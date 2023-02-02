@@ -16,3 +16,6 @@ To use Apollo, simply:
 4. Change the theme name and other misc. data to your own values.
 5. Deploy to Netlify.
 
+## After building...
+
+To get your CSS styles to work via Tailwind, you need to run the following command: ` npm run build-tw `. To have continious updating, run `npm run build-tw-w`. 
