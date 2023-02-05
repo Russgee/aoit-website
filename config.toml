@@ -2,3 +2,12 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'alpha-site-starter'
+
+[params]
+facebook = 'true'
+twitter = 'true'
+    [meta]
+        image = ""
+        description = "This is a template with meta tag configuration."
+        video = ""
+

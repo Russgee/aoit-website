@@ -1,0 +1,22 @@
+<!-- Primary Meta Tags -->
+<title>{{ .Site.Title}} | {{ .Title }}</title>
+<meta name="title" content="{{ .Site.Title }} | {{ .Title }}">
+<meta name="description" content="{{ .Site.Params.meta.description }}">
+
+{{ if .Site.Params.facebook }}
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ .Site.Title }} | {{ .Title }}">
+<meta property="og:description" content="{{ .Site.Params.meta.description }}">
+<meta property="og:image" content="{{ .Site.Params.meta.image }}">
+{{ end }}
+
+{{ if .Site.Params.twitter }}
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="twitter:title" content="{{ .Site.Title }} | {{ .Title }}">
+<meta property="twitter:description" content="{{ .Site.Params.meta.description }}">
+<meta property="twitter:image" content="{{ .Site.Params.meta.image }}">
+{{ end }}

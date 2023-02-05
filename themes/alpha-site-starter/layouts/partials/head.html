@@ -1,3 +1,4 @@
 <title>HELLO</title>
+{{ partial "meta.html" . -}}
 {{ $style := resources.Get "style.css" }}    
 <link rel="stylesheet" href="{{ $style.RelPermalink }}"> 
