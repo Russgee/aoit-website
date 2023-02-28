@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
+    {{- partial "global/head.html" . -}}
     <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
+        {{- partial "global/nav.html" . -}}
+        {{- partial "global/header.html" . -}}
+        <main>
         {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
+        </main>
+        {{- partial "global/footer.html" . -}}
 
         <script>
             if (window.netlifyIdentity) {

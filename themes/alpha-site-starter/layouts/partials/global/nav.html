@@ -1,0 +1,22 @@
+{{ if .Site.Menus.main }}
+
+<nav class="">
+    {{ range .Site.Menus.main }}
+        {{ if eq .Name "logo" }}
+            <a href="/">
+                <picture>
+                    <source srcset="{{ .Params.darkModeLogo }}" media="(prefers-color-scheme: dark)">
+                    <img src="{{ .Params.logo}}" alt="{{ .Params.desc }}" class="mx-auto w-10 h-10">
+                </picture>
+            </a>
+        {{ end }}
+    {{ end }}
+    <ul class="flex justify-center my-3">
+        {{ range .Site.Menus.main }}
+            {{ if ne .Name "logo" }}
+            <li><a href="{{.URL}}">{{ .Name }}</a></li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</nav>
+{{ end }}
