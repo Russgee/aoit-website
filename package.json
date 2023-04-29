@@ -1,0 +1,24 @@
+{
+  "name": "alpha-site-starter",
+  "version": "2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "styles": "npx tailwindcss -i ./themes/alpha-site-starter/assets/main.css -o ./themes/alpha-site-starter/assets/style.css",
+    "styles-dev": "npx tailwindcss -i ./themes/alpha-site-starter/assets/main.css -o ./themes/alpha-site-starter/assets/style.css --watch",
+    "start": "webpack --mode=development --watch --progress",
+    "watch": "webpack --mode=production --watch --progress",
+    "build": "webpack --mode=production",
+  "production": "npm run styles && npm run build && hugo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

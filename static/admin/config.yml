@@ -19,3 +19,44 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - label: "Config"
+    name: "config"
+    files:
+      - label: "Config"
+        name: "config"
+        file: "config.toml"
+        fields:
+          - {label: "Title", name: title, widget: string}
+          - label: "Menus"
+            name: menu
+            widget: list
+            allow_add: false
+            fields:
+              - label: "Main Menu"
+                name: main
+                widget: list
+                fields:
+                  - {label: "Identifier", name: identifier, widget: string}
+                  - {label: "Name", name: name, widget: string}
+                  - {label: "URL", name: url, widget: string}
+                  - {label: "Order", name: weight, widget: number}
+              - label: "Footer Item"
+                name: footer
+                widget: list
+                fields:
+                  - {label: "Identifier", name: identifier, widget: string}
+                  - {label: "Name", name: name, widget: string}
+                  - {label: "URL", name: url, widget: string}
+                  - {label: "Order", name: weight, widget: number}
+          - label: "Website Fields"
+            name: "params"
+            widget: "object" 
+            fields:
+                - {label: "Facebook", name: "facebook", widget: boolean}
+                - {label: "twitter", name: "twitter", widget: boolean}
+                - label: "Website Data"
+                  name: "meta"
+                  widget: object 
+                  fields:
+                    - {label: "image", name: "image", widget: file}
+                    - {label: "Site Description", name: "description", widget: string}

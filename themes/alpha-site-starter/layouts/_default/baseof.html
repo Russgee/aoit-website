@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.LanguageCode }}">
     {{- partial "global/head.html" . -}}
     <body>
         {{- partial "global/nav.html" . -}}
@@ -20,5 +20,7 @@
               });
             }
           </script>
+          {{ $script := resources.Get "bundle.js" | resources.Minify | resources.Fingerprint }}    
+          <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
     </body>
 </html>
