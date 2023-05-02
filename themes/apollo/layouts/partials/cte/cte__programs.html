@@ -1,0 +1,14 @@
+<section class="px-6 container mx-auto my-12" id="programs">
+    <h2 class="text-aoit-400 text-2xl font-bold">Our Programs</h2>
+    <p class="my-6">At Academy of Innovative Technology, we have <strong>3 state-approved</strong> Career and Technical Education programs. These programs allow us to teach students a useful trade.</p>
+    
+    <div class="flex flex-wrap gap-12">
+    {{ range .Pages }}
+    <article class="rounded-cell"> 
+        <strong class="text-xl">{{ .Title }}</strong>
+        <p class="my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+        <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="{{ .RelPermalink }}">Learn More</a>
+    </article>
+    {{ end }}
+    </div>
+</section>

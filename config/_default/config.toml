@@ -37,28 +37,41 @@ url = "/academics"
 weight = 2
 
 [[menu.main]]
+identifier = "CTE"
+name = "CTE"
+url = "/cte"
+weight = 3
+
+[[menu.main]]
 identifier = "Calendar"
 name = "Calendar"
 url = "/calendar"
-weight = 3
+weight = 4
 
 [[menu.main]]
 identifier = "Admissions"
 name = "Admissions"
 url = "/admissions"
-weight = 4
+weight = 5
 
 [[menu.main]]
-identifier = "Parents"
+identifier = "Family"
+name = "Family"
+url = "/family"
+weight = 6
+
+
+[[menu.main]]
+identifier = "Students"
 name = "Students"
 url = "/students"
-weight = 5
+weight = 7
 
 [[menu.main]]
 identifier = "Additional Info"
 name = "Additional Info"
 url = "/additional-info"
-weight = 6
+weight = 8
 
 
 
