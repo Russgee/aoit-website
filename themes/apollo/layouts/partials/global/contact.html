@@ -1,0 +1,28 @@
+<section class="px-6 my-12 container mx-auto">
+    <h2 class="text-center text-2xl font-bold text-aoit-400">Have a question? Feel free to contact us.</h2>
+
+    <form>
+        <label class="label" for="name">Full Name</label>
+        <input class="input" type="text" id="name" name="name" required>
+      
+        <label class="label" for="phone">Phone Number</label>
+        <input class="input" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <small>Format: 123-456-7890</small>
+      
+        <label class="label" for="email">Email Address</label>
+        <input class="input" type="email" id="email" name="email" required>
+      
+        <label class="label" for="dropdown">Select concern</label>
+        <select class="input" id="dropdown" name="dropdown">
+          <option value="item1">Item 1</option>
+          <option value="item2">Item 2</option>
+          <option value="item3">Item 3</option>
+        </select>
+      
+        <label class="label" for="details">Detailed Information</label>
+        <textarea class="input" id="details" name="details" rows="5"></textarea>
+      
+        <button class="btn w-full bg-aoit-500 text-white mt-10" type="submit">Submit</button>
+      </form>
+  
+    </section>

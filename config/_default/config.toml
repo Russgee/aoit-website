@@ -1,7 +1,7 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme = 'alpha-site-starter'
+theme = 'apollo'
 
 [params]
 facebook = 'true'
@@ -21,14 +21,49 @@ url = "/"
 weight = -1
 
 [menu.main.params]
-logo = "https://place-hold.it/300"
-darkModeLogo = "https://place-hold.it/300"
+logo = "/logo.svg"
 desc = "Base theme logo"
 
 [[menu.main]]
 identifier = "about"
-name = "About"
+name = "About Us"
 url = "/about"
 weight = 1
+
+[[menu.main]]
+identifier = "Academics"
+name = "Academics"
+url = "/academics"
+weight = 2
+
+[[menu.main]]
+identifier = "Calendar"
+name = "Calendar"
+url = "/calendar"
+weight = 3
+
+[[menu.main]]
+identifier = "Admissions"
+name = "Admissions"
+url = "/admissions"
+weight = 4
+
+[[menu.main]]
+identifier = "Parents"
+name = "Students"
+url = "/students"
+weight = 5
+
+[[menu.main]]
+identifier = "Additional Info"
+name = "Additional Info"
+url = "/additional-info"
+weight = 6
+
+
+
+
+
+
 
 # [permalinks]

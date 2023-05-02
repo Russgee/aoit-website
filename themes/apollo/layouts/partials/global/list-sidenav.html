@@ -1,0 +1,7 @@
+{{ if .Params.sidebar}}
+<ul>
+    {{ range .Params.sidebar }}
+    <li><a href="{{.url}}">{{.title}}</a></li>
+    {{ end }}
+</ul>
+{{ end }}

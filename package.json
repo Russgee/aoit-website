@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "styles": "npx tailwindcss -i ./themes/alpha-site-starter/assets/main.css -o ./themes/alpha-site-starter/assets/style.css",
-    "styles-dev": "npx tailwindcss -i ./themes/alpha-site-starter/assets/main.css -o ./themes/alpha-site-starter/assets/style.css --watch",
+    "styles": "npx tailwindcss -i ./themes/apollo/assets/main.css -o ./themes/apollo/assets/style.css",
+    "styles-dev": "npx tailwindcss -i ./themes/apollo/assets/main.css -o ./themes/apollo/assets/style.css --watch",
     "start": "webpack --mode=development --watch --progress",
     "watch": "webpack --mode=production --watch --progress",
     "build": "webpack --mode=production",

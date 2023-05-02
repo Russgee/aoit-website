@@ -1,3 +1,0 @@
-{{ partial "global/meta.html" . -}}
-{{ $style := resources.Get "style.css" | resources.Minify | resources.Fingerprint }}    
-<link rel="stylesheet" rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}"> 

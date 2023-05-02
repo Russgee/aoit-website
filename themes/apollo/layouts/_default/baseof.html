@@ -3,7 +3,10 @@
     {{- partial "global/head.html" . -}}
     <body>
         {{- partial "global/nav.html" . -}}
+
+        {{ if ne .Page.RelPermalink "/" }}
         {{- partial "global/header.html" . -}}
+        {{ end }}
         <main>
         {{- block "main" . }}{{- end }}
         </main>

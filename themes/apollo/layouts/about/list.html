@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="container px-6 py-12">
+    {{- partial "global/list-sidenav.html" . -}}
+    <div>
+        {{- partial "about/about__mission.html" . -}}
+        {{- partial "about/about__principalMessage.html" . -}}
+        {{- partial "about/about__studentTestimony.html" . -}}
+        {{- partial "about/about__faq.html" . -}}
+    </div>
+</div>
+{{ end }}

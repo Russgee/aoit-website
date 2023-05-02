@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header {
+    background-image: url("https://c2.staticflickr.com/6/5748/23024641084_9432fc41cf_b.jpg"); 
+}
+
+.overlay {
+    @apply absolute h-full w-full z-10 opacity-80;
+}
+
+@layer components {
+    .btn {
+        @apply rounded-lg font-semibold bg-aoit-200 text-aoit-500 p-3 inline-block;
+    }
+
+    .rounded-cell {
+        @apply shadow-lg p-6 rounded-lg;
+    }
+
+    .input {
+        @apply rounded-lg border-aoit-400 border-2 block w-full p-3;
+    }
+
+    .label {
+        @apply mt-6 block;
+    }
+}
