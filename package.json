@@ -9,7 +9,7 @@
     "start": "webpack --mode=development --watch --progress",
     "watch": "webpack --mode=production --watch --progress",
     "build": "webpack --mode=production",
-  "production": "npm run styles && npm run build && hugo"
+    "production": "npm run styles && npm run build && hugo --gc --minify"
   },
   "keywords": [],
   "author": "",
