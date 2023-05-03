@@ -1,1 +1,0 @@
-(()=>{const e=document.querySelector("#menu"),n=document.querySelector(".nav ul");e.addEventListener("click",(function(){n.classList.toggle("hidden")}))})();
