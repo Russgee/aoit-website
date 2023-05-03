@@ -2,6 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "global/head.html" . -}}
     <body>
+        {{- partial "global/announcement-bar.html" . -}}
         {{- partial "global/nav.html" . -}}
 
         {{ if ne .Page.RelPermalink "/" }}
