@@ -1,29 +1,33 @@
 {{ if .Site.Menus.main }}
-<nav class='absolute top-0 w-full nav flex p-6 justify-between items-center flex-wrap z-50 text-aoit-700 {{ if eq .Page.RelPermalink "/" }} text-white{{end}}'>
-    <span id="menu" class="material-symbols-outlined">
-        menu
-    </span>
-    {{ range .Site.Menus.main }}
-        {{ if eq .Name "logo" }}
-            <a href="/">
-                <picture>
-                    <source srcset="{{ .Params.darkModeLogo }}" media="(prefers-color-scheme: dark)">
-                    <img src="{{ .Params.logo}}" alt="{{ .Params.desc }}" class="w-32">
-                </picture>
-            </a>
-        {{ end }}
-    {{ end }}
-    <div class="buttons flex flex-col">
-        <a href="#">Contact Us</a>
-        <a href="#">Select Language</a>
-    </div>
-
-    <ul class="hidden basis-full">
+<div class='absolute top-0 w-full nav flex p-6 items-center flex-wrap z-50 text-aoit-700 flex-col {{ if eq .Page.RelPermalink "/" }} text-white{{end}}'>
+    <div class="flex justify-between items-center w-full" id="nav-item-container">
+        <span id="menu" class="material-symbols-outlined">
+            menu
+        </span>
         {{ range .Site.Menus.main }}
-            {{ if ne .Name "logo" }}
-            <li><a href="{{.URL}}">{{ .Name }}</a></li>
+            {{ if eq .Name "logo" }}
+                <a href="/">
+                    <picture>
+                        <source srcset="{{ .Params.darkModeLogo }}" media="(prefers-color-scheme: dark)">
+                        <img src="{{ .Params.logo}}" alt="{{ .Params.desc }}" class="w-32">
+                    </picture>
+                </a>
             {{ end }}
         {{ end }}
-    </ul>
-</nav>
+        <div class="buttons flex flex-col">
+            <a href="#">Contact Us</a>
+            <a href="#">Select Language</a>
+        </div>
+    </div>
+
+    <nav class="w-full mt-10 text-white">
+        <ul class="hidden basis-full">
+            {{ range .Site.Menus.main }}
+                {{ if ne .Name "logo" }}
+                <li class="my-8 border-b-2 pb-4"><a href="{{.URL}}">{{ .Name }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </nav>
+</div>
 {{ end }}
