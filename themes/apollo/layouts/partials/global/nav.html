@@ -24,7 +24,7 @@
         <ul class="hidden basis-full">
             {{ range .Site.Menus.main }}
                 {{ if ne .Name "logo" }}
-                <li class="my-8 border-b-2 pb-4"><a href="{{.URL}}">{{ .Name }}</a></li>
+                <li class="my-8 border-b-2 pb-4"><a href="{{.URL}}" class="block w-full h-full">{{ .Name }}</a></li>
                 {{ end }}
             {{ end }}
         </ul>
