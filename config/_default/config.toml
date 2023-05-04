@@ -35,6 +35,21 @@ identifier = "Academics"
 name = "Academics"
 url = "/academics"
 weight = 2
+hasChildren = true
+
+[[menu.main]]
+    name = "Advanced Placement"
+    url = "/academics/ap"
+    identifier = "Advanced Placement"
+    parent = "Academics"
+    weight = 1
+
+  [[menu.main]]
+    name = "English"
+    url = "/academics/english"
+    identifier = "English"
+    parent = "Academics"
+    weight = 2
 
 [[menu.main]]
 identifier = "CTE"
