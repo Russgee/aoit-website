@@ -1,6 +1,8 @@
 <header class="container mx-auto text-aoit-500 text-center mt-40">
     <h1 class="text-3xl font-bold">{{ .Title }}</h1>
     {{ if .Params.sidebar }}
-        {{- partial "global/list-sidenav.html" . -}}
+        {{- partial "global/mobile-headerNav.html" . -}}
+    {{ else if .Params.pageSidebar }}
+        {{- partial "global/page-sidebar.html" . -}}
     {{ end }}
 </header>

@@ -1,0 +1,5 @@
+{{ range .Pages }}
+    <ul class="my-4 md:hidden">
+        <li class="my-1"><a class="underline" href="{{ .Permalink }}">{{ .Title }}</a></li>
+    </ul>
+{{ end }}

@@ -7,7 +7,7 @@
         {{ if ne .Page.RelPermalink "/" }}
         {{- partial "global/header.html" . -}}
         {{ end }}
-        <main>
+        <main class='{{ if ne .Page.RelPermalink "/" }}container mx-auto px-6{{end}}'>
         {{- block "main" . }}{{- end }}
         </main>
         {{- partial "global/footer.html" . -}}
