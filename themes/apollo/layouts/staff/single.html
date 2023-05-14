@@ -1,16 +1,16 @@
 {{ define "main" }}
-    <table>
+    <table class="w-full my-10 table-auto border-collapse border border-slate-500">
         <tr>
-            <th>Name</th>
-            <th>Contact</th>
+            <th class="border border-slate-700 p-4">Name</th>
+            <th class="border border-slate-700 p-4">Contact</th>
         </tr>
         {{ range .Params.data }}
         <tr class="{{ if .lead }}font-bold{{end}}">
-            <td >
-                {{.name}}<br>
+            <td class="border border-slate-700 p-4">
+                {{.name}},<br>
                 {{.title}}
             </td>
-            <td>{{.email}}</td>
+            <td class="border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
         </tr>
         {{ end }}
 

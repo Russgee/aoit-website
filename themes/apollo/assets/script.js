@@ -5,11 +5,14 @@ const menuToggle = document.querySelector("#menu");
 const mainMenu = document.querySelector(".nav ul");
 const nav = document.querySelector(".nav");
 const navItemContainer = document.querySelector("#nav-item-container");
+const body = document.querySelector("body");
 
 menuToggle.addEventListener("click", function() {
     mainMenu.classList.toggle("hidden");
     nav.classList.toggle("bg-aoit-700");
     nav.classList.toggle("h-full");
+    body.classList.toggle("h-full");
+    body.classList.toggle("overflow-hidden");
 
     navItemContainer.classList.toggle("text-white");
 })

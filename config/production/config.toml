@@ -1,6 +1,6 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Academy of Innovative Technology'
 theme = 'apollo'
 
 [params]
@@ -92,6 +92,41 @@ name = "CTE"
 url = "/cte"
 weight = 3
 
+  [[menu.main]]
+    name = "Web Development"
+    url = "/cte/web"
+    identifier = "Web Development"
+    parent = "CTE"
+    weight = 1
+
+  [[menu.main]]
+    name = "Game Design"
+    url = "/cte/game-design"
+    identifier = "Game Design"
+    parent = "CTE"
+    weight = 2
+  
+  [[menu.main]]
+    name = "IT Systems"
+    url = "/cte/it"
+    identifier = "IT Systems"
+    parent = "CTE"
+    weight = 3
+  
+  [[menu.main]]
+    name = "Work-Based Learning"
+    url = "/cte/wbl"
+    identifier = "Work-Based Learning"
+    parent = "CTE"
+    weight = 4
+  
+  [[menu.main]]
+    name = "CTE Electives"
+    url = "/cte/cte-electives"
+    identifier = "CTE Electives"
+    parent = "CTE"
+    weight = 5
+
 [[menu.main]]
 identifier = "Calendar"
 name = "Calendar"
@@ -117,6 +152,42 @@ name = "Students"
 url = "/students"
 weight = 7
 
+  [[menu.main]]
+    name = "Student Success Center"
+    url = "/students/ssc"
+    identifier = "Student Success Center"
+    parent = "Students"
+    weight = 1
+  
+  [[menu.main]]
+    name = "CREW"
+    url = "/students/crew"
+    identifier = "CREW"
+    parent = "Students"
+    weight = 2
+  
+  [[menu.main]]
+    name = "MESH"
+    url = "/students/mesh"
+    identifier = "MESH"
+    parent = "Students"
+    weight = 3
+
+  [[menu.main]]
+    name = "School-Based Health Center"
+    url = "/students/sbhc"
+    identifier = "School-Based Health Center"
+    parent = "Students"
+    weight = 4
+  
+  [[menu.main]]
+    name = "PSAL"
+    url = "/students/psal"
+    identifier = "PSAL"
+    parent = "Students"
+    weight = 5
+
+
 [[menu.main]]
 identifier = "Staff"
 name = "Staff"
@@ -124,7 +195,7 @@ url = "/staff"
 weight = 8
 hasChildren = true
 
-[[menu.main]]
+  [[menu.main]]
     name = "Administration"
     url = "/staff/administration"
     identifier = "Administration"
