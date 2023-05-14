@@ -35,6 +35,56 @@ identifier = "Academics"
 name = "Academics"
 url = "/academics"
 weight = 2
+hasChildren = true
+
+[[menu.main]]
+    name = "Advanced Placement"
+    url = "/academics/ap"
+    identifier = "Advanced Placement"
+    parent = "Academics"
+    weight = 1
+
+  [[menu.main]]
+    name = "English"
+    url = "/academics/english"
+    identifier = "English"
+    parent = "Academics"
+    weight = 2
+
+  [[menu.main]]
+    name = "ISS"
+    url = "/academics/iss"
+    identifier = "ISS"
+    parent = "Academics"
+    weight = 3
+
+  [[menu.main]]
+    name = "Math"
+    url = "/academics/math"
+    identifier = "Math"
+    parent = "Academics"
+    weight = 4
+
+  [[menu.main]]
+    name = "Physical Education and Health"
+    url = "/academics/phys-ed"
+    identifier = "Phys Ed"
+    parent = "Academics"
+    weight = 5
+
+  [[menu.main]]
+    name = "Science"
+    url = "/academics/science"
+    identifier = "Science"
+    parent = "Academics"
+    weight = 6
+  
+  [[menu.main]]
+    name = "Social Studies"
+    url = "/academics/social-studies"
+    identifier = "Social Studies"
+    parent = "Academics"
+    weight = 7
 
 [[menu.main]]
 identifier = "CTE"
@@ -72,7 +122,36 @@ identifier = "Staff"
 name = "Staff"
 url = "/staff"
 weight = 8
+hasChildren = true
 
+[[menu.main]]
+    name = "Administration"
+    url = "/staff/administration"
+    identifier = "Administration"
+    parent = "Staff"
+    weight = 1
+
+  [[menu.main]]
+    name = "Guidance Counselors"
+    url = "/staff/guidance"
+    identifier = "Guidance"
+    parent = "Staff"
+    weight = 2
+
+  [[menu.main]]
+    name = "Teachers"
+    url = "/staff/teachers"
+    identifier = "Teachers"
+    parent = "Staff"
+    weight = 3
+  
+  [[menu.main]]
+    name = "RID Team"
+    url = "/staff/rid"
+    identifier = "rid"
+    parent = "Staff"
+    weight = 4
+  
 
 
 
