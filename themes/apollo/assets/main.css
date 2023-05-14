@@ -30,4 +30,36 @@
     .stat-container svg {
         @apply h-60;
     }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold text-aoit-500 my-4;
+    }
+
+    h2, h3, h4, h5, h6 {
+        @apply font-semibold;
+    }
+
+    .about__single h3, .about__single p {
+        @apply text-center;
+    }
+
+    .about__single table {
+        @apply w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg;
+    }
+
+    .about__single td, .about__single th {
+        @apply border border-aoit-400 p-4;
+    }
+
+    .about__single tr {
+        @apply bg-white;
+    }
+
+    .about__single tr:hover {
+        @apply bg-aoit-50;
+    }
+
+    .about__single th {
+        @apply text-white bg-aoit-500;
+    }
 }

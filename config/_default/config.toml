@@ -31,6 +31,13 @@ url = "/about"
 weight = 1
 
 [[menu.main]]
+    name = "Bell Schedule"
+    url = "/about/bell-schedule"
+    identifier = "Bell Schedule"
+    parent = "about"
+    weight = 1
+
+[[menu.main]]
 identifier = "Academics"
 name = "Academics"
 url = "/academics"
