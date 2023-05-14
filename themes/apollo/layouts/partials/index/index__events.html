@@ -1,29 +1,35 @@
 <section class="container mx-auto px-6 py-10">
     <h2 class="text-center text-2xl font-bold text-aoit-400 mb-14">Upcoming Events</h2>
 
-    
-    <article class="rounded-cell bg-aoit-50">
-        <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 font-bold">Category</span>
+    {{ range (where .Site.RegularPages "Section" "events") }}
+    <article class="cal-event rounded-cell bg-aoit-50">
+        <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 font-bold">{{ .Params.category }}</span>
 
         <div class="my-6 flex justify-between">
             <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center">
                 <div>
-                    <span class="text-5xl">15</span>
-                    <span class="block font-light">Sept</span>
+                    <span class="text-5xl">{{ (time .Params.date).Day }}</span>
+                    <span class="block font-light">{{ (time .Params.date).Month}} {{ (time .Params.date).Year}}</span>
                 </div>
             </time>
 
-            <strong class="text-aoit-500 text-lg">AoIT Event Here</strong>
+            <strong class="text-aoit-500 text-lg md:text-xl">{{ .Title }}</strong>
         </div>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut luctus sem. Ut sapien leo, faucibus eget pellentesque non, accumsan vitae magna. Pellentesque libero elit, dapibus a orci eget, pulvinar facilisis lectus. Aliquam efficitur lectus in accumsan placerat. In dignissim tincidunt sem, eget blandit odio convallis vel.</p>
+        <p>{{ .Params.description }}</p>
 
         <hr class="my-8">
 
         <div class="flex flex-nowrap justify-center">
-            <a class="btn" href="#">+ Add to calendar</a>
+            <button class="btn" data-title="{{.Title}}" data-start-date={{.Params.date}} data-start-time="{{ .Params.startTime}}" data-end-time="{{.Params.endTime}}" data-eventDate="5/14/2023">+ Add to calendar</button>
         </div>
 
-        <img class="block mx-auto mt-6 rounded-2xl" src="https://place-hold.it/300x500">
+        {{ if .Params.thumbnail }}
+        <img class="block mx-auto mt-6 rounded-2xl" src="{{ . }}">
+        {{ end }}
     </article>
+    {{ end }}
+    <div class="text-center mt-10">
+        <a href="/events" class="btn bg-aoit-500 text-white rounded-xl px-10">View More</a>
+    </div>
 </section>

@@ -1,5 +1,6 @@
 // ==== imports ======
 const ProgressBar = require('progressbar.js')
+const ics = require('ics')
 
 const menuToggle = document.querySelector("#menu");
 const mainMenu = document.querySelector(".nav ul");
@@ -122,5 +123,92 @@ var grad = new ProgressBar.Circle("#grad-rate", {
   safety.text.style.fontSize = '2rem';
   safety.text.style.color = 'white';
   safety.text.style.fontWeight = 'bold';
+
+/* === TIME HANDLING CODE === */
+
+function parseTime(timeString) {
+  const [hours, minutes] = timeString.split(':');
+  const currentDate = new Date();
+  const parsedTime = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    currentDate.getDate(),
+    parseInt(hours),
+    parseInt(minutes)
+  );
+  return parsedTime;
+}
+
+function calculateDuration(startTime, endTime) {
+  const durationMs = endTime - startTime;
+  const hours = Math.floor(durationMs / (1000 * 60 * 60));
+  const minutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
+  return { hours, minutes };
+}
+
+function calculateTimeDuration(start, end) {
+  const startTime = parseTime(start);
+  const endTime = parseTime(end);
+  const duration = calculateDuration(startTime, endTime);
+  return duration;
+}
+
+function separateDate(dateString) {
+  const separatedArray = dateString.split('-');
+  return separatedArray;
+}
+
+function replaceDashWithComma(dateArray) {
+  const replacedArray = dateArray.map((element) => element.replace('-', ','));
+  return replacedArray;
+}
+
+function separateDateWithComma(dateString) {
+  const dateArray = separateDate(dateString);
+  const separatedArrayWithComma = replaceDashWithComma(dateArray);
+
+  return separatedArrayWithComma.map((element => parseInt(element)));;
+}
   
-  // === mapbox code ===
+if (window.location.pathname === "/") {
+  let events = document.querySelectorAll(".cal-event .btn");
+  events.forEach(function(n) {
+   const fileName = `${n.dataset.title}-${n.dataset.startDate}.ics`;
+
+   n.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    let event = {
+      start: separateDateWithComma(n.dataset.startDate),
+      duration: calculateTimeDuration(n.dataset.startTime, n.dataset.endTime),
+      title: n.dataset.title,
+      description: '',
+      location: "",
+      url: "https://aoiths.org",
+      status: "CONFIRMED",
+      organizer: { name: 'Academy of Innovative Technology', email: 'info@aoiths.org'},
+    }
+
+     ics.createEvent(event, (error, value) => {
+      if (error) {
+        console.log(error)
+        return
+      }
+
+      const file = new File([value], fileName, { type: 'plain/text' });
+
+      const url = URL.createObjectURL(file);
+
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = fileName;
+    
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
+    
+      URL.revokeObjectURL(url);
+      })
+   });
+  });
+}

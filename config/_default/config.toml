@@ -2,6 +2,7 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Academy of Innovative Technology'
 theme = 'apollo'
+buildFuture = true 
 
 [params]
 facebook = 'true'
