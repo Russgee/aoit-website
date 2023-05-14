@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Contact</th>
+        </tr>
+        {{ range .Params.data }}
+        <tr class="{{ if .lead }}font-bold{{end}}">
+            <td >
+                {{.name}}<br>
+                {{.title}}
+            </td>
+            <td>{{.email}}</td>
+        </tr>
+        {{ end }}
+
+    </table>
+    
+{{ end }}

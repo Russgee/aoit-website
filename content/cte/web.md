@@ -1,5 +1,6 @@
 ---
 title: Web Development
+logo: web.svg
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
 partners:
     - name: "CodeNation"

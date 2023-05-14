@@ -23,6 +23,20 @@
               });
             }
           </script>
+          <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+          <script>
+            mapboxgl.accessToken = 'pk.eyJ1Ijoia2dwaWVycmUiLCJhIjoiY2xobXZvM2N1MWZqYzNncXNsMzByenN5YyJ9.eI57qmHmknLrhEuQJqla9Q';
+            const map = new mapboxgl.Map({
+              container: 'map', // container ID
+              style: 'mapbox://styles/mapbox/streets-v12', // style URL
+              center: [-73.86908, 40.69290], // starting position [lng, lat]
+              zoom: 15, // starting zoom
+            });
+
+            const marker = new mapboxgl.Marker()
+                .setLngLat([-73.86908, 40.69290])
+                .addTo(map);
+            </script>
           {{ $script := resources.Get "bundle.js" | resources.Minify | resources.Fingerprint }}    
           <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
     </body>

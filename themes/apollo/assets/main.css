@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.header {
+/* .header {
     background-image: url("https://c2.staticflickr.com/6/5748/23024641084_9432fc41cf_b.jpg"); 
-}
+} */
 
 .overlay {
     @apply absolute h-full w-full z-10 opacity-80;
@@ -16,7 +16,7 @@
     }
 
     .rounded-cell {
-        @apply shadow-lg p-6 rounded-lg;
+        @apply shadow-lg p-6 rounded-3xl;
     }
 
     .input {
@@ -25,5 +25,9 @@
 
     .label {
         @apply mt-6 block;
+    }
+
+    .stat-container svg {
+        @apply h-60;
     }
 }

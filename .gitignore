@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 themes/apollo/assets/bundle.js
 themes/apollo/assets/style.css
+themes/apollo/assets/bundle.js.LICENSE.txt
