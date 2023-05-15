@@ -10,6 +10,13 @@ const body = document.querySelector("body");
 
 menuToggle.addEventListener("click", function() {
     mainMenu.classList.toggle("hidden");
+
+    if (menuToggle.innerText === "menu") {
+      menuToggle.innerText = "close";
+    } else {
+      menuToggle.innerText = "menu";
+    }
+    
     nav.classList.toggle("bg-aoit-700");
     nav.classList.toggle("h-full");
     body.classList.toggle("h-full");

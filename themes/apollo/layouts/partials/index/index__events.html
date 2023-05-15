@@ -27,7 +27,9 @@
             <hr class="my-8">
 
             <div class="flex flex-nowrap justify-center">
-                <button class="btn" data-title="{{.Title}}" data-start-date={{.Params.date}} data-start-time="{{ .Params.startTime}}" data-end-time="{{.Params.endTime}}" data-eventDate="5/14/2023">+ Add to calendar</button>
+                <button class="btn gap-2 flex" data-title="{{.Title}}" data-start-date={{.Params.date}} data-start-time="{{ .Params.startTime}}" data-end-time="{{.Params.endTime}}" data-eventDate="5/14/2023"><span class="material-symbols-outlined">
+                    calendar_add_on
+                    </span> Add to calendar</button>
             </div>
 
             {{ if .Params.thumbnail }}

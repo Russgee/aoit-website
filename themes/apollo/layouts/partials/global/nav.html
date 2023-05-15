@@ -1,7 +1,8 @@
 {{ if .Site.Menus.main }}
-<div class='absolute top-0 w-full nav p-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll {{ if eq .Page.RelPermalink "/" }} text-white{{end}}'>
+<!-- lg:container lg:mx-auto lg:-translate-x-2/4 lg:left-1/2 -->
+<div class='absolute top-0 w-full nav p-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll text-black {{ if eq .Page.RelPermalink "/" }} text-white{{end}}'>
     <div class="flex justify-between items-center w-full" id="nav-item-container">
-        <span id="menu" class="lg:hidden material-symbols-outlined">
+        <span id="menu" class="transition-all material-symbols-outlined">
             menu
         </span>
         {{ range .Site.Menus.main }}
@@ -14,6 +15,33 @@
                 </a>
             {{ end }}
         {{ end }}
+        <nav class='{{ if eq .Page.RelPermalink "/" }} text-white {{ else }} text-black {{end}} w-8/12' id="desktop-nav">
+            <ul class="hidden basis-full lg:block lg:flex lg:w-full lg:justify-between">
+                {{ range .Site.Menus.main }}
+                    {{ if ne .Name "logo" }}
+                        {{ if .HasChildren }}
+                    <li class="my-8 border-b-2 pb-4 lg:border-b-0">
+                        <details>
+                            <summary>
+                                <a href="{{.URL}}" class="">{{ .Name }}</a>
+                            </summary>
+                            <ul class="ml-5">
+                                {{ range .Children }}
+                                    <li class="my-6"><a href="{{.URL}}">{{ .Name }}</a></li>
+                                {{ end }}
+                            </ul>
+                        </details>
+                    </li>
+                    {{ else }}
+                    <li class="my-8 border-b-2 pb-4">
+                        <a href="{{.URL}}" class="">{{ .Name }}</a>
+                    </li>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            </ul>
+        </nav>
+
         <div class="buttons flex flex-col">
             <a href="#">
                 <span class="material-symbols-outlined">
@@ -33,7 +61,7 @@
         </div>
     </div>
 
-    <nav class="w-full mt-10 text-white">
+    <nav class="w-full mt-10 text-white lg:hidden" id="mobile-nav">
         <ul class="hidden basis-full lg:block lg:flex lg:w-full lg:justify-between">
             {{ range .Site.Menus.main }}
                 {{ if ne .Name "logo" }}

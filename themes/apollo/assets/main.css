@@ -71,3 +71,9 @@
         @apply text-white bg-aoit-500;
     }
 }
+
+@media (min-width: 768px) {
+    #menu {
+        @apply hidden;
+    }
+}
