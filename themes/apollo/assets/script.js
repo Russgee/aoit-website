@@ -3,7 +3,7 @@ const ProgressBar = require('progressbar.js')
 const ics = require('ics')
 
 const menuToggle = document.querySelector("#menu");
-const mainMenu = document.querySelector(".nav ul");
+const mainMenu = document.querySelector("#mobile-nav ul");
 const nav = document.querySelector(".nav");
 const navItemContainer = document.querySelector("#nav-item-container");
 const body = document.querySelector("body");
