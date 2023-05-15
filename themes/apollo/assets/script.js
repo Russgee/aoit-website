@@ -177,7 +177,7 @@ if (window.location.pathname === "/") {
 
    n.addEventListener("click", (e) => {
     e.preventDefault();
-    
+
     let event = {
       start: separateDateWithComma(n.dataset.startDate),
       duration: calculateTimeDuration(n.dataset.startTime, n.dataset.endTime),
@@ -195,12 +195,15 @@ if (window.location.pathname === "/") {
         return
       }
 
-      const file = new File([value], fileName, { type: 'plain/text' });
+      const file = new File([value], fileName, { type: 'plain/calendar' });
+      console.log({file});
 
-      const url = URL.createObjectURL(file);
+      let url = URL.createObjectURL(file);
+      const webcalUrl = url.replace(/^http(s?):\/\//i, 'webcal://');
+      console.log(url);
 
       const anchor = document.createElement('a');
-      anchor.href = url;
+      anchor.href = webcalUrl;
       anchor.download = fileName;
     
       document.body.appendChild(anchor);
