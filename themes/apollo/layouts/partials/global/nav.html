@@ -67,7 +67,7 @@
             {{ range .Site.Menus.main }}
                 {{ if ne .Name "logo" }}
                     {{ if .HasChildren }}
-                <li class="my-8 border-b-2 pb-4 lg:border-b-0">
+                <li class="my-8 border-aoit-400 border-b pb-4 lg:border-b-0">
                     <details>
                         <summary>
                             <a href="{{.URL}}" class="">{{ .Name }}</a>
@@ -80,7 +80,7 @@
                     </details>
                 </li>
                 {{ else }}
-                <li class="my-8 border-b-2 pb-4">
+                <li class="my-8 border-aoit-400 border-b pb-4">
                     <a href="{{.URL}}" class="">{{ .Name }}</a>
                 </li>
                     {{ end }}
