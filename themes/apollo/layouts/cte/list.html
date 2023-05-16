@@ -1,6 +1,18 @@
 {{ define "main" }}
-   {{- partial "cte/cte__about.html" . -}}
-   {{- partial "cte/cte__team.html" . -}}
-   {{- partial "cte/cte__programs.html" . -}}
-   {{- partial "cte/cte__wbl.html" . -}}
+   {{ if .Params.sidebar }}
+      <aside class="col-start-1 col-end-2 hidden lg:block">
+         <ul class="my-4 bg-aoit-200 text-aoit-500 font-semibold p-10 rounded-2xl">
+            {{ range .Params.sidebar }}
+            <li class="my-2 hover:bg-aoit-50 p-4 rounded-xl hover:shadow-md"><a class="underline" href="{{.url}}">{{.title}}</a></li>
+            {{ end }}
+        </ul>
+      </aside>
+   {{ end }}
+
+   <div class="col-start-2 col-end-6">
+      {{- partial "cte/cte__about.html" . -}}
+      {{- partial "cte/cte__team.html" . -}}
+      {{- partial "cte/cte__programs.html" . -}}
+      {{- partial "cte/cte__wbl.html" . -}}
+   </div>
 {{ end }}

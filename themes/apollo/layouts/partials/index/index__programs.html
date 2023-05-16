@@ -2,7 +2,7 @@
     <h2 class="text-3xl font-bold text-center text-aoit-400">Our CTE Programs</h2>
 
     <div class="lg:flex lg:gap-8">
-        {{ range (where .Site.RegularPages "Section" "cte") }}
+        {{ range first 3 (where .Site.RegularPages "Section" "cte") }}
         <article class="rounded-cell bg-white my-12 pb-12 relative overflow-hidden">
             <img class="top-2 right-0 absolute" src="{{ .Params.logo }}">
             <strong class="text-2xl font-semibold block mt-32 text-aoit-400">{{ .Title }}</strong>

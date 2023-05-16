@@ -18,7 +18,13 @@ team:
     - title: Game Design Teacher
       name: Sakib Shams
       email: mr.shams@aoiths.org
-    - title: IT Teacher
+    - title: IT Teacher, Career and Finance Management
       name: Meagan Ramsawak
       email: ms.ramsawak@aoiths.org
+    - title: Career and Finance Management, AP Computer Science, Robotics, Web
+      name: Aaron Pelzer
+      email: mr.pelzer@aoiths.org
+    - title: Modern Youth Apprenticeship Teacher
+      name: Cameron Frazer
+      email: mr.frazer@aoiths.org
 --- 

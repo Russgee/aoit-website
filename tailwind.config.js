@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         aoit: {
           50: '#F8FFFF',
+          75: '#E5F8F7',
           100: '#DCFAFA',
           200: '#DBF3F3',
           300: '#65C2C2',

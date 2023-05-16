@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "global/head.html" . -}}
-    <body class="font-inter bg-gradient-to-b from-white to-aoit-100 border-t-4 border-aoit-500">
+    <body class="font-inter bg-gradient-to-b from-white to-aoit-50 border-t-4 border-aoit-500">
         {{- partial "global/nav.html" . -}}
 
         {{ if ne .Page.RelPermalink "/" }}
         {{- partial "global/header.html" . -}}
         {{ end }}
-        <main class='{{ if ne .Page.RelPermalink "/" }}container mx-auto px-6{{end}}'>
+        <main class='{{ if ne .Page.RelPermalink "/" }}container mx-auto px-6{{end}} {{ if .Params.sidebar}}lg:grid lg:grid-cols-5 lg:gap-x-8 {{end}}'>
         {{- block "main" . }}{{- end }}
         </main>
         {{- partial "global/footer.html" . -}}
