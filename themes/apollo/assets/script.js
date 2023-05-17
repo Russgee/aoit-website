@@ -59,7 +59,7 @@ var grad = new ProgressBar.Circle("#grad-rate", {
   grad.text.style.color = 'white';
   grad.text.style.fontWeight = 'bold';
   
-  grad.animate(0.9);
+  grad.animate(0.91);
 
   var college = new ProgressBar.Circle("#college-rate", {
     color: '#aaa',
@@ -94,7 +94,7 @@ var grad = new ProgressBar.Circle("#grad-rate", {
   college.text.style.color = 'white';
   college.text.style.fontWeight = 'bold';
   
-  college.animate(0.9);
+  college.animate(0.89);
 
   var safety = new ProgressBar.Circle("#safety-rate", {
     color: '#aaa',
@@ -124,7 +124,7 @@ var grad = new ProgressBar.Circle("#grad-rate", {
     }
   });
 
-  safety.animate(0.9);
+  safety.animate(0.88);
 
   safety.text.style.fontFamily = 'Inter, sans-serif';
   safety.text.style.fontSize = '2rem';

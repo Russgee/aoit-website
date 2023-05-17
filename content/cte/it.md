@@ -1,7 +1,8 @@
 ---
 title: Information Technology
 logo: it.svg
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+description: Our three-year Information Technology program focuses on preparing students for IT certifications to enhance their resumes.
+buttonText: Explore IT
 partners:
     - name: "Test"
       logo: ""

@@ -1,14 +1,31 @@
-<section class="px-6 py-20 container mx-auto">
+<section class="px-6 pt-20 container mx-auto">
     <h2 class="text-3xl font-bold text-center text-aoit-400">Our CTE Programs</h2>
 
-    <div class="lg:flex lg:gap-8">
+    <div class="lg:grid lg:grid-cols-3 lg:gap-8 ">
         {{ range first 3 (where .Site.RegularPages "Section" "cte") }}
-        <article class="rounded-cell bg-white my-12 pb-12 relative overflow-hidden">
+        <article class="flex flex-col justify-between rounded-cell bg-white my-12 pb-12 relative overflow-hidden">
             <img class="top-2 right-0 absolute" src="{{ .Params.logo }}">
             <strong class="text-2xl font-semibold block mt-32 text-aoit-400">{{ .Title }}</strong>
-            <p class="mt-4 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="#">Learn More</a>
+            <p class="mt-4 mb-8">{{ .Description}}</p>
+            <a class="btn bg-aoit-500 text-white px-8 rounded-2xl self-start" href="{{ .Permalink }}">{{ .Params.buttonText }}</a>
         </article>
+        {{ end }}
+    </div>
+
+    <hr>
+</section>
+<section class="px-6 pt-12 pb-24 container mx-auto">
+    <h2 class="text-2xl mb-12">Other Programs:</h2>
+
+    <div class="lg:grid lg:grid-cols-3 lg:text-center lg:gap-12">
+        {{ range .Params.programs }}
+        <div class="rounded-cell bg-white">
+            <span class="material-symbols-outlined text-aoit-700">
+                {{ .icon }}
+            </span>
+            <h4 class="font-semibold text-lg">{{ .title }}</h4>
+            <p class=""> {{ .description }}</p>
+        </div>
         {{ end }}
     </div>
 </section>
