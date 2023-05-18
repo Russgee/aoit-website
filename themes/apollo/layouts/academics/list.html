@@ -1,14 +1,15 @@
 {{ define "main" }}
-    <section>
+    {{- partial "global/list-sidenav.html" . -}}
+    <section class="academics col-start-2 col-end-6">
         <h2 class="text-aoit-400 text-2xl font-bold my-10">Test content here</h2>
-    </section>
+        
 
+        {{ range .Pages }}
+        <article class="rounded-cell mb-6"> 
+            <strong class="text-xl">{{ .Title }}</strong>
+            <p class="my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="{{ .RelPermalink }}">Learn More</a>
+        </article>
+        {{ end }}  
     </section>
-    {{ range .Pages }}
-    <article class="rounded-cell mb-6"> 
-        <strong class="text-xl">{{ .Title }}</strong>
-        <p class="my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="{{ .RelPermalink }}">Learn More</a>
-    </article>
-    {{ end }}  
 {{ end }}

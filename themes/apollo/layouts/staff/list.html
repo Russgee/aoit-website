@@ -1,2 +1,239 @@
 {{ define "main" }}
+    <aside class="col-start-1 col-end-2 hidden lg:block">
+        <ul class="my-4 bg-aoit-200 text-aoit-500 font-semibold p-10 rounded-2xl">
+            <li class="my-2 hover:bg-aoit-50 p-4 rounded-xl hover:shadow-md"><a class="underline" href="">links will go here</a></li>
+        </ul>
+    </aside>
+
+   <div class="staff col-start-2 col-end-6">
+
+    <h2 class="text-2xl font-semibold mb-6">Administration</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Admin" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">Career and Technical Education</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "CTE" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">English</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "English" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+    
+    <h2 class="text-2xl font-semibold mb-6">Math</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Mathematics" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">History</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Social Studies" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">Science</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Science" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">Physical Education</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Physical Education" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">Instructional Support Services</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Sped" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">Paraprofessionals</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Paraprofessional" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">ENL</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "ENL" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">Main Office</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Office" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">Guidance</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Guidance" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">RID</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "RID" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <h2 class="text-2xl font-semibold mb-6">Other School Staff</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+
+
+
+
+   </div>
 {{ end }}

@@ -20,7 +20,7 @@
 
 @layer components {
     .btn {
-        @apply rounded-lg font-semibold bg-aoit-200 text-aoit-500 p-3 inline-block;
+        @apply rounded-lg font-semibold bg-aoit-200 text-aoit-500 p-3 inline-block transition-all duration-150;
     }
 
     .rounded-cell {
@@ -73,6 +73,22 @@
 
     .mission p {
         @apply my-10;
+    }
+
+    .about__content p {
+        @apply my-6
+    }
+
+    .about__content ul {
+        @apply list-disc ml-10;
+    }
+
+    .about__content li {
+        @apply my-2;
+    }
+
+    .about__content h2 {
+        @apply text-2xl font-bold mb-6 text-aoit-400 lg:text-3xl;
     }
 }
 

@@ -11,21 +11,19 @@
         </article>
         {{ end }}
     </div>
-
-    <hr>
+    <hr class="border-aoit-700">
 </section>
-<section class="px-6 pt-12 pb-24 container mx-auto">
-    <h2 class="text-2xl mb-12">Other Programs:</h2>
+<section class="px-6 pt-12 pb-24 container mx-auto lg:flex lg:justify-between lg:items-center">
+    <h2 class="text-2xl mb-8 lg:m-0">Other Programs:</h2>
 
-    <div class="lg:grid lg:grid-cols-3 lg:text-center lg:gap-12">
+    <div class="lg:grid lg:grid-cols-4 lg:text-center lg:gap-12 w-10/12">
         {{ range .Params.programs }}
-        <div class="rounded-cell bg-white">
-            <span class="material-symbols-outlined text-aoit-700">
-                {{ .icon }}
-            </span>
-            <h4 class="font-semibold text-lg">{{ .title }}</h4>
-            <p class=""> {{ .description }}</p>
-        </div>
+        <details class="relative p-6">
+            <summary>
+                <span class="font-semibold text-aoit-700">{{ .title }}</span>
+            </summary>
+            <p class="my-6"> {{ .description }}</p>
+        </details>
         {{ end }}
     </div>
 </section>
