@@ -3,3 +3,4 @@ node_modules
 themes/apollo/assets/bundle.js
 themes/apollo/assets/style.css
 themes/apollo/assets/bundle.js.LICENSE.txt
+.netlify/state.json
