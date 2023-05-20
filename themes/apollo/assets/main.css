@@ -92,7 +92,7 @@
     }
 
     table {
-        @apply w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg;
+        @apply w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg bg-white text-black;
     }
 
     table thead tr {

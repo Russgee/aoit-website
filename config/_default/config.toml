@@ -377,7 +377,7 @@ hasChildren = true
 
 [[menu.main]]
     name = "Advanced Placement"
-    url = "/academics/ap"
+    url = "/academics/advanced-placement"
     identifier = "Advanced Placement"
     parent = "Academics"
     weight = 1
@@ -390,7 +390,7 @@ hasChildren = true
     weight = 2
 
   [[menu.main]]
-    name = "ISS"
+    name = "Instructional Support Services"
     url = "/academics/iss"
     identifier = "ISS"
     parent = "Academics"
