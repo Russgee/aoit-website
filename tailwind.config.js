@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["themes/apollo/content/**/*.md", "themes/apollo/layouts/**/*.html", "themes/apollo/assets/script.js"],
+  content: ["themes/apollo/content/**/*.md", "themes/apollo/layouts/**/*.html", "themes/apollo/assets/script.js", "config/**"],
   theme: {
     extend: {
       colors: {

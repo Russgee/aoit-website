@@ -558,6 +558,12 @@ hasChildren = true
     parent = "Staff"
     weight = 4
   
+[[menu.footer]]
+
+[[menu.social]]
+  name = "Facebook"
+  icon = "/fb.svg"
+  url = "https://www.facebook.com/profile.php?id=505373589604113&paipv=0&eav=Afba7QslDWPQhuuDoslTkiqrVT9vkI85r7aRuUJdFC3iA2PiHIptNMbDBMhBNFrXpSU&_rdr"
 
 
 

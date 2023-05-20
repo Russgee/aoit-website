@@ -1,6 +1,6 @@
 {{- partial "global/contact.html" . -}}
 <footer class="bg-aoit-50 px-6 py-12">
-    <div class="container mx-auto lg:grid lg:grid-cols-3 lg:gap-16">
+    <div class="container mx-auto lg:grid lg:grid-cols-3 lg:gap-x-16 lg:gap-y-6">
         <div class="h-80 w-full rounded-3xl shadow-xl" id="map"></div>
 
         <div class="border-b-2 border-gray-400 py-12 lg:col-start-2 lg:col-end-4 lg:flex lg:justify-between">
@@ -25,8 +25,12 @@
             </div>
         </div>
 
-        <div class="">
-            <img src="http://place-hold.it/32x32" alt="Social medias">
+        <div class="w-full col-start-3 col-end-4 flex justify-end">
+            {{ range .Site.Menus.social }}
+                <a href="{{ .URL }}" target="_blank" class="mx-2">
+                    {{ .Pre }}
+                </a>
+            {{ end }}
         </div>
     </div>
 </footer>
