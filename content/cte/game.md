@@ -3,6 +3,7 @@ title: Game Design
 logo: game.svg
 description: "Our three-year Video Game Design program focuses on Unity game engine design and development."
 buttonText: Explore Game
+front: true
 partners:
     - name: "Test"
       logo: ""

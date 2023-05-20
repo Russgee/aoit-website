@@ -3,6 +3,7 @@ title: Information Technology
 logo: it.svg
 description: Our three-year Information Technology program focuses on preparing students for IT certifications to enhance their resumes.
 buttonText: Explore IT
+front: true
 partners:
     - name: "Test"
       logo: ""

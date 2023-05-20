@@ -90,6 +90,18 @@
     .about__content h2 {
         @apply text-2xl font-bold mb-6 text-aoit-400 lg:text-3xl;
     }
+
+    table {
+        @apply w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg;
+    }
+
+    table thead tr {
+        @apply text-white bg-aoit-500;
+    }
+
+    table th, table td {
+        @apply border border-aoit-400 p-4;
+    }
 }
 
 @media (min-width: 1024px) {

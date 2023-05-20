@@ -3,6 +3,7 @@ title: Web Development
 logo: web.svg
 description: "Our three-year web development program teaches students HTML, CSS, and Javascript, enabling them to create websites and web applications."
 buttonText: Explore Web
+front: true
 partners:
     - name: "CodeNation"
       logo: ""
