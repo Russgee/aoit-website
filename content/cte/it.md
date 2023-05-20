@@ -17,3 +17,18 @@ sequence:
     - title: "12th grade (Senior year)"
       description: "3"
 --- 
+
+<div class="px-6 container mx-auto my-12">
+        <p> {{ .Params.description }}</p>
+
+        {{ range .Params.partners }}
+        <img src="{{ .logo }}" alt="{{ .name}}">
+        {{ end }}
+
+        {{ range .Params.sequence }}
+        <details class="rounded-cell shadow-lg my-12">
+            <summary>{{ .title }} </summary>
+            <p> {{ .description }}</p>
+        </details>
+        {{ end }}
+    </div>

@@ -538,35 +538,6 @@ identifier = "Staff"
 name = "Staff"
 url = "/staff"
 weight = 8
-hasChildren = true
-
-  [[menu.main]]
-    name = "Administration"
-    url = "/staff/administration"
-    identifier = "Administration"
-    parent = "Staff"
-    weight = 1
-
-  [[menu.main]]
-    name = "Guidance Counselors"
-    url = "/staff/guidance"
-    identifier = "Guidance"
-    parent = "Staff"
-    weight = 2
-
-  [[menu.main]]
-    name = "Teachers"
-    url = "/staff/teachers"
-    identifier = "Teachers"
-    parent = "Staff"
-    weight = 3
-  
-  [[menu.main]]
-    name = "RID Team"
-    url = "/staff/rid"
-    identifier = "rid"
-    parent = "Staff"
-    weight = 4
 
 [[menu.footer]]
 
