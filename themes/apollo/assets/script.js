@@ -222,3 +222,55 @@ if (window.location.pathname === "/") {
    });
   });
 }
+
+// global contact code 
+
+const form = document.querySelector("#form");
+
+const printModal = (error) => {
+  const modalData = {
+    successIcon: "success.svg",
+    successBody: "Thank you for reaching out. Someone from our school will be in touch very soon.",
+    errorIcon: "error.svg",
+    errorBody: `Something went wrong: ${error}. Please try again.`
+  }
+
+  const modalIcon = error ? modalData.errorIcon : modalData.successIcon;
+  const modalTitle = error ? "Error!" : "Success!";
+  const modalBody = error ? error : modalData.successBody;
+
+  const modal = `
+  <dialog open class="open:fixed open:top-0 open:h-screen open:w-screen open:z-50 open:bg-slate-800/75 open:flex open:justify-center" id="modal">
+    <div class="bg-white text-black w-11/12 p-8 rounded-2xl self-end text-center fade-in mb-28 md:w-3/12 md:p-14 md:self-center md:mb-0">
+      <form method="dialog" id="closeModal" class="flex justify-end mb-4 hover:cursor-pointer">
+        <button class="text-center">
+          <img src="/close.svg" class="w-6 block mx-auto" alt="Click or tap anywhere to close the form submission modal">
+          Close
+        </button>
+      </form>
+
+      <img class="block mx-auto w-24 mb-6" src="/${modalIcon}" alt="${modalTitle}">
+      <strong class="text-2xl block mb-2">${modalTitle}</strong>
+      <p>${modalBody}</p>
+    </div>
+  </dialog>`
+
+  return modal;
+}
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => body.insertAdjacentHTML("beforeend", printModal(null)))
+    .catch((error) => printModal(error));
+};
+
+form.addEventListener("submit", handleSubmit);
