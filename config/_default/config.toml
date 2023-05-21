@@ -35,7 +35,7 @@ email = "Ms.woodham@aoiths.org"
 department = "Admin"
 
 [[params.staff]]
-title = "Teacher"
+title = "CTE Lead Teacher, IT Fundamentals"
 name = "Khayri Alphonse"
 email = "Mr.alphonse@aoiths.org"
 department = "CTE"
@@ -83,7 +83,7 @@ email = "Ms.duran@aoiths.org"
 department = "Sped"
 
 [[params.staff]]
-title = "Teacher"
+title = "CTE Teacher, Music Technology"
 name = "Cameron Frazer"
 email = "Mr.frazer@aoiths.org"
 department = "CTE"
@@ -221,19 +221,19 @@ email = "Ms.murray@aoiths.org"
 department = "Science"
 
 [[params.staff]]
-title = "Teacher"
+title = "CTE Teacher, AP Computer Science, Website Development, Career & Financial Management, Robotics"
 name = "Aaron Pelzer"
 email = "Mr.pelzer@aoiths.org"
 department = "CTE"
 
 [[params.staff]]
-title = "Teacher"
+title = "CTE Teacher, Website Development"
 name = "Kyle Pierre"
 email = "Mr.pierre@aoiths.org"
 department = "CTE"
 
 [[params.staff]]
-title = "Teacher"
+title = "CTE Teacher, Cyber Security, Graphic Design, Career & Financial Management"
 name = "Meagan Ramsawak"
 email = "Ms.ramsawak@aoiths.org"
 department = "CTE"
@@ -251,7 +251,7 @@ email = "Mr.schmidt@aoiths.org"
 department = "Mathematics"
 
 [[params.staff]]
-title = "Teacher"
+title = "CTE Teacher, Game Design & Development"
 name = "Sakib Shams"
 email = "Mr.shams@aoiths.org"
 department = "CTE"
