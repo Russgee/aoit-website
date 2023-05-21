@@ -7,7 +7,7 @@
         {{ if ne .Page.RelPermalink "/" }}
         {{- partial "global/header.html" . -}}
         {{ end }}
-        <main class='{{ if ne .Page.RelPermalink "/" }}container mx-auto px-6{{end}} {{ if .Params.sidebar}}lg:grid lg:grid-cols-5 lg:gap-x-8 {{end}}'>
+        <main class='{{ if ne .Page.RelPermalink "/" }}container mx-auto px-6{{end}} {{ if and (ne .Page.RelPermalink "/") .Pages }}lg:grid lg:grid-cols-5 lg:gap-x-8 {{end}}'>
         {{- block "main" . }}{{- end }}
         </main>
         {{- partial "global/footer.html" . -}}
@@ -36,6 +36,8 @@
             const marker = new mapboxgl.Marker()
                 .setLngLat([-73.86908, 40.69290])
                 .addTo(map);
+
+            map.scrollZoom.disable();
             </script>
           {{ $script := resources.Get "bundle.js" | resources.Minify | resources.Fingerprint }}    
           <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>

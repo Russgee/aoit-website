@@ -1,15 +1,15 @@
-<section class="px-6 py-12 bg-aoit-400 text-white rounded-3xl relative">
+<section class="px-6 py-12 bg-aoit-400 text-white rounded-3xl relative lg:py-20">
   <div class="container mx-auto lg:flex lg:items-center lg:gap-8">
-    <div class="grid grid-cols-2 grid-rows-2 gap-6 lg:gap-2 lg:w-6/12">
-        <img src="https://place-hold.it/300x500" class="row-start-1 row-end-3 self-center rounded-lg">
-        <img src="https://place-hold.it/300x500" class="rounded-lg">
-        <img src="https://place-hold.it/300x500" class="col-start-2 col-end-3 rounded-lg">
+    <div class="grid grid-cols-2 grid-rows-1 gap-6 items-center lg:w-6/12">
+        <img src="/lfs/BHM_Celebration2023-41.jpg" class="shadow-md row-start-1 row-end-3 rounded-2xl">
+        <img src="/lfs/BHM_Celebration2023-270.jpg" class="shadow-md rounded-2xl">
+        <img src="/lfs/BHM_Celebration2023-28.jpg" class="shadow-md rounded-2xl">
     </div>
 
-    <div class="mt-12 lg:w-6/12">
-        <h2 class="text-3xl font-bold mb-6 text-white lg:text-4xl">Our mission is to lorem dolor sit amet cosmsl</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <a href="#" class="bg-aoit-500 text-white px-8 mt-6 btn">Learn More</a>
+    <div class="mission mt-12 lg:mt-0 lg:w-6/12">
+        <h2 class="text-3xl font-bold mb-6 text-white lg:text-4xl">{{ .Params.mission.mission__header }}</h2>
+        {{ .Params.mission.mission__paragraph | markdownify }}
+        <a href="{{ .Params.mission.mission__button.url }}" class="bg-aoit-500 text-white px-8 btn hover:bg-aoit-900">{{ .Params.mission.mission__button.title }}</a>
     </div>
   </div>
     <svg class="absolute bottom-1 right-0 w-40 opacity-40 lg:top-0 lg:w-64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.966 318.779">

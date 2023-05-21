@@ -20,7 +20,7 @@
 
 @layer components {
     .btn {
-        @apply rounded-lg font-semibold bg-aoit-200 text-aoit-500 p-3 inline-block;
+        @apply rounded-lg font-semibold bg-aoit-200 text-aoit-500 p-3 inline-block transition-all duration-150;
     }
 
     .rounded-cell {
@@ -69,6 +69,38 @@
 
     .about__single th {
         @apply text-white bg-aoit-500;
+    }
+
+    .mission p {
+        @apply my-10;
+    }
+
+    .about__content p {
+        @apply my-6
+    }
+
+    .about__content ul {
+        @apply list-disc ml-10;
+    }
+
+    .about__content li {
+        @apply my-2;
+    }
+
+    .about__content h2 {
+        @apply text-2xl font-bold mb-6 text-aoit-400 lg:text-3xl;
+    }
+
+    table {
+        @apply w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg bg-white text-black;
+    }
+
+    table thead tr {
+        @apply text-white bg-aoit-500;
+    }
+
+    table th, table td {
+        @apply border border-aoit-400 p-4;
     }
 }
 
