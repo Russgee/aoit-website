@@ -21,7 +21,7 @@
                     {{ if ne .Name "logo" }}
                         {{ if .HasChildren }}
                     <li class="my-8 border-b-2 pb-4 relative group lg:border-b-0">
-                        <a href="{{.URL}}" class="relative group">
+                        <a href="{{.URL}}" class="ml-2.5 relative group">
                             {{ .Name }}
                             <span class="material-symbols-outlined transition-all absolute -rotate-90 group-hover:rotate-0">
                                 arrow_drop_down
@@ -35,7 +35,7 @@
                     </li>
                     {{ else }}
                     <li class="my-8 border-b-2 pb-4 lg:border-b-0">
-                        <a href="{{.URL}}" class="">{{ .Name }}</a>
+                        <a href="{{.URL}}" class="ml-2.5 ">{{ .Name }}</a>
                     </li>
                         {{ end }}
                     {{ end }}

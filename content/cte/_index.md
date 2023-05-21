@@ -27,4 +27,11 @@ team:
     - title: Modern Youth Apprenticeship Teacher
       name: Cameron Frazer
       email: mr.frazer@aoiths.org
+electives:
+  - title: "Graphic Arts"
+    description: "WE DRAW STUFF"
+  - title: "Robotics"
+    description: "WE BUILD STUFF"
+  - title: "AP Computer Science"
+    description: "WE CODE STUFF"
 --- 

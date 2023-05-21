@@ -490,6 +490,33 @@ name = "Family"
 url = "/family"
 weight = 6
 
+[[menu.main]]
+    name = "Attendance"
+    url = "/family/attendance"
+    identifier = "Attendance"
+    parent = "Family"
+    weight = 1
+
+[[menu.main]]
+    name = "Graduation Requirements"
+    url = "/family/grad-requirements"
+    identifier = "Graduation Requirements"
+    parent = "Family"
+    weight = 2
+
+[[menu.main]]
+    name = "Lunch Forms"
+    url = "/family/lunch-forms"
+    identifier = "Lunch Forms"
+    parent = "Family"
+    weight = 3
+
+[[menu.main]]
+    name = "Parent Teacher Student Association (PTSA)"
+    url = "/family/ptsa"
+    identifier = "Parent Teacher Student Association (PTSA)"
+    parent = "Family"
+    weight = 4
 
 [[menu.main]]
 identifier = "Students"
