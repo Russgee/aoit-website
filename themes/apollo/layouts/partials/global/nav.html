@@ -1,6 +1,6 @@
 {{ if .Site.Menus.main }}
 <!-- lg:container lg:mx-auto lg:-translate-x-2/4 lg:left-1/2 -->
-<div class='absolute top-0 w-full nav p-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:overflow-visible {{ if eq .Page.RelPermalink "/" }} text-white {{ else }} text-aoit-500  {{end}}'>
+<div class='absolute top-0 w-full nav p-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:overflow-visible {{ if eq .Page.RelPermalink "/" }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
     <div class="flex justify-between items-center w-full" id="nav-item-container">
         <span id="menu" class="transition-all material-symbols-outlined">
             menu
@@ -21,7 +21,7 @@
                     {{ if ne .Name "logo" }}
                         {{ if .HasChildren }}
                     <li class="my-8 border-b-2 pb-4 relative group lg:border-b-0">
-                        <a href="{{.URL}}" class="relative group">
+                        <a href="{{.URL}}" class="ml-2.5 relative group">
                             {{ .Name }}
                             <span class="material-symbols-outlined transition-all absolute -rotate-90 group-hover:rotate-0">
                                 arrow_drop_down
@@ -35,7 +35,7 @@
                     </li>
                     {{ else }}
                     <li class="my-8 border-b-2 pb-4 lg:border-b-0">
-                        <a href="{{.URL}}" class="">{{ .Name }}</a>
+                        <a href="{{.URL}}" class="ml-2.5 ">{{ .Name }}</a>
                     </li>
                         {{ end }}
                     {{ end }}

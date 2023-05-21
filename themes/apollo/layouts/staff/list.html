@@ -1,13 +1,16 @@
 {{ define "main" }}
     <aside class="col-start-1 col-end-2 hidden lg:block">
         <ul class="my-4 bg-aoit-200 text-aoit-500 font-semibold p-10 rounded-2xl">
-            <li class="my-2 hover:bg-aoit-50 p-4 rounded-xl hover:shadow-md"><a class="underline" href="">links will go here</a></li>
+
+            {{ range .Params.sidebar }}
+            <li class="my-2 hover:bg-aoit-50 p-4 rounded-xl hover:shadow-md"><a class="underline" href="{{.id}}">{{.title}}</a></li>
+            {{ end }}
         </ul>
     </aside>
 
    <div class="staff col-start-2 col-end-6">
 
-    <h2 class="text-2xl font-semibold mb-6">Administration</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="admin">Administration</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -23,7 +26,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">Career and Technical Education</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="cteTeam">Career and Technical Education</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -39,7 +42,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">English</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="englishTeam">English</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -55,7 +58,7 @@
             {{ end }}
     </table>
     
-    <h2 class="text-2xl font-semibold mb-6">Math</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="mathTeam">Math</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -71,7 +74,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">History</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="historyTeam">History</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -87,7 +90,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">Science</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="scienceTeam">Science</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -103,7 +106,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">Physical Education</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="physEdTeam">Physical Education</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -119,7 +122,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">Instructional Support Services</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="issTeam">Instructional Support Services</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -135,7 +138,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">Paraprofessionals</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="paraTeam">Paraprofessionals</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -151,7 +154,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">ENL</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="enlTeam">ENL</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -167,7 +170,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">Main Office</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="mainOffice">Main Office</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -183,7 +186,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">Guidance</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="guidance">Guidance</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -199,7 +202,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">RID</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="ridTeam">RID</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
@@ -215,7 +218,7 @@
             {{ end }}
     </table>
 
-    <h2 class="text-2xl font-semibold mb-6">Other School Staff</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="otherStaff">Other School Staff</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>

@@ -283,11 +283,74 @@ if (window.location.pathname === "/about/bell-schedule/") {
   const bell = document.querySelector(".normal");
   const weds = document.querySelector(".weds");
 
-  if (date.getDay != 6 || date.getDate != 3) {
+
+
+  if (date.getDay() !== 6 && date.getDay() !== 3) {
     bell.classList.add("bg-aoit-400", "text-white")
-  } else {
-    if (date.getDay === 3) {
+  } else if (date.getDay() === 3) {
       weds.classList.add("bg-aoit-400", "text-white")
-    }
   }
+
+
+
+
+//// TODO: make this work in the future where cells are higlighted based on current time correlated by the current period.
+
+// const regBellSchedule =  document.querySelectorAll(".normal  table  tr");
+
+// let currentTime = `${parseInt(date.getHours())}${parseInt(date.getMinutes())}`;
+// console.log(parseInt(currentTime));
+
+  // switch (currentTime) {
+  //   case (currentTime >= 820 && currentTime <= 910):
+  //     regBellSchedule[0].classList.add("bg-pink-300");
+  //     break;
+  //   case (currentTime >= 914 && currentTime <= 104):
+  //       regBellSchedule[1].classList.add("bg-pink-300");
+  //       break;
+  //   case (currentTime >= 108 && currentTime <= 1058):
+  //     regBellSchedule[2].classList.add("bg-pink-300");
+  //     break;
+  //   case (currentTime >= 112 && currentTime <= 1152):
+  //     regBellSchedule[3].classList.add("bg-pink-300");
+  //     break;
+  //   case (currentTime >= 1156 && currentTime <= 1246):
+  //     regBellSchedule[4].classList.add("bg-pink-300");
+  //     break;
+  //   case (currentTime >= 1250 && currentTime <= 1325):
+  //     regBellSchedule[5].classList.add("bg-pink-300");
+  //     break;
+  //   case (currentTime >= 1327 && currentTime <= 1417):
+  //     regBellSchedule[6].classList.add("bg-pink-300");
+  //     break;
+  //   case (currentTime >= 1420 && currentTime <= 1510):
+  //     regBellSchedule[7].classList.add("bg-pink-300");
+  //     break;
+  //   case (currentTime >= 1510 && currentTime <= 160):
+  //     regBellSchedule[8].classList.add("bg-pink-300");
+  //     break;
+  //   case (currentTime >= 0 && currentTime <= 10):
+  //     regBellSchedule[0].classList.add("bg-pink-300");
+  //     break;     
+  // }
+  
+ 
+  
 }
+
+ const header = document.querySelector("header");
+  const backToTopButton = document.querySelector("#toTop");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        backToTopButton.classList.toggle("hidden");
+      } else if (entry.isIntersecting) {
+        backToTopButton.classList.add("hidden");
+      }
+    })
+  });
+
+  observer.observe(header);
+
+  
