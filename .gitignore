@@ -1,3 +1,7 @@
 node_modules
 .DS_Store
-/.netlify
+themes/apollo/assets/bundle.js
+themes/apollo/assets/style.css
+themes/apollo/assets/bundle.js.LICENSE.txt
+# Local Netlify folder
+.netlify

@@ -1,29 +1,44 @@
-<section class="container mx-auto px-6 py-10" style="background:#feffff;">
-    <h2 class="text-center text-2xl font-bold text-aoit-400">Upcoming Events</h2>
+<section class="container mx-auto px-6 py-10">
+    <h2 class="text-center text-2xl font-bold text-aoit-400 mb-14">Upcoming Events</h2>
 
-    
-    <article class="rounded-cell">
-        <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 font-bold">Category</span>
+    <div class="lg:flex lg:gap-8">
+        {{ range (where .Site.RegularPages "Section" "events") }}
+        <article class="cal-event rounded-cell bg-aoit-50 mb-8 lg:w-3/12 lg:mb-0">
+            <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 font-bold">{{ .Params.category }}</span>
 
-        <div class="my-6 flex justify-between">
-            <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center">
+            <div class="my-6 flex justify-between">
+                <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
+                    <div>
+                        <span class="text-5xl lg:text-3xl">{{ (time .Params.date).Day }}</span>
+                        <span class="block font-light lg:text-sm">{{ (time .Params.date).Month}} {{ (time .Params.date).Year}}</span>
+                    </div>
+                </time>
+
                 <div>
-                    <span class="text-5xl">15</span>
-                    <span class="block font-light">Sept</span>
+                    <strong class="text-aoit-500 text-lg md:text-xl">
+                        {{ .Title }}
+                    </strong>
+                    <span class="block text-aoit-500">{{.Params.startTime}} to {{ .Params.endTime }}</span>
                 </div>
-            </time>
+            </div>
 
-            <strong class="text-aoit-500 text-lg">AoIT Event Here</strong>
-        </div>
+            <p>{{ .Params.description }}</p>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut luctus sem. Ut sapien leo, faucibus eget pellentesque non, accumsan vitae magna. Pellentesque libero elit, dapibus a orci eget, pulvinar facilisis lectus. Aliquam efficitur lectus in accumsan placerat. In dignissim tincidunt sem, eget blandit odio convallis vel.</p>
+            <hr class="my-8">
 
-        <hr class="my-8">
+            <div class="flex flex-nowrap justify-center">
+                <button class="btn gap-2 flex" data-title="{{.Title}}" data-start-date={{.Params.date}} data-start-time="{{ .Params.startTime}}" data-end-time="{{.Params.endTime}}" data-eventDate="5/14/2023"><span class="material-symbols-outlined">
+                    calendar_add_on
+                    </span> Add to calendar</button>
+            </div>
 
-        <div class="flex flex-nowrap justify-center">
-            <a class="btn" href="#">+ Add to calendar</a>
-        </div>
-
-        <img class="block mt-6 rounded-2xl" src="https://place-hold.it/300x500">
-    </article>
+            {{ if .Params.thumbnail }}
+            <img class="block mx-auto mt-6 rounded-2xl" src="{{ . }}">
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+    <div class="text-center mt-10">
+        <a href="/events" class="btn bg-aoit-500 text-white rounded-xl px-10">View More</a>
+    </div>
 </section>

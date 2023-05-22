@@ -1,13 +1,23 @@
 <section class="px-6 container mx-auto my-12" id="programs">
     <h2 class="text-aoit-400 text-2xl font-bold">Our Programs</h2>
-    <p class="my-6">At Academy of Innovative Technology, we have <strong>3 state-approved</strong> Career and Technical Education programs. These programs allow us to teach students a useful trade.</p>
-    
-    <div class="flex flex-wrap gap-12">
+    <div class="flex flex-wrap gap-12 lg:flex-nowrap lg:gap-6">
     {{ range .Pages }}
-    <article class="rounded-cell"> 
-        <strong class="text-xl">{{ .Title }}</strong>
-        <p class="my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="{{ .RelPermalink }}">Learn More</a>
+    {{ if .Params.front }}
+    <article class="rounded-cell bg-white my-12 pb-12 relative overflow-hidden">
+        <img class="top-2 right-0 absolute" src="/{{ .Params.logo }}">
+        <strong class="text-2xl font-semibold block mt-32 text-aoit-400">{{ .Title }}</strong>
+        <p class="mt-4 mb-8">{{ .Params.description }}</p>
+        <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="{{ .Permalink }}">{{ .Params.buttonText }}</a>
+    </article>
+    {{ end }}
+    {{ end }}
+    </div>
+    <div class="lg:grid lg:grid-cols-4 lg:gap-12">
+    {{ range .Params.electives }}
+    <article class="rounded-cell bg-white my-12 pb-12 relative overflow-hidden lg:col-span-2">
+        <strong class="text-2xl font-semibold block text-aoit-400">{{ .title }}</strong>
+        <p class="mt-4 mb-8">{{ .description }}</p>
+        <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="/cte-electives">Learn More</a>
     </article>
     {{ end }}
     </div>

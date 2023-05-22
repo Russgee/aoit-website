@@ -2,21 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.header {
+/* .header {
     background-image: url("https://c2.staticflickr.com/6/5748/23024641084_9432fc41cf_b.jpg"); 
-}
+} */
 
 .overlay {
     @apply absolute h-full w-full z-10 opacity-80;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 @layer components {
     .btn {
-        @apply rounded-lg font-semibold bg-aoit-200 text-aoit-500 p-3 inline-block;
+        @apply rounded-lg font-semibold bg-aoit-200 text-aoit-500 p-3 inline-block transition-all duration-150;
     }
 
     .rounded-cell {
-        @apply shadow-lg p-6 rounded-lg;
+        @apply shadow-lg p-6 rounded-3xl;
     }
 
     .input {
@@ -25,5 +33,79 @@
 
     .label {
         @apply mt-6 block;
+    }
+
+    .stat-container svg {
+        @apply h-60;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold text-aoit-500 my-4;
+    }
+
+    h2, h3, h4, h5, h6 {
+        @apply font-semibold;
+    }
+
+    .about__single h3, .about__single p {
+        @apply text-center;
+    }
+
+    .about__single table {
+        @apply w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg;
+    }
+
+    .about__single td, .about__single th {
+        @apply border border-aoit-400 p-4;
+    }
+
+    .about__single tr {
+        @apply bg-white;
+    }
+
+    .about__single tr:hover {
+        @apply bg-aoit-50;
+    }
+
+    .about__single th {
+        @apply text-white bg-aoit-500;
+    }
+
+    .mission p {
+        @apply my-10;
+    }
+
+    .about__content p {
+        @apply my-6
+    }
+
+    .about__content ul {
+        @apply list-disc ml-10;
+    }
+
+    .about__content li {
+        @apply my-2;
+    }
+
+    .about__content h2 {
+        @apply text-2xl font-bold mb-6 text-aoit-400 lg:text-3xl;
+    }
+
+    table {
+        @apply w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg bg-white text-black;
+    }
+
+    table thead tr {
+        @apply text-white bg-aoit-500;
+    }
+
+    table th, table td {
+        @apply border border-aoit-400 p-4;
+    }
+}
+
+@media (min-width: 1024px) {
+    #menu {
+        @apply hidden;
     }
 }

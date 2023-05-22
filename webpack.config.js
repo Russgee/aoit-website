@@ -7,7 +7,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, './themes/apollo/assets/'),
     filename: 'bundle.js'
-  }
+  },
 };
 
 module.exports = config;

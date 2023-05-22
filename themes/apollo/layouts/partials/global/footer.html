@@ -1,28 +1,37 @@
 {{- partial "global/contact.html" . -}}
-<footer class="bg-gray-200 container px-6 py-12">
-    <div class="map">map here</div>
+<footer class="bg-aoit-50 px-6 py-12">
+    <div class="container mx-auto lg:grid lg:grid-cols-3 lg:gap-x-16 lg:gap-y-6">
+        <div class="h-80 w-full rounded-3xl shadow-xl" id="map"></div>
 
-    <div class="border-b-2 border-gray-400 py-12">
-        <div class="mb-10">
-            <address class="not-italic">
-                <strong>Academy of Innovative Technology</strong>
-                <span>Franklin K. Lane Educational Campus</span>
-                <span>999 Jamaica Avenue</span>
-                <span>Brooklyn, NY 11208</span>
-            </address>
+        <div class="border-b-2 border-gray-400 py-12 lg:col-start-2 lg:col-end-4 lg:flex lg:justify-between">
+            <div class="mb-10">
+                <address class="not-italic mb-6">
+                    <strong class="block text-lg lg:text-xl">Academy of Innovative Technology</strong>
+                    <strong class="font-semibold block mb-3">Meghan Drysdale, Principal</strong>
+                    <p>Franklin K. Lane Educational Campus</p>
+                    <p>999 Jamaica Avenue</p>
+                    <p>Brooklyn, NY 11208</p>
+                </address>
 
-            <img src="http://place-hold.it/148x92" alt="New York City Department of Education">
+                <img class="w-24" src="/doe-logo.svg" alt="New York City Department of Education">
+            </div>
+
+            <div>
+                <strong class="block text-lg mb-3 lg:text-xl">Contact Us</strong>
+                <ul>
+                    <li class="my-2">Phone: <a class="underline font-semibold text-aoit-500" href="tel://7188272469">(718) 827-2469</a></li>
+                    <li class="my-2">Fax: <a class="underline font-semibold text-aoit-500" href="tel://7183332358">(718) 333-2358</a></li>
+                    <li class="my-2">Email: <a class="underline font-semibold text-aoit-500" href="mailto:info@aoiths.org">info@aoiths.org</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div>
-            <strong>Contact Us</strong>
-            <span>(718) 827-2469</span>
-            <span>(718) 333-2358</span>
-            <span>info@aoiths.org</span>
+        <div class="w-full col-start-3 col-end-4 flex justify-end">
+            {{ range .Site.Menus.social }}
+                <a href="{{ .URL }}" target="_blank" class="mx-2">
+                    {{ .Pre }}
+                </a>
+            {{ end }}
         </div>
-    </div>
-
-    <div class="">
-        <img src="http://place-hold.it/32x32" alt="Social medias">
     </div>
 </footer>

@@ -1,6 +1,9 @@
 ---
 title: Information Technology
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+logo: it.svg
+description: Our three-year Information Technology program focuses on preparing students for IT certifications to enhance their resumes.
+buttonText: Explore IT
+front: true
 partners:
     - name: "Test"
       logo: ""
@@ -14,3 +17,18 @@ sequence:
     - title: "12th grade (Senior year)"
       description: "3"
 --- 
+
+<div class="px-6 container mx-auto my-12">
+        <p> {{ .Params.description }}</p>
+
+        {{ range .Params.partners }}
+        <img src="{{ .logo }}" alt="{{ .name}}">
+        {{ end }}
+
+        {{ range .Params.sequence }}
+        <details class="rounded-cell shadow-lg my-12">
+            <summary>{{ .title }} </summary>
+            <p> {{ .description }}</p>
+        </details>
+        {{ end }}
+    </div>

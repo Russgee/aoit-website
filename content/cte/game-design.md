@@ -1,6 +1,9 @@
 ---
 title: Game Design
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+logo: game.svg
+description: "Our three-year Video Game Design program focuses on Unity game engine design and development."
+buttonText: Explore Game
+front: true
 partners:
     - name: "Test"
       logo: ""

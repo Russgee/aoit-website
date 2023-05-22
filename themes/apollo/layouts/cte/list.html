@@ -1,4 +1,10 @@
 {{ define "main" }}
-   {{- partial "cte/cte__programs.html" . -}}
-   {{- partial "cte/cte__wbl.html" . -}}
+   {{- partial "global/list-sidenav.html" . -}}
+
+   <div class="cte col-start-2 col-end-6">
+      {{- partial "cte/cte__about.html" . -}}
+      {{- partial "cte/cte__team.html" . -}}
+      {{- partial "cte/cte__programs.html" . -}}
+      {{- partial "cte/cte__wbl.html" . -}}
+   </div>
 {{ end }}

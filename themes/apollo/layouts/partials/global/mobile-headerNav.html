@@ -1,0 +1,7 @@
+{{ if .Params.sidebar}}
+ <ul class="my-4 md:hidden">
+    {{ range .Params.sidebar }}
+    <li class="my-1"><a class="underline" href="{{.url}}">{{.title}}</a></li>
+    {{ end }}
+</ul>
+{{ end }}

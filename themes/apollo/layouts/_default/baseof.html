@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" class="scroll-smooth">
     {{- partial "global/head.html" . -}}
-    <body>
+    <body class="font-inter bg-gradient-to-b from-white to-aoit-50 border-t-4 border-aoit-500">
         {{- partial "global/nav.html" . -}}
 
         {{ if ne .Page.RelPermalink "/" }}
         {{- partial "global/header.html" . -}}
         {{ end }}
-        <main>
-        {{- block "main" . }}{{- end }}
+        <main class='{{ if ne .Page.RelPermalink "/" }}container mx-auto px-6{{end}} {{ if and (ne .Page.RelPermalink "/") .Pages }}lg:grid lg:grid-cols-5 lg:gap-x-8 {{end}}'>
+          {{- block "main" . }}{{- end }}
+          <a href="#nav" id="toTop" class="hidden opacity-40 bg-aoit-500 fixed bottom-4 right-4 p-4 rounded-full text-white text-center shadow-2xl transition-all hover:bg-aoit-800 hover:opacity-100 hover:">
+            <img src="/up_arrow.svg" class="mx-auto block w-6 h-6">
+            <strong class="block">Back to top</strong>
+          </a>
         </main>
         {{- partial "global/footer.html" . -}}
 
@@ -23,6 +27,22 @@
               });
             }
           </script>
+          <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+          <script>
+            mapboxgl.accessToken = 'pk.eyJ1Ijoia2dwaWVycmUiLCJhIjoiY2xobXZvM2N1MWZqYzNncXNsMzByenN5YyJ9.eI57qmHmknLrhEuQJqla9Q';
+            const map = new mapboxgl.Map({
+              container: 'map', // container ID
+              style: 'mapbox://styles/mapbox/streets-v12', // style URL
+              center: [-73.86908, 40.69290], // starting position [lng, lat]
+              zoom: 15, // starting zoom
+            });
+
+            const marker = new mapboxgl.Marker()
+                .setLngLat([-73.86908, 40.69290])
+                .addTo(map);
+
+            map.scrollZoom.disable();
+            </script>
           {{ $script := resources.Get "bundle.js" | resources.Minify | resources.Fingerprint }}    
           <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
     </body>

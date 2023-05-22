@@ -1,7 +1,11 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Academy of Innovative Technology'
 theme = 'apollo'
+buildFuture = true 
+
+[markup.goldmark.renderer]
+  unsafe = true
 
 [params]
 facebook = 'true'
@@ -12,8 +16,327 @@ twitter = 'true'
         description = "This is a template with meta tag configuration."
         video = ""
 
-[menu]
+[[params.staff]]
+title = "Principal"
+name = "Meghan Drysdale"
+email = "Ms.lynch@aoiths.org"
+department = "Admin"
 
+[[params.staff]]
+title = "Assistant Principal"
+name = "Nicole Simpkins"
+email = "Ms.simpkins@aoiths.org"
+department = "Admin"
+
+[[params.staff]]
+title = "Assistant Principal"
+name = "Nicole Woodham"
+email = "Ms.woodham@aoiths.org"
+department = "Admin"
+
+[[params.staff]]
+title = "Teacher"
+name = "Khayri Alphonse"
+email = "Mr.alphonse@aoiths.org"
+department = "CTE"
+
+[[params.staff]]
+title = "Teacher"
+name = "Donald Amell"
+email = "Mr.amell@aoiths.org"
+department = "Social Studies"
+
+[[params.staff]]
+title = "Teacher"
+name = "Peter Banta"
+email = "Mr.banta@aoiths.org"
+department = "Physical Education"
+
+[[params.staff]]
+title = "Guidance Counselor"
+name = "Mary Cooper"
+email = "Ms.cooper@aoiths.org"
+department = "Guidance"
+
+[[params.staff]]
+title = "Substitute Teacher"
+name = "McLaurence David"
+email = "Mr.david@aoiths.org"
+department = "Sub teacher"
+
+[[params.staff]]
+title = "Teacher"
+name = "Leila Davies"
+email = "Ms.davies@aoiths.org"
+department = "Science"
+
+[[params.staff]]
+title = "Guidance Counselor"
+name = "Marsha Desroches"
+email = "Ms.desroches@aoiths.org"
+department = "Guidance"
+
+[[params.staff]]
+title = "Teacher"
+name = "Audrey Duran"
+email = "Ms.duran@aoiths.org"
+department = "Sped"
+
+[[params.staff]]
+title = "Teacher"
+name = "Cameron Frazer"
+email = "Mr.frazer@aoiths.org"
+department = "CTE"
+
+[[params.staff]]
+title = "Teacher"
+name = "Rachel Freck"
+email = "Ms.freck@aoiths.org"
+department = "Mathematics"
+
+[[params.staff]]
+title = "Paraprofessional"
+name = "Tiffany Gardner"
+email = "Ms.gardner@aoiths.org"
+department = "Office"
+
+[[params.staff]]
+title = "School Support Staff"
+name = "Keianna Gittens"
+email = "Ms.gittens@aoiths.org"
+department = "N/A"
+
+[[params.staff]]
+title = "Teacher"
+name = "Dalian Grant"
+email = "Mr.Grant@aoiths.org"
+department = "English"
+
+[[params.staff]]
+title = "Teacher"
+name = "Stacy Griszell"
+email = "Ms.Griszell@aoiths.org"
+department = "English"
+
+[[params.staff]]
+title = "Teacher"
+name = "Brynda Grube"
+email = "Ms.grube@aoiths.org"
+department = "English"
+
+[[params.staff]]
+title = "Teacher"
+name = "Garfield Headlam"
+email = "Mr.headlam@aoiths.org"
+department = "Social Studies"
+
+[[params.staff]]
+title = "Paraprofessional"
+name = "Tatiana Herrera"
+email = "Ms.herrera@aoiths.org"
+department = "Paraprofessional"
+
+[[params.staff]]
+title = "Information Technology Specialist"
+name = "Shamel Howell"
+email = "Mr.howell@aoiths.org"
+department = "IT"
+
+[[params.staff]]
+title = "School Support Staff"
+name = "Vilmar Jean Michel"
+email = "Mr.jeanmichel@aoiths.org"
+department = "RID"
+
+[[params.staff]]
+title = "Teacher"
+name = "Pamela Kabir"
+email = "Ms.kabir@aoiths.org"
+department = "Sped"
+
+[[params.staff]]
+title = "Teacher"
+name = "Adam Koelsch"
+email = "Mr.koelsch@aoiths.org"
+department = "Mathematics"
+
+[[params.staff]]
+title = "Teacher"
+name = "Alicia Kohlhepp (Stratman)"
+email = "Ms.stratman@aoiths.org"
+department = "Spanish"
+
+[[params.staff]]
+title = "Campus Office Worker"
+name = "Anna LaCommare"
+email = "Ms.lacommare@aoiths.org"
+department = "Office"
+
+[[params.staff]]
+title = "Teacher"
+name = "Ravi Lucas"
+email = "Mr.lucas@aoiths.org"
+department = "Social Studies"
+
+[[params.staff]]
+title = "Parent Coordinator"
+name = "Eduardo Martinez"
+email = "Mr.martinez@aoiths.org"
+department = "Office"
+
+[[params.staff]]
+title = "Teacher"
+name = "Ryan Mcalary"
+email = ""
+department = "Physical Education"
+
+[[params.staff]]
+title = "Teacher"
+name = "Goergette Minto"
+email = "Ms.minto@aoiths.org"
+department = "Mathematics"
+
+[[params.staff]]
+title = "Dean"
+name = "Jason Mollison"
+email = "Mr.mollison@aoiths.org"
+department = "RID"
+
+[[params.staff]]
+title = "Dean"
+name = "Cameron Frazer"
+email = "Mr.frazer@aoiths.org"
+department = "RID"
+
+[[params.staff]]
+title = "Teacher"
+name = "Liliam Mott"
+email = "Ms.Mott@aoiths.org"
+department = "ENL"
+
+[[params.staff]]
+title = "Teacher"
+name = "Cheryl Murray"
+email = "Ms.murray@aoiths.org"
+department = "Science"
+
+[[params.staff]]
+title = "Teacher"
+name = "Aaron Pelzer"
+email = "Mr.pelzer@aoiths.org"
+department = "CTE"
+
+[[params.staff]]
+title = "Teacher"
+name = "Kyle Pierre"
+email = "Mr.pierre@aoiths.org"
+department = "CTE"
+
+[[params.staff]]
+title = "Teacher"
+name = "Meagan Ramsawak"
+email = "Ms.ramsawak@aoiths.org"
+department = "CTE"
+
+[[params.staff]]
+title = "Teacher"
+name = "Elvis Rodriguez"
+email = "Mr.rodriguez@aoiths.org"
+department = "Sped"
+
+[[params.staff]]
+title = "Teacher"
+name = "Eric Schmidt"
+email = "Mr.schmidt@aoiths.org"
+department = "Mathematics"
+
+[[params.staff]]
+title = "Teacher"
+name = "Sakib Shams"
+email = "Mr.shams@aoiths.org"
+department = "CTE"
+
+[[params.staff]]
+title = "Teacher"
+name = "Renee Slater"
+email = "Ms.slater@aoiths.org"
+department = "Special Education"
+
+[[params.staff]]
+title = "Teacher"
+name = "Thomas Smith"
+email = "Mr.smith@aoiths.org"
+department = "Special Education"
+
+[[params.staff]]
+title = "Teacher"
+name = "James Steele"
+email = "Mr.steele@aoiths.org"
+department = "Sped"
+
+[[params.staff]]
+title = "Teacher"
+name = "Michael Sullivan"
+email = "Mr.sullivan@aoiths.org"
+department = "Art"
+
+[[params.staff]]
+title = "Social Worker"
+name = "Jahaira Tavares"
+email = "Ms.tavares@aoiths.org"
+department = "Guidance"
+
+[[params.staff]]
+title = "Principal and Purchasing Secretary"
+name = "Elizabeth Tirado"
+email = "Ms.tirado@aoiths.org"
+department = "Office"
+
+[[params.staff]]
+title = "Paraprofessional"
+name = "Samantha Tirado"
+email = "Ms.stirado@aoiths.org"
+department = "Paraprofessional"
+
+[[params.staff]]
+title = "Teacher"
+name = "Ashley Urena"
+email = "Ms.urena@aoiths.org"
+department = "Social Studies"
+
+[[params.staff]]
+title = "School Support Staff"
+name = "Michael Valentin"
+email = "Mr.valentin@aoiths.org"
+department = "Office"
+
+[[params.staff]]
+title = "Teacher"
+name = "Elisabeth Ventimiglia"
+email = "Ms.ventimiglia@aoiths.org"
+department = "Mathematics"
+
+[[params.staff]]
+title = "Teacher"
+name = "Daniel Verley"
+email = "Mr.verley@aoiths.org"
+department = "Science"
+
+[[params.staff]]
+title = "Paraprofessional"
+name = "Andy Ward"
+email = "Mr.ward@aoiths.org"
+department = "Paraprofessional"
+
+[[params.staff]]
+title = "Teacher"
+name = "Dayna Weaver"
+email = "Ms.weaver@aoiths.org"
+department = "ENL"
+
+
+
+[menu]
 [[menu.main]]
 identifier = "logo"
 name = "logo"
@@ -29,18 +352,125 @@ identifier = "about"
 name = "About Us"
 url = "/about"
 weight = 1
+hasChildren = true
+
+[[menu.main]]
+    name = "Bell Schedule"
+    url = "/about/bell-schedule"
+    identifier = "Bell Schedule"
+    parent = "about"
+    weight = 1
+
+[[menu.main]]
+    name = "Principal's Message"
+    url = "/about/principals-message"
+    identifier = "Principal's Message"
+    parent = "about"
+    weight = 2
 
 [[menu.main]]
 identifier = "Academics"
 name = "Academics"
 url = "/academics"
 weight = 2
+hasChildren = true
+
+[[menu.main]]
+    name = "Advanced Placement"
+    url = "/academics/advanced-placement"
+    identifier = "Advanced Placement"
+    parent = "Academics"
+    weight = 1
+
+  [[menu.main]]
+    name = "English"
+    url = "/academics/english"
+    identifier = "English"
+    parent = "Academics"
+    weight = 2
+
+  [[menu.main]]
+    name = "ISS"
+    url = "/academics/iss"
+    identifier = "ISS"
+    parent = "Academics"
+    weight = 3
+
+  [[menu.main]]
+    name = "Math"
+    url = "/academics/math"
+    identifier = "Math"
+    parent = "Academics"
+    weight = 4
+
+  [[menu.main]]
+    name = "Physical Education and Health"
+    url = "/academics/phys-ed"
+    identifier = "Phys Ed"
+    parent = "Academics"
+    weight = 5
+
+  [[menu.main]]
+    name = "Science"
+    url = "/academics/science"
+    identifier = "Science"
+    parent = "Academics"
+    weight = 6
+  
+  [[menu.main]]
+    name = "Social Studies"
+    url = "/academics/social-studies"
+    identifier = "Social Studies"
+    parent = "Academics"
+    weight = 7
 
 [[menu.main]]
 identifier = "CTE"
 name = "CTE"
 url = "/cte"
 weight = 3
+
+  [[menu.main]]
+    name = "Career and Financial Management"
+    url = "/cte/cfm"
+    identifier = "CFM"
+    parent = "CTE"
+    weight = 5
+
+  [[menu.main]]
+    name = "Web Development"
+    url = "/cte/web"
+    identifier = "Web Development"
+    parent = "CTE"
+    weight = 1
+
+  [[menu.main]]
+    name = "Game Design"
+    url = "/cte/game-design"
+    identifier = "Game Design"
+    parent = "CTE"
+    weight = 2
+  
+  [[menu.main]]
+    name = "IT Systems"
+    url = "/cte/it"
+    identifier = "IT Systems"
+    parent = "CTE"
+    weight = 3
+  
+  [[menu.main]]
+    name = "Work-Based Learning"
+    url = "/cte/wbl"
+    identifier = "Work-Based Learning"
+    parent = "CTE"
+    weight = 4
+  
+  [[menu.main]]
+    name = "CTE Electives"
+    url = "/cte/cte-electives"
+    identifier = "CTE Electives"
+    parent = "CTE"
+    weight = 6
 
 [[menu.main]]
 identifier = "Calendar"
@@ -67,15 +497,64 @@ name = "Students"
 url = "/students"
 weight = 7
 
+  [[menu.main]]
+    name = "Student Success Center"
+    url = "/students/ssc"
+    identifier = "Student Success Center"
+    parent = "Students"
+    weight = 1
+  
+  [[menu.main]]
+    name = "CREW"
+    url = "/students/crew"
+    identifier = "CREW"
+    parent = "Students"
+    weight = 2
+  
+  [[menu.main]]
+    name = "MESH"
+    url = "/students/mesh"
+    identifier = "MESH"
+    parent = "Students"
+    weight = 3
+
+  [[menu.main]]
+    name = "School-Based Health Center"
+    url = "/students/sbhc"
+    identifier = "School-Based Health Center"
+    parent = "Students"
+    weight = 4
+  
+  [[menu.main]]
+    name = "PSAL"
+    url = "/students/psal"
+    identifier = "PSAL"
+    parent = "Students"
+    weight = 5
+
+
 [[menu.main]]
-identifier = "Additional Info"
-name = "Additional Info"
-url = "/additional-info"
+identifier = "Staff"
+name = "Staff"
+url = "/staff"
 weight = 8
 
+[[menu.footer]]
 
+[[menu.social]]
+  name = "Facebook"
+  url = "https://www.facebook.com/profile.php?id=505373589604113&paipv=0&eav=Afba7QslDWPQhuuDoslTkiqrVT9vkI85r7aRuUJdFC3iA2PiHIptNMbDBMhBNFrXpSU&_rdr"
+  pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Facebook</title>   <path d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z"/></svg>'
 
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/aoiths"
+  pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Twitter</title>  <path d="M22,3.999c-0.78,0.463-2.345,1.094-3.265,1.276c-0.027,0.007-0.049,0.016-0.075,0.023c-0.813-0.802-1.927-1.299-3.16-1.299 c-2.485,0-4.5,2.015-4.5,4.5c0,0.131-0.011,0.372,0,0.5c-3.353,0-5.905-1.756-7.735-4c-0.199,0.5-0.286,1.29-0.286,2.032 c0,1.401,1.095,2.777,2.8,3.63c-0.314,0.081-0.66,0.139-1.02,0.139c-0.581,0-1.196-0.153-1.759-0.617c0,0.017,0,0.033,0,0.051 c0,1.958,2.078,3.291,3.926,3.662c-0.375,0.221-1.131,0.243-1.5,0.243c-0.26,0-1.18-0.119-1.426-0.165 c0.514,1.605,2.368,2.507,4.135,2.539c-1.382,1.084-2.341,1.486-5.171,1.486H2C3.788,19.145,6.065,20,8.347,20 C15.777,20,20,14.337,20,8.999c0-0.086-0.002-0.266-0.005-0.447C19.995,8.534,20,8.517,20,8.499c0-0.027-0.008-0.053-0.008-0.08 c-0.003-0.136-0.006-0.263-0.009-0.329c0.79-0.57,1.475-1.281,2.017-2.091c-0.725,0.322-1.503,0.538-2.32,0.636 C20.514,6.135,21.699,4.943,22,3.999z"/></svg>'
 
+[[menu.social]]
+  name = "Instagram"
+  url = "https://instagram.com/aoiths"
+  pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Instagram</title><path d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"/></svg>'
 
 
 
