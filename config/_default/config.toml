@@ -3,6 +3,250 @@ languageCode = 'en-us'
 title = 'Academy of Innovative Technology'
 theme = 'apollo'
 buildFuture = true 
+DefaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+
+[languages]
+   [languages.en]
+     languageName = "English"
+     weight = 1
+
+   [languages.es]
+     languageName = "Spanish"
+     weight = 2
+        
+        [[languages.es.menu.main]]
+        identifier = "logo"
+        name = "logo"
+        url = "/es"
+        weight = -1
+
+        [languages.es.menu.main.params]
+        logo = "/logo.svg"
+        desc = "Base theme logo"
+
+
+        [[languages.es.menu.main]]
+        identifier = "about"
+        name = "Sobre nosotros"
+        url = "/es/about"
+        weight = 1
+        hasChildren = true
+
+                [[languages.es.menu.main]]
+                name = "Horario de campana"
+                url = "/es/about/bell-schedule"
+                identifier = "Bell Schedule"
+                parent = "about"
+                weight = 1
+
+                [[languages.es.menu.main]]
+                name = "Mensaje del director"
+                url = "/es/about/principals-message"
+                identifier = "Principal's Message"
+                parent = "about"
+                weight = 2
+
+        [[languages.es.menu.main]]
+        identifier = "Academics"
+        name = "Académica"
+        url = "/es/academics"
+        weight = 2
+        hasChildren = true
+
+                [[languages.es.menu.main]]
+                name = "Posición avanzada"
+                url = "/es/academics/advanced-placement"
+                identifier = "Advanced Placement"
+                parent = "Academics"
+                weight = 1
+
+                [[languages.es.menu.main]]
+                name = "Inglés"
+                url = "/es/academics/english"
+                identifier = "English"
+                parent = "Academics"
+                weight = 2
+
+                [[languages.es.menu.main]]
+                name = "Servicios de apoyo educativo"
+                url = "/es/academics/iss"
+                identifier = "ISS"
+                parent = "Academics"
+                weight = 3
+
+                [[languages.es.menu.main]]
+                name = "Matemáticas"
+                url = "/es/academics/math"
+                identifier = "Math"
+                parent = "Academics"
+                weight = 4
+
+                [[languages.es.menu.main]]
+                name = "Educación Física y Salud"
+                url = "/es/academics/phys-ed"
+                identifier = "Phys Ed"
+                parent = "Academics"
+                weight = 5
+
+                [[languages.es.menu.main]]
+                name = "Ciencia"
+                url = "/es/academics/science"
+                identifier = "Science"
+                parent = "Academics"
+                weight = 6
+  
+                [[languages.es.menu.main]]
+                name = "Ciencias Sociales"
+                url = "/academics/social-studies"
+                identifier = "Social Studies"
+                parent = "Academics"
+                weight = 7
+
+        [[languages.es.menu.main]]
+        identifier = "CTE"
+        name = "CTE"
+        url = "/es/cte"
+        weight = 3
+
+                [[languages.es.menu.main]]
+                name = "Carrera y gestión financiera"
+                url = "/cte/cfm"
+                identifier = "CFM"
+                parent = "CTE"
+                weight = 5
+
+                [[languages.es.menu.main]]
+                name = "Desarrollo web"
+                url = "/es/cte/web"
+                identifier = "Web Development"
+                parent = "CTE"
+                weight = 1
+
+                [[languages.es.menu.main]]
+                name = "Diseño de juego"
+                url = "/es/cte/game-design"
+                identifier = "Game Design"
+                parent = "CTE"
+                weight = 2
+  
+                [[languages.es.menu.main]]
+                name = "Sistemas IT"
+                url = "/es/cte/it"
+                identifier = "IT Systems"
+                parent = "CTE"
+                weight = 3
+  
+                [[languages.es.menu.main]]
+                name = "Aprendizaje basado en el trabajo"
+                url = "/cte/wbl"
+                identifier = "Work-Based Learning"
+                parent = "CTE"
+                weight = 4
+  
+                [[languages.es.menu.main]]
+                name = "Electivas de CTE"
+                url = "/cte/cte-electives"
+                identifier = "CTE Electives"
+                parent = "CTE"
+                weight = 6
+
+        [[languages.es.menu.main]]
+        identifier = "Calendar"
+        name = "Calendario"
+        url = "/es/calendar"
+        weight = 4
+
+        [[languages.es.menu.main]]
+        identifier = "Admissions"
+        name = "Admisiones"
+        url = "/es/admissions"
+        weight = 5
+
+        [[languages.es.menu.main]]
+        identifier = "Family"
+        name = "Familia"
+        url = "/es/family"
+        weight = 6
+        hasChildren = true
+
+                [[languages.es.menu.main]]
+                name = "Asistencia"
+                url = "/es/family/attendance"
+                identifier = "Attendance"
+                parent = "Family"
+                weight = 1
+
+                [[languages.es.menu.main]]
+                name = "Requisitos de graduación"
+                url = "/es/family/grad-requirements"
+                identifier = "Graduation Requirements"
+                parent = "Family"
+                weight = 2
+
+                [[languages.es.menu.main]]
+                name = "Formularios de almuerzo"
+                url = "/es/family/lunch-forms"
+                identifier = "Lunch Forms"
+                parent = "Family"
+                weight = 3
+
+                [[languages.es.menu.main]]
+                name = "Asociación de Padres, Maestros y Estudiantes (PTSA)"
+                url = "/family/ptsa"
+                identifier = "Parent Teacher Student Association (PTSA)"
+                parent = "Family"
+                weight = 4
+
+        [[languages.es.menu.main]]
+        identifier = "Students"
+        name = "Estudiantes"
+        url = "/es/students"
+        weight = 7
+        hasChildren = true
+
+                [[languages.es.menu.main]]
+                name = "Centro de Éxito Estudiantil"
+                url = "/es/students/ssc"
+                identifier = "Student Success Center"
+                parent = "Students"
+                weight = 1
+  
+                [[languages.es.menu.main]]
+                name = "CREW"
+                url = "/es/students/crew"
+                identifier = "CREW"
+                parent = "Students"
+                weight = 2
+  
+                [[languages.es.menu.main]]
+                name = "MESH"
+                url = "/es/students/mesh"
+                identifier = "MESH"
+                parent = "Students"
+                weight = 3
+
+                [[languages.es.menu.main]]
+                name = "Centro de salud escolar"
+                url = "/es/students/sbhc"
+                identifier = "School-Based Health Center"
+                parent = "Students"
+                weight = 4
+  
+                [[languages.es.menu.main]]
+                name = "PSAL"
+                url = "/students/psal"
+                identifier = "PSAL"
+                parent = "Students"
+                weight = 5
+
+        [[languages.es.menu.main]]
+        identifier = "Staff"
+        name = "Personal"
+        url = "/es/staff"
+        weight = 8
+
+
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -350,20 +594,20 @@ desc = "Base theme logo"
 [[menu.main]]
 identifier = "about"
 name = "About Us"
-url = "/about"
+url = "/en/about"
 weight = 1
 hasChildren = true
 
 [[menu.main]]
     name = "Bell Schedule"
-    url = "/about/bell-schedule"
+    url = "/en/about/bell-schedule"
     identifier = "Bell Schedule"
     parent = "about"
     weight = 1
 
 [[menu.main]]
     name = "Principal's Message"
-    url = "/about/principals-message"
+    url = "/en/about/principals-message"
     identifier = "Principal's Message"
     parent = "about"
     weight = 2
@@ -371,55 +615,55 @@ hasChildren = true
 [[menu.main]]
 identifier = "Academics"
 name = "Academics"
-url = "/academics"
+url = "/en/academics"
 weight = 2
 hasChildren = true
 
 [[menu.main]]
     name = "Advanced Placement"
-    url = "/academics/advanced-placement"
+    url = "/en/academics/advanced-placement"
     identifier = "Advanced Placement"
     parent = "Academics"
     weight = 1
 
   [[menu.main]]
     name = "English"
-    url = "/academics/english"
+    url = "/en/academics/english"
     identifier = "English"
     parent = "Academics"
     weight = 2
 
   [[menu.main]]
     name = "Instructional Support Services"
-    url = "/academics/iss"
+    url = "/en/academics/iss"
     identifier = "ISS"
     parent = "Academics"
     weight = 3
 
   [[menu.main]]
     name = "Math"
-    url = "/academics/math"
+    url = "/en/academics/math"
     identifier = "Math"
     parent = "Academics"
     weight = 4
 
   [[menu.main]]
     name = "Physical Education and Health"
-    url = "/academics/phys-ed"
+    url = "/en/academics/phys-ed"
     identifier = "Phys Ed"
     parent = "Academics"
     weight = 5
 
   [[menu.main]]
     name = "Science"
-    url = "/academics/science"
+    url = "/en/academics/science"
     identifier = "Science"
     parent = "Academics"
     weight = 6
   
   [[menu.main]]
     name = "Social Studies"
-    url = "/academics/social-studies"
+    url = "/en/academics/social-studies"
     identifier = "Social Studies"
     parent = "Academics"
     weight = 7
@@ -427,47 +671,47 @@ hasChildren = true
 [[menu.main]]
 identifier = "CTE"
 name = "CTE"
-url = "/cte"
+url = "/en/cte"
 weight = 3
 
   [[menu.main]]
     name = "Career and Financial Management"
-    url = "/cte/cfm"
+    url = "/en/cte/cfm"
     identifier = "CFM"
     parent = "CTE"
     weight = 5
 
   [[menu.main]]
     name = "Web Development"
-    url = "/cte/web"
+    url = "/en/cte/web"
     identifier = "Web Development"
     parent = "CTE"
     weight = 1
 
   [[menu.main]]
     name = "Game Design"
-    url = "/cte/game-design"
+    url = "/en/cte/game-design"
     identifier = "Game Design"
     parent = "CTE"
     weight = 2
   
   [[menu.main]]
     name = "IT Systems"
-    url = "/cte/it"
+    url = "/en/cte/it"
     identifier = "IT Systems"
     parent = "CTE"
     weight = 3
   
   [[menu.main]]
     name = "Work-Based Learning"
-    url = "/cte/wbl"
+    url = "/en/cte/wbl"
     identifier = "Work-Based Learning"
     parent = "CTE"
     weight = 4
   
   [[menu.main]]
     name = "CTE Electives"
-    url = "/cte/cte-electives"
+    url = "/en/cte/cte-electives"
     identifier = "CTE Electives"
     parent = "CTE"
     weight = 6
@@ -475,45 +719,45 @@ weight = 3
 [[menu.main]]
 identifier = "Calendar"
 name = "Calendar"
-url = "/calendar"
+url = "/en/calendar"
 weight = 4
 
 [[menu.main]]
 identifier = "Admissions"
 name = "Admissions"
-url = "/admissions"
+url = "/en/admissions"
 weight = 5
 
 [[menu.main]]
 identifier = "Family"
 name = "Family"
-url = "/family"
+url = "/en/family"
 weight = 6
 
 [[menu.main]]
     name = "Attendance"
-    url = "/family/attendance"
+    url = "/en/family/attendance"
     identifier = "Attendance"
     parent = "Family"
     weight = 1
 
 [[menu.main]]
     name = "Graduation Requirements"
-    url = "/family/grad-requirements"
+    url = "/en/family/grad-requirements"
     identifier = "Graduation Requirements"
     parent = "Family"
     weight = 2
 
 [[menu.main]]
     name = "Lunch Forms"
-    url = "/family/lunch-forms"
+    url = "/en/family/lunch-forms"
     identifier = "Lunch Forms"
     parent = "Family"
     weight = 3
 
 [[menu.main]]
     name = "Parent Teacher Student Association (PTSA)"
-    url = "/family/ptsa"
+    url = "/en/family/ptsa"
     identifier = "Parent Teacher Student Association (PTSA)"
     parent = "Family"
     weight = 4
@@ -521,40 +765,40 @@ weight = 6
 [[menu.main]]
 identifier = "Students"
 name = "Students"
-url = "/students"
+url = "/en/students"
 weight = 7
 
   [[menu.main]]
     name = "Student Success Center"
-    url = "/students/ssc"
+    url = "/en/students/ssc"
     identifier = "Student Success Center"
     parent = "Students"
     weight = 1
   
   [[menu.main]]
     name = "CREW"
-    url = "/students/crew"
+    url = "/en/students/crew"
     identifier = "CREW"
     parent = "Students"
     weight = 2
   
   [[menu.main]]
     name = "MESH"
-    url = "/students/mesh"
+    url = "/en/students/mesh"
     identifier = "MESH"
     parent = "Students"
     weight = 3
 
   [[menu.main]]
     name = "School-Based Health Center"
-    url = "/students/sbhc"
+    url = "/en/students/sbhc"
     identifier = "School-Based Health Center"
     parent = "Students"
     weight = 4
   
   [[menu.main]]
     name = "PSAL"
-    url = "/students/psal"
+    url = "/en/students/psal"
     identifier = "PSAL"
     parent = "Students"
     weight = 5
@@ -563,7 +807,7 @@ weight = 7
 [[menu.main]]
 identifier = "Staff"
 name = "Staff"
-url = "/staff"
+url = "/en/staff"
 weight = 8
 
 [[menu.footer]]

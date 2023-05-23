@@ -1,6 +1,5 @@
 {{ if .Site.Menus.main }}
-<!-- lg:container lg:mx-auto lg:-translate-x-2/4 lg:left-1/2 -->
-<div class='absolute top-0 w-full nav p-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:overflow-visible {{ if eq .Page.RelPermalink "/" }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
+<div class='absolute top-0 w-full nav p-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:overflow-visible {{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
     <div class="flex justify-between items-center w-full" id="nav-item-container">
         <span id="menu" class="transition-all material-symbols-outlined">
             menu
@@ -15,13 +14,13 @@
                 </a>
             {{ end }}
         {{ end }}
-        <nav class='{{ if eq .Page.RelPermalink "/" }} text-white {{ else }} text-aoit-500  {{end}} hidden relative lg:block w-8/12' id="desktop-nav">
-            <ul class="hidden basis-full lg:block lg:flex lg:w-full lg:justify-between">
+        <nav class='{{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}} hidden relative lg:block my-10 w-8/12' id="desktop-nav">
+            <ul class="hidden basis-full lg:block lg:flex lg:w-full lg:justify-between lg:items-center">
                 {{ range .Site.Menus.main }}
                     {{ if ne .Name "logo" }}
                         {{ if .HasChildren }}
-                    <li class="my-8 border-b-2 pb-4 relative group lg:border-b-0">
-                        <a href="{{.URL}}" class="ml-2.5 relative group">
+                    <li class="border-b-2 relative group lg:border-b-0">
+                        <a href="{{.URL}}" class="ml-2.5 relative group p-6">
                             {{ .Name }}
                             <span class="material-symbols-outlined transition-all absolute -rotate-90 group-hover:rotate-0">
                                 arrow_drop_down
@@ -29,12 +28,12 @@
                         </a>
                         <ul class="transition-all hidden absolute bg-aoit-75 rounded-2xl w-64 px-6 shadow-xl top-10 py-4 group-hover:block">
                             {{ range .Children }}
-                            <li class="transition-all text-aoit-500 font-semibold hover:bg-white hover:shadow-md px-4 py-4 rounded-2xl"><a href="{{.URL}}">{{ .Name }}</a></li>
+                            <li class="transition-all text-aoit-500 font-semibold hover:bg-white hover:shadow-md px-4 rounded-2xl py-4"><a href="{{.URL}}">{{ .Name }}</a></li>
                             {{ end }}
                         </ul>
                     </li>
                     {{ else }}
-                    <li class="my-8 border-b-2 pb-4 lg:border-b-0">
+                    <li class="border-b-2 lg:border-b-0">
                         <a href="{{.URL}}" class="ml-2.5 ">{{ .Name }}</a>
                     </li>
                         {{ end }}
@@ -43,22 +42,32 @@
             </ul>
         </nav>
 
-        <div class="buttons flex flex-col">
-            <a href="#">
+        <div class="buttons flex flex-col relative lg:flex-row lg:items-center">
+            <button class="group px-3 py-6" href="#">
                 <span class="material-symbols-outlined">
                 call
                 </span>
-            </a>
-            <a href="#">
+            </button>
+            <button class="group px-3 py-6" href="#">
                 <span class="material-symbols-outlined">
                     mail
                 </span>
-            </a>
-            <a href="#">
+            </button>
+            <button class="group px-3 py-6" href="#">
                 <span class="material-symbols-outlined">
                 language
                 </span>
-            </a>
+                <ul class="transition-all hidden absolute bg-aoit-75 rounded-2xl p-4 shadow-xl top-10 left-0 w-full mt-8 group-hover:block {{ if .IsHome }} text-black {{ end }}">
+                    {{ range .Site.Languages }}
+                        {{ if eq . $.Site.Language }}
+                        <li class="font-semibold text-white bg-aoit-500 shadow-md rounded-2xl mb-2 p-2">{{ .LanguageName }}</li>
+                        {{ end }}
+                    {{ end }}
+                    {{ range $.Translations }}
+                        <li class="mb-2 p-2 hover:font-semibold hover:bg-white hover:shadow-md hover:rounded-2xl"><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                    {{ end }}
+                </ul>
+            </button>
         </div>
     </div>
 
