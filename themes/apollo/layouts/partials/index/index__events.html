@@ -1,44 +1,60 @@
 <section class="container mx-auto px-6 py-10">
-    <h2 class="text-center text-2xl font-bold text-aoit-400 mb-14">Upcoming Events</h2>
+    <h2 class="text-center text-2xl font-bold text-aoit-400 mb-14">Upcoming Events</h2>  
+    <script src="https://apis.google.com/js/api.js"></script>      
+    <script>
+        var CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
+        var API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
+        var CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1da77c83@group.calendar.google.com';
+        var SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
-    <div class="lg:flex lg:gap-8">
-        {{ range (where .Site.RegularPages "Section" "events") }}
-        <article class="cal-event rounded-cell bg-aoit-50 mb-8 lg:w-3/12 lg:mb-0">
-            <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 font-bold">{{ .Params.category }}</span>
+        function handleClientLoad() {
+            gapi.load('client:auth2', initClient);
+        }
 
-            <div class="my-6 flex justify-between">
-                <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
-                    <div>
-                        <span class="text-5xl lg:text-3xl">{{ (time .Params.date).Day }}</span>
-                        <span class="block font-light lg:text-sm">{{ (time .Params.date).Month}} {{ (time .Params.date).Year}}</span>
-                    </div>
-                </time>
+        function initClient() {
+        gapi.client.init({
+            apiKey: API_KEY,
+            clientId: CLIENT_ID,
+            discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+            scope: SCOPES
+        }).then(function () {
+            // Call listUpcomingEvents after client has been initialized
+            listUpcomingEvents();
+        });
+        }
 
-                <div>
-                    <strong class="text-aoit-500 text-lg md:text-xl">
-                        {{ .Title }}
-                    </strong>
-                    <span class="block text-aoit-500">{{.Params.startTime}} to {{ .Params.endTime }}</span>
-                </div>
-            </div>
+        function listUpcomingEvents() {
+        gapi.client.calendar.events.list({
+            'calendarId': CALENDAR_ID,
+            'timeMin': (new Date()).toISOString(),
+            'showDeleted': false,
+            'singleEvents': true,
+            'maxResults': 10,
+            'orderBy': 'startTime'
+        }).then(function(response) {
+            var events = response.result.items;
+            var contentDiv = document.getElementById('content');
 
-            <p>{{ .Params.description }}</p>
+            if (events.length > 0) {
+            contentDiv.innerHTML = '';
+            for (var i = 0; i < events.length; i++) {
+                var event = events[i];
+                var when = event.start.dateTime;
+                if (!when) {
+                when = event.start.date;
+                }
+                contentDiv.innerHTML += '<p><b>' + event.summary + '</b><br>' + when + '</p>';
+            }
+            } else {
+            contentDiv.innerHTML = '<p>No upcoming events found.</p>';
+            }
+        });
+    }
 
-            <hr class="my-8">
-
-            <div class="flex flex-nowrap justify-center">
-                <button class="btn gap-2 flex" data-title="{{.Title}}" data-start-date={{.Params.date}} data-start-time="{{ .Params.startTime}}" data-end-time="{{.Params.endTime}}" data-eventDate="5/14/2023"><span class="material-symbols-outlined">
-                    calendar_add_on
-                    </span> Add to calendar</button>
-            </div>
-
-            {{ if .Params.thumbnail }}
-            <img class="block mx-auto mt-6 rounded-2xl" src="{{ . }}">
-            {{ end }}
-        </article>
-        {{ end }}
-    </div>
-    <div class="text-center mt-10">
-        <a href="/events" class="btn bg-aoit-500 text-white rounded-xl px-10">View More</a>
-    </div>
+    // Call handleClientLoad when the webpage has finished loading
+    window.onload = handleClientLoad;
+       
+    </script>
+<div id='content'>
+</div>
 </section>
