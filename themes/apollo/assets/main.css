@@ -102,6 +102,20 @@
     table th, table td {
         @apply border border-aoit-400 p-4;
     }
+
+    @media (max-width: 640px) 
+    {
+        .normal table td:last-of-type, .normal table thead th:last-of-type, .weds table td:last-of-type, .weds table thead th:last-of-type
+        {
+            display: none;
+        }
+
+        .normal table td:first-of-type, .normal table thead th:first-of-type, .weds table td:first-of-type, .weds table thead th:first-of-type
+        {
+            @apply w-16 p-1 px-1.5;
+        }
+    }
+    
 }
 
 @media (min-width: 1024px) {
