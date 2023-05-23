@@ -43,6 +43,7 @@
 
             map.scrollZoom.disable();
             </script>
+          <script src="https://accounts.google.com/gsi/client" async defer></script>    
           {{ $script := resources.Get "bundle.js" | resources.Minify | resources.Fingerprint }}    
           <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
     </body>

@@ -1,104 +1,10 @@
 <section class="container mx-auto px-6 py-10">
     <h2 class="text-center text-2xl font-bold text-aoit-400 mb-14">Upcoming Events</h2>  
 
-    <div class="lg:flex lg:gap-8 events">
+    <div class="events lg:grid lg:grid-cols-4 lg:gap-8">
     </div>
+
     <div class="text-center mt-10">
         <a href="/calendar" class="btn bg-aoit-500 text-white rounded-xl px-10">View More</a>
     </div>
-
-
-    <script src="https://accounts.google.com/gsi/client" async defer></script>    
-    <script type="text/javascript">
-        var CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1da77c83@group.calendar.google.com';
-        var CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
-        var API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
-        var data = [];
-        const events = document.querySelector(".events");
-
-        function processTime(_date){
-            var t =  new Date(_date);
-
-            return t.toLocaleTimeString(navigator.language, { 
-                hour: '2-digit', 
-                minute: '2-digit'
-            });
-        }
-
-        function processDate(_date){
-            console.log(_date);
-            var t =  new Date(_date);
-            const MONTHS = ["January", "Feburary", "March", "April", "May", "June"]; 
-            const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-            return {
-                numDay: t.getDay(),
-                year: t.getFullYear(),
-                month: MONTHS[t.getMonth()],
-                monthDate: t.getDate()
-            }
-    
-        }
-        
-        function getEventTypeById(id){
-
-            const CATEGORY = ["Trips", "Family", "Work Based Learning", "Senior", "College Prep"];
-
-            return CATEGORY[id];
-        }
-
-        var setContent = (post, title) => (post[title] != null || post[title] != undefined) ? post[title] : " ------ ";
-        
-
-        fetch('https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_ID + '/events?key=' + API_KEY)
-            .then(response => {
-                return response.json();
-            })
-            .then(d => {
-                data = d.items;
-                d.items.reverse().forEach((n) => {
-
-                    var post = n;
-                    var curr_date = processDate(post.start.dateTime);
-                    
-                    // PENDING
-                    var details = { };
-
-                    events.insertAdjacentHTML("beforeend", 
-                        `<article class="cal-event rounded-cell bg-aoit-50 mb-8 lg:w-3/12 lg:mb-0">
-                            <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 font-bold"> ${ getEventTypeById(2) }</span>
-                                <div class="my-6 flex justify-between">
-                                    <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
-                                        <div>
-                                            <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
-                                            <span class="block font-light lg:text-sm">${ curr_date.month }&nbsp;${ curr_date.year  }</span>
-                                        </div>
-                                    </time>
-
-                                    <div>
-                                        <strong class="text-aoit-500 text-lg md:text-xl">
-                                            ${ setContent(post, "summary") }
-                                        </strong>
-                                        <span class="block text-aoit-500">${ processTime(n.start.dateTime)} to ${ processTime(n.end.dateTime) }</span>
-                                    </div>
-                                </div>
-                                    <p>${ setContent(post, "description") }</p>
-                                
-
-                            <hr class="my-8">
-
-                            <div class="flex flex-nowrap justify-center">
-                                <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">
-                                    calendar_add_on
-                                    </span> Add to calendar</a>
-                            </div>
-                        </article>`);
-                });
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-    <script async defer src="https://apis.google.com/js/api.js"></script>
-    <script async defer src="https://accounts.google.com/gsi/client"></script>
 </section>
