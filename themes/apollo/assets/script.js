@@ -133,98 +133,6 @@ if (window.location.pathname === "/") {
     safety.text.style.fontWeight = 'bold';
   }
 
-/* === TIME HANDLING CODE === */
-
-function parseTime(timeString) {
-  const [hours, minutes] = timeString.split(':');
-  const currentDate = new Date();
-  const parsedTime = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    currentDate.getDate(),
-    parseInt(hours),
-    parseInt(minutes)
-  );
-  return parsedTime;
-}
-
-function calculateDuration(startTime, endTime) {
-  const durationMs = endTime - startTime;
-  const hours = Math.floor(durationMs / (1000 * 60 * 60));
-  const minutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
-  return { hours, minutes };
-}
-
-function calculateTimeDuration(start, end) {
-  const startTime = parseTime(start);
-  const endTime = parseTime(end);
-  const duration = calculateDuration(startTime, endTime);
-  return duration;
-}
-
-function separateDate(dateString) {
-  const separatedArray = dateString.split('-');
-  return separatedArray;
-}
-
-function replaceDashWithComma(dateArray) {
-  const replacedArray = dateArray.map((element) => element.replace('-', ','));
-  return replacedArray;
-}
-
-function separateDateWithComma(dateString) {
-  const dateArray = separateDate(dateString);
-  const separatedArrayWithComma = replaceDashWithComma(dateArray);
-
-  return separatedArrayWithComma.map((element => parseInt(element)));;
-}
-  
-if (window.location.pathname === "/") {
-  let events = document.querySelectorAll(".cal-event .btn");
-  events.forEach(function(n) {
-   const fileName = `${n.dataset.title}-${n.dataset.startDate}.ics`;
-
-   n.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    let event = {
-      start: separateDateWithComma(n.dataset.startDate),
-      duration: calculateTimeDuration(n.dataset.startTime, n.dataset.endTime),
-      title: n.dataset.title,
-      description: '',
-      location: "",
-      url: "https://aoiths.org",
-      status: "CONFIRMED",
-      organizer: { name: 'Academy of Innovative Technology', email: 'info@aoiths.org'},
-    }
-
-     ics.createEvent(event, (error, value) => {
-      if (error) {
-        console.log(error)
-        return
-      }
-
-      const file = new File([value], fileName, { type: 'plain/calendar' });
-      console.log({file});
-
-      let url = URL.createObjectURL(file);
-      const webcalUrl = url.replace(/^http(s?):\/\//i, 'webcal://');
-      console.log(url);
-
-      const anchor = document.createElement('a');
-      anchor.href = webcalUrl;
-      anchor.download = fileName;
-    
-      document.body.appendChild(anchor);
-      anchor.click();
-      document.body.removeChild(anchor);
-    
-      URL.revokeObjectURL(url);
-      })
-   });
-  });
-}
-
 // global contact code 
 
 const form = document.querySelector("#form");
@@ -333,8 +241,6 @@ if (window.location.pathname === "/about/bell-schedule/") {
   //     regBellSchedule[0].classList.add("bg-pink-300");
   //     break;     
   // }
-  
- 
   
 }
 
