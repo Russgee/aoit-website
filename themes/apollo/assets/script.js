@@ -133,98 +133,6 @@ if (window.location.pathname === "/") {
     safety.text.style.fontWeight = 'bold';
   }
 
-/* === TIME HANDLING CODE === */
-
-function parseTime(timeString) {
-  const [hours, minutes] = timeString.split(':');
-  const currentDate = new Date();
-  const parsedTime = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    currentDate.getDate(),
-    parseInt(hours),
-    parseInt(minutes)
-  );
-  return parsedTime;
-}
-
-function calculateDuration(startTime, endTime) {
-  const durationMs = endTime - startTime;
-  const hours = Math.floor(durationMs / (1000 * 60 * 60));
-  const minutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
-  return { hours, minutes };
-}
-
-function calculateTimeDuration(start, end) {
-  const startTime = parseTime(start);
-  const endTime = parseTime(end);
-  const duration = calculateDuration(startTime, endTime);
-  return duration;
-}
-
-function separateDate(dateString) {
-  const separatedArray = dateString.split('-');
-  return separatedArray;
-}
-
-function replaceDashWithComma(dateArray) {
-  const replacedArray = dateArray.map((element) => element.replace('-', ','));
-  return replacedArray;
-}
-
-function separateDateWithComma(dateString) {
-  const dateArray = separateDate(dateString);
-  const separatedArrayWithComma = replaceDashWithComma(dateArray);
-
-  return separatedArrayWithComma.map((element => parseInt(element)));;
-}
-  
-if (window.location.pathname === "/") {
-  let events = document.querySelectorAll(".cal-event .btn");
-  events.forEach(function(n) {
-   const fileName = `${n.dataset.title}-${n.dataset.startDate}.ics`;
-
-   n.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    let event = {
-      start: separateDateWithComma(n.dataset.startDate),
-      duration: calculateTimeDuration(n.dataset.startTime, n.dataset.endTime),
-      title: n.dataset.title,
-      description: '',
-      location: "",
-      url: "https://aoiths.org",
-      status: "CONFIRMED",
-      organizer: { name: 'Academy of Innovative Technology', email: 'info@aoiths.org'},
-    }
-
-     ics.createEvent(event, (error, value) => {
-      if (error) {
-        console.log(error)
-        return
-      }
-
-      const file = new File([value], fileName, { type: 'plain/calendar' });
-      console.log({file});
-
-      let url = URL.createObjectURL(file);
-      const webcalUrl = url.replace(/^http(s?):\/\//i, 'webcal://');
-      console.log(url);
-
-      const anchor = document.createElement('a');
-      anchor.href = webcalUrl;
-      anchor.download = fileName;
-    
-      document.body.appendChild(anchor);
-      anchor.click();
-      document.body.removeChild(anchor);
-    
-      URL.revokeObjectURL(url);
-      })
-   });
-  });
-}
-
 // global contact code 
 
 const form = document.querySelector("#form");
@@ -339,9 +247,8 @@ console.log(currentTime);
  }
 
  if(index > -1){
-  regBellSchedule[index].classList.add("bg-pink-300");
- }
-
+  regBellSchedule[index].classList.add("bg-aoit-300");
+ }  
 }
 
  const header = document.querySelector("header");
@@ -358,5 +265,96 @@ console.log(currentTime);
   });
 
   observer.observe(header);
+
+  // ==== CALENDAR CODE ======
+
+  var CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1da77c83@group.calendar.google.com';
+        var CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
+        var API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
+        var data = [];
+        const events = document.querySelector(".events");
+
+        function processTime(_date){
+            var t =  new Date(_date);
+
+            return t.toLocaleTimeString(navigator.language, { 
+                hour: '2-digit', 
+                minute: '2-digit'
+            });
+        }
+
+        function processDate(_date){
+            console.log(_date);
+            var t =  new Date(_date);
+            const MONTHS = ["January", "Feburary", "March", "April", "May", "June"]; 
+            const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            return {
+                numDay: t.getDay(),
+                year: t.getFullYear(),
+                month: MONTHS[t.getMonth()],
+                monthDate: t.getDate()
+            }
+    
+        }
+        
+        function getEventTypeById(id){
+
+            const CATEGORY = ["Trips", "Family", "Work Based Learning", "Senior", "College Prep"];
+
+            return CATEGORY[id];
+        }
+
+        var setContent = (post, title) => (post[title] != null || post[title] != undefined) ? post[title] : " ------ ";
+        
+
+        fetch('https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_ID + '/events?key=' + API_KEY)
+            .then(response => {
+                return response.json();
+            })
+            .then(d => {
+                data = d.items;
+                d.items.reverse().forEach((n) => {
+
+                    var post = n;
+                    var curr_date = processDate(post.start.dateTime);
+                    
+                    // PENDING
+                    var details = { };
+
+                    events.insertAdjacentHTML("beforeend", 
+                        `<article class="col-span-1 cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-around lg:w-full lg:mb-0">
+                            <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 self-start font-bold"> ${ getEventTypeById(2) }</span>
+                                <div class="my-8 flex justify-between">
+                                    <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
+                                        <div>
+                                            <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
+                                            <span class="block font-light lg:text-sm">${ curr_date.month }&nbsp;${ curr_date.year  }</span>
+                                        </div>
+                                    </time>
+
+                                    <div class="lg:ml-4">
+                                        <strong class="text-aoit-500 text-lg md:text-xl">
+                                            ${ setContent(post, "summary") }
+                                        </strong>
+                                        <span class="block text-aoit-500">${ processTime(n.start.dateTime)} to ${ processTime(n.end.dateTime) }</span>
+                                    </div>
+                                </div>
+                                    <p>${ setContent(post, "description") }</p>
+                                
+
+                            <hr class="my-8">
+
+                            <div class="flex flex-nowrap justify-center">
+                                <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">
+                                    calendar_add_on
+                                    </span> Add to calendar</a>
+                            </div>
+                        </article>`);
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
 
   
