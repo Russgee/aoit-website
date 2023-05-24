@@ -3,7 +3,7 @@ title: Bell Schedule
 ---
 <div class="lg:grid lg:grid-cols-2 gap-14 items-end">
 
-<div class="col-start-1 col-end-2 text-center normal p-6 rounded-3xl">
+<div class="col-start-1 col-end-2 text-center normal p-6 rounded-3xl overflow-auto">
 
 ### Academy of Innovative Technology's 2023-24 Bell Schedule
 

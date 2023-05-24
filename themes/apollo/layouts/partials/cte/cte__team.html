@@ -1,22 +1,42 @@
 <section class="px-6 container mx-auto my-12" id="about">
     <h2 class="text-aoit-400 text-2xl font-bold">Department Members</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
-        <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name & Title</th>
-            <th class="border border-aoit-400 p-4">Contact Information</th>
-        </tr>
+    <div class="overflow-auto max-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name & Title</th>
+                <th class="border border-aoit-400 p-4">Contact Information</th>
+            </tr>
         
-        {{ range .Params.team }}
-        <tr>
-            <td class="border border-aoit-400 p-4">
-                <span class="font-semibold">{{ .name }}</span><br>
-                {{ .title }}
-            </td>
-            <td class="border border-aoit-400 p-4">
-                <a href="mailto:{{.email}}" class="underline text-aoit-500">{{ .email }}</a>
-            </td>
-        </tr>
-        {{ end }}
-    </table>
+            {{ range .Params.team }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <span class="font-semibold">{{ .name }}</span><br>
+                        {{ .title }}
+                    </td>
+                    <td class="border border-aoit-400 p-4">
+                        <a href="mailto:{{.email}}" class="underline text-aoit-500">{{ .email }}</a>
+                    </td>
+                </tr>
+            {{ end }}
+        </table>
+    </div>
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name & Title</th>
+            </tr>
+            {{ range .Params.team }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <span class="font-semibold">{{ .name }}</span><br>
+                        {{ .title }}
+                        <br>
+                        <a href="mailto:{{.email}}" class="underline text-aoit-500">{{ .email }}</a>
+                    </td>
+                </tr>
+            {{ end }}
+        </table>
+    </div>
+    
 </section>
     
