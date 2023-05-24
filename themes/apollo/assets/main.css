@@ -47,7 +47,7 @@
     }
 
     .single a {
-        @apply font-semibold underline text-aoit-500 hover:text-aoit-700 transition-all transition-150;
+        @apply font-semibold underline text-aoit-500 hover:text-aoit-700 transition-all duration-150;
     }
     
 

@@ -1,6 +1,6 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'Academy of Innovative Technology'
+title = 'Academy of Innovative Technology High School'
 theme = 'apollo'
 buildFuture = true 
 DefaultContentLanguage = 'en'
