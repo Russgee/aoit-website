@@ -133,98 +133,6 @@ if (window.location.pathname === "/") {
     safety.text.style.fontWeight = 'bold';
   }
 
-/* === TIME HANDLING CODE === */
-
-function parseTime(timeString) {
-  const [hours, minutes] = timeString.split(':');
-  const currentDate = new Date();
-  const parsedTime = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    currentDate.getDate(),
-    parseInt(hours),
-    parseInt(minutes)
-  );
-  return parsedTime;
-}
-
-function calculateDuration(startTime, endTime) {
-  const durationMs = endTime - startTime;
-  const hours = Math.floor(durationMs / (1000 * 60 * 60));
-  const minutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
-  return { hours, minutes };
-}
-
-function calculateTimeDuration(start, end) {
-  const startTime = parseTime(start);
-  const endTime = parseTime(end);
-  const duration = calculateDuration(startTime, endTime);
-  return duration;
-}
-
-function separateDate(dateString) {
-  const separatedArray = dateString.split('-');
-  return separatedArray;
-}
-
-function replaceDashWithComma(dateArray) {
-  const replacedArray = dateArray.map((element) => element.replace('-', ','));
-  return replacedArray;
-}
-
-function separateDateWithComma(dateString) {
-  const dateArray = separateDate(dateString);
-  const separatedArrayWithComma = replaceDashWithComma(dateArray);
-
-  return separatedArrayWithComma.map((element => parseInt(element)));;
-}
-  
-if (window.location.pathname === "/") {
-  let events = document.querySelectorAll(".cal-event .btn");
-  events.forEach(function(n) {
-   const fileName = `${n.dataset.title}-${n.dataset.startDate}.ics`;
-
-   n.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    let event = {
-      start: separateDateWithComma(n.dataset.startDate),
-      duration: calculateTimeDuration(n.dataset.startTime, n.dataset.endTime),
-      title: n.dataset.title,
-      description: '',
-      location: "",
-      url: "https://aoiths.org",
-      status: "CONFIRMED",
-      organizer: { name: 'Academy of Innovative Technology', email: 'info@aoiths.org'},
-    }
-
-     ics.createEvent(event, (error, value) => {
-      if (error) {
-        console.log(error)
-        return
-      }
-
-      const file = new File([value], fileName, { type: 'plain/calendar' });
-      console.log({file});
-
-      let url = URL.createObjectURL(file);
-      const webcalUrl = url.replace(/^http(s?):\/\//i, 'webcal://');
-      console.log(url);
-
-      const anchor = document.createElement('a');
-      anchor.href = webcalUrl;
-      anchor.download = fileName;
-    
-      document.body.appendChild(anchor);
-      anchor.click();
-      document.body.removeChild(anchor);
-    
-      URL.revokeObjectURL(url);
-      })
-   });
-  });
-}
-
 // global contact code 
 
 const form = document.querySelector("#form");
@@ -283,59 +191,64 @@ if (window.location.pathname === "/about/bell-schedule/") {
   const bell = document.querySelector(".normal");
   const weds = document.querySelector(".weds");
 
+let dayIndex = date.getDay();
 
-
-  if (date.getDay() !== 6 && date.getDay() !== 3) {
+  if (dayIndex !== 6 && dayIndex !== 3) {
     bell.classList.add("bg-aoit-400", "text-white")
-  } else if (date.getDay() === 3) {
+  } else if (dayIndex === 3) {
+    console.log( "HITS ")
       weds.classList.add("bg-aoit-400", "text-white")
   }
 
 
-
+function formatMinutes(min) {
+  return min.toString().padStart(2, '0');
+}
 
 //// TODO: make this work in the future where cells are higlighted based on current time correlated by the current period.
 
-// const regBellSchedule =  document.querySelectorAll(".normal  table  tr");
+const regBellSchedule =  document.querySelectorAll(".normal  table  tr");
 
 // let currentTime = `${parseInt(date.getHours())}${parseInt(date.getMinutes())}`;
-// console.log(parseInt(currentTime));
+let currentTime = `${date.getHours() + "" + formatMinutes(date.getMinutes())}`;
 
-  // switch (currentTime) {
-  //   case (currentTime >= 820 && currentTime <= 910):
-  //     regBellSchedule[0].classList.add("bg-pink-300");
-  //     break;
-  //   case (currentTime >= 914 && currentTime <= 104):
-  //       regBellSchedule[1].classList.add("bg-pink-300");
-  //       break;
-  //   case (currentTime >= 108 && currentTime <= 1058):
-  //     regBellSchedule[2].classList.add("bg-pink-300");
-  //     break;
-  //   case (currentTime >= 112 && currentTime <= 1152):
-  //     regBellSchedule[3].classList.add("bg-pink-300");
-  //     break;
-  //   case (currentTime >= 1156 && currentTime <= 1246):
-  //     regBellSchedule[4].classList.add("bg-pink-300");
-  //     break;
-  //   case (currentTime >= 1250 && currentTime <= 1325):
-  //     regBellSchedule[5].classList.add("bg-pink-300");
-  //     break;
-  //   case (currentTime >= 1327 && currentTime <= 1417):
-  //     regBellSchedule[6].classList.add("bg-pink-300");
-  //     break;
-  //   case (currentTime >= 1420 && currentTime <= 1510):
-  //     regBellSchedule[7].classList.add("bg-pink-300");
-  //     break;
-  //   case (currentTime >= 1510 && currentTime <= 160):
-  //     regBellSchedule[8].classList.add("bg-pink-300");
-  //     break;
-  //   case (currentTime >= 0 && currentTime <= 10):
-  //     regBellSchedule[0].classList.add("bg-pink-300");
-  //     break;     
-  // }
-  
- 
-  
+console.log(currentTime);
+
+  var index = -1;
+
+  switch (true) {
+    case (currentTime >= 820 && currentTime <= 910):
+      index = 1;
+      break;
+    case (currentTime >= 914 && currentTime <= 1004):
+      index = 2;
+        break;
+    case (currentTime >= 1008 && currentTime <= 1058):
+      index = 3;
+      break;
+    case (currentTime >= 1102 && currentTime <= 1152):
+      index = 4;
+      break;
+     case (currentTime >= 1156 && currentTime <= 1246):
+      index = 5;
+       break;
+     case (currentTime >= 1250 && currentTime <= 1325):
+      index = 6;
+       break;
+     case (currentTime >= 1327 && currentTime <= 1417):
+      index = 7;
+       break;
+    case (currentTime >= 1420 && currentTime <= 1510):
+      index = 8;
+      break;
+    case (currentTime >= 1510 && currentTime <= 1600):
+      index = 9;
+      break;
+ }
+
+ if(index > -1){
+  regBellSchedule[index].classList.add("bg-aoit-300");
+ }  
 }
 
  const header = document.querySelector("header");
@@ -352,5 +265,96 @@ if (window.location.pathname === "/about/bell-schedule/") {
   });
 
   observer.observe(header);
+
+  // ==== CALENDAR CODE ======
+
+  var CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1da77c83@group.calendar.google.com';
+        var CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
+        var API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
+        var data = [];
+        const events = document.querySelector(".events");
+
+        function processTime(_date){
+            var t =  new Date(_date);
+
+            return t.toLocaleTimeString(navigator.language, { 
+                hour: '2-digit', 
+                minute: '2-digit'
+            });
+        }
+
+        function processDate(_date){
+            console.log(_date);
+            var t =  new Date(_date);
+            const MONTHS = ["January", "Feburary", "March", "April", "May", "June"]; 
+            const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            return {
+                numDay: t.getDay(),
+                year: t.getFullYear(),
+                month: MONTHS[t.getMonth()],
+                monthDate: t.getDate()
+            }
+    
+        }
+        
+        function getEventTypeById(id){
+
+            const CATEGORY = ["Trips", "Family", "Work Based Learning", "Senior", "College Prep"];
+
+            return CATEGORY[id];
+        }
+
+        var setContent = (post, title) => (post[title] != null || post[title] != undefined) ? post[title] : " ------ ";
+        
+
+        fetch('https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_ID + '/events?key=' + API_KEY)
+            .then(response => {
+                return response.json();
+            })
+            .then(d => {
+                data = d.items;
+                d.items.reverse().forEach((n) => {
+
+                    var post = n;
+                    var curr_date = processDate(post.start.dateTime);
+                    
+                    // PENDING
+                    var details = { };
+
+                    events.insertAdjacentHTML("beforeend", 
+                        `<article class="col-span-1 cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-around lg:w-full lg:mb-0">
+                            <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 self-start font-bold"> ${ getEventTypeById(2) }</span>
+                                <div class="my-8 flex justify-between">
+                                    <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
+                                        <div>
+                                            <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
+                                            <span class="block font-light lg:text-sm">${ curr_date.month }&nbsp;${ curr_date.year  }</span>
+                                        </div>
+                                    </time>
+
+                                    <div class="lg:ml-4">
+                                        <strong class="text-aoit-500 text-lg md:text-xl">
+                                            ${ setContent(post, "summary") }
+                                        </strong>
+                                        <span class="block text-aoit-500">${ processTime(n.start.dateTime)} to ${ processTime(n.end.dateTime) }</span>
+                                    </div>
+                                </div>
+                                    <p>${ setContent(post, "description") }</p>
+                                
+
+                            <hr class="my-8">
+
+                            <div class="flex flex-nowrap justify-center">
+                                <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">
+                                    calendar_add_on
+                                    </span> Add to calendar</a>
+                            </div>
+                        </article>`);
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
 
   
