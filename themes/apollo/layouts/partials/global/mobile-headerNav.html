@@ -1,7 +1,5 @@
-{{ if .Params.sidebar}}
- <ul class="my-4 md:hidden">
-    {{ range .Params.sidebar }}
-    <li class="my-1"><a class="underline" href="{{.url}}">{{.title}}</a></li>
-    {{ end }}
-</ul>
+<ul class="my-4 lg:hidden">
+ {{ range .Pages }}
+    <li class="my-1"><a class="underline" href="{{ .Permalink }}">{{.Title}}</a></li>
 {{ end }}
+</ul>

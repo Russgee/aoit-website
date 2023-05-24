@@ -1,14 +1,5 @@
 ---
 title: About Our School
-sidebar:
-    - title: "Our Mission & Summary"
-      url: "/about"
-    - title: "Principal's Message"
-      url: "/about/principals-message"
-    - title: "Student Testimony"
-      url: "/student-testimomy"
-    - title: "FAQ"
-      url: "/faq"
 --- 
 
 ## Our School's Summary 
