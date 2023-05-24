@@ -1,5 +1,11 @@
 <ul class="my-4 lg:hidden">
- {{ range .Pages }}
-    <li class="my-1"><a class="underline" href="{{ .Permalink }}">{{.Title}}</a></li>
-{{ end }}
+    {{ if isset .Params "sidebar_override"}}
+        {{ range .Params.sidebar_override }}
+        <li class="my-2"><a class="underline" href="{{ .url }}">{{.title}}</a></li>
+        {{ end }}
+    {{ else if .Pages }}
+        {{ range .Pages }}
+            <li class="my-1"><a class="underline" href="{{ .Permalink }}">{{.Title}}</a></li>
+        {{ end }}
+    {{ end }}
 </ul>

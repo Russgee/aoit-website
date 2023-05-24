@@ -261,7 +261,7 @@
     </div>
 
     <h2 class="text-2xl font-semibold mb-6" id="issTeam">Instructional Support Services</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
             <th class="border border-aoit-400 p-4">Email</th>
@@ -276,8 +276,30 @@
             {{ end }}
     </table>
 
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name, Title</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "Sped" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
+                            <br>
+                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </td>
+
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
+    
+    
+
     <h2 class="text-2xl font-semibold mb-6" id="paraTeam">Paraprofessionals</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
             <th class="border border-aoit-400 p-4">Email</th>
@@ -292,8 +314,27 @@
             {{ end }}
     </table>
 
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name, Title</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "Paraprofessional" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
+                            <br>
+                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
+
     <h2 class="text-2xl font-semibold mb-6" id="enlTeam">ENL</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
             <th class="border border-aoit-400 p-4">Email</th>
@@ -308,8 +349,27 @@
             {{ end }}
     </table>
 
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name, Title</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "ENL" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
+                            <br>
+                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
+
     <h2 class="text-2xl font-semibold mb-6" id="mainOffice">Main Office</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
             <th class="border border-aoit-400 p-4">Email</th>
@@ -324,8 +384,29 @@
             {{ end }}
     </table>
 
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name, Title</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "Office" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
+                            <br>
+                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
+    
+
+
     <h2 class="text-2xl font-semibold mb-6" id="guidance">Guidance</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
             <th class="border border-aoit-400 p-4">Email</th>
@@ -340,8 +421,27 @@
             {{ end }}
     </table>
 
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name, Title</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "Guidance" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
+                            <br>
+                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
+
     <h2 class="text-2xl font-semibold mb-6" id="ridTeam">RID (Dean)</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
             <th class="border border-aoit-400 p-4">Email</th>
@@ -356,8 +456,27 @@
             {{ end }}
     </table>
 
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name, Title</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "RID" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
+                            <br>
+                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
+
     <h2 class="text-2xl font-semibold mb-6" id="otherStaff">Other School Staff</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">Name, Title</th>
             <th class="border border-aoit-400 p-4">Email</th>
@@ -371,6 +490,25 @@
                 {{ end }}
             {{ end }}
     </table>
+
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name, Title</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
+                            <br>
+                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
 
 
 

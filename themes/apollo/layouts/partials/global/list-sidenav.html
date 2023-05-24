@@ -1,7 +1,14 @@
+<!-- Hi Aaron :-) -->
 <aside class="col-start-1 col-end-2 hidden lg:block">
     <ul class="my-4 bg-aoit-200 text-aoit-500 font-semibold p-10 rounded-2xl">
-       {{ range .Pages }}
-       <li class="my-2 hover:bg-aoit-50 p-4 rounded-xl hover:shadow-md"><a class="underline" href="{{.Permalink}}">{{.Title}}</a></li>
-       {{ end }}
+      {{ if isset .Params "sidebar_override"}}
+        {{ range .Params.sidebar_override }}
+        <li class="my-2 hover:bg-aoit-50 p-4 rounded-xl hover:shadow-md"><a class="underline" href="{{.Permalink}}">{{.Title}}</a></li>
+        {{ end }}
+      {{ else if .Pages }}
+        {{ range .Pages }}
+        <li class="my-2 hover:bg-aoit-50 p-4 rounded-xl hover:shadow-md"><a class="underline" href="{{.Permalink}}">{{.Title}}</a></li>
+        {{ end }}
+      {{ end }}
    </ul>
  </aside>

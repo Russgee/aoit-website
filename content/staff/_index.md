@@ -1,6 +1,6 @@
 ---
 title: Staff
-sidebar:
+sidebar_override:
     - title: "Administration"
       url: "#admin"
     - title: "Career and Technical Education"
