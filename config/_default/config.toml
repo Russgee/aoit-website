@@ -609,7 +609,7 @@ hasChildren = true
     weight = 2
 
 [[menu.main]]
-identifier = "Academics"
+identifier = "academics"
 name = "Academics"
 url = "/en/academics"
 weight = 2
@@ -619,53 +619,53 @@ hasChildren = true
     name = "Advanced Placement"
     url = "/en/academics/advanced-placement"
     identifier = "Advanced Placement"
-    parent = "Academics"
+    parent = "academics"
     weight = 1
 
   [[menu.main]]
     name = "English"
     url = "/en/academics/english"
     identifier = "English"
-    parent = "Academics"
+    parent = "academics"
     weight = 2
 
   [[menu.main]]
     name = "Instructional Support Services"
     url = "/en/academics/iss"
     identifier = "ISS"
-    parent = "Academics"
+    parent = "academics"
     weight = 3
 
   [[menu.main]]
     name = "Math"
     url = "/en/academics/math"
     identifier = "Math"
-    parent = "Academics"
+    parent = "academics"
     weight = 4
 
   [[menu.main]]
     name = "Physical Education and Health"
     url = "/en/academics/phys-ed"
     identifier = "Phys Ed"
-    parent = "Academics"
+    parent = "academics"
     weight = 5
 
   [[menu.main]]
     name = "Science"
     url = "/en/academics/science"
     identifier = "Science"
-    parent = "Academics"
+    parent = "academics"
     weight = 6
   
   [[menu.main]]
     name = "Social Studies"
     url = "/en/academics/social-studies"
     identifier = "Social Studies"
-    parent = "Academics"
+    parent = "academics"
     weight = 7
 
 [[menu.main]]
-identifier = "CTE"
+identifier = "cte"
 name = "CTE"
 url = "/en/cte"
 weight = 3
@@ -674,93 +674,94 @@ weight = 3
     name = "Career and Financial Management"
     url = "/en/cte/cfm"
     identifier = "CFM"
-    parent = "CTE"
+    parent = "cte"
     weight = 5
 
   [[menu.main]]
     name = "Web Development"
     url = "/en/cte/web"
     identifier = "Web Development"
-    parent = "CTE"
+    parent = "cte"
     weight = 1
 
   [[menu.main]]
     name = "Game Design"
     url = "/en/cte/game-design"
     identifier = "Game Design"
-    parent = "CTE"
+    parent = "cte"
     weight = 2
   
   [[menu.main]]
     name = "IT Systems"
     url = "/en/cte/it"
     identifier = "IT Systems"
-    parent = "CTE"
+    parent = "cte"
     weight = 3
   
   [[menu.main]]
     name = "Work-Based Learning"
     url = "/en/cte/wbl"
     identifier = "Work-Based Learning"
-    parent = "CTE"
+    parent = "cte"
     weight = 4
 
 
 [[menu.main]]
-identifier = "Calendar"
+identifier = "calendar"
 name = "Calendar"
 url = "/en/calendar"
 weight = 4
 
 [[menu.main]]
-identifier = "Admissions"
+identifier = "admissions"
 name = "Admissions"
 url = "/en/admissions"
 weight = 5
 
 [[menu.main]]
-identifier = "Family"
+identifier = "family"
 name = "Family"
 url = "/en/family"
 weight = 6
+hasChildren = true
 
 [[menu.main]]
     name = "Attendance"
     url = "/en/family/attendance"
     identifier = "Attendance"
-    parent = "Family"
+    parent = "family"
     weight = 1
 
 [[menu.main]]
     name = "Graduation Requirements"
     url = "/en/family/grad-requirements"
     identifier = "Graduation Requirements"
-    parent = "Family"
+    parent = "family"
     weight = 2
   
   [[menu.main]]
     name = "Guidance Department"
     url = "/en/family/guidance"
     identifier = "Guidance Department"
-    parent = "Family"
+    parent = "family"
     weight = 3
 
 [[menu.main]]
     name = "Lunch Forms"
     url = "/en/family/lunch-forms"
     identifier = "Lunch Forms"
-    parent = "Family"
+    parent = "family"
     weight = 4
 
 [[menu.main]]
     name = "Parent Teacher Student Association (PTSA)"
     url = "/en/family/ptsa"
     identifier = "Parent Teacher Student Association (PTSA)"
-    parent = "Family"
+    parent = "family"
     weight = 5
 
 [[menu.main]]
-identifier = "Students"
+identifier = "students"
 name = "Students"
 url = "/en/students"
 weight = 7
@@ -769,40 +770,40 @@ weight = 7
     name = "Student Success Center"
     url = "/en/students/ssc"
     identifier = "Student Success Center"
-    parent = "Students"
+    parent = "students"
     weight = 1
   
   [[menu.main]]
     name = "CREW"
     url = "/en/students/crew"
     identifier = "CREW"
-    parent = "Students"
+    parent = "students"
     weight = 2
   
   [[menu.main]]
     name = "MESH"
     url = "/en/students/mesh"
     identifier = "MESH"
-    parent = "Students"
+    parent = "students"
     weight = 3
 
   [[menu.main]]
     name = "School-Based Health Center"
     url = "/en/students/sbhc"
     identifier = "School-Based Health Center"
-    parent = "Students"
+    parent = "students"
     weight = 4
   
   [[menu.main]]
     name = "PSAL"
     url = "/en/students/psal"
     identifier = "PSAL"
-    parent = "Students"
+    parent = "students"
     weight = 5
 
 
 [[menu.main]]
-identifier = "Staff"
+identifier = "staff"
 name = "Staff"
 url = "/en/staff"
 weight = 8

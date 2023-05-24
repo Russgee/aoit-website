@@ -1,3 +1,4 @@
+{{ $currentPage := . }}
 {{ if .Site.Menus.main }}
 <div class='absolute top-0 w-full nav pt-16 px-6 pb-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:pt-12 lg:overflow-visible {{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
     <div class="flex justify-between items-center w-full" id="nav-item-container">
@@ -19,7 +20,7 @@
                 {{ range .Site.Menus.main }}
                     {{ if ne .Name "logo" }}
                         {{ if .HasChildren }}
-                    <li class="border-b-2 relative group lg:border-b-0">
+                    <li class='{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }}font-bold underline{{ end }} border-b-2 relative group lg:border-b-0'>
                         <a href="{{.URL}}" class="mx-2.5 relative group p-6">
                             {{ .Name }}
                             <span class="material-symbols-outlined transition-all absolute -rotate-90 group-hover:rotate-0">
@@ -38,7 +39,7 @@
                         </ul>
                     </li>
                     {{ else }}
-                    <li class="border-b-2 lg:border-b-0">
+                    <li class='{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }}font-bold underline{{ end }} border-b-2 lg:border-b-0'>
                         <a href="{{.URL}}" class="mx-2.5 ">{{ .Name }}</a>
                     </li>
                         {{ end }}
@@ -81,7 +82,7 @@
             {{ range .Site.Menus.main }}
                 {{ if ne .Name "logo" }}
                     {{ if .HasChildren }}
-                <li class="my-8 border-aoit-400 border-b pb-4 lg:border-b-0">
+                <li class='{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }}font-bold{{ end }} my-8 border-aoit-400 border-b pb-4 lg:border-b-0'>
                     <details>
                         <summary>
                             <a href="{{.URL}}" class="">{{ .Name }}</a>
@@ -94,7 +95,7 @@
                     </details>
                 </li>
                 {{ else }}
-                <li class="my-8 border-aoit-400 border-b pb-4">
+                <li class='{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }}font-bold{{ end }} my-8 border-aoit-400 border-b pb-4'>
                     <a href="{{.URL}}" class="">{{ .Name }}</a>
                 </li>
                     {{ end }}
