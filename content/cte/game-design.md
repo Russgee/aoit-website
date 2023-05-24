@@ -1,7 +1,7 @@
 ---
 title: Game Design
 logo: game.svg
-description: "Our three-year Video Game Design program focuses on Unity game engine design and development."
+description: "Our three-year Video Game Design program focuses on the Unity game engine for 2D and 3D game design and development."
 buttonText: Explore Game
 front: true
 partners:
@@ -9,11 +9,11 @@ partners:
       logo: ""
 sequence:
     - title: "9th Grade (Freshman year)"
-      description: "Test"
+      description: "Exploratory Computer Science"
     - title: "10th grade (Sophomore year)"
-      description: "1"
+      description: "Game Design 1 & 2"
     - title: "11th grade (Junior year)"
-      description: "2"
+      description: "Game Design 3 & 4"
     - title: "12th grade (Senior year)"
-      description: "3"
+      description: "Studio Game Design"
 --- 

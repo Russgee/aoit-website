@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{.Site.Language.Lang}}-us" class="scroll-smooth">
     {{- partial "global/head.html" . -}}
-    <body class="font-inter bg-gradient-to-b from-white to-aoit-50 border-t-4 border-aoit-500">
+    <body class="font-inter bg-gradient-to-b from-white to-aoit-50 border-aoit-500 {{ if .Site.Params.announcement }} {{ else }} border-t-4 {{ end }}">
+        {{- partial "global/announcement-bar.html" . -}}
         {{- partial "global/nav.html" . -}}
 
         {{ if eq .IsHome false }}

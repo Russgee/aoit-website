@@ -29,9 +29,9 @@ team:
       email: mr.frazer@aoiths.org
 electives:
   - title: "Graphic Arts"
-    description: "WE DRAW STUFF"
-  - title: "Robotics"
-    description: "WE BUILD STUFF"
+    description: "Students learn to design captivating visuals, illustrations, and multimedia using industry-standard tools and techniques."
+  - title: "Mechnical Engineering"
+    description: "Explore the exciting field of Mechanical Engineering as you design, build, and bring innovative machines to life, mastering the principles of mechanics, materials, and automation."
   - title: "AP Computer Science"
-    description: "WE CODE STUFF"
+    description: "Advanced Placement Computer Science course, where you'll dive into the world of algorithms, data structures, and software development, preparing for college and industry opportunities in the digital age."
 --- 

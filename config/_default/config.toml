@@ -11,6 +11,9 @@ defaultContentLanguageInSubdir = true
      languageName = "English"
      weight = 1
 
+     [languages.en.params]
+     announcement = "Test!"
+
    [languages.es]
      languageName = "Spanish"
      weight = 2

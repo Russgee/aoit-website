@@ -1,3 +1,9 @@
 ---
 title: Career and Financial Management
 ---
+
+Career and Financial Management (CFM) is a vital course mandated by the New York State Education Department for Career and Technical Education (CTE) programs. This comprehensive course equips students with essential skills and knowledge to navigate the ever-changing landscape of careers and personal finance.
+
+In CFM, students embark on a transformative journey where they explore various career pathways, assess their strengths and interests, and develop a clear understanding of the skills and qualifications required for success in the workforce. Through career exploration activities, guest speakers, and interactive projects, students gain valuable insights into different industries and make informed decisions about their future educational and career goals. CFM also focuses on the development of essential employability skills, such as effective communication, teamwork, problem-solving, and adaptability, empowering students to excel in any professional setting.
+
+In addition to career readiness, CFM places a strong emphasis on financial literacy and management. Students learn crucial financial skills, including budgeting, saving, investing, and responsible borrowing, equipping them with the tools necessary to make informed financial decisions throughout their lives. They explore topics like income, taxes, banking, credit, and consumer rights, enabling them to navigate the complexities of the modern financial landscape with confidence and independence. By understanding the importance of financial planning and the potential impact of their decisions, students develop the skills and mindset required for long-term financial well-being.

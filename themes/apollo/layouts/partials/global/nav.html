@@ -1,5 +1,5 @@
 {{ if .Site.Menus.main }}
-<div class='absolute top-0 w-full nav p-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:overflow-visible {{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
+<div class='absolute top-0 w-full nav pt-16 px-6 pb-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:pt-12 lg:overflow-visible {{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
     <div class="flex justify-between items-center w-full" id="nav-item-container">
         <span id="menu" class="transition-all material-symbols-outlined">
             menu
@@ -20,7 +20,7 @@
                     {{ if ne .Name "logo" }}
                         {{ if .HasChildren }}
                     <li class="border-b-2 relative group lg:border-b-0">
-                        <a href="{{.URL}}" class="ml-2.5 relative group p-6">
+                        <a href="{{.URL}}" class="mx-2.5 relative group p-6">
                             {{ .Name }}
                             <span class="material-symbols-outlined transition-all absolute -rotate-90 group-hover:rotate-0">
                                 arrow_drop_down
@@ -37,7 +37,7 @@
                     </li>
                     {{ else }}
                     <li class="border-b-2 lg:border-b-0">
-                        <a href="{{.URL}}" class="ml-2.5 ">{{ .Name }}</a>
+                        <a href="{{.URL}}" class="mx-2.5 ">{{ .Name }}</a>
                     </li>
                         {{ end }}
                     {{ end }}
@@ -45,22 +45,22 @@
             </ul>
         </nav>
 
-        <div class="buttons flex flex-col relative lg:flex-row lg:items-center">
-            <button class="group px-3 py-6" href="#">
+        <div class="buttons flex flex-col lg:relative lg:flex-row lg:items-center">
+            <a href="tel://7188272469" class="group lg:px-3 lg:py-6">
                 <span class="material-symbols-outlined">
                 call
                 </span>
-            </button>
-            <button class="group px-3 py-6" href="#">
+            </a>
+            <a href="mailto:info@aoiths.org" class="group lg:px-3 lg:py-6">
                 <span class="material-symbols-outlined">
                     mail
                 </span>
-            </button>
-            <button class="group px-3 py-6" href="#">
+            </a>
+            <button class="group lg:px-3 lg:py-6">
                 <span class="material-symbols-outlined">
                 language
                 </span>
-                <ul class="transition-all hidden absolute bg-aoit-75 rounded-2xl p-4 shadow-xl top-10 left-0 w-full mt-8 group-hover:block {{ if .IsHome }} text-black {{ end }}">
+                <ul class="w-6/12 right-0 transition-all hidden absolute bg-aoit-75 rounded-2xl p-4 shadow-xl top-10 lg:left-0 w-full mt-8 group-hover:block {{ if .IsHome }} text-black {{ end }}">
                     {{ range .Site.Languages }}
                         {{ if eq . $.Site.Language }}
                         <li class="font-semibold text-white bg-aoit-500 shadow-md rounded-2xl mb-2 p-2">{{ .LanguageName }}</li>

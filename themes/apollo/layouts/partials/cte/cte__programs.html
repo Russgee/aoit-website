@@ -14,10 +14,10 @@
     </div>
     <div class="lg:grid lg:grid-cols-4 lg:gap-12">
     {{ range .Params.electives }}
-    <article class="rounded-cell bg-white my-12 pb-12 relative overflow-hidden lg:col-span-2">
+    <article class="rounded-cell bg-white my-12 pb-12 relative overflow-hidden flex flex-col justify-between lg:col-span-2">
         <strong class="text-2xl font-semibold block text-aoit-400">{{ .title }}</strong>
         <p class="mt-4 mb-8">{{ .description }}</p>
-        <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="/cte-electives">Learn More</a>
+        <a class="btn bg-aoit-500 text-white px-8 rounded-2xl self-start" href="/cte-electives">Learn More</a>
     </article>
     {{ end }}
     </div>
