@@ -1,6 +1,5 @@
 // ==== imports ======
 const ProgressBar = require('progressbar.js')
-const ics = require('ics')
 
 const menuToggle = document.querySelector("#menu");
 const mainMenu = document.querySelector("#mobile-nav ul");
@@ -27,7 +26,7 @@ menuToggle.addEventListener("click", function() {
 
 // progress bar code 
 
-if (window.location.pathname === "/") {
+if (window.location.pathname === "/en/" || window.location.pathname === "/es/") {
   var grad = new ProgressBar.Circle("#grad-rate", {
       color: '#aaa',
       // This has to be the same size as the maximum width to
@@ -181,6 +180,8 @@ const handleSubmit = (event) => {
   })
     .then(() => body.insertAdjacentHTML("beforeend", printModal(null)))
     .catch((error) => printModal(error));
+
+    myForm.reset();
 };
 
 form.addEventListener("submit", handleSubmit);
@@ -191,13 +192,12 @@ if (window.location.pathname === "/about/bell-schedule/") {
   const bell = document.querySelector(".normal");
   const weds = document.querySelector(".weds");
 
-let dayIndex = date.getDay();
+  let dayIndex = date.getDay();
 
   if (dayIndex !== 6 && dayIndex !== 3) {
-    bell.classList.add("bg-aoit-400", "text-white")
+    bell.classList.add("bell-toggled", "bg-aoit-400", "text-white", "p-6", "rounded-3xl", "overflow-auto")
   } else if (dayIndex === 3) {
-    console.log( "HITS ")
-      weds.classList.add("bg-aoit-400", "text-white")
+    weds.classList.add("bell-toggled", "bg-aoit-400", "text-white", "p-6", "rounded-3xl", "overflow-auto")
   }
 
 

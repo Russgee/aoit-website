@@ -1,6 +1,6 @@
 ---
 title: Information Technology
-logo: it.svg
+logo: /it.svg
 description: Our three-year Information Technology program focuses on preparing students for IT certifications to enhance their resumes.
 buttonText: Explore IT
 front: true
@@ -18,17 +18,16 @@ sequence:
       description: "3"
 --- 
 
-<div class="px-6 container mx-auto my-12">
-        <p> {{ .Params.description }}</p>
+Put a description about the course here.
 
-        {{ range .Params.partners }}
-        <img src="{{ .logo }}" alt="{{ .name}}">
-        {{ end }}
+### 9th Grade (Freshman year)
+Exploratory Computer Science
 
-        {{ range .Params.sequence }}
-        <details class="rounded-cell shadow-lg my-12">
-            <summary>{{ .title }} </summary>
-            <p> {{ .description }}</p>
-        </details>
-        {{ end }}
-    </div>
+### 10th grade (Sophomore year)
+IT Systems 1 & 2
+
+### 11th grade (Junior year)
+IT Systems 3 & 4
+
+### 12th grade (Senior year)
+Cybersecurity and Networking

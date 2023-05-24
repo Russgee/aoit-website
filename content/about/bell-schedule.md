@@ -1,13 +1,13 @@
 ---
-title: Bell Schedule
+title: 2023-24 Bell Schedule
 ---
 <div class="lg:grid lg:grid-cols-2 gap-14 items-end">
 
-<div class="col-start-1 col-end-2 text-center normal p-6 rounded-3xl overflow-auto">
+<div class="col-start-1 col-end-2 text-center normal">
 
-### Academy of Innovative Technology's 2023-24 Bell Schedule
+### Normal Bell Schedule
 
-Bell schedule for Monday, Tuesday, Thursday, Friday
+This bell schedule applies on Monday, Tuesday, Thursday, and Friday. Each class period is 50 minutes, except for lunch. The school day begins at 8:20 and ends at 3:10 on normal days.
 
 | Period / Description      | Start Time | End Time | Length
 | -----------   | ----------- | ----------- | ----------- |
@@ -24,7 +24,7 @@ Bell schedule for Monday, Tuesday, Thursday, Friday
 
 <div class="col-start-2 col-end-3 text-center weds">
 
-### Academy of Innovative Technology's 2023-24 Wednesday Bell Schedule
+### Wednesday Bell Schedule
 We follow a unique schedule on Wednesdays to allow our faculty to engage in conduct family outreach and other professional activities. As a result, students are be dismissed early every Wednesday. 
 
 | Period / Description      | Start Time | End Time | Length

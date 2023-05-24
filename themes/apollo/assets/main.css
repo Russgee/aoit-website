@@ -19,6 +19,40 @@
 }
 
 @layer components {
+
+    /* Global Styles for site here */
+
+    .single p, .mission p {
+        @apply my-6;
+    }
+
+    .single h3 {
+        @apply font-semibold;
+    }
+
+    .bell-toggled h3 {
+        @apply text-white;
+    }
+
+    .single h1 {
+        @apply text-4xl;
+    }
+
+    .single h2 {
+        @apply text-3xl;
+    }
+
+    .single h3 {
+        @apply text-2xl;
+    }
+
+    .single a {
+        @apply font-semibold underline text-aoit-500 hover:text-aoit-700 transition-all transition-150;
+    }
+    
+
+    /* END GLOBAL STYLES */
+
     .btn {
         @apply rounded-lg font-semibold bg-aoit-200 text-aoit-500 p-3 inline-block transition-all duration-150;
     }
@@ -47,10 +81,6 @@
         @apply font-semibold;
     }
 
-    .about__single h3, .about__single p {
-        @apply text-center;
-    }
-
     .about__single table {
         @apply w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg;
     }
@@ -71,13 +101,7 @@
         @apply text-white bg-aoit-500;
     }
 
-    .mission p {
-        @apply my-10;
-    }
-
-    .about__content p {
-        @apply my-6
-    }
+   
 
     .about__content ul {
         @apply list-disc ml-10;

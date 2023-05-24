@@ -146,13 +146,6 @@ defaultContentLanguageInSubdir = true
                 identifier = "Work-Based Learning"
                 parent = "CTE"
                 weight = 4
-  
-                [[languages.es.menu.main]]
-                name = "Electivas de CTE"
-                url = "/cte/cte-electives"
-                identifier = "CTE Electives"
-                parent = "CTE"
-                weight = 6
 
         [[languages.es.menu.main]]
         identifier = "Calendar"
@@ -711,13 +704,7 @@ weight = 3
     identifier = "Work-Based Learning"
     parent = "CTE"
     weight = 4
-  
-  [[menu.main]]
-    name = "CTE Electives"
-    url = "/en/cte/cte-electives"
-    identifier = "CTE Electives"
-    parent = "CTE"
-    weight = 6
+
 
 [[menu.main]]
 identifier = "Calendar"
@@ -750,20 +737,27 @@ weight = 6
     identifier = "Graduation Requirements"
     parent = "Family"
     weight = 2
+  
+  [[menu.main]]
+    name = "Guidance Department"
+    url = "/en/family/guidance"
+    identifier = "Guidance Department"
+    parent = "Family"
+    weight = 3
 
 [[menu.main]]
     name = "Lunch Forms"
     url = "/en/family/lunch-forms"
     identifier = "Lunch Forms"
     parent = "Family"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Parent Teacher Student Association (PTSA)"
     url = "/en/family/ptsa"
     identifier = "Parent Teacher Student Association (PTSA)"
     parent = "Family"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
 identifier = "Students"
