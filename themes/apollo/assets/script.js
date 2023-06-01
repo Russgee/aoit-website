@@ -268,11 +268,14 @@ console.log(currentTime);
 
   // ==== CALENDAR CODE ======
 
-  var CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1da77c83@group.calendar.google.com';
-        var CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
-        var API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
+const CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1da77c83@group.calendar.google.com';
+const CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
+const API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
+const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_ID + '/events?key=' + API_KEY;
+var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
+
         var data = [];
-        const events = document.querySelector(".events");
+        const events = el(".events");
 
         function processTime(_date){
             var t =  new Date(_date);
@@ -284,7 +287,6 @@ console.log(currentTime);
         }
 
         function processDate(_date){
-            console.log(_date);
             var t =  new Date(_date);
             const MONTHS = ["January", "Feburary", "March", "April", "May", "June"]; 
             const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -305,56 +307,62 @@ console.log(currentTime);
             return CATEGORY[id];
         }
 
+
+        var parseCategoryFromTitle = (title, getCategory) => getCategory ? title.slice(1).split("]")[0] : title.split("]")[1];
+
         var setContent = (post, title) => (post[title] != null || post[title] != undefined) ? post[title] : " ------ ";
         
+        
 
-        fetch('https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_ID + '/events?key=' + API_KEY)
-            .then(response => {
-                return response.json();
-            })
-            .then(d => {
-                data = d.items;
-                d.items.reverse().forEach((n) => {
-
-                    var post = n;
-                    var curr_date = processDate(post.start.dateTime);
+        makeRequest(URL_ROOT, "GET", (d) => {
+            data = d.items;
                     
-                    // PENDING
-                    var details = { };
+            d.items.reverse().forEach((n) => {
 
-                    events.insertAdjacentHTML("beforeend", 
-                        `<article class="col-span-1 cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-around lg:w-full lg:mb-0">
-                            <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 self-start font-bold"> ${ getEventTypeById(2) }</span>
-                                <div class="my-8 flex justify-between">
-                                    <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
-                                        <div>
-                                            <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
-                                            <span class="block font-light lg:text-sm">${ curr_date.month }&nbsp;${ curr_date.year  }</span>
-                                        </div>
-                                    </time>
+                var post = n;
+                var curr_date = processDate(post.start.dateTime);
 
-                                    <div class="lg:ml-4">
-                                        <strong class="text-aoit-500 text-lg md:text-xl">
-                                            ${ setContent(post, "summary") }
-                                        </strong>
-                                        <span class="block text-aoit-500">${ processTime(n.start.dateTime)} to ${ processTime(n.end.dateTime) }</span>
+                events.insertAdjacentHTML("beforeend", 
+                    `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">
+                        <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 self-start font-bold"> ${ parseCategoryFromTitle(setContent(post, "summary"), true)  }</span>
+                            <div class="my-6 flex justify-between">
+                                <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
+                                    <div>
+                                        <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
+                                        <span class="block font-light lg:text-sm">${ curr_date.month }&nbsp;${ curr_date.year  }</span>
                                     </div>
+                                </time>
+
+                                <div>
+                                    <strong class="text-aoit-500 text-lg md:text-xl">
+                                        ${ parseCategoryFromTitle(setContent(post, "summary")) }
+                                    </strong>
+                                    <span class="block text-aoit-500">${ processTime(n.start.dateTime)} to ${ processTime(n.end.dateTime) }</span>
                                 </div>
-                                    <p>${ setContent(post, "description") }</p>
-                                
-
-                            <hr class="my-8">
-
-                            <div class="flex flex-nowrap justify-center">
-                                <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">
-                                    calendar_add_on
-                                    </span> Add to calendar</a>
                             </div>
-                        </article>`);
-                });
-            })
-            .catch(error => {
-                console.error(error);
+                            
+                            <div>
+                              <p>${ setContent(post, "description") }</p>
+                            
+                              <hr class="my-8">
+                            </div>
+
+                        <div class="flex flex-nowrap justify-center">
+                            <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">
+                                calendar_add_on
+                                </span> Add to calendar</a>
+                        </div>
+                    </article>`);
             });
+                
+        }, (err) => console.log(err));
+
+        function makeRequest(url, action, success, error) {
+
+            fetch(url, { method: action })
+                .then(resp => resp.json())
+                .then(data => success(data))
+                .catch(err => error(err));
+        }
 
   

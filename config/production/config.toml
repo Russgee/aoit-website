@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = true
      weight = 1
 
      [languages.en.params]
-     announcement = "Test!"
+     announcement = "June 1 is a non-instructional day for students not taking the U.S. History Regents."
 
    [languages.es]
      languageName = "Spanish"

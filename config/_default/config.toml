@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = true
      weight = 1
 
      [languages.en.params]
-     announcement = "Test!"
+     announcement = "June 1 is a non-instructional day for students not taking the U.S. History Regents."
 
    [languages.es]
      languageName = "Spanish"
@@ -600,6 +600,8 @@ hasChildren = true
     identifier = "Bell Schedule"
     parent = "about"
     weight = 1
+    [menu.main.params]
+    description = "Our school's daily timetable."
 
 [[menu.main]]
     name = "Principal's Message"
@@ -607,6 +609,8 @@ hasChildren = true
     identifier = "Principal's Message"
     parent = "about"
     weight = 2
+    [menu.main.params]
+    description = "Our principal's vision and values."
 
 [[menu.main]]
 identifier = "academics"
@@ -621,6 +625,8 @@ hasChildren = true
     identifier = "Advanced Placement"
     parent = "academics"
     weight = 1
+    [menu.main.params]
+    description = "Accelerated courses for advanced learners."
 
   [[menu.main]]
     name = "English"
@@ -628,6 +634,8 @@ hasChildren = true
     identifier = "English"
     parent = "academics"
     weight = 2
+    [menu.main.params]
+    description = "Develop language and literacy skills."
 
   [[menu.main]]
     name = "Instructional Support Services"
@@ -635,6 +643,8 @@ hasChildren = true
     identifier = "ISS"
     parent = "academics"
     weight = 3
+    [menu.main.params]
+    description = "Individualized assistance for student success."
 
   [[menu.main]]
     name = "Math"
@@ -642,6 +652,8 @@ hasChildren = true
     identifier = "Math"
     parent = "academics"
     weight = 4
+    [menu.main.params]
+    description = "Explore numbers and problem-solving."
 
   [[menu.main]]
     name = "Physical Education and Health"
@@ -649,6 +661,8 @@ hasChildren = true
     identifier = "Phys Ed"
     parent = "academics"
     weight = 5
+    [menu.main.params]
+    description = "Promote wellness through physical activity and education."
 
   [[menu.main]]
     name = "Science"
@@ -656,6 +670,8 @@ hasChildren = true
     identifier = "Science"
     parent = "academics"
     weight = 6
+    [menu.main.params]
+    description = "Explore the wonders of the natural world."
   
   [[menu.main]]
     name = "Social Studies"
@@ -663,6 +679,8 @@ hasChildren = true
     identifier = "Social Studies"
     parent = "academics"
     weight = 7
+    [menu.main.params]
+    description = "Learn about history, culture, and society."
 
 [[menu.main]]
 identifier = "cte"
@@ -671,18 +689,13 @@ url = "/en/cte"
 weight = 3
 
   [[menu.main]]
-    name = "Career and Financial Management"
-    url = "/en/cte/cfm"
-    identifier = "CFM"
-    parent = "cte"
-    weight = 5
-
-  [[menu.main]]
     name = "Web Development"
     url = "/en/cte/web"
     identifier = "Web Development"
     parent = "cte"
     weight = 1
+    [menu.main.params]
+    description = "Building websites, shaping digital experiences."
 
   [[menu.main]]
     name = "Game Design"
@@ -690,6 +703,8 @@ weight = 3
     identifier = "Game Design"
     parent = "cte"
     weight = 2
+    [menu.main.params]
+    description = "Creating captivating interactive games."
   
   [[menu.main]]
     name = "IT Systems"
@@ -697,6 +712,8 @@ weight = 3
     identifier = "IT Systems"
     parent = "cte"
     weight = 3
+    [menu.main.params]
+    description = "Mastering technology, empowering businesses."
   
   [[menu.main]]
     name = "Work-Based Learning"
@@ -704,6 +721,17 @@ weight = 3
     identifier = "Work-Based Learning"
     parent = "cte"
     weight = 4
+    [menu.main.params]
+    description = "Real-world experience for practical skills."
+  
+  [[menu.main]]
+    name = "Career and Financial Management"
+    url = "/en/cte/cfm"
+    identifier = "CFM"
+    parent = "cte"
+    weight = 5
+    [menu.main.params]
+    description = "Professional readiness for future success."
 
 
 [[menu.main]]
@@ -713,52 +741,56 @@ url = "/en/calendar"
 weight = 4
 
 [[menu.main]]
-identifier = "admissions"
-name = "Admissions"
-url = "/en/admissions"
+identifier = "guidance"
+name = "Guidance"
+url = "/en/guidance"
 weight = 5
-
-[[menu.main]]
-identifier = "family"
-name = "Family"
-url = "/en/family"
-weight = 6
 hasChildren = true
 
 [[menu.main]]
     name = "Attendance"
-    url = "/en/family/attendance"
+    url = "/en/guidance/attendance"
     identifier = "Attendance"
-    parent = "family"
+    parent = "guidance"
+    weight = 2
+    [menu.main.params]
+    description = "Track and manage student attendance."
+
+[[menu.main]]
+    name = "Admissions"
+    url = "/en/guidance/admissions"
+    identifier = "Admissions"
+    parent = "guidance"
     weight = 1
+    [menu.main.params]
+    description = "Learn more about our admissions process."
 
 [[menu.main]]
     name = "Graduation Requirements"
-    url = "/en/family/grad-requirements"
+    url = "/en/guidance/grad-requirements"
     identifier = "Graduation Requirements"
-    parent = "family"
-    weight = 2
-  
-  [[menu.main]]
-    name = "Guidance Department"
-    url = "/en/family/guidance"
-    identifier = "Guidance Department"
-    parent = "family"
+    parent = "guidance"
     weight = 3
+    [menu.main.params]
+    description = "Track and manage student attendance."
 
 [[menu.main]]
     name = "Lunch Forms"
-    url = "/en/family/lunch-forms"
+    url = "/en/guidance/lunch-forms"
     identifier = "Lunch Forms"
-    parent = "family"
+    parent = "guidance"
     weight = 4
+    [menu.main.params]
+    description = "Access and submit lunch-related forms."
 
 [[menu.main]]
     name = "Parent Teacher Student Association (PTSA)"
-    url = "/en/family/ptsa"
+    url = "/en/guidance/ptsa"
     identifier = "Parent Teacher Student Association (PTSA)"
-    parent = "family"
+    parent = "guidance"
     weight = 5
+    [menu.main.params]
+    description = "Collaborate for student success."
 
 [[menu.main]]
 identifier = "students"
@@ -772,6 +804,8 @@ weight = 7
     identifier = "Student Success Center"
     parent = "students"
     weight = 1
+    [menu.main.params]
+    description = "Resources for college success."
   
   [[menu.main]]
     name = "CREW"
@@ -779,6 +813,8 @@ weight = 7
     identifier = "CREW"
     parent = "students"
     weight = 2
+    [menu.main.params]
+    description = "Foster connections and mentorship."
   
   [[menu.main]]
     name = "MESH"
@@ -786,6 +822,8 @@ weight = 7
     identifier = "MESH"
     parent = "students"
     weight = 3
+    [menu.main.params]
+    description = "Support for mental well-being."
 
   [[menu.main]]
     name = "School-Based Health Center"
@@ -793,6 +831,8 @@ weight = 7
     identifier = "School-Based Health Center"
     parent = "students"
     weight = 4
+    [menu.main.params]
+    description = "Comprehensive healthcare services."
   
   [[menu.main]]
     name = "PSAL"
@@ -800,6 +840,8 @@ weight = 7
     identifier = "PSAL"
     parent = "students"
     weight = 5
+    [menu.main.params]
+    description = "Engage in sports and athletics."
 
 
 [[menu.main]]

@@ -27,12 +27,12 @@
                                 arrow_drop_down
                             </span>
                         </a>
-                        <ul class="transition-all hidden absolute bg-aoit-75 rounded-2xl w-64 px-6 shadow-xl top-10 py-4 group-hover:block">
+                        <ul class="transition-all hidden absolute bg-aoit-75 rounded-2xl w-80 px-6 shadow-xl top-10 py-4 group-hover:block">
                             {{ range .Children }}
                             <li class="transition-all text-aoit-500 font-semibold hover:bg-white hover:shadow-md px-4 rounded-2xl py-4">
                                 <a href="{{.URL}}">
                                     {{ .Name }}
-                                    <p class="text-gray-600 font-small font-normal">Description here.</p>
+                                    <p class="text-gray-600 text-sm font-normal">{{ .Params.description }}</p>
                                 </a>
                             </li>
                             {{ end }}
