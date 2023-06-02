@@ -8,7 +8,7 @@
         {{ if eq .IsHome false }}
         {{- partial "global/header.html" . -}}
         {{ end }}
-        <main class='{{ if eq .IsHome false }}my-10 container mx-auto px-6{{end}} {{ if and (eq .IsHome false) .Pages }}lg:w-8/12 lg:grid lg:gap-x-8 {{end}}'>
+        <main class='{{ if eq .IsHome false }}my-10 container mx-auto px-6{{end}} {{ if and (eq .IsHome false) }}lg:w-9/12 lg:grid lg:gap-x-8 {{end}}'>
           {{- block "main" . }}{{- end }}
         </main>
         <a href="#nav" id="toTop" class="hidden opacity-40 bg-aoit-500 fixed bottom-4 right-4 p-4 rounded-full text-white text-center shadow-2xl transition-all hover:bg-aoit-800 hover:opacity-100">

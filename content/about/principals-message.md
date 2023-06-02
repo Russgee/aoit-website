@@ -1,5 +1,6 @@
 ---
 title: Principal's Message
+description: "Message from the Principal at Academy of Innovative Technology"
 ---
 
 Dear Students, Parents, and Staff,

@@ -1,5 +1,6 @@
 ---
 title: Career and Technical Education
+description: "At Academy of Innovative Technology High School, we have 3 state-approved Career and Technical Education programs. These programs allow us to prepare students for the careers of the future."
 sidebar:
     - title: "Our Programs"
       url: "#programs"

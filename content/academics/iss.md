@@ -1,5 +1,6 @@
 ---
 title: Instructional Support Services
+description: "Instructional Support Services at the Academy of Innovative Technology"
 ---
 
 ## Our Mission

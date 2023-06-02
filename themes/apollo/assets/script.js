@@ -135,6 +135,113 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
 // global contact code 
 
 const form = document.querySelector("#form");
+const selector = document.querySelector("#dropdown");
+const formHeading = document.querySelector(".form-desc");
+
+const formTypes = [
+  {
+    type: "Instructional Support Services Inquiry",
+    form: "iss"
+  },
+  {
+    type: "Request an IEP Copy",
+    form: "iss"
+  },
+  {
+    type: "Grade Concern",
+    form: "guidance"
+  },
+  {
+    type: "Working Papers Request", 
+    form: "office"
+  },
+  {
+    type: "Transcript Request", 
+    form: "guidance"
+  },
+  {
+    type: "Career and Technical Education",
+    form: "cte"
+  },
+  {
+    type: "Metrocard Inquiry",
+    form: "office"
+  },
+  {
+    type: "General Question",
+    form: "office"
+  },
+  {
+    type: "Admissions Info",
+    form: "guidance"
+  },
+  {
+    type: "Disciplinary Concern",
+    form: "rid"
+  },
+  {
+    type: "Other",
+    form: "office"
+  }
+];
+
+formTypes.forEach((n) => selector.insertAdjacentHTML("beforeend", `<option value="${n.form}">${n.type}</option>`));
+
+// optimize hiding and showing
+// var hideOrDefault = (nameObjs) => {
+//   nameObjs.forEach( (v, i) => {
+//     el(v.title).style.display = "none";
+//   });
+// };
+
+var showOrHide = (name, status) => {
+  el(name).style.display = status;
+}
+
+var resetFormSections = () => {
+  el("dvAddress").style.display = none;
+}
+
+selector.addEventListener("change", function() {
+  const formType = this.value;
+  
+  form.id = formType;
+
+  var html = "", 
+      msgStart = "Your inquiry will be directed to ";
+  
+      resetFormSections();
+  switch (formType) {
+    case "iss":
+      html = msgStart + "Ms. Slater";
+      break;
+    case "guidance":
+      html = msgStart + "our guidance team, Ms. Cooper and Ms. Desroches";
+      //document.querySelector(".dvAddress").style.display = "block";
+      showOrHide(".dvAddress", "block");
+      break;
+    case "office":
+      html = msgStart + "our main office staff and Parent Coordinator, Mr. Martinez";
+      break;
+    case "cte":
+      html = msgStart + "our CTE team.";
+      break;
+    case "rid":
+      html = msgStart + "our RID team lead, Mr. Mollison";
+      break;
+      default:
+        html = msgStart + "our office staff";
+        break;
+  }
+
+  formHeading.innerHTML = `<p class="text-center font-semibold text-aoit-900">${html}</p>`;
+});
+
+const states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+var htmlStates = states.map((s, i) => `<option value="${s.toLowerCase()}"> ${ s }</option>`);
+
+document.querySelector("#states").insertAdjacentHTML("beforeend", htmlStates);
+
 
 const printModal = (error) => {
   const modalData = {
@@ -297,7 +404,6 @@ var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
                 month: MONTHS[t.getMonth()],
                 monthDate: t.getDate()
             }
-    
         }
         
         function getEventTypeById(id){
@@ -306,7 +412,6 @@ var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
 
             return CATEGORY[id];
         }
-
 
         var parseCategoryFromTitle = (title, getCategory) => getCategory ? title.slice(1).split("]")[0] : title.split("]")[1];
 
@@ -321,11 +426,11 @@ var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
 
                 var post = n;
                 var curr_date = processDate(post.start.dateTime);
-
+                
                 events.insertAdjacentHTML("beforeend", 
                     `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">
                         <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 self-start font-bold"> ${ parseCategoryFromTitle(setContent(post, "summary"), true)  }</span>
-                            <div class="my-6 flex justify-between">
+                            <div class="my-6 flex justify-between gap-x-4">
                                 <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
                                     <div>
                                         <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
@@ -365,4 +470,5 @@ var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
                 .catch(err => error(err));
         }
 
-  
+
+

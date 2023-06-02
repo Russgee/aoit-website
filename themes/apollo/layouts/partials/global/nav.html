@@ -1,6 +1,6 @@
 {{ $currentPage := . }}
 {{ if .Site.Menus.main }}
-<div class='absolute top-0 w-full nav pt-16 px-6 pb-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:pt-12 lg:overflow-visible {{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
+<div class='absolute top-0 w-full nav {{ if .Site.Params.announcement }} pt-28 {{ else }} pt-16 {{ end }} px-6 pb-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:pt-12 lg:overflow-visible {{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
     <div class="flex justify-between items-center w-full" id="nav-item-container">
         <span id="menu" class="transition-all material-symbols-outlined">
             menu
@@ -89,7 +89,12 @@
                         </summary>
                         <ul class="ml-5">
                             {{ range .Children }}
-                                <li class="my-6"><a href="{{.URL}}">{{ .Name }}</a></li>
+                                <li class="my-6">
+                                    <a href="{{.URL}}">
+                                        {{ .Name }}
+                                        <p class="text-gray-200 text-sm font-normal">{{ .Params.description }}</p>
+                                    </a>
+                                </li>
                             {{ end }}
                         </ul>
                     </details>

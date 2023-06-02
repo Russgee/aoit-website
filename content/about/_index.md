@@ -1,5 +1,6 @@
 ---
 title: About Our School
+description: "The Academy of Innovative Technology HS is located on the Franklin K. Lane Campus. We have approximately 402 students."
 --- 
 
 ## Our School's Summary 

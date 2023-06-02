@@ -3,13 +3,13 @@
 {{ if eq .Page.RelPermalink "/404.html" }}
 <title>Whoops! 404 Error: {{ .Site.Title}}</title>
 {{ end }}
-<title>{{ .Title }}{{ .Site.Title}}</title>
-<meta name="title" content="{{ .Title }}{{ .Site.Title }} ">
 {{ if eq .Page.RelPermalink "/404.html"}}
 <meta name="robots" content="noindex">
 {{ end }}
-<meta name="title" content="{{ .Site.Title }} | {{ .Title }}">
-<meta name="description" content="{{ .Site.Params.meta.description }}">
+
+<title>{{ .Title }} {{ if .Title }} | {{ end }} {{ .Site.Title }}</title>
+<meta name="title" content="{{ .Title }} {{ if .Title }} | {{ end }} {{ .Site.Title }}">
+<meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }} {{ .Site.Params.Description }} {{ end }}">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -23,8 +23,8 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:title" content="{{ .Site.Title }} | {{ .Title }}">
-<meta property="og:description" content="{{ .Site.Params.meta.description }}">
+<meta property="og:title" content="{{ .Title }} {{ if .Title }} | {{ end }} {{ .Site.Title }}">
+<meta property="og:description" content="{{ .Site.Params.Description }}">
 <meta property="og:image" content="{{ .Site.Params.meta.image }}">
 {{ end }}
 

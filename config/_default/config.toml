@@ -13,6 +13,7 @@ defaultContentLanguageInSubdir = true
 
      [languages.en.params]
      announcement = "June 1 is a non-instructional day for students not taking the U.S. History Regents."
+     description = "This is the description for our site."
 
    [languages.es]
      languageName = "Spanish"
@@ -573,7 +574,6 @@ title = "Teacher"
 name = "Dayna Weaver"
 email = "Ms.weaver@aoiths.org"
 department = "ENL"
-
 
 
 [menu]
