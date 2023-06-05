@@ -1,4 +1,4 @@
-baseURL = 'https://tranquil-axolotl-86be0e.netlify.app/en/'
+baseURL = 'https://tranquil-axolotl-86be0e.netlify.app'
 languageCode = 'en-us'
 title = 'Academy of Innovative Technology High School'
 theme = 'apollo'
