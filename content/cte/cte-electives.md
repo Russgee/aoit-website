@@ -1,5 +1,6 @@
 ---
 title: CTE Electives
+description: "The Graphic Arts course focuses on developing students' skills in using Adobe Photoshop and Illustrator, two widely used software programs in the field of graphic design."
 --- 
 
 ## Graphic Arts

@@ -26,12 +26,20 @@
             </div>
         </div>
 
-        <div class="w-full col-start-3 col-end-4 flex justify-end">
+        <div class="social-media w-full col-start-3 col-end-4 flex justify-between pt-4 items-center">
+            <a href="#nav" class="flex bg-aoit-500 px-4 py-2 rounded-full text-white text-center shadow-2xl transition-all z-50 hover:bg-aoit-800 hover:opacity-100">
+                <img src="/up_arrow.svg" class="">
+                <strong class="">Back to top</strong>
+              </a>
+            
+            <div class="flex">
             {{ range .Site.Menus.social }}
                 <a href="{{ .URL }}" target="_blank" class="mx-2">
                     {{ .Pre }}
                 </a>
             {{ end }}
+            </div>
+
         </div>
     </div>
 </footer>

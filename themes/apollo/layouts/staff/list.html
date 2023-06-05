@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{ if .Params.sidebar_override }}
-    <aside class="col-start-1 col-end-2 hidden lg:block">
+    <aside class="col-start-1 col-end-3 hidden lg:block">
         <ul class="my-4 bg-aoit-200 text-aoit-500 font-semibold p-10 rounded-2xl">
 
             {{ range .Params.sidebar_override }}
@@ -11,7 +11,7 @@
     </aside>
 {{ end }}
 
-   <div class="staff col-start-2 col-end-6">
+   <div class="staff col-start-3 col-end-8">
 
     <h2 class="text-2xl font-semibold mb-6" id="admin">Administration</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">

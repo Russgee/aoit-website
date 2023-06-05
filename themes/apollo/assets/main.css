@@ -49,6 +49,10 @@
     .single a {
         @apply font-semibold underline text-aoit-500 hover:text-aoit-700 transition-all duration-150;
     }
+
+    .single ul {
+        @apply list-disc ml-10;
+    }
     
 
     /* END GLOBAL STYLES */

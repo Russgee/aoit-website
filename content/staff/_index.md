@@ -1,5 +1,6 @@
 ---
 title: Staff
+description: "Staff directory at the Academy of Innovative Technology High School"
 sidebar_override:
     - title: "Administration"
       url: "#admin"

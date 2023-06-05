@@ -1,11 +1,13 @@
 // ==== imports ======
 const ProgressBar = require('progressbar.js')
 
-const menuToggle = document.querySelector("#menu");
-const mainMenu = document.querySelector("#mobile-nav ul");
-const nav = document.querySelector(".nav");
-const navItemContainer = document.querySelector("#nav-item-container");
-const body = document.querySelector("body");
+var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
+
+const menuToggle = el("#menu");
+const mainMenu = el("#mobile-nav ul");
+const nav = el(".nav");
+const navItemContainer = el("#nav-item-container");
+const body = el("body");
 
 menuToggle.addEventListener("click", function() {
     mainMenu.classList.toggle("hidden");
@@ -134,9 +136,9 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
 
 // global contact code 
 
-const form = document.querySelector("#form");
-const selector = document.querySelector("#dropdown");
-const formHeading = document.querySelector(".form-desc");
+const form = el("#form");
+const selector = el("#dropdown");
+const formHeading = el(".form-desc");
 
 const formTypes = [
   {
@@ -240,7 +242,7 @@ selector.addEventListener("change", function() {
 const states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
 var htmlStates = states.map((s, i) => `<option value="${s.toLowerCase()}"> ${ s }</option>`);
 
-document.querySelector("#states").insertAdjacentHTML("beforeend", htmlStates);
+el("#states").insertAdjacentHTML("beforeend", htmlStates);
 
 
 const printModal = (error) => {
@@ -280,6 +282,17 @@ const handleSubmit = (event) => {
   const myForm = event.target;
   const formData = new FormData(myForm);
 
+/*
+  makeRequest("/", { 
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  }, () => body.insertAdjacentHTML("beforeend", printModal(null)), (error) => { 
+    printModal(error);
+    myForm.reset();
+  });
+*/
+
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -296,8 +309,8 @@ form.addEventListener("submit", handleSubmit);
 // bell schedule code
 if (window.location.pathname === "/about/bell-schedule/") {
   let date = new Date();
-  const bell = document.querySelector(".normal");
-  const weds = document.querySelector(".weds");
+  const bell = el(".normal");
+  const weds = el(".weds");
 
   let dayIndex = date.getDay();
 
@@ -314,7 +327,7 @@ function formatMinutes(min) {
 
 //// TODO: make this work in the future where cells are higlighted based on current time correlated by the current period.
 
-const regBellSchedule =  document.querySelectorAll(".normal  table  tr");
+const regBellSchedule =  el(".normal  table  tr", true);
 
 // let currentTime = `${parseInt(date.getHours())}${parseInt(date.getMinutes())}`;
 let currentTime = `${date.getHours() + "" + formatMinutes(date.getMinutes())}`;
@@ -359,19 +372,34 @@ console.log(currentTime);
 }
 
  const header = document.querySelector("header");
-  const backToTopButton = document.querySelector("#toTop");
+ const footer = document.querySelector("footer .social-media");
+ const backToTopButton = document.querySelector("#toTop");
+ let headerIntersected;
+ let footerIntersected;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        backToTopButton.classList.toggle("hidden");
-      } else if (entry.isIntersecting) {
+      if (entry.isIntersecting) {
         backToTopButton.classList.add("hidden");
+      } else {
+        backToTopButton.classList.remove("hidden");
       }
     })
   });
 
+  const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        backToTopButton.classList.add("hidden");
+      } else {
+        backToTopButton.classList.remove("hidden");
+      }
+    })
+  });
+
+
   observer.observe(header);
+  footerObserver.observe(footer);
 
   // ==== CALENDAR CODE ======
 
@@ -379,7 +407,7 @@ const CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1
 const CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
 const API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
 const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_ID + '/events?key=' + API_KEY;
-var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
+
 
         var data = [];
         const events = el(".events");
@@ -395,7 +423,7 @@ var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
 
         function processDate(_date){
             var t =  new Date(_date);
-            const MONTHS = ["January", "Feburary", "March", "April", "May", "June"]; 
+            const MONTHS = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
             const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
             return {
@@ -419,10 +447,25 @@ var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
         
         
 
-        makeRequest(URL_ROOT, "GET", (d) => {
+        makeRequest(URL_ROOT, { method: "GET" }, (d) => {
             data = d.items;
+            const now = new Date();
+
+            let futureEvents = d.items.filter(event => {
+              const eventDate = new Date(event.start.dateTime || event.start.date);
+              return eventDate > now;
+            })
+
+            futureEvents = futureEvents.sort((a, b) => {
+              const dateA = new Date(a.start.dateTime || a.start.date);
+              const dateB = new Date(b.start.dateTime || b.start.date);
+  
+              return dateB - dateA;
+          });
+
+          futureEvents = futureEvents.slice(0, 8);
                     
-            d.items.reverse().forEach((n) => {
+            futureEvents.reverse().forEach((n) => {
 
                 var post = n;
                 var curr_date = processDate(post.start.dateTime);
@@ -462,9 +505,9 @@ var el = (t, a) => a ? document.querySelectorAll(t) : document.querySelector(t);
                 
         }, (err) => console.log(err));
 
-        function makeRequest(url, action, success, error) {
+        function makeRequest(url, props, success, error) {
 
-            fetch(url, { method: action })
+            fetch(url, props)
                 .then(resp => resp.json())
                 .then(data => success(data))
                 .catch(err => error(err));

@@ -1,5 +1,6 @@
 ---
 title: Career and Financial Management
+description: "Career and Financial Management (CFM) is a vital course mandated by the New York State Education Department for Career and Technical Education (CTE) programs." 
 ---
 
 Career and Financial Management (CFM) is a vital course mandated by the New York State Education Department for Career and Technical Education (CTE) programs. This comprehensive course equips students with essential skills and knowledge to navigate the ever-changing landscape of careers and personal finance.
