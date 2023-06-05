@@ -1,6 +1,6 @@
-baseURL = 'https://tranquil-axolotl-86be0e.netlify.app/'
+baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'Academy of Innovative Technology'
+title = 'Academy of Innovative Technology High School'
 theme = 'apollo'
 buildFuture = true 
 DefaultContentLanguage = 'en'
@@ -13,6 +13,7 @@ defaultContentLanguageInSubdir = true
 
      [languages.en.params]
      announcement = "June 1 is a non-instructional day for students not taking the U.S. History Regents."
+     description = "This is the description for our site."
 
    [languages.es]
      languageName = "Spanish"
@@ -146,13 +147,6 @@ defaultContentLanguageInSubdir = true
                 identifier = "Work-Based Learning"
                 parent = "CTE"
                 weight = 4
-  
-                [[languages.es.menu.main]]
-                name = "Electivas de CTE"
-                url = "/cte/cte-electives"
-                identifier = "CTE Electives"
-                parent = "CTE"
-                weight = 6
 
         [[languages.es.menu.main]]
         identifier = "Calendar"
@@ -582,7 +576,6 @@ email = "Ms.weaver@aoiths.org"
 department = "ENL"
 
 
-
 [menu]
 [[menu.main]]
 identifier = "logo"
@@ -607,6 +600,8 @@ hasChildren = true
     identifier = "Bell Schedule"
     parent = "about"
     weight = 1
+    [menu.main.params]
+    description = "Our school's daily timetable."
 
 [[menu.main]]
     name = "Principal's Message"
@@ -614,9 +609,11 @@ hasChildren = true
     identifier = "Principal's Message"
     parent = "about"
     weight = 2
+    [menu.main.params]
+    description = "Our principal's vision and values."
 
 [[menu.main]]
-identifier = "Academics"
+identifier = "academics"
 name = "Academics"
 url = "/en/academics"
 weight = 2
@@ -626,147 +623,177 @@ hasChildren = true
     name = "Advanced Placement"
     url = "/en/academics/advanced-placement"
     identifier = "Advanced Placement"
-    parent = "Academics"
+    parent = "academics"
     weight = 1
+    [menu.main.params]
+    description = "Accelerated courses for advanced learners."
 
   [[menu.main]]
     name = "English"
     url = "/en/academics/english"
     identifier = "English"
-    parent = "Academics"
+    parent = "academics"
     weight = 2
+    [menu.main.params]
+    description = "Develop language and literacy skills."
 
   [[menu.main]]
     name = "Instructional Support Services"
     url = "/en/academics/iss"
     identifier = "ISS"
-    parent = "Academics"
+    parent = "academics"
     weight = 3
+    [menu.main.params]
+    description = "Individualized assistance for student success."
 
   [[menu.main]]
     name = "Math"
     url = "/en/academics/math"
     identifier = "Math"
-    parent = "Academics"
+    parent = "academics"
     weight = 4
+    [menu.main.params]
+    description = "Explore numbers and problem-solving."
 
   [[menu.main]]
     name = "Physical Education and Health"
     url = "/en/academics/phys-ed"
     identifier = "Phys Ed"
-    parent = "Academics"
+    parent = "academics"
     weight = 5
+    [menu.main.params]
+    description = "Promote wellness through physical activity and education."
 
   [[menu.main]]
     name = "Science"
     url = "/en/academics/science"
     identifier = "Science"
-    parent = "Academics"
+    parent = "academics"
     weight = 6
+    [menu.main.params]
+    description = "Explore the wonders of the natural world."
   
   [[menu.main]]
     name = "Social Studies"
     url = "/en/academics/social-studies"
     identifier = "Social Studies"
-    parent = "Academics"
+    parent = "academics"
     weight = 7
+    [menu.main.params]
+    description = "Learn about history, culture, and society."
 
 [[menu.main]]
-identifier = "CTE"
+identifier = "cte"
 name = "CTE"
 url = "/en/cte"
 weight = 3
 
   [[menu.main]]
-    name = "Career and Financial Management"
-    url = "/en/cte/cfm"
-    identifier = "CFM"
-    parent = "CTE"
-    weight = 5
-
-  [[menu.main]]
     name = "Web Development"
     url = "/en/cte/web"
     identifier = "Web Development"
-    parent = "CTE"
+    parent = "cte"
     weight = 1
+    [menu.main.params]
+    description = "Building websites, shaping digital experiences."
 
   [[menu.main]]
     name = "Game Design"
     url = "/en/cte/game-design"
     identifier = "Game Design"
-    parent = "CTE"
+    parent = "cte"
     weight = 2
+    [menu.main.params]
+    description = "Creating captivating interactive games."
   
   [[menu.main]]
     name = "IT Systems"
     url = "/en/cte/it"
     identifier = "IT Systems"
-    parent = "CTE"
+    parent = "cte"
     weight = 3
+    [menu.main.params]
+    description = "Mastering technology, empowering businesses."
   
   [[menu.main]]
     name = "Work-Based Learning"
     url = "/en/cte/wbl"
     identifier = "Work-Based Learning"
-    parent = "CTE"
+    parent = "cte"
     weight = 4
+    [menu.main.params]
+    description = "Real-world experience for practical skills."
   
   [[menu.main]]
-    name = "CTE Electives"
-    url = "/en/cte/cte-electives"
-    identifier = "CTE Electives"
-    parent = "CTE"
-    weight = 6
+    name = "Career and Financial Management"
+    url = "/en/cte/cfm"
+    identifier = "CFM"
+    parent = "cte"
+    weight = 5
+    [menu.main.params]
+    description = "Professional readiness for future success."
+
 
 [[menu.main]]
-identifier = "Calendar"
+identifier = "calendar"
 name = "Calendar"
 url = "/en/calendar"
 weight = 4
 
 [[menu.main]]
-identifier = "Admissions"
-name = "Admissions"
-url = "/en/admissions"
+identifier = "guidance"
+name = "Guidance"
+url = "/en/guidance"
 weight = 5
-
-[[menu.main]]
-identifier = "Family"
-name = "Family"
-url = "/en/family"
-weight = 6
+hasChildren = true
 
 [[menu.main]]
     name = "Attendance"
-    url = "/en/family/attendance"
+    url = "/en/guidance/attendance"
     identifier = "Attendance"
-    parent = "Family"
+    parent = "guidance"
+    weight = 2
+    [menu.main.params]
+    description = "Track and manage student attendance."
+
+[[menu.main]]
+    name = "Admissions"
+    url = "/en/guidance/admissions"
+    identifier = "Admissions"
+    parent = "guidance"
     weight = 1
+    [menu.main.params]
+    description = "Learn more about our admissions process."
 
 [[menu.main]]
     name = "Graduation Requirements"
-    url = "/en/family/grad-requirements"
+    url = "/en/guidance/grad-requirements"
     identifier = "Graduation Requirements"
-    parent = "Family"
-    weight = 2
+    parent = "guidance"
+    weight = 3
+    [menu.main.params]
+    description = "Track and manage student attendance."
 
 [[menu.main]]
     name = "Lunch Forms"
-    url = "/en/family/lunch-forms"
+    url = "/en/guidance/lunch-forms"
     identifier = "Lunch Forms"
-    parent = "Family"
-    weight = 3
+    parent = "guidance"
+    weight = 4
+    [menu.main.params]
+    description = "Access and submit lunch-related forms."
 
 [[menu.main]]
     name = "Parent Teacher Student Association (PTSA)"
-    url = "/en/family/ptsa"
+    url = "/en/guidance/ptsa"
     identifier = "Parent Teacher Student Association (PTSA)"
-    parent = "Family"
-    weight = 4
+    parent = "guidance"
+    weight = 5
+    [menu.main.params]
+    description = "Collaborate for student success."
 
 [[menu.main]]
-identifier = "Students"
+identifier = "students"
 name = "Students"
 url = "/en/students"
 weight = 7
@@ -775,40 +802,50 @@ weight = 7
     name = "Student Success Center"
     url = "/en/students/ssc"
     identifier = "Student Success Center"
-    parent = "Students"
+    parent = "students"
     weight = 1
+    [menu.main.params]
+    description = "Resources for college success."
   
   [[menu.main]]
     name = "CREW"
     url = "/en/students/crew"
     identifier = "CREW"
-    parent = "Students"
+    parent = "students"
     weight = 2
+    [menu.main.params]
+    description = "Foster connections and mentorship."
   
   [[menu.main]]
     name = "MESH"
     url = "/en/students/mesh"
     identifier = "MESH"
-    parent = "Students"
+    parent = "students"
     weight = 3
+    [menu.main.params]
+    description = "Support for mental well-being."
 
   [[menu.main]]
     name = "School-Based Health Center"
     url = "/en/students/sbhc"
     identifier = "School-Based Health Center"
-    parent = "Students"
+    parent = "students"
     weight = 4
+    [menu.main.params]
+    description = "Comprehensive healthcare services."
   
   [[menu.main]]
     name = "PSAL"
     url = "/en/students/psal"
     identifier = "PSAL"
-    parent = "Students"
+    parent = "students"
     weight = 5
+    [menu.main.params]
+    description = "Engage in sports and athletics."
 
 
 [[menu.main]]
-identifier = "Staff"
+identifier = "staff"
 name = "Staff"
 url = "/en/staff"
 weight = 8
