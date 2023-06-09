@@ -307,7 +307,11 @@ const handleSubmit = (event) => {
 form.addEventListener("submit", handleSubmit);
 
 // bell schedule code
-if (window.location.pathname === "/about/bell-schedule/") {
+console.log( window.location.pathname.split("/").includes("bell-schedule") );
+
+// REMOVE IN NEXT UPDATE
+// if (window.location.pathname === "/about/bell-schedule/") {
+if( window.location.pathname.split("/").includes("bell-schedule") ){
   let date = new Date();
   const bell = el(".normal");
   const weds = el(".weds");
@@ -366,8 +370,10 @@ console.log(currentTime);
       break;
  }
 
+ 
  if(index > -1){
   regBellSchedule[index].classList.add("bg-aoit-300");
+  regBellSchedule[index].style.backgroundColor = "yellow";
  }  
 }
 
