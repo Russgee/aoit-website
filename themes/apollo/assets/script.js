@@ -380,7 +380,7 @@ console.log(currentTime);
  const header = document.querySelector("header");
  const footer = document.querySelector("footer .social-media");
  const backToTopButton = document.querySelector("#toTop");
- let headerIntersecting 
+ let headerIntersecting;
 
   const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -446,8 +446,8 @@ const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_
             const now = new Date();
 
             let futureEvents = d.items.filter(event => {
-              const eventDate = new Date(event.start.dateTime || event.start.date);
-              return eventDate > now;
+              const eventDate = new Date(event.end.dateTime || event.end.date);
+              return eventDate >= now;
             })
 
             futureEvents = futureEvents.sort((a, b) => {
@@ -458,7 +458,16 @@ const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_
           });
 
           futureEvents = futureEvents.slice(0, 8);
-                    
+             
+          if (futureEvents.length === 0) {
+            events.insertAdjacentHTML("beforeend", `
+            <div class="lg:col-start-2 lg:col-end-4 text-center text-xl text-aoit-700 opacity-60">
+              <span class="material-symbols-outlined text-5xl">
+                event_busy
+              </span>
+              <p>There are no upcoming events.</p>
+            </div>`);
+          } else {
             futureEvents.reverse().forEach((n) => {
 
                 var post = n;
@@ -496,6 +505,7 @@ const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_
                         </div>
                     </article>`);
             });
+          }
                 
         }, (err) => console.log(err));
 
