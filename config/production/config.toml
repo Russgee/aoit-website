@@ -301,7 +301,7 @@ department = "Guidance"
 
 [[params.staff]]
 title = "Substitute Teacher"
-name = "McLaurence David"
+name = "McLawerence David"
 email = "Mr.david@aoiths.org"
 department = "Sub teacher"
 
@@ -428,7 +428,7 @@ department = "Office"
 [[params.staff]]
 title = "Teacher"
 name = "Ryan Mcalary"
-email = ""
+email = "mr.mcalary@aoiths.org"
 department = "Physical Education"
 
 [[params.staff]]
@@ -454,12 +454,6 @@ title = "Teacher"
 name = "Liliam Mott"
 email = "Ms.Mott@aoiths.org"
 department = "ENL"
-
-[[params.staff]]
-title = "Teacher"
-name = "Cheryl Murray"
-email = "Ms.murray@aoiths.org"
-department = "Science"
 
 [[params.staff]]
 title = "CTE Teacher, AP Computer Science, Website Development, Career & Financial Management, Robotics"
@@ -523,8 +517,8 @@ department = "Art"
 
 [[params.staff]]
 title = "Social Worker"
-name = "Jahaira Tavares"
-email = "Ms.tavares@aoiths.org"
+name = ""
+email = ""
 department = "Guidance"
 
 [[params.staff]]
@@ -532,12 +526,6 @@ title = "Principal and Purchasing Secretary"
 name = "Elizabeth Tirado"
 email = "Ms.tirado@aoiths.org"
 department = "Office"
-
-[[params.staff]]
-title = "Paraprofessional"
-name = "Samantha Tirado"
-email = "Ms.stirado@aoiths.org"
-department = "Paraprofessional"
 
 [[params.staff]]
 title = "Teacher"

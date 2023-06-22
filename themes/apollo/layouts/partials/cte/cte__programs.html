@@ -1,10 +1,10 @@
 <section class="px-6 container mx-auto my-12" id="programs">
-    <h2 class="text-aoit-400 text-2xl font-bold">Our Programs</h2>
+    <h2 class="text-aoit-400 text-2xl font-bold">State-approved Programs</h2>
     <div class="flex flex-wrap gap-12 lg:flex-nowrap lg:gap-6">
     {{ range .Pages }}
     {{ if .Params.front }}
     <article class="rounded-cell bg-white my-12 pb-12 relative overflow-hidden">
-        <img class="top-2 right-0 absolute" src="/{{ .Params.logo }}">
+        <img class="top-2 right-0 absolute" src="{{ .Params.logo }}">
         <strong class="text-2xl font-semibold block mt-32 text-aoit-400">{{ .Title }}</strong>
         <p class="mt-4 mb-8">{{ .Params.description }}</p>
         <a class="btn bg-aoit-500 text-white px-8 rounded-2xl" href="{{ .Permalink }}">{{ .Params.buttonText }}</a>

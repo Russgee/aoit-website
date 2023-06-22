@@ -1,6 +1,9 @@
 ---
 title: Career and Technical Education
-description: "At Academy of Innovative Technology High School, we have 3 state-approved Career and Technical Education programs. These programs allow us to prepare students for the careers of the future."
+description: "At Academy of Innovative Technology High School, we have 3 state-approved Career and Technical Education programs. These programs allow us to prepare students for the careers of the future.
+
+
+The New York State Career and Technical Education (CTE) Program Approval refers to the process through which educational programs in career and technical fields are evaluated and authorized by the state. This approval signifies that a CTE program meets certain standards and requirements set forth by the New York State Education Department (NYSED)."
 sidebar:
     - title: "Our Programs"
       url: "#programs"
