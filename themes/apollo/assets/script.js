@@ -374,32 +374,20 @@ console.log(currentTime);
  const header = document.querySelector("header");
  const footer = document.querySelector("footer .social-media");
  const backToTopButton = document.querySelector("#toTop");
- let headerIntersected;
- let footerIntersected;
+ let headerIntersecting 
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        backToTopButton.classList.add("hidden");
+      if (entries[0].isIntersecting) {
+        backToTopButton.style.display = 'none';
       } else {
-        backToTopButton.classList.remove("hidden");
+        backToTopButton.style.display = 'block';
       }
-    })
   });
 
-  const footerObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        backToTopButton.classList.add("hidden");
-      } else {
-        backToTopButton.classList.remove("hidden");
-      }
-    })
-  });
 
 
   observer.observe(header);
-  footerObserver.observe(footer);
+  observer.observe(footer);
 
   // ==== CALENDAR CODE ======
 
