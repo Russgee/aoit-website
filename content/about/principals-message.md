@@ -5,25 +5,26 @@ description: "Message from the Principal at Academy of Innovative Technology"
 
 Dear Students, Parents, and Staff,
 
-Welcome to [School Name]!
+Welcome to the Academy of Innovative Technology High School!
 
-I am honored to serve as the principal of this exceptional school, where we are dedicated to providing a nurturing and inclusive learning environment for all students. Our school community is built on a foundation of respect, collaboration, and a shared commitment to academic excellence.
 
-At [School Name], we believe that every student has unique talents, abilities, and potential waiting to be unlocked. Our dedicated team of educators strives to create engaging and innovative learning experiences that cater to individual needs, interests, and learning styles. We foster a love for learning by providing a rigorous and comprehensive curriculum that encourages critical thinking, creativity, and problem-solving skills.
+I am honored to serve as the principal of this amazing school, where we are dedicated to providing a nurturing and inclusive learning environment for all students. AoITHS believes in the empowerment of our youth in order to help them become responsible citizens that hold themselves accountable within their school community and beyond.  It is my hope that you will strive to fulfill this mission and vision while attending AoIT. 
+
+
+At AoIT, we strive to support our students’ social emotional well being by establishing a foundational support system that starts with each student having a trusted adult in crew and continuing to build relationships with students and teachers to create a supportive school environment, resulting in improved collaborative and trusting relationships to foster student voice.
+
 
 We are committed to ensuring that all students feel safe, supported, and valued within our school community. We prioritize social-emotional development and have established a positive and inclusive school culture where every student can thrive. Our caring staff members are here to listen, guide, and mentor students on their educational journey, instilling in them the confidence and resilience needed to overcome challenges and achieve their goals.
 
-Collaboration and partnership between parents, students, and staff are vital to the success of our school community. We encourage open communication and active involvement from parents to create a strong home-school partnership. Together, we can create an environment that nurtures the holistic growth of our students, academically, socially, and emotionally.
 
-Our school is also committed to embracing technology as a tool to enhance learning and prepare students for the future. We provide access to cutting-edge resources and digital platforms to support 21st-century skills development and ensure our students are well-equipped to thrive in a rapidly evolving world.
+Furthermore, as educators we strive to push student thinking and support independence.  Our teachers are self-reflective, culturally responsive educators, who examine their biases, focus on the strengths of our students, and make sure that our students see themselves in the curriculum. In doing so, students will become partners in their learning and growth as they prepare for their post-secondary experience. By building literacy, students will also gain the intellect and knowledge to navigate their lives. 
 
-As the principal, my door is always open, and I encourage you to reach out to me or any member of our dedicated staff with your questions, concerns, or ideas. We are here to support and guide our students towards their full potential, and we welcome your input and collaboration.
 
-I am excited about the journey ahead and look forward to working together to create a vibrant and enriching educational experience for all our students. Together, we will inspire, empower, and prepare our students to become lifelong learners and responsible global citizens.
+Lastly, our school is also committed to embracing technology as a tool to enhance learning and prepare students for the future. We provide access to cutting-edge resources and digital platforms to support 21st-century skills development and ensure our students are well-equipped to thrive in a rapidly evolving world.  As well, all students are enrolled in a rigorous 4-year CTE pathway that provides them access to Game Design, Web Design, Networking/Cybersecurity, and Game Design Coursework. It is the expectation that all students at AoIT graduate with a CTE endorsed diploma, technical assessment, and internship on their resume.  
 
-Thank you for choosing [School Name]. Let's embark on this educational adventure together!
+In conclusion, as the principal, my door is always open, and I encourage you to reach out to me or any member of our dedicated staff with your questions, concerns, or ideas. We are here to support and guide our students towards their full potential, and we welcome your input and collaboration.
+
 
 Warm regards,
 
-[Principal's Name]
-Principal, [School Name]
+Meghan Drysdale, Principal
