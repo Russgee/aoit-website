@@ -742,7 +742,7 @@ hasChildren = true
     parent = "guidance"
     weight = 2
     [menu.main.params]
-    description = "Track and manage student attendance."
+    description = "Student attendance policies of AoIT."
 
 [[menu.main]]
     name = "Admissions"
