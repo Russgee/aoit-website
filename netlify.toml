@@ -42,3 +42,9 @@ status = 404
 from = "/de/*"
 to = "/de/404.html"
 status = 404
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
