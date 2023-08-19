@@ -14,6 +14,7 @@ defaultContentLanguageInSubdir = true
      [languages.en.params]
      announcement = "June 1 is a non-instructional day for students not taking the U.S. History Regents."
      description = "This is the description for our site."
+     backToTopAlt = "Click here to return back to top."
 
    [languages.es]
      languageName = "Spanish"

@@ -25,7 +25,7 @@ mission:
         alt: AoIT students showcasing our Mechanical Engineering program to New York City Mayor Eric Adams
       - url: /lfs/BHM_Celebration2023-28.jpg
         class: shadow-md rounded-2xl
-        alt: AoIT students participating in our annual Black History Month celebration.
+        alt: Freshman AoIT students celebrating Black History.
 programs:
     - title: "Advanced Placement Courses"
       description: "Our rigorous Advanced Placement program offers college-level courses to prepare students for AP exams and earn college credit while in high school."
