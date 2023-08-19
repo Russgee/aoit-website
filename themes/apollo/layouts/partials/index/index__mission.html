@@ -1,9 +1,9 @@
 <section class="px-6 py-12 bg-aoit-400 text-white rounded-3xl relative lg:py-20">
   <div class="container mx-auto lg:flex lg:items-center lg:gap-8">
     <div class="grid grid-cols-2 grid-rows-1 gap-6 items-center lg:w-6/12">
-        <img src="/lfs/BHM_Celebration2023-41.jpg" class="shadow-md row-start-1 row-end-3 rounded-2xl">
-        <img src="/lfs/BHM_Celebration2023-270.jpg" class="shadow-md rounded-2xl">
-        <img src="/lfs/BHM_Celebration2023-28.jpg" class="shadow-md rounded-2xl">
+      {{ range .Params.mission.mission__images }}
+        <img src="{{ .url }}" class="{{ .class }}" alt="{{ .alt }}">
+      {{ end }}
     </div>
 
     <div class="mission mt-12 lg:mt-0 lg:w-6/12">

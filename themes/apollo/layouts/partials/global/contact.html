@@ -12,6 +12,7 @@
       </div>
 
       <fieldset class="lg:flex lg:gap-8">
+        <legend>Personal Details</legend>
         <div class="lg:w-3/6">
           <label class="label" for="name">First Name</label>
           <input class="input bg-slate-50" type="text" id="name" name="name" required>
@@ -30,6 +31,11 @@
           <label class="label" for="phone">Phone Number</label>
           <input class="input bg-slate-50" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
           <small>Format: 123-456-7890</small>
+        </div>
+
+        <div class="lg:w-6/12">
+          <label class="label" for="email">Email Address</label>
+          <input class="input bg-slate-50" type="email" id="email" name="email" required>
         </div>
         
         <div class="lg:w-6/12" style="display: none;">
@@ -80,16 +86,13 @@
     </span>
 
       <fieldset class="lg:flex lg:gap-8">
-        <div class="lg:w-6/12">
-          <label class="label" for="email">Email Address</label>
-          <input class="input bg-slate-50" type="email" id="email" name="email" required>
-        </div>
-        
+        <legend>Your inquiry</legend>
+        <label class="label" for="details">Detailed Information</label>
+        <textarea class="input bg-slate-50" id="details" name="details" rows="5"></textarea>
         
       </fieldset>
       
-        <label class="label" for="details">Detailed Information</label>
-        <textarea class="input bg-slate-50" id="details" name="details" rows="5"></textarea>
+        
       
         <button class="btn w-full bg-aoit-500 text-white mt-10" type="submit">Submit</button>
       </form>
