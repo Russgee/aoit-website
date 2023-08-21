@@ -5,3 +5,4 @@ themes/apollo/assets/style.css
 themes/apollo/assets/bundle.js.LICENSE.txt
 # Local Netlify folder
 .netlify
+assets

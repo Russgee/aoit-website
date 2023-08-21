@@ -64,7 +64,11 @@ const config = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'static/**/*', to: '../../..' },
+        { 
+          from: 'static/**/*', 
+          to: '../../../',
+          context: 'assets'
+        },
       ],
     }),
   ],
