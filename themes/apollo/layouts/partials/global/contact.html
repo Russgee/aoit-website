@@ -11,80 +11,107 @@
         </select>
       </div>
 
-      <fieldset class="lg:flex lg:gap-8">
-        <legend>Personal Details</legend>
-        <div class="lg:w-6/12">
-          <label class="label" for="first-name">First Name</label>
-          <input class="input bg-slate-50" type="text" id="first-name" name="first-name" required>
+      <fieldset class="my-10 lg:flex lg:items-center lg:gap-8">
+        <legend class="contents">
+          <span class="w-3/12">
+            <strong class="block">Contact Information</strong>
+            <span>Please provide contact information for who we should follow up with.</span>
+          </span>
+        </legend>
 
-          <label class="label" for="last-name">Last Name</label>
-          <input class="input bg-slate-50" type="text" id="last-name" name="last-name" required>
-        </div>
+        <div class="w-9/12">
+          <div class="w-full lg:flex lg:gap-x-8">
+            <div class="lg:w-6/12">
+              <label class="label" for="first-name">First Name</label>
+              <input class="input bg-slate-50" type="text" id="first-name" name="first-name" required>
+            </div>
 
-        
-        
-        <div class="lg:w-6/12">
-          <label class="label" for="phone">Phone Number</label>
-          <input class="input bg-slate-50" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-          <small>Format: 123-456-7890</small>
-        </div>
+            <div class="lg:w-6/12">
+              <label class="label" for="last-name">Last Name</label>
+              <input class="input bg-slate-50" type="text" id="last-name" name="last-name" required>
+            </div>
+          </div>
+          
+          <div class="w-full lg:flex lg:gap-x-8">
+            <div class="lg:w-6/12">
+              <label class="label" for="phone">Phone Number</label>
+              <input class="input bg-slate-50" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+              <small>Format: 123-456-7890</small>
+            </div>
 
-        <div class="lg:w-6/12">
-          <label class="label" for="email">Email Address</label>
-          <input class="input bg-slate-50" type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="lg:w-6/12" style="display: none;">
-          <label class="label" for="date">Date of Birth</label>
-          <input class="input bg-slate-50" type="date" id="date" name="date" required>
+            <div class="lg:w-6/12">
+              <label class="label" for="email">Email Address</label>
+              <input class="input bg-slate-50" type="email" id="email" name="email" required>
+            </div>
+          </div>
+          
+          <div class="lg:w-6/12" style="display: none;">
+            <label class="label" for="date">Date of Birth</label>
+            <input class="input bg-slate-50" type="date" id="date" name="date" required>
+          </div>
         </div>
         
       </fieldset>
 
       <hr />
 
-      <span class="dvAddress" style="display: none;">
-      <fieldset class="lg:flex lg:gap-8">
+      <fieldset class="my-10 dvAddress flex lg:items-center lg:gap-8">
+        <legend class="contents">
+          <span class="w-3/12">
+            <strong class="block">Mailing Address</strong>
+            <span>Please provide the mailing address where your document should be sent to.</span>
+          </span>
+        </legend>
 
-        <div class="lg:w-6/12">
-          <label class="label" for="name">Address</label>
-          <input class="input bg-slate-50" type="text" id="address" name="address" required>
-        </div>
+        <div class="w-9/12">
+          <div class="w-full lg:flex lg:gap-x-8">
+            <div class="lg:w-6/12">
+              <label class="label" for="name">Address</label>
+              <input class="input bg-slate-50" type="text" id="address" name="address" required>
+            </div>
 
-        <div class="lg:w-6/12">
-          <label class="label" for="name">Address 2</label>
-          <input class="input bg-slate-50" type="text" id="address2" name="address">
+            <div class="lg:w-6/12">
+              <label class="label" for="name">Address 2</label>
+              <input class="input bg-slate-50" type="text" id="address2" name="address">
+            </div>
+          </div>
+
+          <div class="w-full lg:flex lg:gap-x-8">
+            <div class="lg:w-4/12">
+              <label class="label" for="city">City</label>
+              <input class="input bg-slate-50" type="text" id="city" name="city" required>
+            </div>
+
+            <div class="lg:w-4/12">
+              <label class="label" for="states">State</label>
+              <select class="form-select input bg-slate-50" id="states" name="states" required>
+                <option> Select State</option>
+              </select>
+            </div>
+
+            <div class="lg:w-4/12">
+              <label class="label" for="zipCode">ZIP Code</label>
+              <input class="input bg-slate-50" type="text" id="zipCode" name="zipCode" required>
+            </div>
+          </div>
         </div>
       
-      </fieldset>
-
-      <fieldset class="lg:flex lg:gap-8">
-        <div class="lg:w-3/12">
-          <label class="label" for="city">City</label>
-          <input class="input bg-slate-50" type="text" id="city" name="city" required>
-        </div>
-
-        <div class="lg:w-3/12">
-          <label class="label" for="states">State</label>
-          <select class="form-select input bg-slate-50" id="states" name="states" required>
-            <option> Select State</option>
-          </select>
-        </div>
-
-        <div class="lg:w-3/12">
-          <label class="label" for="zipCode">Zipcode</label>
-          <input class="input bg-slate-50" type="text" id="zipCode" name="zipCode" required>
-        </div>
-
       </fieldset>
       
       <hr />
-    </span>
 
-      <fieldset class="lg:flex lg:gap-8">
-        <legend>Your inquiry</legend>
-        <label class="label" for="details">Detailed Information</label>
-        <textarea class="input bg-slate-50" id="details" name="details" rows="5"></textarea>
+      <fieldset class="my-10 lg:items-center lg:flex lg:gap-8">
+        <legend class="contents">
+          <span class="w-3/12">
+            <strong class="block">Additional Information</strong>
+            <span>Please provide any additional information that may be important to answer your question.</span>
+          </span>
+        </legend>
+
+        <div class="w-9/12">
+          <label class="label" for="details">Information</label>
+          <textarea class="input bg-slate-50" id="details" name="details" rows="5"></textarea>
+        </div>
         
       </fieldset>
       

@@ -159,7 +159,7 @@ const formTypes = [
   },
   {
     type: "Transcript Request", 
-    form: "guidance"
+    form: "transcript"
   },
   {
     type: "Career and Technical Education",
@@ -201,7 +201,7 @@ var showOrHide = (name, status) => {
 }
 
 var resetFormSections = () => {
-  el("dvAddress").style.display = none;
+  el(".dvAddress").style.display = "none";
 }
 
 selector.addEventListener("change", function() {
@@ -212,27 +212,30 @@ selector.addEventListener("change", function() {
   var html = "", 
       msgStart = "Your inquiry will be directed to ";
   
-      resetFormSections();
+  resetFormSections();
+  
   switch (formType) {
     case "iss":
-      html = msgStart + "Ms. Slater";
+      html = msgStart + "Ms. Slater, our ISS Coordinator.";
       break;
     case "guidance":
-      html = msgStart + "our guidance team, Ms. Cooper and Ms. Desroches";
-      //document.querySelector(".dvAddress").style.display = "block";
-      showOrHide(".dvAddress", "block");
+      html = msgStart + "our guidance team, Ms. Cooper and Ms. Desroches.";
+      break;
+    case "transcript":
+      html = msgStart + "our guidance team, Ms. Cooper and Ms. Desroches.";
+      showOrHide(".dvAddress", "flex");
       break;
     case "office":
-      html = msgStart + "our main office staff and Parent Coordinator, Mr. Martinez";
+      html = msgStart + "our main office staff and Parent Coordinator, Mr. Martinez.";
       break;
     case "cte":
       html = msgStart + "our CTE team.";
       break;
     case "rid":
-      html = msgStart + "our RID team lead, Mr. Mollison";
+      html = msgStart + "our RID team lead, Mr. Mollison.";
       break;
-      default:
-        html = msgStart + "our office staff";
+    default:
+        html = msgStart + "our office staff.";
         break;
   }
 
