@@ -16,6 +16,16 @@ mission:
     mission__button:
         title: About Our School
         url: /about
+    mission__images:
+      - url: /lfs/BHM_Celebration2023-41.jpg
+        class: shadow-md row-start-1 row-end-3 rounded-2xl
+        alt: AoIT students participating in our annual Black History Month celebration.
+      - url: /lfs/BHM_Celebration2023-270.jpg
+        class: shadow-md rounded-2xl
+        alt: AoIT students showcasing our Mechanical Engineering program to New York City Mayor Eric Adams
+      - url: /lfs/BHM_Celebration2023-28.jpg
+        class: shadow-md rounded-2xl
+        alt: Freshman AoIT students celebrating Black History.
 programs:
     - title: "Advanced Placement Courses"
       description: "Our rigorous Advanced Placement program offers college-level courses to prepare students for AP exams and earn college credit while in high school."
