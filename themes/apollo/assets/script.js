@@ -309,75 +309,57 @@ const handleSubmit = (event) => {
 
 form.addEventListener("submit", handleSubmit);
 
-// bell schedule code
-console.log( window.location.pathname.split("/").includes("bell-schedule") );
-
 // REMOVE IN NEXT UPDATE
 // if (window.location.pathname === "/about/bell-schedule/") {
 if( window.location.pathname.split("/").includes("bell-schedule") ){
   let date = new Date();
-  const bell = el(".normal");
-  const weds = el(".weds");
 
-  let dayIndex = date.getDay();
-
-  if (dayIndex !== 6 && dayIndex !== 3) {
-    bell.classList.add("bell-toggled", "bg-aoit-400", "text-white", "p-6", "rounded-3xl", "overflow-auto")
-  } else if (dayIndex === 3) {
-    weds.classList.add("bell-toggled", "bg-aoit-400", "text-white", "p-6", "rounded-3xl", "overflow-auto")
+  function formatMinutes(min) {
+    return min.toString().padStart(2, '0');
   }
 
+  //// TODO: make this work in the future where cells are higlighted based on current time correlated by the current period.
 
-function formatMinutes(min) {
-  return min.toString().padStart(2, '0');
-}
+  const regBellSchedule =  el(".normal  table  tr", true);
+  
+  let currentTime = `${date.getHours() + "" + formatMinutes(date.getMinutes())}`;
 
-//// TODO: make this work in the future where cells are higlighted based on current time correlated by the current period.
+  console.log(currentTime);
 
-const regBellSchedule =  el(".normal  table  tr", true);
+    var index = -1;
 
-// let currentTime = `${parseInt(date.getHours())}${parseInt(date.getMinutes())}`;
-let currentTime = `${date.getHours() + "" + formatMinutes(date.getMinutes())}`;
-
-console.log(currentTime);
-
-  var index = -1;
-
-  switch (true) {
-    case (currentTime >= 820 && currentTime <= 910):
-      index = 1;
-      break;
-    case (currentTime >= 914 && currentTime <= 1004):
-      index = 2;
+    switch (true) {
+      case (currentTime >= 840 && currentTime <= 925):
+        index = 1;
         break;
-    case (currentTime >= 1008 && currentTime <= 1058):
-      index = 3;
-      break;
-    case (currentTime >= 1102 && currentTime <= 1152):
-      index = 4;
-      break;
-     case (currentTime >= 1156 && currentTime <= 1246):
-      index = 5;
-       break;
-     case (currentTime >= 1250 && currentTime <= 1325):
-      index = 6;
-       break;
-     case (currentTime >= 1327 && currentTime <= 1417):
-      index = 7;
-       break;
-    case (currentTime >= 1420 && currentTime <= 1510):
-      index = 8;
-      break;
-    case (currentTime >= 1510 && currentTime <= 1600):
-      index = 9;
-      break;
- }
+      case (currentTime >= 929 && currentTime <= 1014):
+        index = 2;
+          break;
+      case (currentTime >= 1018 && currentTime <= 1103):
+        index = 3;
+        break;
+      case (currentTime >= 1107 && currentTime <= 1152):
+        index = 4;
+        break;
+      case (currentTime >= 1156 && currentTime <= 1241):
+        index = 5;
+        break;
+      case (currentTime >= 1245 && currentTime <= 1320):
+        index = 6;
+        break;
+      case (currentTime >= 1322 && currentTime <= 1407):
+        index = 7;
+        break;
+      case (currentTime >= 1410 && currentTime <= 1455):
+        index = 8;
+        break;
+  }
 
- 
- if(index > -1){
-  regBellSchedule[index].classList.add("bg-aoit-300");
-  regBellSchedule[index].style.backgroundColor = "yellow";
- }  
+  
+  if(index > -1){
+    regBellSchedule[index].classList.add("bg-aoit-300");
+    regBellSchedule[index].style.backgroundColor = "yellow";
+  }  
 }
 
  const header = document.querySelector("header");
