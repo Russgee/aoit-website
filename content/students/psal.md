@@ -8,8 +8,6 @@ sidebar_override:
       url: "https://www.psal.org/PDF/Miscellaneous/2021_PSAL_NewPPE_2021.pdf"
     - title: "Parental Consent Form"
       url: "https://www.psal.org/PDF/Miscellaneous/2021_2021_PSAL%20Interscholastic%20Athletics%20Parental%20Consent%20Form%20(002).pdf"
-    - title: "Admissions Method"
-      url: "#admission-method" 
 ---
 {{< videoGallery src="/lfs/psal_1.MP4|/lfs/psal_2.MP4|/lfs/psal_3.MP4" >}}
 
