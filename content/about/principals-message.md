@@ -3,6 +3,9 @@ title: Principal's Message
 description: "Message from the Principal at Academy of Innovative Technology"
 ---
 
+{{< imageGallery src="/lfs/BHM_Celebration2023-214.jpg|/lfs/BHM_Celebration2023-249.jpg|/lfs/AoIT_9thGradeAwardCelebration2023-95-46.jpg" alt="Alt text for image 1|Alt text for image 2" size="large" >}}
+
+
 Dear Students, Parents, and Staff,
 
 Welcome to the Academy of Innovative Technology High School!

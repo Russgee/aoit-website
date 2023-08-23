@@ -1,0 +1,22 @@
+{{ $srcs := split (.Get "src") "|" }}
+{{ $alts := split (.Get "alt") "|" }}
+{{ $animated := .Get "animated" }}
+{{ $size := .Get "size" }}
+{{ $sizeClass := "" }}
+
+{{ if eq $size "small" }}
+    {{ $sizeClass = "w-40" }}
+{{ else if eq $size "medium" }}
+    {{ $sizeClass = "w-56" }}
+{{ else if eq $size "large" }}
+    {{ $sizeClass = "w-80" }}
+{{ end }}
+
+
+<div class=' lg:flex justify-between my-10 {{ if eq $animated "true" }}animated{{ end }}'>
+    {{ range $index, $src := $srcs }}
+        {{ $srcTrimmed := trim $src " " }}
+        {{ $altTrimmed := trim (index $alts $index) " " }}
+        <img src="{{ $srcTrimmed }}" alt="{{ $altTrimmed }}" class="mx-auto block lg:mx-0 rounded-md self-center {{ $sizeClass }}"/>
+    {{ end }}
+</div>
