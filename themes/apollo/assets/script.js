@@ -147,7 +147,7 @@ const formTypes = [
   },
   {
     type: "Request an IEP Copy",
-    form: "iss"
+    form: "iep-request"
   },
   {
     type: "Grade Concern",
@@ -231,6 +231,9 @@ selector.addEventListener("change", function() {
   
   switch (formType) {
     case "iss":
+      html = msgStart + "Ms. Slater, our ISS Coordinator.";
+      break;
+    case "iep-request":
       html = msgStart + "Ms. Slater, our ISS Coordinator.";
       break;
     case "guidance":
