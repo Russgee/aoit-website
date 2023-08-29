@@ -444,7 +444,7 @@ const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_
 
           futureEvents = futureEvents.slice(0, 8);
              
-          if (futureEvents.length === 0) {
+          if (futureEvents.length <= 0) {
             events.insertAdjacentHTML("beforeend", `
             <div class="lg:col-start-2 lg:col-end-4 text-center text-xl text-aoit-700 opacity-60">
               <span class="material-symbols-outlined text-5xl">
@@ -457,31 +457,28 @@ const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_
 
                 var post = n;
                 var curr_date = processDate(post.start.dateTime);
+                console.log(post);
                 
                 events.insertAdjacentHTML("beforeend", 
                     `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">
-                        <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 self-start font-bold"> ${ parseCategoryFromTitle(setContent(post, "summary"), true)  }</span>
-                            <div class="my-6 flex justify-between gap-x-4">
+                            <div class="mt-6 flex justify-between gap-x-4">
                                 <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
                                     <div>
                                         <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
-                                        <span class="block font-light lg:text-sm">${ curr_date.month }&nbsp;${ curr_date.year  }</span>
+                                        <span class="block font-light lg:text-sm">${ curr_date.month }<br>${ curr_date.year  }</span>
                                     </div>
                                 </time>
 
                                 <div>
                                     <strong class="text-aoit-500 text-lg md:text-xl">
-                                        ${ parseCategoryFromTitle(setContent(post, "summary")) }
+                                        ${ setContent(post, "summary") }
                                     </strong>
                                     <span class="block text-aoit-500">${ processTime(n.start.dateTime)} to ${ processTime(n.end.dateTime) }</span>
                                 </div>
                             </div>
+
+                            <hr class="my-8">
                             
-                            <div>
-                              <p>${ setContent(post, "description") }</p>
-                            
-                              <hr class="my-8">
-                            </div>
 
                         <div class="flex flex-nowrap justify-center">
                             <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">

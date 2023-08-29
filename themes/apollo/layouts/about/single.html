@@ -1,5 +1,7 @@
 {{ define "main" }}
-<div class="about__single single lg:w-9/12 col-start-1 col-end-8 mx-auto">
+{{- partial "global/list-sidenav.html" . -}}
+
+<div class="about__single single col-start-1 col-end-8 mx-auto">
     {{ .Content }}
 </article>
 {{ end }}

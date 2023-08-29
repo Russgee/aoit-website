@@ -13,10 +13,10 @@
 {{ end }}
 
 
-<div class=' lg:flex justify-between my-10 {{ if eq $animated "true" }}animated{{ end }}'>
+<div class='overflow-x-scroll lg:flex justify-between my-10 {{ if eq $animated "true" }}animated{{ end }}'>
     {{ range $index, $src := $srcs }}
         {{ $srcTrimmed := trim $src " " }}
         {{ $altTrimmed := trim (index $alts $index) " " }}
-        <img src="{{ $srcTrimmed }}" alt="{{ $altTrimmed }}" class="mx-auto block lg:mx-0 rounded-md self-center {{ $sizeClass }}"/>
+        <img src="{{ $srcTrimmed }}" alt="{{ $altTrimmed }}" class="mx-auto block mr-4 xl:mr-0 rounded-md self-center {{ $sizeClass }}"/>
     {{ end }}
 </div>

@@ -11,7 +11,7 @@ sidebar_override:
 ---
 {{< videoGallery src="/lfs/psal_1.MP4|/lfs/psal_2.MP4|/lfs/psal_3.MP4" >}}
 
-**Campus Athletic Director: Mr. D. Amell, [damell@schools.nyc.gov](damell@schools.nyc.gov)**, Room 312 or Boy’s Locker Room Office
+**Campus Athletic Director: Mr. D. Amell, [damell@schools.nyc.gov](damell@schools.nyc.gov)**, Room 312 or Boys Locker Room Office
 
 
 The mission of the Public Schools Athletic League is to provide opportunities for educating students in physical fitness, character development, and socialization skills through an athletic program that fosters teamwork, discipline, and sportsmanship.

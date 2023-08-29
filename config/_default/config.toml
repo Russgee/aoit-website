@@ -627,61 +627,25 @@ hasChildren = true
     parent = "academics"
     weight = 1
     [menu.main.params]
-    description = "Accelerated courses for advanced learners."
-
-  [[menu.main]]
-    name = "English"
-    url = "/en/academics/english"
-    identifier = "English"
-    parent = "academics"
-    weight = 2
-    [menu.main.params]
-    description = "Develop language and literacy skills."
+    description = "College-credit eligible accelerated courses for advanced learners."
 
   [[menu.main]]
     name = "Instructional Support Services"
     url = "/en/academics/iss"
     identifier = "ISS"
     parent = "academics"
-    weight = 3
+    weight = 2
     [menu.main.params]
     description = "Individualized assistance for student success."
 
   [[menu.main]]
-    name = "Math"
-    url = "/en/academics/math"
-    identifier = "Math"
+    name = "MESH"
+    url = "/en/academics/mesh"
+    identifier = "MESH"
     parent = "academics"
-    weight = 4
+    weight = 3
     [menu.main.params]
-    description = "Explore numbers and problem-solving."
-
-  [[menu.main]]
-    name = "Physical Education and Health"
-    url = "/en/academics/phys-ed"
-    identifier = "Phys Ed"
-    parent = "academics"
-    weight = 5
-    [menu.main.params]
-    description = "Promote wellness through physical activity and education."
-
-  [[menu.main]]
-    name = "Science"
-    url = "/en/academics/science"
-    identifier = "Science"
-    parent = "academics"
-    weight = 6
-    [menu.main.params]
-    description = "Explore the wonders of the natural world."
-  
-  [[menu.main]]
-    name = "Social Studies"
-    url = "/en/academics/social-studies"
-    identifier = "Social Studies"
-    parent = "academics"
-    weight = 7
-    [menu.main.params]
-    description = "Learn about history, culture, and society."
+    description = "Afterschool tutoring support."
 
 [[menu.main]]
 identifier = "cte"
@@ -696,7 +660,7 @@ weight = 3
     parent = "cte"
     weight = 1
     [menu.main.params]
-    description = "Building websites, shaping digital experiences."
+    description = "State-approved CTE program teaching website development."
 
   [[menu.main]]
     name = "Game Design"
@@ -705,7 +669,7 @@ weight = 3
     parent = "cte"
     weight = 2
     [menu.main.params]
-    description = "Creating captivating interactive games."
+    description = "State-approved CTE program teaching video game development."
   
   [[menu.main]]
     name = "IT Systems"
@@ -714,7 +678,7 @@ weight = 3
     parent = "cte"
     weight = 3
     [menu.main.params]
-    description = "Mastering technology, empowering businesses."
+    description = "State-approved CTE program teaching IT System fundamentals."
   
   [[menu.main]]
     name = "Work-Based Learning"
@@ -723,7 +687,7 @@ weight = 3
     parent = "cte"
     weight = 4
     [menu.main.params]
-    description = "Real-world experience for practical skills."
+    description = "Internships and programs designed for learning through real-world experiences."
   
   [[menu.main]]
     name = "Career and Financial Management"
@@ -732,7 +696,7 @@ weight = 3
     parent = "cte"
     weight = 5
     [menu.main.params]
-    description = "Professional readiness for future success."
+    description = "State-approved CTE course teaching important career and financial skills."
 
 
 [[menu.main]]
@@ -755,7 +719,7 @@ hasChildren = true
     parent = "guidance"
     weight = 2
     [menu.main.params]
-    description = "Student attendance policies of AoIT."
+    description = "Student attendance policies of our school."
 
 [[menu.main]]
     name = "Admissions"
@@ -764,7 +728,7 @@ hasChildren = true
     parent = "guidance"
     weight = 1
     [menu.main.params]
-    description = "Learn more about our admissions process."
+    description = "Information on our admissions criteria."
 
 [[menu.main]]
     name = "Graduation Requirements"
@@ -773,7 +737,7 @@ hasChildren = true
     parent = "guidance"
     weight = 3
     [menu.main.params]
-    description = "Track and manage student attendance."
+    description = "Learn more about requirements to graduate."
 
 [[menu.main]]
     name = "Lunch Forms"
@@ -791,7 +755,7 @@ hasChildren = true
     parent = "guidance"
     weight = 5
     [menu.main.params]
-    description = "Collaborate for student success."
+    description = "More information regarding AoIT's PTSA."
 
 [[menu.main]]
 identifier = "students"
@@ -816,15 +780,6 @@ weight = 7
     weight = 2
     [menu.main.params]
     description = "Foster connections and mentorship."
-  
-  [[menu.main]]
-    name = "MESH"
-    url = "/en/students/mesh"
-    identifier = "MESH"
-    parent = "students"
-    weight = 3
-    [menu.main.params]
-    description = "Support for mental well-being."
 
   [[menu.main]]
     name = "School-Based Health Center"

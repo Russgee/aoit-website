@@ -1,8 +1,8 @@
 ---
 title: ""
 header:
-    header__title: "Welcome to the Academy of Innovative Technology"
-    header__description: "Empowering Brooklyn's Next Generation of Skilled Professionals"
+    header__title: "Welcome to Academy of Innovative Technology High School"
+    header__description: "New York City Public School serving grades 9-12 on the Franklin K. Lane Campus, in Cypress Hills, Brooklyn."
     header__video: /lfs/bg-video.mp4
 events:
     events__title: ""

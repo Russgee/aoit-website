@@ -9,7 +9,7 @@
     <div class="mission mt-12 lg:mt-0 lg:w-6/12">
         <h2 class="text-3xl font-bold mb-6 text-white lg:text-4xl">{{ .Params.mission.mission__header }}</h2>
         {{ .Params.mission.mission__paragraph | markdownify }}
-        <a href="{{ .Params.mission.mission__button.url }}" class="bg-aoit-500 text-white px-8 btn hover:bg-aoit-900">{{ .Params.mission.mission__button.title }}</a>
+        <a href='{{ "about" | relLangURL }}' class="bg-aoit-500 text-white px-8 btn hover:bg-aoit-900">{{ .Params.mission.mission__button.title }}</a>
     </div>
   </div>
     <svg class="absolute bottom-1 right-0 w-40 opacity-40 lg:top-0 lg:w-64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.966 318.779">
