@@ -198,16 +198,30 @@ formTypes.forEach((n) => selector.insertAdjacentHTML("beforeend", `<option value
 
 var showOrHide = (name, status) => {
   el(name).style.display = status;
+
+  if (name === ".dvAddress") {
+    el(`${name} input`, true).forEach(function(n) {
+      if (n.id !== "address2") {
+        n.setAttribute("required", true);
+      }
+    })
+  }
 }
 
 var resetFormSections = () => {
   el(".dvAddress").style.display = "none";
+
+  el(`${name} input`, true).forEach(function(n) {
+    if (n.id !== "address2") {
+      n.removeAttribute("required");
+    }
+  })
 }
 
 selector.addEventListener("change", function() {
   const formType = this.value;
   
-  form.id = formType;
+  form.name = formType;
 
   var html = "", 
       msgStart = "Your inquiry will be directed to ";
@@ -279,11 +293,8 @@ const printModal = (error) => {
   return modal;
 }
 
-console.log(form);
-
 const handleSubmit = (event) => {
   event.preventDefault();
-  alert("This is being triggered");
   
   const myForm = event.target;
   const formData = new FormData(myForm);
