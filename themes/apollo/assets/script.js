@@ -136,7 +136,7 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
 
 // global contact code 
 
-const form = el("#form");
+const form = el("form");
 const selector = el("#dropdown");
 const formHeading = el(".form-desc");
 
@@ -279,8 +279,11 @@ const printModal = (error) => {
   return modal;
 }
 
+console.log(form);
+
 const handleSubmit = (event) => {
   event.preventDefault();
+  alert("This is being triggered");
   
   const myForm = event.target;
   const formData = new FormData(myForm);
@@ -324,8 +327,6 @@ if( window.location.pathname.split("/").includes("bell-schedule") ){
   
   let currentTime = `${date.getHours() + "" + formatMinutes(date.getMinutes())}`;
 
-  console.log(currentTime);
-
     var index = -1;
 
     switch (true) {
@@ -355,7 +356,6 @@ if( window.location.pathname.split("/").includes("bell-schedule") ){
         break;
   }
 
-  
   if(index > -1){
     regBellSchedule[index].classList.add("bg-aoit-300");
     regBellSchedule[index].style.backgroundColor = "yellow";
@@ -374,8 +374,6 @@ if( window.location.pathname.split("/").includes("bell-schedule") ){
         backToTopButton.style.display = 'block';
       }
   });
-
-
 
   observer.observe(header);
   observer.observe(footer);
@@ -424,8 +422,6 @@ const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_
 
         var setContent = (post, title) => (post[title] != null || post[title] != undefined) ? post[title] : " ------ ";
         
-        
-
         makeRequest(URL_ROOT, { method: "GET" }, (d) => {
             data = d.items;
             const now = new Date();
@@ -457,7 +453,6 @@ const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_
 
                 var post = n;
                 var curr_date = processDate(post.start.dateTime);
-                console.log(post);
                 
                 events.insertAdjacentHTML("beforeend", 
                     `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">

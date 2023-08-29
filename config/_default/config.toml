@@ -773,15 +773,6 @@ weight = 7
     description = "Resources for college success."
   
   [[menu.main]]
-    name = "CREW"
-    url = "/en/students/crew"
-    identifier = "CREW"
-    parent = "students"
-    weight = 2
-    [menu.main.params]
-    description = "Foster connections and mentorship."
-
-  [[menu.main]]
     name = "School-Based Health Center"
     url = "/en/students/sbhc"
     identifier = "School-Based Health Center"
