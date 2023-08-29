@@ -222,6 +222,7 @@ selector.addEventListener("change", function() {
   const formType = this.value;
   
   form.name = formType;
+  el("input[name='form-name']").value = formType;
 
   var html = "", 
       msgStart = "Your inquiry will be directed to ";
