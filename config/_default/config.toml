@@ -14,24 +14,331 @@ defaultContentLanguageInSubdir = true
      [languages.en.params]
      announcement = "June 1 is a non-instructional day for students not taking the U.S. History Regents."
      description = "This is the description for our site."
+     backToTopText = "Back to top"
      backToTopAlt = "Click here to return back to top."
 
    [languages.es]
      languageName = "Spanish"
      weight = 2
+
+     [languages.es.params]
+      announcement = "El 1 de junio es un día no instructivo para los estudiantes que no toman los Regents de Historia de EE. UU."
+      description = "Esta es la descripción de nuestro sitio en español."
+      backToTopText = "Volver al inicio"
+      backToTopAlt = "Click here to go back to the top."
+
+        [[languages.es.params.staff]]
+          title = "Directora"
+          name = "Meghan Drysdale"
+          email = "Ms.lynch@aoiths.org"
+          department = "Admin"
+
+      [[languages.es.params.staff]]
+        title = "Subdirectora"
+        name = "Nicole Simpkins"
+        email = "Ms.simpkins@aoiths.org"
+        department = "Admin"
+
+      [[languages.es.params.staff]]
+        title = "Subdirectora"
+        name = "Nicole Woodham"
+        email = "Ms.woodham@aoiths.org"
+        department = "Admin"
+
+      [[languages.es.params.staff]]
+        title = "Profesor Líder de CTE, Fundamentos de TI"
+        name = "Khayri Alphonse"
+        email = "Mr.alphonse@aoiths.org"
+        department = "CTE"
+
+      [[languages.es.params.staff]]
+        title = "Profesor"
+        name = "Donald Amell"
+        email = "Mr.amell@aoiths.org"
+        department = "Social Studies"
+
+      [[languages.es.params.staff]]
+        title = "Profesor"
+        name = "Peter Banta"
+        email = "Mr.banta@aoiths.org"
+        department = "Physical Education"
+
+      [[languages.es.params.staff]]
+        title = "Consejera de Orientación"
+        name = "Mary Cooper"
+        email = "Ms.cooper@aoiths.org"
+        department = "Guidance"
+
+      [[languages.es.params.staff]]
+        title = "Profesor Sustituto"
+        name = "McLaurence David"
+        email = "Mr.david@aoiths.org"
+        department = "Sub teacher"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Leila Davies"
+        email = "Ms.davies@aoiths.org"
+        department = "Science"
+
+      [[languages.es.params.staff]]
+        title = "Consejera de Orientación"
+        name = "Marsha Desroches"
+        email = "Ms.desroches@aoiths.org"
+        department = "Guidance"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Audrey Duran"
+        email = "Ms.duran@aoiths.org"
+        department = "Sped"
+
+      [[languages.es.params.staff]]
+        title = "Profesor de CTE, Tecnología Musical"
+        name = "Cameron Frazer"
+        email = "Mr.frazer@aoiths.org"
+        department = "CTE"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Rachel Freck"
+        email = "Ms.freck@aoiths.org"
+        department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Tiffany Gardner"
+      email = "Ms.gardner@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Dalian Grant"
+      email = "Mr.Grant@aoiths.org"
+      department = "English"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Stacy Griszell"
+      email = "Ms.Griszell@aoiths.org"
+      department = "English"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Garfield Headlam"
+      email = "Mr.headlam@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Tatiana Herrera"
+      email = "Ms.herrera@aoiths.org"
+      department = "Paraprofessional"
+
+    [[languages.es.params.staff]]
+      title = "Especialista en Tecnología de la Información"
+      name = "Shamel Howell"
+      email = "Mr.howell@aoiths.org"
+      department = "IT"
+
+    [[languages.es.params.staff]]
+    title = "Personal de Apoyo Escolar"
+    name = "Vilmar Jean Michel"
+    email = "Mr.jeanmichel@aoiths.org"
+    department = "RID"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Pamela Kabir"
+      email = "Ms.kabir@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Adam Koelsch"
+      email = "Mr.koelsch@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Alicia Kohlhepp (Stratman)"
+      email = "Ms.stratman@aoiths.org"
+      department = "Spanish"
+
+    [[languages.es.params.staff]]
+      title = "Trabajadora de Oficina del Campus"
+      name = "Anna LaCommare"
+      email = "Ms.lacommare@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Ravi Lucas"
+      email = "Mr.lucas@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Coordinador de Padres"
+      name = "Eduardo Martinez"
+      email = "Mr.martinez@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Ryan Mcalary"
+      email = "mr.mcalary@aoiths.org"
+      department = "Physical Education"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Goergette Minto"
+      email = "Ms.minto@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Decano"
+      name = "Jason Mollison"
+      email = "Mr.mollison@aoiths.org"
+      department = "RID"
+
+    [[languages.es.params.staff]]
+      title = "Decano"
+      name = "Cameron Frazer"
+      email = "Mr.frazer@aoiths.org"
+      department = "RID"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Liliam Mott"
+      email = "Ms.Mott@aoiths.org"
+      department = "ENL"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Kevin Lynch"
+      email = "Mr.lynch@aoiths.org"
+      department = "Science"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Ciencias de la Computación AP, Desarrollo de Sitios Web, Gestión de Carreras y Finanzas, Robótica"
+      name = "Aaron Pelzer"
+      email = "Mr.pelzer@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Desarrollo de Sitios Web"
+      name = "Kyle Pierre"
+      email = "Mr.pierre@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesora de CTE, Seguridad Cibernética, Diseño Gráfico, Gestión de Carreras y Finanzas"
+      name = "Meagan Ramsawak"
+      email = "Ms.ramsawak@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Elvis Rodriguez"
+      email = "Mr.rodriguez@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Eric Schmidt"
+      email = "Mr.schmidt@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Diseño y Desarrollo de Videojuegos"
+      name = "Sakib Shams"
+      email = "Mr.shams@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Renee Slater"
+      email = "Ms.slater@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Thomas Smith"
+      email = "Mr.smith@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "James Steele"
+      email = "Mr.steele@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Michael Sullivan"
+      email = "Mr.sullivan@aoiths.org"
+      department = "Arte"
+
+    [[languages.es.params.staff]]
+      title = "Trabajadora Social"
+      name = "Jahaira Tavares"
+      email = "Ms.tavares@aoiths.org"
+      department = "Guidance"
+
+    [[languages.es.params.staff]]
+      title = "Secretaria de la Directora y de Compras"
+      name = "Elizabeth Tirado"
+      email = "Ms.tirado@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Ashley Urena"
+      email = "Ms.urena@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Personal de Apoyo Escolar"
+      name = "Michael Valentin"
+      email = "Mr.valentin@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Elisabeth Ventimiglia"
+      email = "Ms.ventimiglia@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Daniel Verley"
+      email = "Mr.verley@aoiths.org"
+      department = "Science"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Andy Ward"
+      email = "Mr.ward@aoiths.org"
+      department = "Paraprofessional"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Dayna Weaver"
+      email = "Ms.weaver@aoiths.org"
+      department = "ENL"
         
-        [[languages.es.menu.main]]
+      [[languages.es.menu.main]]
         identifier = "logo"
         name = "logo"
         url = "/es"
         weight = -1
 
-        [languages.es.menu.main.params]
+      [languages.es.menu.main.params]
         logo = "/logo.svg"
         desc = "Base theme logo"
 
 
-        [[languages.es.menu.main]]
+      [[languages.es.menu.main]]
         identifier = "about"
         name = "Sobre nosotros"
         url = "/es/about"
@@ -44,6 +351,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Bell Schedule"
                 parent = "about"
                 weight = 1
+                [languages.es.menu.main.params]
+                description = "Nuestro horario escolar diario."
 
                 [[languages.es.menu.main]]
                 name = "Mensaje del director"
@@ -51,6 +360,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Principal's Message"
                 parent = "about"
                 weight = 2
+                [languages.es.menu.main.params]
+                description = "La visión y valores de nuestro director."
 
         [[languages.es.menu.main]]
         identifier = "Academics"
@@ -65,48 +376,26 @@ defaultContentLanguageInSubdir = true
                 identifier = "Advanced Placement"
                 parent = "Academics"
                 weight = 1
-
-                [[languages.es.menu.main]]
-                name = "Inglés"
-                url = "/es/academics/english"
-                identifier = "English"
-                parent = "Academics"
-                weight = 2
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
                 [[languages.es.menu.main]]
                 name = "Servicios de apoyo educativo"
                 url = "/es/academics/iss"
                 identifier = "ISS"
                 parent = "Academics"
+                weight = 2
+                [languages.es.menu.main.params]
+                description = "Asistencia individualizada para el éxito del estudiante."
+
+                [[languages.es.menu.main]]
+                name = "MESH"
+                url = "/es/academics/mesh"
+                identifier = "MESH"
+                parent = "Academics"
                 weight = 3
-
-                [[languages.es.menu.main]]
-                name = "Matemáticas"
-                url = "/es/academics/math"
-                identifier = "Math"
-                parent = "Academics"
-                weight = 4
-
-                [[languages.es.menu.main]]
-                name = "Educación Física y Salud"
-                url = "/es/academics/phys-ed"
-                identifier = "Phys Ed"
-                parent = "Academics"
-                weight = 5
-
-                [[languages.es.menu.main]]
-                name = "Ciencia"
-                url = "/es/academics/science"
-                identifier = "Science"
-                parent = "Academics"
-                weight = 6
-  
-                [[languages.es.menu.main]]
-                name = "Ciencias Sociales"
-                url = "/academics/social-studies"
-                identifier = "Social Studies"
-                parent = "Academics"
-                weight = 7
+                [languages.es.menu.main.params]
+                description = "Apoyo de tutoría después de la escuela."
 
         [[languages.es.menu.main]]
         identifier = "CTE"
@@ -120,6 +409,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "CFM"
                 parent = "CTE"
                 weight = 5
+                [languages.es.menu.main.params]
+                description = "Nuestro horario escolar diario."
 
                 [[languages.es.menu.main]]
                 name = "Desarrollo web"
@@ -127,6 +418,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Web Development"
                 parent = "CTE"
                 weight = 1
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar desarrollo de sitios web."
 
                 [[languages.es.menu.main]]
                 name = "Diseño de juego"
@@ -134,6 +427,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Game Design"
                 parent = "CTE"
                 weight = 2
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar desarrollo de videojuegos."
   
                 [[languages.es.menu.main]]
                 name = "Sistemas IT"
@@ -141,6 +436,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "IT Systems"
                 parent = "CTE"
                 weight = 3
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar fundamentos de sistemas de TI."
   
                 [[languages.es.menu.main]]
                 name = "Aprendizaje basado en el trabajo"
@@ -148,6 +445,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Work-Based Learning"
                 parent = "CTE"
                 weight = 4
+                [languages.es.menu.main.params]
+                description = "Pasantías y programas diseñados para aprender a través de experiencias del mundo real."
 
         [[languages.es.menu.main]]
         identifier = "Calendar"
@@ -156,51 +455,53 @@ defaultContentLanguageInSubdir = true
         weight = 4
 
         [[languages.es.menu.main]]
-        identifier = "Admissions"
-        name = "Admisiones"
-        url = "/es/admissions"
+        identifier = "Guidance"
+        name = "Orientación"
+        url = "/es/guidance"
         weight = 5
-
-        [[languages.es.menu.main]]
-        identifier = "Family"
-        name = "Familia"
-        url = "/es/family"
-        weight = 6
         hasChildren = true
 
                 [[languages.es.menu.main]]
                 name = "Asistencia"
-                url = "/es/family/attendance"
+                url = "/es/guidance/attendance"
                 identifier = "Attendance"
-                parent = "Family"
+                parent = "Guidance"
                 weight = 1
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
                 [[languages.es.menu.main]]
                 name = "Requisitos de graduación"
-                url = "/es/family/grad-requirements"
+                url = "/es/guidance/grad-requirements"
                 identifier = "Graduation Requirements"
-                parent = "Family"
+                parent = "Guidance"
                 weight = 2
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
                 [[languages.es.menu.main]]
                 name = "Formularios de almuerzo"
-                url = "/es/family/lunch-forms"
+                url = "/es/guidance/lunch-forms"
                 identifier = "Lunch Forms"
-                parent = "Family"
+                parent = "Guidance"
                 weight = 3
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
                 [[languages.es.menu.main]]
                 name = "Asociación de Padres, Maestros y Estudiantes (PTSA)"
-                url = "/family/ptsa"
+                url = "/es/guidance/ptsa"
                 identifier = "Parent Teacher Student Association (PTSA)"
-                parent = "Family"
+                parent = "Guidance"
                 weight = 4
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
         [[languages.es.menu.main]]
         identifier = "Students"
         name = "Estudiantes"
         url = "/es/students"
-        weight = 7
+        weight = 6
         hasChildren = true
 
                 [[languages.es.menu.main]]
@@ -209,41 +510,26 @@ defaultContentLanguageInSubdir = true
                 identifier = "Student Success Center"
                 parent = "Students"
                 weight = 1
-  
-                [[languages.es.menu.main]]
-                name = "CREW"
-                url = "/es/students/crew"
-                identifier = "CREW"
-                parent = "Students"
-                weight = 2
-  
-                [[languages.es.menu.main]]
-                name = "MESH"
-                url = "/es/students/mesh"
-                identifier = "MESH"
-                parent = "Students"
-                weight = 3
-
+                
                 [[languages.es.menu.main]]
                 name = "Centro de salud escolar"
                 url = "/es/students/sbhc"
                 identifier = "School-Based Health Center"
                 parent = "Students"
-                weight = 4
+                weight = 2
   
                 [[languages.es.menu.main]]
                 name = "PSAL"
                 url = "/students/psal"
                 identifier = "PSAL"
                 parent = "Students"
-                weight = 5
+                weight = 3
 
         [[languages.es.menu.main]]
         identifier = "Staff"
         name = "Personal"
         url = "/es/staff"
-        weight = 8
-
+        weight = 7
 
 
 [markup.goldmark.renderer]

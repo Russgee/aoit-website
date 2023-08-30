@@ -4,6 +4,7 @@ header:
     header__title: "Welcome to Academy of Innovative Technology High School"
     header__description: "New York City Public School serving grades 9-12 on the Franklin K. Lane Campus, in Cypress Hills, Brooklyn."
     header__video: /lfs/bg-video.mp4
+    header__buttonTitle: Learn More
 events:
     events__title: ""
 mission:
@@ -51,11 +52,11 @@ programs:
     - title: "CREW"
       description: "Our CREW program provides students with a supportive mentorship experience, pairing them with mentors who help track their progress, address social-emotional concerns, and maintain regular communication with parents to ensure the success and well-being of each student."
       icon:
-statistics:
-    - slot1: 91%
-      stat1: of students graduate in four years
-    - slot2: 90%
-      stat2: of students enroll in college or career programs
-    - slot3: 90%
-      stat3: of students feel safe in the hallways, bathrooms, locker room, and cafeteria
+stats:
+  slot1: "91%"
+  stat1: "of students graduate in four years"
+  slot2: "90%"
+  stat2: "of students enroll in college or career programs"
+  slot3: "90%"
+  stat3: "of students feel safe in the hallways, bathrooms, locker room, and cafeteria"
 ---

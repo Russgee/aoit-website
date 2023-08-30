@@ -7,7 +7,7 @@
         </span>
         {{ range .Site.Menus.main }}
             {{ if eq .Name "logo" }}
-                <a href="/">
+                <a href='{{ "/" | relLangURL }}'>
                     <picture>
                         <source srcset="{{ .Params.darkModeLogo }}" media="(prefers-color-scheme: dark)">
                         <img src="{{ .Params.logo}}" alt="{{ .Params.desc }}" class="w-32">

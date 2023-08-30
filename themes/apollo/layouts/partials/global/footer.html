@@ -6,8 +6,8 @@
         <div class="border-b-2 border-gray-400 py-12 lg:col-start-2 lg:col-end-4 lg:flex lg:justify-between">
             <div class="mb-10">
                 <address class="not-italic mb-6">
-                    <strong class="block text-lg lg:text-xl">Academy of Innovative Technology</strong>
-                    <strong class="font-semibold block mb-3">Meghan Drysdale, Principal</strong>
+                    <strong class="block text-lg lg:text-xl">{{ i18n "footer_school_name" }}</strong>
+                    <strong class="font-semibold block mb-3">{{ i18n "footer_principal_name" }}</strong>
                     <p>Franklin K. Lane Educational Campus</p>
                     <p>999 Jamaica Avenue</p>
                     <p>Brooklyn, NY 11208</p>
@@ -17,11 +17,11 @@
             </div>
 
             <div>
-                <strong class="block text-lg mb-3 lg:text-xl">Contact Us</strong>
+                <strong class="block text-lg mb-3 lg:text-xl">{{ i18n "footer_header" }}</strong>
                 <ul>
-                    <li class="my-2">Phone: <a class="underline font-semibold text-aoit-500" href="tel://7188272469">(718) 827-2469</a></li>
-                    <li class="my-2">Fax: <a class="underline font-semibold text-aoit-500" href="tel://7183332358">(718) 333-2358</a></li>
-                    <li class="my-2">Email: <a class="underline font-semibold text-aoit-500" href="mailto:info@aoiths.org">info@aoiths.org</a></li>
+                    <li class="my-2">{{ i18n "footer_contact_phone" }}: <a class="underline font-semibold text-aoit-500" href="tel://7188272469">(718) 827-2469</a></li>
+                    <li class="my-2">{{ i18n "footer_contact_fax" }}: <a class="underline font-semibold text-aoit-500" href="tel://7183332358">(718) 333-2358</a></li>
+                    <li class="my-2">{{ i18n "footer_contact_email" }}: <a class="underline font-semibold text-aoit-500" href="mailto:info@aoiths.org">info@aoiths.org</a></li>
                 </ul>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="pt-4 social-media w-full col-start-2 col-end-4 flex justify-between lg:pt-0 items-center">
             <a href="#nav" class="flex bg-aoit-500 px-4 py-2 rounded-full text-white text-center shadow-2xl transition-all z-50 hover:bg-aoit-800 hover:opacity-100">
                 <img src="/up_arrow.svg" class="" alt="{{ .Site.Params.backToTopAlt }}">
-                <strong class="">Back to top</strong>
+                <strong class="">{{ .Site.Params.BackToTopText }}</strong>
               </a>
             
             <div class="flex">

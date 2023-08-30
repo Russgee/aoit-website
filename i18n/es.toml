@@ -1,0 +1,36 @@
+[home_page_events]
+other = "Próximos Eventos"
+
+[home_page_events_button]
+other = "Ver Calendario Completo"
+
+[home_page_cte_label]
+other = "Nuestros Programas CTE"
+
+[home_page_programs_label]
+other = "Otros Programas:"
+
+[cte_page_program_label]
+other = "Programas Aprobados por el Estado"
+
+[cte_page_elective_label]
+other = "Cursos Electivos"
+
+
+[footer_school_name]
+other = "Escuela secundaria de la Academia de Tecnología Innovadora"
+
+[footer_principal_name]
+other = "Meghan Drysdale, Directora"
+
+[footer_header]
+other = "Contacta con nosotras"
+
+[footer_contact_phone]
+other = "Teléfono"
+
+[footer_contact_fax]
+other = "Fax"
+
+[footer_contact_email]
+other = "Correo Electrónico"

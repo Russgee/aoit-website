@@ -371,6 +371,41 @@
         </table>
     </div>
 
+    <h2 class="text-2xl font-semibold mb-6" id="enlTeam">Spanish</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">Name, Title</th>
+            <th class="border border-aoit-400 p-4">Email</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Spanish" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4">Name, Title</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "Spanish" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
+                            <br>
+                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
+
     <h2 class="text-2xl font-semibold mb-6" id="mainOffice">Main Office</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">

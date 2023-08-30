@@ -14,12 +14,121 @@ defaultContentLanguageInSubdir = true
      [languages.en.params]
      announcement = "June 1 is a non-instructional day for students not taking the U.S. History Regents."
      description = "This is the description for our site."
+     backToTopText = "Back to top"
+     backToTopAlt = "Click here to return back to top."
 
    [languages.es]
      languageName = "Spanish"
      weight = 2
+
+     [languages.es.params]
+      announcement = "El 1 de junio es un día no instructivo para los estudiantes que no toman los Regents de Historia de EE. UU."
+      description = "Esta es la descripción de nuestro sitio en español."
+      backToTopText = "Volver al inicio"
+      backToTopAlt = "Click here to go back to the top."
+
+       Pierre"
+      email = "Mr.pierre@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesora de CTE, Seguridad Cibernética, Diseño Gráfico, Gestión de Carreras y Finanzas"
+      name = "Meagan Ramsawak"
+      email = "Ms.ramsawak@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Elvis Rodriguez"
+      email = "Mr.rodriguez@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Eric Schmidt"
+      email = "Mr.schmidt@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Diseño y Desarrollo de Videojuegos"
+      name = "Sakib Shams"
+      email = "Mr.shams@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Renee Slater"
+      email = "Ms.slater@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Thomas Smith"
+      email = "Mr.smith@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "James Steele"
+      email = "Mr.steele@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Michael Sullivan"
+      email = "Mr.sullivan@aoiths.org"
+      department = "Arte"
+
+    [[languages.es.params.staff]]
+      title = "Trabajadora Social"
+      name = ""
+      email = ""
+      department = "Guidance"
+
+    [[languages.es.params.staff]]
+      title = "Secretaria de la Directora y de Compras"
+      name = "Elizabeth Tirado"
+      email = "Ms.tirado@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Ashley Urena"
+      email = "Ms.urena@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Personal de Apoyo Escolar"
+      name = "Michael Valentin"
+      email = "Mr.valentin@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Elisabeth Ventimiglia"
+      email = "Ms.ventimiglia@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Daniel Verley"
+      email = "Mr.verley@aoiths.org"
+      department = "Science"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Andy Ward"
+      email = "Mr.ward@aoiths.org"
+      department = "Paraprofessional"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Dayna Weaver"
+      email = "Ms.weaver@aoiths.org"
+      department = "ENL"
+
         
-        [[languages.es.menu.main]]
+      [[languages.es.menu.main]]
         identifier = "logo"
         name = "logo"
         url = "/es"
@@ -43,6 +152,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Bell Schedule"
                 parent = "about"
                 weight = 1
+                [languages.es.menu.main.params]
+                description = "Nuestro horario escolar diario."
 
                 [[languages.es.menu.main]]
                 name = "Mensaje del director"
@@ -50,6 +161,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Principal's Message"
                 parent = "about"
                 weight = 2
+                [languages.es.menu.main.params]
+                description = "La visión y valores de nuestro director."
 
         [[languages.es.menu.main]]
         identifier = "Academics"
@@ -64,48 +177,26 @@ defaultContentLanguageInSubdir = true
                 identifier = "Advanced Placement"
                 parent = "Academics"
                 weight = 1
-
-                [[languages.es.menu.main]]
-                name = "Inglés"
-                url = "/es/academics/english"
-                identifier = "English"
-                parent = "Academics"
-                weight = 2
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
                 [[languages.es.menu.main]]
                 name = "Servicios de apoyo educativo"
                 url = "/es/academics/iss"
                 identifier = "ISS"
                 parent = "Academics"
+                weight = 2
+                [languages.es.menu.main.params]
+                description = "Asistencia individualizada para el éxito del estudiante."
+
+                [[languages.es.menu.main]]
+                name = "MESH"
+                url = "/es/academics/mesh"
+                identifier = "MESH"
+                parent = "Academics"
                 weight = 3
-
-                [[languages.es.menu.main]]
-                name = "Matemáticas"
-                url = "/es/academics/math"
-                identifier = "Math"
-                parent = "Academics"
-                weight = 4
-
-                [[languages.es.menu.main]]
-                name = "Educación Física y Salud"
-                url = "/es/academics/phys-ed"
-                identifier = "Phys Ed"
-                parent = "Academics"
-                weight = 5
-
-                [[languages.es.menu.main]]
-                name = "Ciencia"
-                url = "/es/academics/science"
-                identifier = "Science"
-                parent = "Academics"
-                weight = 6
-  
-                [[languages.es.menu.main]]
-                name = "Ciencias Sociales"
-                url = "/academics/social-studies"
-                identifier = "Social Studies"
-                parent = "Academics"
-                weight = 7
+                [languages.es.menu.main.params]
+                description = "Apoyo de tutoría después de la escuela."
 
         [[languages.es.menu.main]]
         identifier = "CTE"
@@ -119,6 +210,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "CFM"
                 parent = "CTE"
                 weight = 5
+                [languages.es.menu.main.params]
+                description = "Nuestro horario escolar diario."
 
                 [[languages.es.menu.main]]
                 name = "Desarrollo web"
@@ -126,6 +219,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Web Development"
                 parent = "CTE"
                 weight = 1
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar desarrollo de sitios web."
 
                 [[languages.es.menu.main]]
                 name = "Diseño de juego"
@@ -133,6 +228,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Game Design"
                 parent = "CTE"
                 weight = 2
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar desarrollo de videojuegos."
   
                 [[languages.es.menu.main]]
                 name = "Sistemas IT"
@@ -140,6 +237,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "IT Systems"
                 parent = "CTE"
                 weight = 3
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar fundamentos de sistemas de TI."
   
                 [[languages.es.menu.main]]
                 name = "Aprendizaje basado en el trabajo"
@@ -147,6 +246,8 @@ defaultContentLanguageInSubdir = true
                 identifier = "Work-Based Learning"
                 parent = "CTE"
                 weight = 4
+                [languages.es.menu.main.params]
+                description = "Pasantías y programas diseñados para aprender a través de experiencias del mundo real."
 
         [[languages.es.menu.main]]
         identifier = "Calendar"
@@ -155,51 +256,53 @@ defaultContentLanguageInSubdir = true
         weight = 4
 
         [[languages.es.menu.main]]
-        identifier = "Admissions"
-        name = "Admisiones"
-        url = "/es/admissions"
+        identifier = "Guidance"
+        name = "Orientación"
+        url = "/es/guidance"
         weight = 5
-
-        [[languages.es.menu.main]]
-        identifier = "Family"
-        name = "Familia"
-        url = "/es/family"
-        weight = 6
         hasChildren = true
 
                 [[languages.es.menu.main]]
                 name = "Asistencia"
-                url = "/es/family/attendance"
+                url = "/es/guidance/attendance"
                 identifier = "Attendance"
-                parent = "Family"
+                parent = "Guidance"
                 weight = 1
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
                 [[languages.es.menu.main]]
                 name = "Requisitos de graduación"
-                url = "/es/family/grad-requirements"
+                url = "/es/guidance/grad-requirements"
                 identifier = "Graduation Requirements"
-                parent = "Family"
+                parent = "Guidance"
                 weight = 2
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
                 [[languages.es.menu.main]]
                 name = "Formularios de almuerzo"
-                url = "/es/family/lunch-forms"
+                url = "/es/guidance/lunch-forms"
                 identifier = "Lunch Forms"
-                parent = "Family"
+                parent = "Guidance"
                 weight = 3
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
                 [[languages.es.menu.main]]
                 name = "Asociación de Padres, Maestros y Estudiantes (PTSA)"
-                url = "/family/ptsa"
+                url = "/es/guidance/ptsa"
                 identifier = "Parent Teacher Student Association (PTSA)"
-                parent = "Family"
+                parent = "Guidance"
                 weight = 4
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
 
         [[languages.es.menu.main]]
         identifier = "Students"
         name = "Estudiantes"
         url = "/es/students"
-        weight = 7
+        weight = 6
         hasChildren = true
 
                 [[languages.es.menu.main]]
@@ -208,40 +311,26 @@ defaultContentLanguageInSubdir = true
                 identifier = "Student Success Center"
                 parent = "Students"
                 weight = 1
-  
-                [[languages.es.menu.main]]
-                name = "CREW"
-                url = "/es/students/crew"
-                identifier = "CREW"
-                parent = "Students"
-                weight = 2
-  
-                [[languages.es.menu.main]]
-                name = "MESH"
-                url = "/es/students/mesh"
-                identifier = "MESH"
-                parent = "Students"
-                weight = 3
-
+                
                 [[languages.es.menu.main]]
                 name = "Centro de salud escolar"
                 url = "/es/students/sbhc"
                 identifier = "School-Based Health Center"
                 parent = "Students"
-                weight = 4
+                weight = 2
   
                 [[languages.es.menu.main]]
                 name = "PSAL"
                 url = "/students/psal"
                 identifier = "PSAL"
                 parent = "Students"
-                weight = 5
+                weight = 3
 
         [[languages.es.menu.main]]
         identifier = "Staff"
         name = "Personal"
         url = "/es/staff"
-        weight = 8
+        weight = 7
 
 
 
@@ -614,61 +703,25 @@ hasChildren = true
     parent = "academics"
     weight = 1
     [menu.main.params]
-    description = "Accelerated courses for advanced learners."
-
-  [[menu.main]]
-    name = "English"
-    url = "/en/academics/english"
-    identifier = "English"
-    parent = "academics"
-    weight = 2
-    [menu.main.params]
-    description = "Develop language and literacy skills."
+    description = "College-credit eligible accelerated courses for advanced learners."
 
   [[menu.main]]
     name = "Instructional Support Services"
     url = "/en/academics/iss"
     identifier = "ISS"
     parent = "academics"
-    weight = 3
+    weight = 2
     [menu.main.params]
     description = "Individualized assistance for student success."
 
   [[menu.main]]
-    name = "Math"
-    url = "/en/academics/math"
-    identifier = "Math"
+    name = "MESH"
+    url = "/en/academics/mesh"
+    identifier = "MESH"
     parent = "academics"
-    weight = 4
+    weight = 3
     [menu.main.params]
-    description = "Explore numbers and problem-solving."
-
-  [[menu.main]]
-    name = "Physical Education and Health"
-    url = "/en/academics/phys-ed"
-    identifier = "Phys Ed"
-    parent = "academics"
-    weight = 5
-    [menu.main.params]
-    description = "Promote wellness through physical activity and education."
-
-  [[menu.main]]
-    name = "Science"
-    url = "/en/academics/science"
-    identifier = "Science"
-    parent = "academics"
-    weight = 6
-    [menu.main.params]
-    description = "Explore the wonders of the natural world."
-  
-  [[menu.main]]
-    name = "Social Studies"
-    url = "/en/academics/social-studies"
-    identifier = "Social Studies"
-    parent = "academics"
-    weight = 7
-    [menu.main.params]
-    description = "Learn about history, culture, and society."
+    description = "Afterschool tutoring support."
 
 [[menu.main]]
 identifier = "cte"
@@ -683,7 +736,7 @@ weight = 3
     parent = "cte"
     weight = 1
     [menu.main.params]
-    description = "Building websites, shaping digital experiences."
+    description = "State-approved CTE program teaching website development."
 
   [[menu.main]]
     name = "Game Design"
@@ -692,7 +745,7 @@ weight = 3
     parent = "cte"
     weight = 2
     [menu.main.params]
-    description = "Creating captivating interactive games."
+    description = "State-approved CTE program teaching video game development."
   
   [[menu.main]]
     name = "IT Systems"
@@ -701,7 +754,7 @@ weight = 3
     parent = "cte"
     weight = 3
     [menu.main.params]
-    description = "Mastering technology, empowering businesses."
+    description = "State-approved CTE program teaching IT System fundamentals."
   
   [[menu.main]]
     name = "Work-Based Learning"
@@ -710,7 +763,7 @@ weight = 3
     parent = "cte"
     weight = 4
     [menu.main.params]
-    description = "Real-world experience for practical skills."
+    description = "Internships and programs designed for learning through real-world experiences."
   
   [[menu.main]]
     name = "Career and Financial Management"
@@ -719,7 +772,7 @@ weight = 3
     parent = "cte"
     weight = 5
     [menu.main.params]
-    description = "Professional readiness for future success."
+    description = "State-approved CTE course teaching important career and financial skills."
 
 
 [[menu.main]]
@@ -742,7 +795,7 @@ hasChildren = true
     parent = "guidance"
     weight = 2
     [menu.main.params]
-    description = "Student attendance policies of AoIT."
+    description = "Student attendance policies of our school."
 
 [[menu.main]]
     name = "Admissions"
@@ -751,7 +804,7 @@ hasChildren = true
     parent = "guidance"
     weight = 1
     [menu.main.params]
-    description = "Learn more about our admissions process."
+    description = "Information on our admissions criteria."
 
 [[menu.main]]
     name = "Graduation Requirements"
@@ -760,7 +813,7 @@ hasChildren = true
     parent = "guidance"
     weight = 3
     [menu.main.params]
-    description = "Track and manage student attendance."
+    description = "Learn more about requirements to graduate."
 
 [[menu.main]]
     name = "Lunch Forms"
@@ -778,7 +831,7 @@ hasChildren = true
     parent = "guidance"
     weight = 5
     [menu.main.params]
-    description = "Collaborate for student success."
+    description = "More information regarding AoIT's PTSA."
 
 [[menu.main]]
 identifier = "students"
@@ -795,24 +848,6 @@ weight = 7
     [menu.main.params]
     description = "Resources for college success."
   
-  [[menu.main]]
-    name = "CREW"
-    url = "/en/students/crew"
-    identifier = "CREW"
-    parent = "students"
-    weight = 2
-    [menu.main.params]
-    description = "Foster connections and mentorship."
-  
-  [[menu.main]]
-    name = "MESH"
-    url = "/en/students/mesh"
-    identifier = "MESH"
-    parent = "students"
-    weight = 3
-    [menu.main.params]
-    description = "Support for mental well-being."
-
   [[menu.main]]
     name = "School-Based Health Center"
     url = "/en/students/sbhc"

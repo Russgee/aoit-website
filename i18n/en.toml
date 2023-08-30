@@ -1,0 +1,35 @@
+[home_page_events]
+other = "Upcoming Events"
+
+[home_page_events_button]
+other = "View Full Calendar"
+
+[home_page_cte_label]
+other = "Our CTE Programs"
+
+[home_page_programs_label]
+other = "Other Programs:"
+
+[cte_page_program_label]
+other = "State-approved Programs"
+
+[cte_page_elective_label]
+other = "Elective Courses"
+
+[footer_school_name]
+other = "Academy of Innovative Technology High School"
+
+[footer_principal_name]
+other = "Meghan Drysdale, Principal"
+
+[footer_header]
+other = "Contact Us"
+
+[footer_contact_phone]
+other = "Phone"
+
+[footer_contact_fax]
+other = "Fax"
+
+[footer_contact_email]
+other = "Email"

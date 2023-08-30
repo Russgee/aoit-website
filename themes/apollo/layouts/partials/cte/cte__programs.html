@@ -1,5 +1,5 @@
 <section class="px-6 container mx-auto my-12" id="programs">
-    <h2 class="text-aoit-400 text-2xl font-bold">State-approved Programs</h2>
+    <h2 class="text-aoit-400 text-2xl font-bold">{{ i18n "cte_page_program_label" }}</h2>
     <div class="flex flex-wrap gap-12 lg:flex-nowrap lg:gap-6">
     {{ range .Pages }}
     {{ if .Params.front }}
@@ -12,7 +12,7 @@
     {{ end }}
     {{ end }}
     </div>
-    <h2 class="text-aoit-400 text-2xl font-bold">Elective Courses</h2>
+    <h2 class="text-aoit-400 text-2xl font-bold">{{ i18n "cte_page_elective_label" }} </h2>
     <div class="lg:grid lg:grid-cols-4 lg:gap-12">
     {{ range .Params.electives }}
     <article class="rounded-cell bg-white my-4 pb-12 relative overflow-hidden flex flex-col justify-between lg:col-span-2">
