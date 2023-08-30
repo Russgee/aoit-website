@@ -26,8 +26,207 @@ defaultContentLanguageInSubdir = true
       description = "Esta es la descripción de nuestro sitio en español."
       backToTopText = "Volver al inicio"
       backToTopAlt = "Click here to go back to the top."
+[[languages.es.params.staff]]
+          title = "Directora"
+          name = "Meghan Drysdale"
+          email = "Ms.lynch@aoiths.org"
+          department = "Admin"
 
-       Pierre"
+      [[languages.es.params.staff]]
+        title = "Subdirectora"
+        name = "Nicole Simpkins"
+        email = "Ms.simpkins@aoiths.org"
+        department = "Admin"
+
+      [[languages.es.params.staff]]
+        title = "Subdirectora"
+        name = "Nicole Woodham"
+        email = "Ms.woodham@aoiths.org"
+        department = "Admin"
+
+      [[languages.es.params.staff]]
+        title = "Profesor Líder de CTE, Fundamentos de TI"
+        name = "Khayri Alphonse"
+        email = "Mr.alphonse@aoiths.org"
+        department = "CTE"
+
+      [[languages.es.params.staff]]
+        title = "Profesor"
+        name = "Donald Amell"
+        email = "Mr.amell@aoiths.org"
+        department = "Social Studies"
+
+      [[languages.es.params.staff]]
+        title = "Profesor"
+        name = "Peter Banta"
+        email = "Mr.banta@aoiths.org"
+        department = "Physical Education"
+
+      [[languages.es.params.staff]]
+        title = "Consejera de Orientación"
+        name = "Mary Cooper"
+        email = "Ms.cooper@aoiths.org"
+        department = "Guidance"
+
+      [[languages.es.params.staff]]
+        title = "Profesor Sustituto"
+        name = "McLaurence David"
+        email = "Mr.david@aoiths.org"
+        department = "Sub teacher"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Leila Davies"
+        email = "Ms.davies@aoiths.org"
+        department = "Science"
+
+      [[languages.es.params.staff]]
+        title = "Consejera de Orientación"
+        name = "Marsha Desroches"
+        email = "Ms.desroches@aoiths.org"
+        department = "Guidance"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Audrey Duran"
+        email = "Ms.duran@aoiths.org"
+        department = "Sped"
+
+      [[languages.es.params.staff]]
+        title = "Profesor de CTE, Tecnología Musical"
+        name = "Cameron Frazer"
+        email = "Mr.frazer@aoiths.org"
+        department = "CTE"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Rachel Freck"
+        email = "Ms.freck@aoiths.org"
+        department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Tiffany Gardner"
+      email = "Ms.gardner@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Dalian Grant"
+      email = "Mr.Grant@aoiths.org"
+      department = "English"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Stacy Griszell"
+      email = "Ms.Griszell@aoiths.org"
+      department = "English"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Garfield Headlam"
+      email = "Mr.headlam@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Tatiana Herrera"
+      email = "Ms.herrera@aoiths.org"
+      department = "Paraprofessional"
+
+    [[languages.es.params.staff]]
+      title = "Especialista en Tecnología de la Información"
+      name = "Shamel Howell"
+      email = "Mr.howell@aoiths.org"
+      department = "IT"
+
+    [[languages.es.params.staff]]
+    title = "Personal de Apoyo Escolar"
+    name = "Vilmar Jean Michel"
+    email = "Mr.jeanmichel@aoiths.org"
+    department = "RID"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Pamela Kabir"
+      email = "Ms.kabir@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Adam Koelsch"
+      email = "Mr.koelsch@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Alicia Kohlhepp (Stratman)"
+      email = "Ms.stratman@aoiths.org"
+      department = "Spanish"
+
+    [[languages.es.params.staff]]
+      title = "Trabajadora de Oficina del Campus"
+      name = "Anna LaCommare"
+      email = "Ms.lacommare@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Ravi Lucas"
+      email = "Mr.lucas@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Coordinador de Padres"
+      name = "Eduardo Martinez"
+      email = "Mr.martinez@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Ryan Mcalary"
+      email = "mr.mcalary@aoiths.org"
+      department = "Physical Education"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Goergette Minto"
+      email = "Ms.minto@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Decano"
+      name = "Jason Mollison"
+      email = "Mr.mollison@aoiths.org"
+      department = "RID"
+
+    [[languages.es.params.staff]]
+      title = "Decano"
+      name = "Cameron Frazer"
+      email = "Mr.frazer@aoiths.org"
+      department = "RID"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Liliam Mott"
+      email = "Ms.Mott@aoiths.org"
+      department = "ENL"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Kevin Lynch"
+      email = "Mr.lynch@aoiths.org"
+      department = "Science"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Ciencias de la Computación AP, Desarrollo de Sitios Web, Gestión de Carreras y Finanzas, Robótica"
+      name = "Aaron Pelzer"
+      email = "Mr.pelzer@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Desarrollo de Sitios Web"
+      name = "Kyle Pierre"
       email = "Mr.pierre@aoiths.org"
       department = "CTE"
 
