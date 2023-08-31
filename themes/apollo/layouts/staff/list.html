@@ -13,11 +13,11 @@
 
    <div class="staff col-start-3 col-end-8">
 
-    <h2 class="text-2xl font-semibold mb-6" id="admin">Administration</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="admin">{{ i18n "staff_page_administration" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Admin" }}
@@ -33,7 +33,7 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Admin" }}
@@ -49,19 +49,32 @@
     </div>
     
 
-    <h2 class="text-2xl font-semibold mb-6" id="cteTeam">Career and Technical Education</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="cteTeam">{{ i18n "staff_page_career_and_technical_education" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "CTE" }}
-                <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
-                </tr>
-                {{ end }}
+                        {{ if or (in .title "Lead Teacher") (eq .title "Profesor Líder") }}
+                            <tr class="">
+                                <td class="border border-slate-700 p-4">
+                                    <strong>{{.name}}</strong>,<br>
+                                    {{.title}}
+                                </td>
+                                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                            </tr>
+                        {{ else }}
+                            <tr class="">
+                                <td class="border border-slate-700 p-4">
+                                    <strong>{{.name}}</strong>,<br>
+                                    {{.title}}
+                                </td>
+                                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                            </tr>
+                        {{ end }}
+                    {{ end }}
             {{ end }}
     </table>
 
@@ -69,34 +82,64 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "CTE" }}
-                    <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
-                        </td>
-                    </tr>
+                    {{ if or (in .title "Lead Teacher") (eq .title "Profesor Líder") }}
+                            <tr class="">
+                                <td class="border border-slate-700 p-4">
+                                    <strong>{{.name}}</strong><br>
+                                    {{.title}}
+                                </td>
+                                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                            </tr>
+                        {{ else }}
+                            <tr class="">
+                                <td class="border border-slate-700 p-4">
+                                    <strong>{{.name}}</strong>,<br>
+                                    {{.title}}
+                                </td>
+                                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                            </tr>
+                        {{ end }}
                     {{ end }}
                 {{ end }}
         </table>
     </div>
     
 
-    <h2 class="text-2xl font-semibold mb-6" id="englishTeam">English</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="englishTeam">{{ i18n "staff_page_english" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "English" }}
-                <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
-                </tr>
+                    {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
+                    <tr class="">
+                        <td class="border border-slate-700 p-4">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
+                        </td>
+                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "English" }}
+                    {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                        <tr class="">
+                            <td class="border border-slate-700 p-4">
+                                <strong>{{.name}}</strong><br>
+                                {{.title}}
+                            </td>
+                            <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                        </tr>
+                        {{ end }}
                 {{ end }}
             {{ end }}
     </table>
@@ -105,134 +148,258 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
-                {{ range .Site.Params.staff }}
-                    {{ if eq .department "English" }}
-                    <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+            {{ range .Site.Params.staff }}
+            {{ if eq .department "English" }}
+                {{ if or (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ range .Site.Params.staff }}
+            {{ if eq .department "English" }}
+                {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                    <tr class="">
+                        <td class="border border-slate-700 p-4">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
                         </td>
-                        
+                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                     </tr>
                     {{ end }}
-                {{ end }}
+            {{ end }}
+        {{ end }}
         </table>
     </div>
     
 
     
-    <h2 class="text-2xl font-semibold mb-6" id="mathTeam">Math</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="mathTeam">{{ i18n "staff_page_math" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
-            {{ range .Site.Params.staff }}
-                {{ if eq .department "Mathematics" }}
-                <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+        {{ range .Site.Params.staff }}
+        {{ if eq .department "Mathematics" }}
+            {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
+            <tr class="">
+                <td class="border border-slate-700 p-4">
+                    <strong>{{.name}}</strong><br>
+                    {{.title}}
+                </td>
+                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+            </tr>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ range .Site.Params.staff }}
+        {{ if eq .department "Mathematics" }}
+            {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
-            {{ end }}
+        {{ end }}
+    {{ end }}
     </table>
 
     <!-- Table for mobile rendering -->
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
-                {{ range .Site.Params.staff }}
-                    {{ if eq .department "Mathematics" }}
-                    <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+            {{ range .Site.Params.staff }}
+            {{ if eq .department "Mathematics" }}
+                {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ range .Site.Params.staff }}
+            {{ if eq .department "Mathematics" }}
+                {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                    <tr class="">
+                        <td class="border border-slate-700 p-4">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
                         </td>
+                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                     </tr>
                     {{ end }}
-                {{ end }}
+            {{ end }}
+        {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="historyTeam">History</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="historyTeam">{{ i18n "staff_page_social_studies" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
-            {{ range .Site.Params.staff }}
-                {{ if eq .department "Social Studies" }}
-                <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+        {{ range .Site.Params.staff }}
+        {{ if eq .department "Social Studies" }}
+            {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
+            <tr class="">
+                <td class="border border-slate-700 p-4">
+                    <strong>{{.name}}</strong><br>
+                    {{.title}}
+                </td>
+                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+            </tr>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ range .Site.Params.staff }}
+        {{ if eq .department "Social Studies" }}
+            {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
-            {{ end }}
+        {{ end }}
+    {{ end }}
     </table>
 
     <!-- Table for mobile rendering -->
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
-                {{ range .Site.Params.staff }}
-                    {{ if eq .department "Social Studies" }}
-                    <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+            {{ range .Site.Params.staff }}
+            {{ if eq .department "Social Studies" }}
+                {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ range .Site.Params.staff }}
+            {{ if eq .department "Social Studies" }}
+                {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                    <tr class="">
+                        <td class="border border-slate-700 p-4">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
                         </td>
+                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                     </tr>
                     {{ end }}
-                {{ end }}
+            {{ end }}
+        {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="scienceTeam">Science</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="scienceTeam">{{ i18n "staff_page_science" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
-            {{ range .Site.Params.staff }}
-                {{ if eq .department "Science" }}
-                <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+        {{ range .Site.Params.staff }}
+        {{ if eq .department "Science" }}
+            {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
+            <tr class="">
+                <td class="border border-slate-700 p-4">
+                    <strong>{{.name}}</strong><br>
+                    {{.title}}
+                </td>
+                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+            </tr>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ range .Site.Params.staff }}
+        {{ if eq .department "Science" }}
+            {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
-            {{ end }}
+        {{ end }}
+    {{ end }}
     </table>
 
     <!-- Table for mobile rendering -->
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
-                {{ range .Site.Params.staff }}
-                    {{ if eq .department "Science" }}
-                    <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
-                        </td>  
+            {{ range .Site.Params.staff }}
+            {{ if eq .department "Science" }}
+                {{ if eq .title "Lead Teacher" }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ range .Site.Params.staff }}
+            {{ if eq .department "Science" }}
+                {{ if ne .title "Lead Teacher" }}
+                    <tr class="">
+                        <td class="border border-slate-700 p-4">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
+                        </td>
+                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                     </tr>
                     {{ end }}
-                {{ end }}
+            {{ end }}
+        {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="physEdTeam">Physical Education</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="physEdTeam">{{ i18n "staff_page_physical_education" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Physical Education" }}
@@ -248,7 +415,7 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Physical Education" }}
@@ -263,49 +430,84 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="issTeam">Instructional Support Services</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="issTeam">{{ i18n "staff_page_instructional_support_services" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
-            {{ range .Site.Params.staff }}
-                {{ if eq .department "Sped" }}
-                <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+        {{ range .Site.Params.staff }}
+        {{ if eq .department "Sped" }}
+            {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
+            <tr class="">
+                <td class="border border-slate-700 p-4">
+                    <strong>{{.name}}</strong><br>
+                    {{.title}}
+                </td>
+                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+            </tr>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ range .Site.Params.staff }}
+        {{ if eq .department "Sped" }}
+            {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
-            {{ end }}
+        {{ end }}
+    {{ end }}
     </table>
 
     <!-- Table for mobile rendering -->
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
-                {{ range .Site.Params.staff }}
-                    {{ if eq .department "Sped" }}
-                    <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
-                        </td>
+            {{ range .Site.Params.staff }}
+            {{ if eq .department "Sped" }}
+                {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        {{ end }}
 
+        {{ range .Site.Params.staff }}
+            {{ if eq .department "Sped" }}
+                {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                    <tr class="">
+                        <td class="border border-slate-700 p-4">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
+                        </td>
+                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                     </tr>
                     {{ end }}
-                {{ end }}
+            {{ end }}
+        {{ end }}
         </table>
     </div>
     
     
 
-    <h2 class="text-2xl font-semibold mb-6" id="paraTeam">Paraprofessionals</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="paraTeam">{{ i18n "staff_page_paraprofessional" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Paraprofessional" }}
@@ -321,7 +523,7 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Paraprofessional" }}
@@ -336,46 +538,82 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="enlTeam">ENL</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="enlTeam">{{ i18n "staff_page_enl" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
-            {{ range .Site.Params.staff }}
-                {{ if eq .department "ENL" }}
-                <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+        {{ range .Site.Params.staff }}
+        {{ if eq .department "ENL" }}
+            {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
+            <tr class="">
+                <td class="border border-slate-700 p-4">
+                    <strong>{{.name}}</strong><br>
+                    {{.title}}
+                </td>
+                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+            </tr>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ range .Site.Params.staff }}
+        {{ if eq .department "ENL" }}
+            {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
+                <tr class="">
+                    <td class="border border-slate-700 p-4">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </td>
+                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
-            {{ end }}
+        {{ end }}
+    {{ end }}
     </table>
 
     <!-- Table for mobile rendering -->
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
-                {{ range .Site.Params.staff }}
-                    {{ if eq .department "ENL" }}
-                    <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "ENL" }}
+                    {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
+                    <tr class="">
+                        <td class="border border-slate-700 p-4">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
                         </td>
+                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                     </tr>
                     {{ end }}
                 {{ end }}
+            {{ end }}
+        
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "ENL" }}
+                    {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
+                        <tr class="">
+                            <td class="border border-slate-700 p-4">
+                                <strong>{{.name}}</strong><br>
+                                {{.title}}
+                            </td>
+                            <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                        </tr>
+                        {{ end }}
+                {{ end }}
+            {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="enlTeam">Spanish</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="enlTeam">{{ i18n "staff_page_spanish" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Spanish" }}
@@ -391,7 +629,7 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Spanish" }}
@@ -406,11 +644,11 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="mainOffice">Main Office</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="mainOffice">{{ i18n "staff_page_office_staff" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Office" }}
@@ -426,7 +664,7 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Office" }}
@@ -443,11 +681,11 @@
     
 
 
-    <h2 class="text-2xl font-semibold mb-6" id="guidance">Guidance</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="guidance">{{ i18n "staff_page_guidance" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Guidance" }}
@@ -463,7 +701,7 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Guidance" }}
@@ -478,11 +716,11 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="ridTeam">RID (Dean)</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="ridTeam">{{ i18n "staff_page_rid" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "RID" }}
@@ -498,7 +736,7 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "RID" }}
@@ -513,14 +751,14 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="otherStaff">Other School Staff</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="otherStaff">{{ i18n "staff_page_other_school_staff" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
-            <th class="border border-aoit-400 p-4">Name, Title</th>
-            <th class="border border-aoit-400 p-4">Email</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
-                {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") }}
+                {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") (eq .department "Art") }}
                 <tr>
                     <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
                     <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
@@ -533,10 +771,10 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">Name, Title</th>
+                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
-                    {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") }}
+                    {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") (eq .department "Art") }}
                     <tr>
                         <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
                             <br>

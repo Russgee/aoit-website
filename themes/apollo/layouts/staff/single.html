@@ -1,19 +1,37 @@
 {{ define "main" }}
+    {{ $data := .Params.staff }} <!-- Store the original data -->
+    {{ $sortedData := sort $data "title" }} <!-- Sort the data by title -->
+
     <table class="w-full my-10 table-auto border-collapse border border-slate-500">
         <tr>
             <th class="border border-slate-700 p-4">Name</th>
             <th class="border border-slate-700 p-4">Contact</th>
         </tr>
-        {{ range .Params.data }}
-        <tr class="{{ if .lead }}font-bold{{end}}">
-            <td class="border border-slate-700 p-4">
-                {{.name}},<br>
-                {{.title}}
-            </td>
-            <td class="border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-        </tr>
+
+        <!-- Loop through sorted data, but only for 'Lead Teacher' -->
+        {{ range $sortedData }}
+            {{ if in .title "Lead Teacher" }}
+                <tr class="font-bold">
+                    <td class="border border-slate-700 p-4">
+                        {{.name}},<br>
+                        {{.title}}
+                    </td>
+                    <td class="border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                </tr>
+            {{ end }}
         {{ end }}
 
+        <!-- Loop through sorted data, but exclude 'Lead Teacher' -->
+        {{ range $sortedData }}
+            {{ if not (in .title "Lead Teacher") }}
+                <tr>
+                    <td class="border border-slate-700 p-4">
+                        {{.name}},<br>
+                        {{.title}}
+                    </td>
+                    <td class="border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                </tr>
+            {{ end }}
+        {{ end }}
     </table>
-    
 {{ end }}

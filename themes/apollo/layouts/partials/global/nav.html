@@ -70,7 +70,7 @@
                         {{ end }}
                     {{ end }}
                     {{ range $.Translations }}
-                        <li class="mb-2 p-2 hover:font-semibold hover:bg-white hover:shadow-md hover:rounded-2xl"><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                        <li class="mb-2 p-2 hover:font-semibold hover:bg-white hover:shadow-md hover:rounded-2xl"><a class="block w-full h-full" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
                     {{ end }}
                 </ul>
             </button>

@@ -3,7 +3,7 @@ title: Horario de Clases 2023-24
 description: "Nuestro horario de clases es de lunes a viernes. Cada período de clase dura 45 minutos, excepto el almuerzo que es de 35 minutos. El día escolar comienza a las 8:40 y termina a las 2:55 todos los días."
 ---
 
-Este horario de clases se aplica los lunes, martes, jueves y viernes. Cada período de clase dura 50 minutos, excepto el almuerzo. El día escolar comienza a las 8:20 y termina a las 3:10 en días normales.
+Este horario de clases se aplica los lunes, martes, jueves y viernes. Cada período de clase dura 45 minutos, excepto el almuerzo. El día escolar comienza a las 8:40 y termina a las 2:55 en días normales.
 
 | Período / Descripción      | Hora de Inicio | Hora de Finalización | Duración
 | -----------   | ----------- | ----------- | ----------- |

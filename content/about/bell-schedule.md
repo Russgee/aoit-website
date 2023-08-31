@@ -3,7 +3,7 @@ title: 2023-24 Bell Schedule
 description: "Our bell schedule runs from Monday to Friday. Each class period is 45 minutes, except for lunch which is 35 minutes. The school day begins at 8:40 and ends at 2:55 every day."
 ---
 
-This bell schedule applies on Monday, Tuesday, Thursday, and Friday. Each class period is 50 minutes, except for lunch. The school day begins at 8:20 and ends at 3:10 on normal days.
+This bell schedule applies on Monday, Tuesday, Thursday, and Friday. Each class period is 45 minutes, except for lunch. The school day begins at 8:40 and ends at 2:55 on normal days.
 
 | Period / Description      | Start Time | End Time | Length
 | -----------   | ----------- | ----------- | ----------- |

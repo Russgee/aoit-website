@@ -1,6 +1,6 @@
 ---
-title: Work-Based Learning
-description: "Work-Based Learning at the Academy of Innovative Technology High School"
+title: Aprendizaje Basado en el Trabajo
+description: "Aprendizaje Basado en el Trabajo en la Academia de Tecnología Innovadora de Educación Secundaria"
 ---
 
-Work-Based Learning experiences, internships, and other important information will be updated through this page.
+Las experiencias de Aprendizaje Basado en el Trabajo, pasantías y otra información importante se actualizarán a través de esta página.

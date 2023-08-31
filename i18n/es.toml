@@ -37,3 +37,91 @@ other = "Fax"
 
 [footer_contact_email]
 other = "Correo Electrónico"
+
+[staff_page_staff]
+other = "Personal"
+
+[staff_page_administration]
+other = "Administración"
+
+[staff_page_career_and_technical_education]
+other = "Educación Técnica y Profesional"
+
+[staff_page_english]
+other = "Inglés"
+
+[staff_page_math]
+other = "Matemáticas"
+
+[staff_page_science]
+other = "Ciencias"
+
+[staff_page_social_studies]
+other = "Ciencias Sociales"
+
+[staff_page_physical_education]
+other = "Educación Física"
+
+[staff_page_instructional_support_services]
+other = "Servicios de Apoyo Educativo"
+
+[staff_page_paraprofessional]
+other = "Paraprofesional"
+
+[staff_page_enl]
+other = "Inglés como Nuevo Idioma"
+
+[staff_page_spanish]
+other = "Español"
+
+[contact_form_header]
+other = "¿Tiene una pregunta? No dude en contactarnos."
+
+[contact_info_label]
+other = "Información de Contacto"
+
+[contact_info_subheader]
+other = "Por favor, proporcione información de contacto para con quién debemos hacer seguimiento."
+
+[contact_fname]
+other = "Primer Nombre"
+
+[contact_lname]
+other = "Apellido"
+
+[contact_phone]
+other = "Número de Teléfono"
+
+[contact_email]
+other = "Dirección de Correo Electrónico"
+
+[contact_addtl_info]
+other = "Información Adicional"
+
+[contact_information]
+other = "Información"
+
+[contact_addtl_info_desc]
+other = "Por favor, proporcione cualquier información adicional que pueda ser importante para responder a su pregunta."
+
+[contact_submit]
+other = "Enviar"
+
+
+[staff_page_office_staff]
+other = "Personal de Oficina"
+
+[staff_page_guidance]
+other = "Orientación"
+
+[staff_page_rid]
+other = "RID"
+
+[staff_page_other_school_staff]
+other = "Otro Personal Escolar"
+
+[staff_page_name_title]
+other = "Nombre, Título"
+
+[staff_page_email]
+other = "Correo Electrónico"

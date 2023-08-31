@@ -39,7 +39,7 @@ La Academia de Tecnología Innovadora HS está ubicada en el Campus Franklin K. 
 La descomposición demográfica es la siguiente:
 
 - Asiáticos: 5%
-- Negros: 36%
+- Afro Americanos: 36%
 - Hispanos o Latinx: 52%
 - Nativos Americanos: 2%
 - Nativo Hawaiano/Isleño del Pacífico: 0%

@@ -182,7 +182,7 @@ const formTypes = [
     form: "rid"
   },
   {
-    type: "Other",
+    type: "Other / Consulta en español ",
     form: "office"
   }
 ];
@@ -395,111 +395,121 @@ if( window.location.pathname.split("/").includes("bell-schedule") ){
 
   // ==== CALENDAR CODE ======
 
-const CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1da77c83@group.calendar.google.com';
-const CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
-const API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
-const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_ID + '/events?key=' + API_KEY;
+if (window.location.pathname === "/en/" || window.location.pathname === "/es/") {
+  const CALENDAR_ID = 'c_2df89eb3b489793160cfcfbd402552c767b0c1421651d8382e804a7c1da77c83@group.calendar.google.com';
+  const CLIENT_ID = '900934217608-3dhrgkhtngn8ut3qhtm1uds3rll7jl4g.apps.googleusercontent.com';
+  const API_KEY = 'AIzaSyBPgM0s7e1F3LmzHwEn5Ep561IMnuZ0qXI';
+  const URL_ROOT = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDAR_ID + '/events?key=' + API_KEY;
 
 
-        var data = [];
-        const events = el(".events");
+          var data = [];
+          const events = el(".events");
 
-        function processTime(_date){
-            var t =  new Date(_date);
+          function processTime(_date){
+              var t =  new Date(_date);
 
-            return t.toLocaleTimeString(navigator.language, { 
-                hour: '2-digit', 
-                minute: '2-digit'
-            });
-        }
-
-        function processDate(_date){
-            var t =  new Date(_date);
-            const MONTHS = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
-            const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-            return {
-                numDay: t.getDay(),
-                year: t.getFullYear(),
-                month: MONTHS[t.getMonth()],
-                monthDate: t.getDate()
-            }
-        }
-        
-        function getEventTypeById(id){
-
-            const CATEGORY = ["Trips", "Family", "Work Based Learning", "Senior", "College Prep"];
-
-            return CATEGORY[id];
-        }
-
-        var parseCategoryFromTitle = (title, getCategory) => getCategory ? title.slice(1).split("]")[0] : title.split("]")[1];
-
-        var setContent = (post, title) => (post[title] != null || post[title] != undefined) ? post[title] : " ------ ";
-        
-        makeRequest(URL_ROOT, { method: "GET" }, (d) => {
-            data = d.items;
-            const now = new Date();
-
-            let futureEvents = d.items.filter(event => {
-              const eventDate = new Date(event.end.dateTime || event.end.date);
-              return eventDate >= now;
-            })
-
-            futureEvents = futureEvents.sort((a, b) => {
-              const dateA = new Date(a.start.dateTime || a.start.date);
-              const dateB = new Date(b.start.dateTime || b.start.date);
-  
-              return dateB - dateA;
-          });
-
-          futureEvents = futureEvents.slice(0, 8);
-             
-          if (futureEvents.length <= 0) {
-            events.insertAdjacentHTML("beforeend", `
-            <div class="lg:col-start-2 lg:col-end-4 text-center text-xl text-aoit-700 opacity-60">
-              <span class="material-symbols-outlined text-5xl">
-                event_busy
-              </span>
-              <p>There are no upcoming events.</p>
-            </div>`);
-          } else {
-            futureEvents.reverse().forEach((n) => {
-
-                var post = n;
-                var curr_date = processDate(post.start.dateTime);
-                
-                events.insertAdjacentHTML("beforeend", 
-                    `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">
-                            <div class="mt-6 flex justify-between gap-x-4">
-                                <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
-                                    <div>
-                                        <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
-                                        <span class="block font-light lg:text-sm">${ curr_date.month }<br>${ curr_date.year  }</span>
-                                    </div>
-                                </time>
-
-                                <div>
-                                    <strong class="text-aoit-500 text-lg md:text-xl">
-                                        ${ setContent(post, "summary") }
-                                    </strong>
-                                    <span class="block text-aoit-500">${ processTime(n.start.dateTime)} to ${ processTime(n.end.dateTime) }</span>
-                                </div>
-                            </div>
-
-                            <hr class="my-8">
-                            
-
-                        <div class="flex flex-nowrap justify-center">
-                            <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">
-                                calendar_add_on
-                                </span> Add to calendar</a>
-                        </div>
-                    </article>`);
-            });
+              return t.toLocaleTimeString(navigator.language, { 
+                  hour: '2-digit', 
+                  minute: '2-digit'
+              });
           }
-                
-        }, (err) => console.log(err));
+
+          function processDate(_date){
+              var t =  new Date(_date);
+              const MONTHS = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
+              const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+              return {
+                  numDay: t.getDay(),
+                  year: t.getFullYear(),
+                  month: MONTHS[t.getMonth()],
+                  monthDate: t.getDate()
+              }
+          }
+          
+          function getEventTypeById(id){
+
+              const CATEGORY = ["Trips", "Family", "Work Based Learning", "Senior", "College Prep"];
+
+              return CATEGORY[id];
+          }
+
+          var parseCategoryFromTitle = (title, getCategory) => getCategory ? title.slice(1).split("]")[0] : title.split("]")[1];
+
+          var setContent = (post, title) => (post[title] != null || post[title] != undefined) ? post[title] : " ------ ";
+          
+          makeRequest(URL_ROOT, { method: "GET" }, (d) => {
+              data = d.items;
+              const now = new Date();
+
+              let futureEvents = d.items.filter(event => {
+                const eventDate = new Date(event.end.dateTime || event.end.date);
+                return eventDate >= now;
+              })
+
+              futureEvents = futureEvents.sort((a, b) => {
+                const dateA = new Date(a.start.dateTime || a.start.date);
+                const dateB = new Date(b.start.dateTime || b.start.date);
+    
+                return dateA - dateB;
+            });
+
+            futureEvents = futureEvents.slice(0, 8);
+              
+            if (futureEvents.length <= 0) {
+              events.insertAdjacentHTML("beforeend", `
+              <div class="lg:col-start-2 lg:col-end-4 text-center text-xl text-aoit-700 opacity-60">
+                <span class="material-symbols-outlined text-5xl">
+                  event_busy
+                </span>
+                <p>There are no upcoming events.</p>
+              </div>`);
+            } else {
+              futureEvents.forEach((n) => {
+                  console.log(n);
+
+                  var post = n;
+                  var curr_date = processDate(post.start.dateTime || post.start.date );
+                  
+                  events.insertAdjacentHTML("beforeend", 
+                      `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">
+                              <div class="mt-6 flex justify-between gap-x-4">
+                                  <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
+                                      <div>
+                                          <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
+                                          <span class="block font-light lg:text-sm">${ curr_date.month }<br>${ curr_date.year  }</span>
+                                      </div>
+                                  </time>
+
+                                  <div>
+                                      <strong class="text-aoit-500 text-lg md:text-xl">
+                                          ${ setContent(post, "summary") }
+                                      </strong>
+                                      <span class="block text-aoit-500">
+                                        ${
+                                          n.start.dateTime && n.end.dateTime 
+                                            ? `${processTime(n.start.dateTime)} to ${processTime(n.end.dateTime)}`
+                                            : ""
+                                        }
+                                      </span>
+
+                                  </div>
+                              </div>
+
+                              <hr class="my-8">
+                              
+
+                          <div class="flex flex-nowrap justify-center">
+                              <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">
+                                  calendar_add_on
+                                  </span> Add to calendar</a>
+                          </div>
+                      </article>`);
+              });
+            }
+                  
+          }, (err) => console.log(err));
+}
 
         function makeRequest(url, props, success, error) {
 

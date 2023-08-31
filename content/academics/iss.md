@@ -7,7 +7,7 @@ description: "Instructional Support Services at the Academy of Innovative Techno
 
 At Academy of Innovative Technology, we are committed to providing an inclusive educational environment where students with disabilities have equal access to a rigorous curriculum and are held to high expectations, all while receiving the necessary supports outlined in their Individualized Education Program (IEP). Our overarching mission is to empower our students towards independence in every aspect of their lives. We also offer a range of related services tailored to the needs of qualifying students.
 
-To ensure the best possible education for our diverse student body, we offer a variety of educational settings designed to meet individual needs. These include ICT (Integrated Co-Teaching) classrooms, SETSS (Special Education Teacher Support Services), and 15:1 Special Classes. Our dedicated team of psychologists, social workers, counselors, and teachers collaborate closely with students to ensure their unique needs are met within our challenging academic environment. In addition, our team provides At-Risk counseling services for students, further supporting their overall well-being.
+To ensure the best possible education for our diverse student body, we offer various educational settings designed to meet individual needs. These include ICT (Integrated Co-Teaching) classrooms and SETSS (Special Education Teacher Support Services). Our dedicated team of a psychologist, a social worker, counselors, and teachers collaborate closely with students to ensure their unique needs are met within our challenging academic environment.
 
 [Request Your Scholar's IEP](#)
 

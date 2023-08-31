@@ -1,0 +1,7 @@
+{{ define "main" }}
+   {{- partial "global/list-sidenav.html" . -}}
+
+   <div class='single {{ if isset .Params "sidebar_override"}} col-start-3 col-end-8 {{ else }} col-start-1 col-end-8 lg:w-8/12 {{ end }} mx-auto'>
+        {{ .Content }}
+   </div>
+{{ end }}
