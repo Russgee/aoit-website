@@ -512,91 +512,91 @@ twitter = 'true'
         description = "This is a template with meta tag configuration."
         video = ""
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Principal"
 name = "Meghan Drysdale"
 email = "Ms.drysdale@aoiths.org"
 department = "Admin"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Assistant Principal"
 name = "Nicole Simpkins"
 email = "Ms.simpkins@aoiths.org"
 department = "Admin"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Assistant Principal"
 name = "Nicole Woodham"
 email = "Ms.woodham@aoiths.org"
 department = "Admin"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "CTE Lead Teacher, IT Fundamentals"
 name = "Khayri Alphonse"
 email = "Mr.alphonse@aoiths.org"
 department = "CTE"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Donald Amell"
 email = "Mr.amell@aoiths.org"
 department = "Social Studies"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Peter Banta"
 email = "Mr.banta@aoiths.org"
 department = "Physical Education"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Guidance Counselor"
 name = "Mary Cooper"
 email = "Ms.cooper@aoiths.org"
 department = "Guidance"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Substitute Teacher"
 name = "McLawrence David"
 email = "Mr.david@aoiths.org"
 department = "Sub teacher"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Leila Davies"
 email = "Ms.davies@aoiths.org"
 department = "Science"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Guidance Counselor"
 name = "Marsha Desroches"
 email = "Ms.desroches@aoiths.org"
 department = "Guidance"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher, Social Studies & English"
 name = "Alexandra Sherman"
 email = "Ms.sherman@aoiths.org"
 department = "Sped"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "CTE Teacher, Music Technology"
 name = "Cameron Frazer"
 email = "Mr.frazer@aoiths.org"
 department = "CTE"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Rachel Freck"
 email = "Ms.freck@aoiths.org"
 department = "Mathematics"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Paraprofessional"
 name = "Tiffany Gardner"
 email = "Ms.gardner@aoiths.org"
 department = "Office"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Dalian Grant"
 email = "Mr.Grant@aoiths.org"
@@ -608,212 +608,212 @@ name = "Stacy Griszell"
 email = "Ms.Griszell@aoiths.org"
 department = "English"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Anne Pietro"
 email = "Ms.pietro@aoiths.org"
 department = "English"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Maciel Gomez"
 email = "Ms.gomez@aoiths.org"
 department = "English"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Lead Teacher"
 name = "Garfield Headlam"
 email = "Mr.headlam@aoiths.org"
 department = "Social Studies"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Paraprofessional"
 name = "Tatiana Herrera"
 email = "Ms.herrera@aoiths.org"
 department = "Paraprofessional"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Information Technology Specialist"
 name = "Shamel Howell"
 email = "Mr.howell@aoiths.org"
 department = "IT"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher, Science"
 name = "Pamela Kabir"
 email = "Ms.kabir@aoiths.org"
 department = "Sped"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Lead Teacher"
 name = "Adam Koelsch"
 email = "Mr.koelsch@aoiths.org"
 department = "Mathematics"
 
-[[params.staff]]
+[[languages.en.params.staff]]
   title = ""
   name = "Vacancy"
   email = ""
   department = "Spanish"
 
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Ravi Lucas"
 email = "Mr.lucas@aoiths.org"
 department = "Social Studies"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Parent Coordinator"
 name = "Eduardo Martinez"
 email = "Mr.martinez@aoiths.org"
 department = "Office"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Ryan Mcalary"
 email = "mr.mcalary@aoiths.org"
 department = "Physical Education"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Georgette Minto"
 email = "Ms.minto@aoiths.org"
 department = "Mathematics"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Dean"
 name = "Jason Mollison"
 email = "Mr.mollison@aoiths.org"
 department = "RID"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Dean"
 name = "Cameron Frazer"
 email = "Mr.frazer@aoiths.org"
 department = "RID"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Liliam Mott"
 email = "Ms.Mott@aoiths.org"
 department = "ENL"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Tevin Lynch"
 email = "Mr.lynch@aoiths.org"
 department = "Science"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "CTE Teacher, AP Computer Science, Website Development, Career & Financial Management, Robotics"
 name = "Aaron Pelzer"
 email = "Mr.pelzer@aoiths.org"
 department = "CTE"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "CTE Teacher, Website Development"
 name = "Kyle Pierre"
 email = "Mr.pierre@aoiths.org"
 department = "CTE"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "CTE Teacher, Cyber Security, Graphic Design, Career & Financial Management"
 name = "Meagan Ramsawak"
 email = "Ms.ramsawak@aoiths.org"
 department = "CTE"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher, Social Studies"
 name = "Elvis Rodriguez"
 email = "Mr.rodriguez@aoiths.org"
 department = "Sped"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Eric Schmidt"
 email = "Mr.schmidt@aoiths.org"
 department = "Mathematics"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "CTE Teacher, Game Design & Development"
 name = "Sakib Shams"
 email = "Mr.shams@aoiths.org"
 department = "CTE"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Lead Teacher"
 name = "Renee Slater"
 email = "Ms.slater@aoiths.org"
 department = "Sped"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher, Social Studies"
 name = "Thomas Smith"
 email = "Mr.smith@aoiths.org"
 department = "Special Education"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher, Math"
 name = "James Steele"
 email = "Mr.steele@aoiths.org"
 department = "Sped"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher, Art"
 name = "Michael Sullivan"
 email = "Mr.sullivan@aoiths.org"
 department = "Art"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Social Worker"
 name = "Ariel Molina"
 email = "mr.molina@aoiths.org"
 department = "Guidance"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Principal and Purchasing Secretary"
 name = "Elizabeth Tirado"
 email = "Ms.tirado@aoiths.org"
 department = "Office"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Paraprofessional"
 name = "Ryan Shephard"
 email = "Mr.shephard@aoiths.org"
 department = "Paraprofessional"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Ashley Urena"
 email = "Ms.urena@aoiths.org"
 department = "Social Studies"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "School Support Staff"
 name = "Michael Valentin"
 email = "Mr.valentin@aoiths.org"
 department = "Office"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher, Programmer"
 name = "Elisabeth Ventimiglia"
 email = "Ms.ventimiglia@aoiths.org"
 department = "Mathematics"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Teacher"
 name = "Daniel Verley"
 email = "Mr.verley@aoiths.org"
 department = "Science"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Paraprofessional"
 name = "Andy Ward"
 email = "Mr.ward@aoiths.org"
 department = "Paraprofessional"
 
-[[params.staff]]
+[[languages.en.params.staff]]
 title = "Lead Teacher"
 name = "Dayna Weaver"
 email = "Ms.weaver@aoiths.org"

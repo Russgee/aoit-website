@@ -120,3 +120,9 @@ other = "Information"
 
 [contact_addtl_info_desc]
 other = "Please provide any additional information that may be important to answer your question."
+
+[staff_page_name_title]
+other = "Name, Title"
+
+[staff_page_email]
+other = "Email"

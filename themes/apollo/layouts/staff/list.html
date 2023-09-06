@@ -60,7 +60,7 @@
                         {{ if or (in .title "Lead Teacher") (eq .title "Profesor Líder") }}
                             <tr class="">
                                 <td class="border border-slate-700 p-4">
-                                    <strong>{{.name}}</strong>,<br>
+                                    <strong>{{.name}}</strong><br>
                                     {{.title}}
                                 </td>
                                 <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
@@ -68,7 +68,7 @@
                         {{ else }}
                             <tr class="">
                                 <td class="border border-slate-700 p-4">
-                                    <strong>{{.name}}</strong>,<br>
+                                    <strong>{{.name}}</strong><br>
                                     {{.title}}
                                 </td>
                                 <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
@@ -97,7 +97,7 @@
                         {{ else }}
                             <tr class="">
                                 <td class="border border-slate-700 p-4">
-                                    <strong>{{.name}}</strong>,<br>
+                                    <strong>{{.name}}</strong><br>
                                     {{.title}}
                                 </td>
                                 <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
@@ -117,7 +117,7 @@
         </tr>
             {{ range .Site.Params.staff }}
                 {{ if eq .department "English" }}
-                    {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
+                    {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
                     <tr class="">
                         <td class="border border-slate-700 p-4">
                             <strong>{{.name}}</strong><br>
@@ -131,7 +131,7 @@
 
             {{ range .Site.Params.staff }}
                 {{ if eq .department "English" }}
-                    {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                    {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
                         <tr class="">
                             <td class="border border-slate-700 p-4">
                                 <strong>{{.name}}</strong><br>
@@ -152,7 +152,7 @@
             </tr>
             {{ range .Site.Params.staff }}
             {{ if eq .department "English" }}
-                {{ if or (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
                 <tr class="">
                     <td class="border border-slate-700 p-4">
                         <strong>{{.name}}</strong><br>
@@ -166,7 +166,7 @@
 
         {{ range .Site.Params.staff }}
             {{ if eq .department "English" }}
-                {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+                {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
                     <tr class="">
                         <td class="border border-slate-700 p-4">
                             <strong>{{.name}}</strong><br>
@@ -452,7 +452,7 @@
 
     {{ range .Site.Params.staff }}
         {{ if eq .department "Sped" }}
-            {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
+            {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
                 <tr class="">
                     <td class="border border-slate-700 p-4">
                         <strong>{{.name}}</strong><br>
