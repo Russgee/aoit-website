@@ -3,13 +3,13 @@ title: Admissions Information
 description: "Admissions information about the Academy of Innovative Technology High School"
 sidebar_override:
     - title: "Seats and Demand Last Year"
-      url: "#seats-and-demand-last-year"
+      url: "guidance/admissions/#seats-and-demand-last-year"
     - title: "Priority Groups"
-      url: "#priority-groups"
+      url: "guidance/admissions/#priority-groups"
     - title: "Your Chances"
-      url: "#your-chances"
+      url: "guidance/admissions/#your-chances"
     - title: "Admissions Method"
-      url: "#admission-method"  
+      url: "guidance/admissions/#admission-method"  
 ---
 
 ### Academy of Innovative Technology (L51A)
