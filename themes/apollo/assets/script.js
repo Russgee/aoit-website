@@ -466,8 +466,6 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
               </div>`);
             } else {
               futureEvents.forEach((n) => {
-                  console.log(n);
-
                   var post = n;
                   var curr_date = processDate(post.start.dateTime || post.start.date );
                   
