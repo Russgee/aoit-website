@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://aoiths.org'
 languageCode = 'en-us'
 title = 'Academy of Innovative Technology High School'
 theme = 'apollo'
