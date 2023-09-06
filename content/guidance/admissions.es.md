@@ -3,13 +3,13 @@ title: Información de Admisión
 description: "Información sobre la admisión a la Academia de Tecnología Innovadora de Educación Secundaria"
 sidebar_override:
     - title: "Plazas y Demanda del Año Pasado"
-      url: "#plazas-y-demanda-del-ano-pasado"
+      url: "guidance/admissions/#plazas-y-demanda-del-ano-pasado"
     - title: "Grupos de Prioridad"
-      url: "#grupos-de-prioridad"
+      url: "guidance/admissions/#grupos-de-prioridad"
     - title: "Tus Posibilidades"
-      url: "#tus-posibilidades"
+      url: "guidance/admissions/#tus-posibilidades"
     - title: "Método de Admisión"
-      url: "#metodo-de-admision"
+      url: "guidance/admissions/#metodo-de-admision"
 ---
 
 ### Academia de Tecnología Innovadora (L51A)
