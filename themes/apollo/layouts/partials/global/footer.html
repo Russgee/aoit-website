@@ -1,28 +1,45 @@
 {{- partial "global/contact.html" . -}}
-<footer class="bg-gray-200 container px-6 py-12">
-    <div class="map">map here</div>
+<footer class="bg-aoit-50 px-6 py-12">
+    <div class="container mx-auto lg:grid lg:grid-cols-3 lg:gap-x-16 lg:gap-y-6">
+        <div class="h-80 w-full rounded-3xl shadow-xl" id="map"></div>
 
-    <div class="border-b-2 border-gray-400 py-12">
-        <div class="mb-10">
-            <address class="not-italic">
-                <strong>Academy of Innovative Technology</strong>
-                <span>Franklin K. Lane Educational Campus</span>
-                <span>999 Jamaica Avenue</span>
-                <span>Brooklyn, NY 11208</span>
-            </address>
+        <div class="border-b-2 border-gray-400 py-12 lg:col-start-2 lg:col-end-4 lg:flex lg:justify-between">
+            <div class="mb-10">
+                <address class="not-italic mb-6">
+                    <strong class="block text-lg lg:text-xl">{{ i18n "footer_school_name" }}</strong>
+                    <strong class="font-semibold block mb-3">{{ i18n "footer_principal_name" }}</strong>
+                    <p>Franklin K. Lane Educational Campus</p>
+                    <p>999 Jamaica Avenue</p>
+                    <p>Brooklyn, NY 11208</p>
+                </address>
 
-            <img src="http://place-hold.it/148x92" alt="New York City Department of Education">
+                <img class="w-24" src="/doe-logo.svg" alt="New York City Department of Education">
+            </div>
+
+            <div>
+                <strong class="block text-lg mb-3 lg:text-xl">{{ i18n "footer_header" }}</strong>
+                <ul>
+                    <li class="my-2">{{ i18n "footer_contact_phone" }}: <a class="underline font-semibold text-aoit-500" href="tel://7188272469">(718) 827-2469</a></li>
+                    <li class="my-2">{{ i18n "footer_contact_fax" }}: <a class="underline font-semibold text-aoit-500" href="tel://7188274013">(718) 827-4013</a></li>
+                    <li class="my-2">{{ i18n "footer_contact_email" }}: <a class="underline font-semibold text-aoit-500" href="mailto:info@aoiths.org">info@aoiths.org</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div>
-            <strong>Contact Us</strong>
-            <span>(718) 827-2469</span>
-            <span>(718) 333-2358</span>
-            <span>info@aoiths.org</span>
-        </div>
-    </div>
+        <div class="pt-4 social-media w-full col-start-2 col-end-4 flex justify-between lg:pt-0 items-center">
+            <a href='{{ "#nav" | relLangURL }}' class="flex bg-aoit-500 px-4 py-2 rounded-full text-white text-center shadow-2xl transition-all z-50 hover:bg-aoit-800 hover:opacity-100">
+                <img src="/up_arrow.svg" class="" alt="{{ .Site.Params.backToTopAlt }}">
+                <strong class="">{{ .Site.Params.BackToTopText }}</strong>
+              </a>
+            
+            <div class="flex">
+            {{ range .Site.Menus.social }}
+                <a href="{{ .URL }}" target="_blank" class="mx-2">
+                    {{ .Pre }}
+                </a>
+            {{ end }}
+            </div>
 
-    <div class="">
-        <img src="http://place-hold.it/32x32" alt="Social medias">
+        </div>
     </div>
 </footer>

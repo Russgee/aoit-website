@@ -1,0 +1,128 @@
+[back_to_top]
+other = "Back to top"
+
+[home_page_events]
+other = "Upcoming Events"
+
+[home_page_events_button]
+other = "View Full Calendar"
+
+[home_page_cte_label]
+other = "Our CTE Programs"
+
+[home_page_programs_label]
+other = "Other Programs:"
+
+[cte_page_program_label]
+other = "State-approved Programs"
+
+[cte_page_elective_label]
+other = "Elective Courses"
+
+[footer_school_name]
+other = "Academy of Innovative Technology High School"
+
+[footer_principal_name]
+other = "Meghan Drysdale, Principal"
+
+[footer_header]
+other = "Contact Us"
+
+[footer_contact_phone]
+other = "Phone"
+
+[footer_contact_fax]
+other = "Fax"
+
+[footer_contact_email]
+other = "Email"
+
+[staff_page_title]
+other = "Staff"
+
+[staff_page_description]
+other = "Staff directory at the Academy of Innovative Technology High School"
+
+[staff_page_administration]
+other = "Administration"
+
+[staff_page_career_and_technical_education]
+other = "Career and Technical Education"
+
+[staff_page_english]
+other = "English"
+
+[staff_page_math]
+other = "Math"
+
+[staff_page_social_studies]
+other = "Social Studies"
+
+[staff_page_physical_education]
+other = "Physical Education"
+
+[staff_page_instructional_support_services]
+other = "Instructional Support Services"
+
+[staff_page_paraprofessional]
+other = "Paraprofessional"
+
+[staff_page_enl]
+other = "ENL"
+
+[staff_page_main_office]
+other = "Main Office"
+
+[staff_page_guidance]
+other = "Guidance"
+
+[staff_page_rid]
+other = "RID"  # Assuming RID stands for Reading Instructional Design
+
+[staff_page_other_school_staff]
+other = "Other School Staff"
+
+[staff_page_science]
+other = "Science"
+
+[staff_page_spanish]
+other = "Spanish"
+
+[contact_form_header]
+other = "Have a question? Feel free to contact us."
+
+[contact_info_label]
+other = "Contact Information"
+
+[contact_info_subheader]
+other = "Please provide contact information for who we should follow up with."
+
+[contact_submit]
+other = "Submit"
+
+[contact_fname]
+other = "First Name"
+
+[contact_lname]
+other = "Last Name"
+
+[contact_phone]
+other = "Phone Number"
+
+[contact_email]
+other = "Email Address"
+
+[contact_addtl_info]
+other = "Additional Information"
+
+[contact_information]
+other = "Information"
+
+[contact_addtl_info_desc]
+other = "Please provide any additional information that may be important to answer your question."
+
+[staff_page_name_title]
+other = "Name, Title"
+
+[staff_page_email]
+other = "Email"

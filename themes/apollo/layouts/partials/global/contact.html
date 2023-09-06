@@ -1,28 +1,119 @@
-<section class="px-6 my-12 container mx-auto">
-    <h2 class="text-center text-2xl font-bold text-aoit-400">Have a question? Feel free to contact us.</h2>
+<section class="px-6 py-12 bg-white">
+  <div class="container mx-auto">
+    <h2 class="form-heading text-center text-2xl font-bold text-aoit-400">{{ i18n "contact_form_header" }}</h2>
+    <p class="form-desc"></p>
 
-    <form>
-        <label class="label" for="name">Full Name</label>
-        <input class="input" type="text" id="name" name="name" required>
-      
-        <label class="label" for="phone">Phone Number</label>
-        <input class="input" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-        <small>Format: 123-456-7890</small>
-      
-        <label class="label" for="email">Email Address</label>
-        <input class="input" type="email" id="email" name="email" required>
-      
-        <label class="label" for="dropdown">Select concern</label>
-        <select class="input" id="dropdown" name="dropdown">
-          <option value="item1">Item 1</option>
-          <option value="item2">Item 2</option>
-          <option value="item3">Item 3</option>
+    <form method="POST" name="general-form" netlify>
+      <input type="hidden" name="form-name" value="general-form">
+      <div class="">
+        <label class="label" for="dropdown">Select concern / Seleccione una preocupación</label>
+        <select class="form-select input bg-slate-50" id="dropdown" name="dropdown">
+          <option value="" disabled selected>Select a concern... / Seleccione una preocupación...</option>
         </select>
+      </div>
+
+      <fieldset class="my-10 lg:flex lg:items-center lg:gap-8">
+        <legend class="contents">
+          <span class="w-3/12">
+            <strong class="block">{{ i18n "contact_info_label"}}</strong>
+            <span>{{ i18n "contact_info_subheader" }}.</span>
+          </span>
+        </legend>
+
+        <div class="w-9/12">
+          <div class="w-full lg:flex lg:gap-x-8">
+            <div class="lg:w-6/12">
+              <label class="label" for="first-name">{{ i18n "contact_fname" }}</label>
+              <input class="input bg-slate-50" type="text" id="first-name" name="first-name" required>
+            </div>
+
+            <div class="lg:w-6/12">
+              <label class="label" for="last-name">{{ i18n "contact_lname" }}</label>
+              <input class="input bg-slate-50" type="text" id="last-name" name="last-name" required>
+            </div>
+          </div>
+          
+          <div class="w-full lg:flex lg:gap-x-8">
+            <div class="lg:w-6/12">
+              <label class="label" for="phone">{{ i18n "contact_phone" }}</label>
+              <input class="input bg-slate-50" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+              <small>Format: 123-456-7890</small>
+            </div>
+
+            <div class="lg:w-6/12">
+              <label class="label" for="email">{{ i18n "contact_email" }}</label>
+              <input class="input bg-slate-50" type="email" id="email" name="email" required>
+            </div>
+          </div>
+        </div>
+        
+      </fieldset>
+
+      <hr />
+
+      <fieldset class="my-10 dvAddress hidden lg:items-center lg:gap-8">
+        <legend class="contents">
+          <span class="w-3/12">
+            <strong class="block">Mailing Address</strong>
+            <span>Please provide the mailing address where your document should be sent to.</span>
+          </span>
+        </legend>
+
+        <div class="w-9/12">
+          <div class="w-full lg:flex lg:gap-x-8">
+            <div class="lg:w-6/12">
+              <label class="label" for="address">Address</label>
+              <input class="input bg-slate-50" type="text" id="address" name="address">
+            </div>
+
+            <div class="lg:w-6/12">
+              <label class="label" for="address2">Address 2</label>
+              <input class="input bg-slate-50" type="text" id="address2" name="address">
+            </div>
+          </div>
+
+          <div class="w-full lg:flex lg:gap-x-8">
+            <div class="lg:w-4/12">
+              <label class="label" for="city">City</label>
+              <input class="input bg-slate-50" type="text" id="city" name="city">
+            </div>
+
+            <div class="lg:w-4/12">
+              <label class="label" for="states">State</label>
+              <select class="form-select input bg-slate-50" id="states" name="states">
+                <option> Select State</option>
+              </select>
+            </div>
+
+            <div class="lg:w-4/12">
+              <label class="label" for="zipCode">ZIP Code</label>
+              <input class="input bg-slate-50" type="text" id="zipCode" name="zipCode">
+            </div>
+          </div>
+        </div>
       
-        <label class="label" for="details">Detailed Information</label>
-        <textarea class="input" id="details" name="details" rows="5"></textarea>
+      </fieldset>
       
-        <button class="btn w-full bg-aoit-500 text-white mt-10" type="submit">Submit</button>
+      <hr />
+
+      <fieldset class="my-10 lg:items-center lg:flex lg:gap-8">
+        <legend class="contents">
+          <span class="w-3/12">
+            <strong class="block">{{ i18n "contact_addtl_info" }}</strong>
+            <span>{{ i18n "contact_addtl_info_desc"}} </span>
+          </span>
+        </legend>
+
+        <div class="w-9/12">
+          <label class="label" for="details">{{ i18n "contact_information" }}</label>
+          <textarea class="input bg-slate-50" id="details" name="details" rows="5"></textarea>
+        </div>
+        
+      </fieldset>
+      
+        
+      
+        <button class="btn w-full bg-aoit-500 text-white mt-10" type="submit">{{ i18n "contact_submit" }}</button>
       </form>
-  
+    </div>
     </section>

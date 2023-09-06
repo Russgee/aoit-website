@@ -1,16 +1,19 @@
-<section class="px-6 py-12 bg-aoit-500 text-white rounded-3xl">
-    <div>
-        <strong>100%</strong>
-        <span>Graduation Rate</span>
-    </div>
+<section class="py-12 bg-aoit-500 text-white rounded-3xl">
+    <div class="container mx-auto lg:grid lg:grid-cols-3">
+        <div class="flex flex-col text-center my-16">
+            <span class="stat-container relative order-1" id="grad-rate"></span>
+            <span class="order-2 block p-6 font-semibold mt-4 lg:text-xl">{{ .Params.stats.stat1 }}</span>
+        </div>
 
-    <div>
-        <strong>100%</strong>
-        <span>Graduation Rate</span>
-    </div>
+        <div class="flex flex-col text-center my-16">
+            <span class="stat-container relative order-1" id="college-rate"></span>
+            <span class="order-2 block p-6 font-semibold mt-4 lg:text-xl">{{ .Params.stats.stat2 }}
+            </span>
+        </div>
 
-    <div>
-        <strong>100%</strong>
-        <span>Graduation Rate</span>
+        <div class="flex flex-col text-center my-16">
+            <span class="stat-container relative order-1" id="safety-rate"></span>
+            <span class="order-2 block p-6 font-semibold mt-4 lg:text-xl">{{ .Params.stats.stat3 }}</span>
+        </div>
     </div>
 </div>

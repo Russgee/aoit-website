@@ -1,29 +1,10 @@
-<section class="container mx-auto px-6 py-10" style="background:#feffff;">
-    <h2 class="text-center text-2xl font-bold text-aoit-400">Upcoming Events</h2>
+<section class="container mx-auto px-6 py-10">
+    <h2 class="text-center text-3xl font-bold text-aoit-400 mb-14">{{ i18n "home_page_events" }}</h2>  
 
-    
-    <article class="rounded-cell">
-        <span class="bg-aoit-200 text-aoit-500 rounded-full inline-block px-4 py-1 font-bold">Category</span>
+    <div class="events lg:grid lg:grid-cols-4 lg:gap-8">
+    </div>
 
-        <div class="my-6 flex justify-between">
-            <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center">
-                <div>
-                    <span class="text-5xl">15</span>
-                    <span class="block font-light">Sept</span>
-                </div>
-            </time>
-
-            <strong class="text-aoit-500 text-lg">AoIT Event Here</strong>
-        </div>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut luctus sem. Ut sapien leo, faucibus eget pellentesque non, accumsan vitae magna. Pellentesque libero elit, dapibus a orci eget, pulvinar facilisis lectus. Aliquam efficitur lectus in accumsan placerat. In dignissim tincidunt sem, eget blandit odio convallis vel.</p>
-
-        <hr class="my-8">
-
-        <div class="flex flex-nowrap justify-center">
-            <a class="btn" href="#">+ Add to calendar</a>
-        </div>
-
-        <img class="block mt-6 rounded-2xl" src="https://place-hold.it/300x500">
-    </article>
+    <div class="text-center mt-10">
+        <a href='{{ "calendar" | relLangURL }}' class="btn bg-aoit-500 text-white rounded-xl px-10 hover:bg-aoit-900">{{ i18n "home_page_events_button" }}</a>
+    </div>
 </section>

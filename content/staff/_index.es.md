@@ -1,0 +1,31 @@
+---
+title: Personal
+description: "Directorio del personal en la Academia de Tecnología Innovadora de Educación Secundaria"
+sidebar_override:
+    - title: "Administración"
+      url: "#admin"
+    - title: "Educación Técnica y Profesional"
+      url: "#cteTeam"
+    - title: "Inglés"
+      url: "#englishTeam"
+    - title: "Matemáticas"
+      url: "#mathTeam"
+    - title: "Ciencias Sociales"
+      url: "#historyTeam"
+    - title: "Educación Física"
+      url: "#physEdTeam"
+    - title: "Servicios de Apoyo Educativo"
+      url: "#issTeam"
+    - title: "Paraprofesional"
+      url: "#paraTeam"
+    - title: "Inglés como Nuevo Idioma"
+      url: "#enlTeam"
+    - title: "Oficina Principal"
+      url: "#mainOffice"
+    - title: "Orientación"
+      url: "#guidance"
+    - title: "Diseño Instruccional de Lectura"  # Assuming RID stands for Reading Instructional Design
+      url: "#ridTeam"
+    - title: "Otro Personal Escolar"
+      url: "#otherStaff"
+---

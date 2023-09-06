@@ -1,13 +1,31 @@
-<section class="px-6 py-12 bg-aoit-400 text-white rounded-3xl">
-    <div class="grid grid-cols-2 grid-rows-2 gap-6">
-        <img src="https://place-hold.it/300x500" class="row-start-1 row-end-3 self-center rounded-lg">
-        <img src="https://place-hold.it/300x500" class="rounded-lg">
-        <img src="https://place-hold.it/300x500" class="col-start-2 col-end-3 rounded-lg">
+<section class="px-6 py-12 bg-aoit-400 text-white rounded-3xl relative lg:py-20">
+  <div class="container mx-auto lg:flex lg:items-center lg:gap-8">
+    <div class="grid grid-cols-2 grid-rows-1 gap-6 items-center lg:w-6/12">
+      {{ range .Params.mission.mission__images }}
+        <img src="{{ .url }}" class="{{ .class }}" loading="lazy" alt="{{ .alt }}">
+      {{ end }}
     </div>
 
-    <div class="mt-12">
-        <h2 class="text-3xl font-bold mb-6">Our mission is to lorem dolor sit amet cosmsl</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <a href="#" class="bg-aoit-500 text-white px-8 mt-6 btn">Learn More</a>
+    <div class="mission mt-12 lg:mt-0 lg:w-6/12">
+        <h2 class="text-3xl font-bold mb-6 text-white lg:text-4xl">{{ .Params.mission.mission__header }}</h2>
+        {{ .Params.mission.mission__paragraph | markdownify }}
+        <a href='{{ "about" | relLangURL }}' class="bg-aoit-500 text-white px-8 btn hover:bg-aoit-900">{{ .Params.mission.mission__button.title }}</a>
     </div>
+  </div>
+    <svg class="absolute bottom-1 right-0 w-40 opacity-40 lg:top-0 lg:w-64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.966 318.779">
+        <g id="Group_147" data-name="Group 147" opacity="0.358">
+          <g id="Group_146" data-name="Group 146" clip-path="url(#clip-path)">
+            <path id="Path_267" data-name="Path 267" d="M221.555,295.388a3.632,3.632,0,0,1-3.637-3.623V271.993a47.09,47.09,0,0,1,14.845-34.508,81.648,81.648,0,0,0,26.09-59.691A81.707,81.707,0,0,0,175.824,96.26c-44.151.61-80.349,36.9-80.694,80.883a81.685,81.685,0,0,0,25.727,60.006,47.73,47.73,0,0,1,15.2,34.574v20.047a3.637,3.637,0,0,1-7.274,0V271.722a40.455,40.455,0,0,0-12.918-29.3A88.958,88.958,0,1,1,239.585,114.568a87.966,87.966,0,0,1,26.548,63.219,88.946,88.946,0,0,1-28.411,64.995,39.832,39.832,0,0,0-12.525,29.2v19.772a3.641,3.641,0,0,1-3.642,3.636Z" transform="translate(-36.504 -37.185)" fill="#7ee6e5"/>
+            <path id="Path_268" data-name="Path 268" d="M212.961,478.432H199.214a41.3,41.3,0,0,1-41.329-41.167v-2.579a3.632,3.632,0,0,1,3.637-3.622h89.122a3.632,3.632,0,0,1,3.637,3.622v2.579a41.284,41.284,0,0,1-41.32,41.167ZM165.18,438.309a34.025,34.025,0,0,0,34.033,32.871H212.96a34.024,34.024,0,0,0,34.033-32.871Z" transform="translate(-65.604 -180.106)" fill="#7ee6e5"/>
+            <path id="Path_269" data-name="Path 269" d="M219.827,524.336a28.865,28.865,0,0,1-28.877-28.727,3.634,3.634,0,0,1,3.63-3.629h.007a3.625,3.625,0,0,1,3.637,3.616,21.6,21.6,0,0,0,43.206.007,3.626,3.626,0,0,1,3.637-3.616h.007a3.628,3.628,0,0,1,3.63,3.629,28.864,28.864,0,0,1-28.877,28.72Z" transform="translate(-79.343 -205.557)" fill="#7ee6e5"/>
+            <path id="Path_270" data-name="Path 270" d="M249.1,472.767H170.76a3.623,3.623,0,1,1,0-7.245H249.1a3.623,3.623,0,1,1,0,7.245" transform="translate(-69.442 -194.503)" fill="#7ee6e5"/>
+            <path id="Path_271" data-name="Path 271" d="M237.77,35.506a3.632,3.632,0,0,1-3.637-3.623V3.622a3.637,3.637,0,0,1,7.274,0V31.886A3.626,3.626,0,0,1,237.77,35.506Z" transform="translate(-97.286)" fill="#7ee6e5"/>
+            <path id="Path_272" data-name="Path 272" d="M92.279,95.806A3.658,3.658,0,0,1,89.7,94.749L69.644,74.759a3.629,3.629,0,0,1,5.142-5.121l20.069,19.99a3.618,3.618,0,0,1-2.576,6.179Z" transform="translate(-28.496 -28.653)" fill="#7ee6e5"/>
+            <path id="Path_273" data-name="Path 273" d="M32.01,241.377H3.637a3.623,3.623,0,1,1,0-7.245H32.012a3.623,3.623,0,1,1,0,7.245Z" transform="translate(0 -97.824)" fill="#7ee6e5"/>
+            <path id="Path_274" data-name="Path 274" d="M451.723,241.377H423.341a3.623,3.623,0,1,1,0-7.245h28.382a3.623,3.623,0,1,1,0,7.245" transform="translate(-174.394 -97.824)" fill="#7ee6e5"/>
+            <path id="Path_275" data-name="Path 275" d="M369,95.806a3.658,3.658,0,0,1-2.575-1.057,3.615,3.615,0,0,1,0-5.121l20.069-19.99a3.629,3.629,0,0,1,5.142,5.121l-20.069,19.99A3.6,3.6,0,0,1,369,95.806Z" transform="translate(-151.813 -28.653)" fill="#7ee6e5"/>
+          </g>
+        </g>
+      </svg>
+      
 </section>

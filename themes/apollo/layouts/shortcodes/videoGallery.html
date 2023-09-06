@@ -1,0 +1,11 @@
+{{ $srcs := split (.Get "src") "|" }}
+
+<div class="overflow-scroll lg:flex justify-between">
+    {{ range $srcs }}
+        {{ $srcTrimmed := trim . " " }}
+        <video class="w-full lg:w-96 my-12 lg:my-0 lg:mx-12" controls>
+            <source src="{{ $srcTrimmed }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {{ end }}
+</div>
