@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = true
      weight = 1
 
      [languages.en.params]
-     announcement = "Please join us for a <a class='underline' href='' target='_blank'>virtual PTSA meeting</a> on November 13, 2023 @ 5:30 PM. Our <a class='underline' href='AoIT Open House Flyer.pdf'>open house for prospective families</a> is on November 14, 2023 @ 5:30 PM."
+     announcement = "Please join us for a <a class='underline' href='https://zoom.us/j/98112287548?pwd=Y1pHTWJqU3JncEVTSklkZDAyNTBWQT09' target='_blank'>virtual PTSA meeting</a> on November 13, 2023 @ 5:30 PM. Our <a class='underline' href='AoIT Open House Flyer.pdf'>open house for prospective families</a> is on November 14, 2023 @ 5:30 PM."
      description = "Discover Academy of Innovative Technology High School in Cypress Hills, Brooklyn, a nurturing New York City public high school for grades 9-12, providing three New York State approved CTE programs and a vast array of supports to ensure student success."
      backToTopText = "Back to top"
      backToTopAlt = "Click here to return back to top."
@@ -329,7 +329,7 @@ defaultContentLanguageInSubdir = true
      weight = 2
 
      [languages.es.params]
-      announcement = "Por favor únase a nosotros para una <a class='underline' href='' target='_blank'>reunión virtual de la PTSA</a> el 13 de noviembre de 2023 a las 5:30 PM. Nuestra <a class='underline' href='AoIT Open House Flyer.pdf'>jornada de puertas abiertas para familias interesadas</a> es el 14 de noviembre de 2023 a las 5:30 PM."
+      announcement = "Por favor únase a nosotros para una <a class='underline' href='https://zoom.us/j/98112287548?pwd=Y1pHTWJqU3JncEVTSklkZDAyNTBWQT09' target='_blank'>reunión virtual de la PTSA</a> el 13 de noviembre de 2023 a las 5:30 PM. Nuestra <a class='underline' href='AoIT Open House Flyer.pdf'>jornada de puertas abiertas para familias interesadas</a> es el 14 de noviembre de 2023 a las 5:30 PM."
       description = "Descubra la escuela secundaria Academy of Innovative Technology en Cypress Hills, Brooklyn, una enriquecedora escuela secundaria pública de la ciudad de Nueva York para los grados 9 a 12, que ofrece tres programas CTE aprobados por el estado de Nueva York y una amplia gama de apoyos para garantizar el éxito de los estudiantes."
       backToTopText = "Volver al inicio"
       backToTopAlt = "Click here to go back to the top."
