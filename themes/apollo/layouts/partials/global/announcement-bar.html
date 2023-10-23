@@ -1,5 +1,5 @@
 {{ if .Site.Params.announcement }}
     <div class="bg-aoit-400 text-center font-bold text-white border-b-4 border-aoit-500 relative z-[99]">
-        <p class="p-3 lg:py-2">{{ .Site.Params.announcement }}</p>
+        <p class="p-3 lg:py-2">{{ .Site.Params.announcement | safeHTML }}</p>
     </div>
 {{ end }}

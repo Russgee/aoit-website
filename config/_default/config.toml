@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = true
      weight = 1
 
      [languages.en.params]
-     announcement = "Welcome back to school! We are excited for the 2023-24 school year."
+     announcement = "Please join us for a <a class='underline' href='' target='_blank'>virtual PTSA meeting</a> on November 13, 2023 @ 5:30 PM. Our <a class='underline' href='AoIT Open House Flyer.pdf'>open house for prospective families</a> is on November 14, 2023 @ 5:30 PM."
      description = "Discover Academy of Innovative Technology High School in Cypress Hills, Brooklyn, a nurturing New York City public high school for grades 9-12, providing three New York State approved CTE programs and a vast array of supports to ensure student success."
      backToTopText = "Back to top"
      backToTopAlt = "Click here to return back to top."
