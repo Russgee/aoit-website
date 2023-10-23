@@ -115,8 +115,8 @@ defaultContentLanguageInSubdir = true
 
           [[languages.en.params.staff]]
           title = "Teacher"
-          name = "Anne Pietro"
-          email = "Ms.pietro@aoiths.org"
+          name = "Anne Pietrow"
+          email = "Ms.pietrow@aoiths.org"
           department = "English"
 
           [[languages.en.params.staff]]
@@ -432,8 +432,8 @@ defaultContentLanguageInSubdir = true
 
       [[languages.es.params.staff]]
         title = "Profesora"
-        name = "Anne Pietro"
-        email = "Ms.pietro@aoiths.org"
+        name = "Anne Pietrow"
+        email = "Ms.pietrow@aoiths.org"
         department = "English"
 
         [[languages.es.params.staff]]
