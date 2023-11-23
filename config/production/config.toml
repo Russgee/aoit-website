@@ -156,9 +156,9 @@ defaultContentLanguageInSubdir = true
           department = "Mathematics"
 
           [[languages.en.params.staff]]
-            title = ""
-            name = "Vacancy"
-            email = ""
+            title = "Teacher"
+            name = "Ydanairy Vallejo"
+            email = "ms.vallejo@aoiths.org"
             department = "Spanish"
 
 
@@ -479,9 +479,9 @@ defaultContentLanguageInSubdir = true
       department = "Mathematics"
 
     [[languages.es.params.staff]]
-      title = ""
-      name = "Vacancy"
-      email = ""
+      title = "Teacher"
+      name = "Ydanairy Vallejo"
+      email = "ms.vallejo@aoiths.org"
       department = "Spanish"
 
     [[languages.es.params.staff]]
