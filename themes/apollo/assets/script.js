@@ -443,8 +443,10 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
               const now = new Date();
 
               let futureEvents = d.items.filter(event => {
-                const eventDate = new Date(event.end.dateTime || event.end.date);
-                return eventDate >= now;
+                if (event.status === "confirmed") {
+                  const eventDate = new Date(event.end.dateTime || event.end.date);
+                  return eventDate >= now;
+                }
               })
 
               futureEvents = futureEvents.sort((a, b) => {
@@ -466,43 +468,43 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
               </div>`);
             } else {
               futureEvents.forEach((n) => {
-                  var post = n;
-                  var curr_date = processDate(post.start.dateTime || post.start.date );
-                  
-                  events.insertAdjacentHTML("beforeend", 
-                      `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">
-                              <div class="mt-6 flex justify-between gap-x-4">
-                                  <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
-                                      <div>
-                                          <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
-                                          <span class="block font-light lg:text-sm">${ curr_date.month }<br>${ curr_date.year  }</span>
-                                      </div>
-                                  </time>
+                    var post = n;
+                    var curr_date = processDate(post.start.dateTime || post.start.date );
+                    
+                    events.insertAdjacentHTML("beforeend", 
+                        `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">
+                                <div class="mt-6 flex justify-between gap-x-4 flex-wrap xl:flex-nowrap">
+                                    <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
+                                        <div>
+                                            <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
+                                            <span class="block font-light lg:text-sm">${ curr_date.month }<br>${ curr_date.year  }</span>
+                                        </div>
+                                    </time>
 
-                                  <div>
-                                      <strong class="text-aoit-500 text-lg md:text-xl">
-                                          ${ setContent(post, "summary") }
-                                      </strong>
-                                      <span class="block text-aoit-500">
-                                        ${
-                                          n.start.dateTime && n.end.dateTime 
-                                            ? `${processTime(n.start.dateTime)} to ${processTime(n.end.dateTime)}`
-                                            : ""
-                                        }
-                                      </span>
+                                    <div class="mt-6 xl:mt-0">
+                                        <strong class="text-aoit-500 text-lg md:text-xl">
+                                            ${ setContent(post, "summary") }
+                                        </strong>
+                                        <span class="block text-aoit-500">
+                                          ${
+                                            n.start.dateTime && n.end.dateTime 
+                                              ? `${processTime(n.start.dateTime)} to ${processTime(n.end.dateTime)}`
+                                              : ""
+                                          }
+                                        </span>
 
-                                  </div>
-                              </div>
+                                    </div>
+                                </div>
 
-                              <hr class="my-8">
-                              
+                                <hr class="my-8">
+                                
 
-                          <div class="flex flex-nowrap justify-center">
-                              <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="material-symbols-outlined">
-                                  calendar_add_on
-                                  </span> Add to calendar</a>
-                          </div>
-                      </article>`);
+                            <div class="flex flex-nowrap justify-center text-center">
+                                <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="self-center material-symbols-outlined">
+                                    calendar_add_on
+                                    </span> Add to calendar</a>
+                            </div>
+                        </article>`);
               });
             }
                   

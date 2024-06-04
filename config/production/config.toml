@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = true
      weight = 1
 
      [languages.en.params]
-     announcement = "Welcome back to school! We are excited for the 2023-24 school year."
+     announcement = ""
      description = "Discover Academy of Innovative Technology High School in Cypress Hills, Brooklyn, a nurturing New York City public high school for grades 9-12, providing three New York State approved CTE programs and a vast array of supports to ensure student success."
      backToTopText = "Back to top"
      backToTopAlt = "Click here to return back to top."
@@ -115,8 +115,8 @@ defaultContentLanguageInSubdir = true
 
           [[languages.en.params.staff]]
           title = "Teacher"
-          name = "Anne Pietro"
-          email = "Ms.pietro@aoiths.org"
+          name = "Anne Pietrow"
+          email = "Ms.pietrow@aoiths.org"
           department = "English"
 
           [[languages.en.params.staff]]
@@ -156,9 +156,9 @@ defaultContentLanguageInSubdir = true
           department = "Mathematics"
 
           [[languages.en.params.staff]]
-            title = ""
-            name = "Vacancy"
-            email = ""
+            title = "Teacher"
+            name = "Ydanairy Vallejo"
+            email = "ms.vallejo@aoiths.org"
             department = "Spanish"
 
 
@@ -329,7 +329,7 @@ defaultContentLanguageInSubdir = true
      weight = 2
 
      [languages.es.params]
-      announcement = "¡Bienvenido de nuevo al colegio! Estamos emocionados por el año escolar 2023-24."
+      announcement = ""
       description = "Descubra la escuela secundaria Academy of Innovative Technology en Cypress Hills, Brooklyn, una enriquecedora escuela secundaria pública de la ciudad de Nueva York para los grados 9 a 12, que ofrece tres programas CTE aprobados por el estado de Nueva York y una amplia gama de apoyos para garantizar el éxito de los estudiantes."
       backToTopText = "Volver al inicio"
       backToTopAlt = "Click here to go back to the top."
@@ -432,8 +432,8 @@ defaultContentLanguageInSubdir = true
 
       [[languages.es.params.staff]]
         title = "Profesora"
-        name = "Anne Pietro"
-        email = "Ms.pietro@aoiths.org"
+        name = "Anne Pietrow"
+        email = "Ms.pietrow@aoiths.org"
         department = "English"
 
         [[languages.es.params.staff]]
@@ -479,9 +479,9 @@ defaultContentLanguageInSubdir = true
       department = "Mathematics"
 
     [[languages.es.params.staff]]
-      title = ""
-      name = "Vacancy"
-      email = ""
+      title = "Teacher"
+      name = "Ydanairy Vallejo"
+      email = "ms.vallejo@aoiths.org"
       department = "Spanish"
 
     [[languages.es.params.staff]]

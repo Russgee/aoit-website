@@ -1,6 +1,6 @@
 {{ $currentPage := . }}
 {{ if .Site.Menus.main }}
-<div class='absolute top-0 w-full nav {{ if .Site.Params.announcement }} pt-28 {{ else }} pt-16 {{ end }} px-6 pb-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll lg:pt-12 lg:overflow-visible {{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
+<div class='absolute top-0 w-full nav {{ if .Site.Params.announcement }} pt-16 {{ else }} pt-6 {{ end }} px-6 pb-6 items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll  lg:overflow-visible {{ if eq .IsHome true }} text-white {{ else }} text-aoit-500  {{end}}' id="nav">
     <div class="flex justify-between items-center w-full" id="nav-item-container">
         <span id="menu" class="transition-all material-symbols-outlined">
             menu
@@ -21,9 +21,9 @@
                     {{ if ne .Name "logo" }}
                         {{ if .HasChildren }}
                     <li class='{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }}font-bold underline{{ end }} border-b-2 relative group lg:border-b-0'>
-                        <a href="{{.URL}}" class="mx-2.5 relative group p-6">
+                        <a href="{{.URL}}" class="relative group pb-6">
                             {{ .Name }}
-                            <span class="material-symbols-outlined transition-all absolute -rotate-90 group-hover:rotate-0">
+                            <span class="material-symbols-outlined transition-all absolute -rotate-90 group-hover:rotate-0 -translate-x-1/2 left-1/2 bottom-0">
                                 arrow_drop_down
                             </span>
                         </a>
