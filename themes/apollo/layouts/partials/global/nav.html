@@ -1,7 +1,7 @@
 {{ $currentPage := . }}
 {{ if .Site.Menus.main }}
 <div class='container mx-auto nav {{ if .Site.Params.announcement }} pt-16 {{ else }} pt-6 {{ end }} px-6 pb-2 font-semibold items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll  lg:overflow-visible  text-aoit-500' id="nav">
-    <div class="flex justify-between items-center w-full" id="nav-item-container">
+    <div class="flex justify-between items-center w-full container mx-auto" id="nav-item-container">
         <span id="menu" class="transition-all material-symbols-outlined">
             menu
         </span>
