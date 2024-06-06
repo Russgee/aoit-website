@@ -19,9 +19,13 @@ menuToggle.addEventListener("click", function() {
     }
     
     nav.classList.toggle("bg-aoit-700");
-    nav.classList.toggle("h-full");
+    nav.classList.toggle("h-screen");
+    nav.classList.toggle("w-screen");
     body.classList.toggle("h-full");
     body.classList.toggle("overflow-hidden");
+
+    nav.classList.toggle("container");
+    nav.classList.toggle("mx-auto");
 
     navItemContainer.classList.toggle("text-white");
 })
@@ -472,38 +476,32 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
                     var curr_date = processDate(post.start.dateTime || post.start.date );
                     
                     events.insertAdjacentHTML("beforeend", 
-                        `<article class="cal-event rounded-cell bg-aoit-50 mb-8 flex flex-col justify-evenly lg:mb-0">
-                                <div class="mt-6 flex justify-between gap-x-4 flex-wrap xl:flex-nowrap">
-                                    <time class="bg-aoit-200 text-aoit-500 font-bold p-4 w-28 h-28 rounded-lg box-border text-center flex items-center justify-center lg:w-24 lg:w-24">
+                        `<article class="cal-event min-h-48 min-w-[20rem]	rounded-cell backdrop-blur bg-aoit-50/25 text-white rounded-xl py-2 px-4 bg-aoit-50 mb-8 flex flex-col justify-evenly items-center lg:mb-0 xl:w-[25rem]">
+                                <div class="flex gap-x-4 items-center w-full">
+                                <div class="flex flex-col gap-3">
+                                    <time class="bg-aoit-200 text-aoit-500 font-bold p-2 w-16 h-24 md:w-20 rounded-lg box-border text-center flex items-center justify-center lg:min-w-16">
                                         <div>
-                                            <span class="text-5xl lg:text-3xl">${ curr_date.monthDate }</span>
+                                            <span class="text-2xl">${ curr_date.monthDate }</span>
                                             <span class="block font-light lg:text-sm">${ curr_date.month }<br>${ curr_date.year  }</span>
                                         </div>
                                     </time>
+                                  </div>
 
-                                    <div class="mt-6 xl:mt-0">
-                                        <strong class="text-aoit-500 text-lg md:text-xl">
+                                    <div class="mx-auto">
+                                        <strong class="text-white text-sm md:text-md xl:text-lg">
                                             ${ setContent(post, "summary") }
                                         </strong>
-                                        <span class="block text-aoit-500">
+                                        <span class="block text-white text-xs md:text-sm xl:text-lg">
                                           ${
                                             n.start.dateTime && n.end.dateTime 
                                               ? `${processTime(n.start.dateTime)} to ${processTime(n.end.dateTime)}`
                                               : ""
                                           }
                                         </span>
-
+                                        
+                                     
                                     </div>
-                                </div>
-
-                                <hr class="my-8">
-                                
-
-                            <div class="flex flex-nowrap justify-center text-center">
-                                <a class="btn gap-2 flex hover:bg-aoit-500 hover:text-white" href="${n.htmlLink}"><span class="self-center material-symbols-outlined">
-                                    calendar_add_on
-                                    </span> Add to calendar</a>
-                            </div>
+                                </div>                            
                         </article>`);
               });
             }
