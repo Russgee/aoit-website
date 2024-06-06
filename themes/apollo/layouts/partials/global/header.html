@@ -1,4 +1,35 @@
-<header class="container mx-auto text-aoit-500 text-center mt-40 px-6 lg:mt-44 lg:mb-20">
-    <h1 class="text-3xl font-bold lg:text-4xl">{{ .Title }}</h1>
+<header class="relative h-96 flex items-center justify-center rounded-3xl container mx-auto text-aoit-500 text-center px-6 shadow-2xl shadow-aoit-500 lg:mb-20">
+    <div class="absolute rounded-3xl inset-0 bg-aoit-700 opacity-80 z-10"></div>
+
+
+    <video class="absolute rounded-3xl top-0 left-0 h-full w-full object-cover rounded-3xl z-0" playsInline autoplay muted loop>
+        <source src="/lfs/header.mp4" type="video/mp4">
+    </video>
+
+    <div class="px-6 py-4 relative z-50 bg-aoit-200/20 text-white rounded-2xl backdrop-blur">
+        <h1 class="text-white text-3xl font-bold lg:text-4xl">{{ .Title }}</h1>
         {{- partial "global/mobile-headerNav.html" . -}}
+        
+        {{ if isset .Params "sidebar_override"}}
+    <ul class='relative z-50 col-start-1 col-end-3 hidden lg:flex gap-x-6 justify-center font-semibold {{ if eq .Page.Title "Staff" }}hidden lg:hidden{{ end }}'>
+      {{ if isset .Params "sidebar_override"}}
+        {{ range .Params.sidebar_override }}
+        <li class=""><a class="underline" href='{{ .url | relLangURL }}'>{{.title}}</a></li>
+        {{ end }}
+      {{ else if .Pages }}
+        {{ range .Pages }}
+        <li class=""><a class="underline" href="{{ .Permalink }}">{{.Title}}</a></li>
+        {{ end }}
+      {{ end }}
+   </ul>
+ </aside>
+ {{ else if .Pages }}
+  <ul class='relative z-50 col-start-1 col-end-3 hidden lg:flex gap-x-6 justify-center font-semibold  {{ if eq .Page.Title "Staff" }}hidden lg:hidden{{ end }}rounded-2xl'>
+    {{ range .Pages }}
+      <li class=""><a class="underline" href="{{ .Permalink }}">{{.Title}}</a></li>
+    {{ end }}
+ </ul>
+ {{ end }}
+    </div>
+        
 </header>
