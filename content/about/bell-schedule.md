@@ -1,5 +1,5 @@
 ---
-title: 2023-24 Bell Schedule
+title: Bell Schedule
 description: "Our bell schedule runs from Monday to Friday. Each class period is 45 minutes, except for lunch which is 35 minutes. The school day begins at 8:40 and ends at 2:55 every day."
 ---
 
