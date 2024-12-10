@@ -80,7 +80,10 @@ other = "Main Office"
 other = "Guidance"
 
 [staff_page_rid]
-other = "RID"  # Assuming RID stands for Reading Instructional Design
+other = "RID"
+
+[staff_page_office_staff]
+other = "Main Office"
 
 [staff_page_other_school_staff]
 other = "Other School Staff"

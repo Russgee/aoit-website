@@ -331,54 +331,41 @@ const handleSubmit = (event) => {
 
 form.addEventListener("submit", handleSubmit);
 
-// REMOVE IN NEXT UPDATE
-// if (window.location.pathname === "/about/bell-schedule/") {
-if( window.location.pathname.split("/").includes("bell-schedule") ){
-  let date = new Date();
+if (window.location.pathname.split("/").includes("bell-schedule")) {
+  function updateBellScheduleHighlight() {
+    let date = new Date();
+    let currentTime = date.getHours() * 100 + date.getMinutes();
 
-  function formatMinutes(min) {
-    return min.toString().padStart(2, '0');
+    const regBellSchedule = el(".normal table tr", true);
+    
+    const scheduleRanges = [
+      { start: 840, end: 925, index: 1 },
+      { start: 929, end: 1014, index: 2 },
+      { start: 1018, end: 1103, index: 3 },
+      { start: 1107, end: 1152, index: 4 },
+      { start: 1156, end: 1241, index: 5 },
+      { start: 1245, end: 1320, index: 6 },
+      { start: 1322, end: 1407, index: 7 },
+      { start: 1410, end: 1455, index: 8 }
+    ];
+
+    // Remove previous highlight
+    regBellSchedule.forEach(row => row.classList.remove("bg-aoit-300"));
+
+    const currentPeriod = scheduleRanges.find(range => 
+      currentTime >= range.start && currentTime <= range.end
+    );
+
+    if (currentPeriod) {
+      regBellSchedule[currentPeriod.index].classList.add("bg-aoit-300");
+    }
   }
 
-  //// TODO: make this work in the future where cells are higlighted based on current time correlated by the current period.
+  // Initial call
+  updateBellScheduleHighlight();
 
-  const regBellSchedule =  el(".normal  table  tr", true);
-  
-  let currentTime = `${date.getHours() + "" + formatMinutes(date.getMinutes())}`;
-
-    var index = -1;
-
-    switch (true) {
-      case (currentTime >= 840 && currentTime <= 925):
-        index = 1;
-        break;
-      case (currentTime >= 929 && currentTime <= 1014):
-        index = 2;
-          break;
-      case (currentTime >= 1018 && currentTime <= 1103):
-        index = 3;
-        break;
-      case (currentTime >= 1107 && currentTime <= 1152):
-        index = 4;
-        break;
-      case (currentTime >= 1156 && currentTime <= 1241):
-        index = 5;
-        break;
-      case (currentTime >= 1245 && currentTime <= 1320):
-        index = 6;
-        break;
-      case (currentTime >= 1322 && currentTime <= 1407):
-        index = 7;
-        break;
-      case (currentTime >= 1410 && currentTime <= 1455):
-        index = 8;
-        break;
-  }
-
-  if(index > -1){
-    regBellSchedule[index].classList.add("bg-aoit-300");
-    regBellSchedule[index].style.backgroundColor = "yellow";
-  }  
+  // Update every minute
+  setInterval(updateBellScheduleHighlight, 60000);
 }
 
  const header = document.querySelector("header");
@@ -476,32 +463,24 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
                     var curr_date = processDate(post.start.dateTime || post.start.date );
                     
                     events.insertAdjacentHTML("beforeend", 
-                        `<article class="cal-event min-h-48 min-w-[20rem]	rounded-cell backdrop-blur bg-aoit-50/25 text-white rounded-xl py-2 px-4 bg-aoit-50 mb-8 flex flex-col justify-evenly items-center lg:mb-0 xl:w-[25rem]">
-                                <div class="flex gap-x-4 items-center w-full">
-                                <div class="flex flex-col gap-3">
-                                    <time class="bg-aoit-200 text-aoit-500 font-bold p-2 w-16 h-24 md:w-20 rounded-lg box-border text-center flex items-center justify-center lg:min-w-16">
-                                        <div>
-                                            <span class="text-2xl">${ curr_date.monthDate }</span>
-                                            <span class="block font-light lg:text-sm">${ curr_date.month }<br>${ curr_date.year  }</span>
-                                        </div>
-                                    </time>
-                                  </div>
-
-                                    <div class="mx-auto">
-                                        <strong class="text-white text-sm md:text-md xl:text-lg">
-                                            ${ setContent(post, "summary") }
-                                        </strong>
-                                        <span class="block text-white text-xs md:text-sm xl:text-lg">
-                                          ${
-                                            n.start.dateTime && n.end.dateTime 
-                                              ? `${processTime(n.start.dateTime)} to ${processTime(n.end.dateTime)}`
-                                              : ""
-                                          }
-                                        </span>
-                                        
-                                     
-                                    </div>
-                                </div>                            
+                        `<article class="cal-event min-h-20 min-w-[15rem] rounded-cell backdrop-blur-md bg-aoit-50/25 text-white rounded-xl p-3 mb-4 flex items-center lg:mb-0 xl:w-[20rem]">
+                            <time class="bg-aoit-200 text-aoit-500 font-bold p-2 w-18 h-20 rounded-lg text-center flex flex-col justify-center mr-3">
+                                <span class="text-xl">${curr_date.monthDate}</span>
+                                <span class="text-xs">${curr_date.month}</span>
+                                <span class="text-xs">${curr_date.year}</span>
+                            </time>
+                            <div>
+                                <strong class="text-white text-sm block">
+                                    ${setContent(post, "summary")}
+                                </strong>
+                                <span class="text-white text-xs">
+                                    ${
+                                        n.start.dateTime && n.end.dateTime 
+                                        ? `${processTime(n.start.dateTime)} - ${processTime(n.end.dateTime)}`
+                                        : ""
+                                    }
+                                </span>
+                            </div>
                         </article>`);
               });
             }
