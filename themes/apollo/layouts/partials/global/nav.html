@@ -30,8 +30,13 @@
                         <ul class="transition-all hidden absolute z-[60] bg-aoit-75 rounded-2xl w-80 px-6 shadow-xl top-10 py-4 group-hover:block">
                             {{ range .Children }}
                             <li class="transition-all text-aoit-500 font-semibold hover:bg-white hover:shadow-md px-4 rounded-2xl py-4">
-                                <a href="{{.URL}}">
+                                <a href="{{.URL}}" class="relative">
                                     {{ .Name }}
+                                    {{ if .Params.new }}
+                                    <span class="inline-flex items-center gap-x-1.5 rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-700 absolute top-0 right-0">
+                                      New!
+                                    </span>
+                                    {{ end }}
                                     <p class="text-gray-600 text-sm font-normal">{{ .Params.description }}</p>
                                 </a>
                             </li>
@@ -63,7 +68,7 @@
                 <span class="material-symbols-outlined">
                 language
                 </span>
-                <ul class="w-6/12 right-0 transition-all hidden absolute bg-aoit-75 rounded-2xl p-4 shadow-xl top-10 lg:left-0 w-full mt-8 group-hover:block {{ if .IsHome }} text-black {{ end }}">
+                <ul class="w-6/12 z-50 right-0 transition-all hidden absolute bg-aoit-75 rounded-2xl p-4 shadow-xl top-10 lg:left-0 w-full mt-8 group-hover:block {{ if .IsHome }} text-black {{ end }}">
                     {{ range .Site.Languages }}
                         {{ if eq . $.Site.Language }}
                         <li class="font-semibold text-white bg-aoit-500 shadow-md rounded-2xl mb-2 p-2">{{ .LanguageName }}</li>
