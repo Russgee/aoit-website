@@ -1,0 +1,65 @@
+{{ if .Site.Params.modalAnnouncement }}
+<div id="announcement-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden transition-opacity duration-300">
+    <!-- Backdrop with blur effect -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" id="modal-backdrop"></div>
+    
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 md:mx-auto overflow-hidden transform transition-transform duration-300 max-h-[90vh] flex flex-col">
+        <!-- Header with close button -->
+        <div class="bg-aoit-500 text-white px-4 py-3 flex justify-between items-center flex-shrink-0">
+            <h3 class="font-bold text-lg text-white">{{ .Site.Params.modalAnnouncementTitle | default "Announcement" }}</h3>
+            <button id="close-modal" class="text-white hover:text-gray-200 focus:outline-none">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <!-- Content - Scrollable container -->
+        <div class="overflow-y-auto flex-grow">
+            <!-- Two column layout for larger screens, stacked for mobile -->
+            <div class="flex flex-col md:flex-row">
+                <!-- Left column - Image -->
+                {{ if .Site.Params.modalAnnouncementImage }}
+                <div class="md:w-1/2 p-4 flex items-center justify-center bg-gray-50">
+                    <img src="{{ .Site.Params.modalAnnouncementImage }}" alt="{{ .Site.Params.modalAnnouncementTitle }}" class="max-w-full h-auto rounded-lg shadow-md">
+                </div>
+                {{ end }}
+                
+                <!-- Right column - Text content -->
+                <div class="md:w-1/2 p-6">
+                    <div class="prose dark:prose-invert max-w-none mb-6">
+                        {{ .Site.Params.modalAnnouncement | safeHTML }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer with checkbox and button - Fixed at bottom -->
+        <div class="border-t border-gray-200 p-4 bg-white flex-shrink-0">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <!-- Don't show again checkbox -->
+                <div class="flex items-center">
+                    <input type="checkbox" id="dont-show-again" class="h-4 w-4 text-aoit-500 focus:ring-aoit-500 border-gray-300 rounded">
+                    <label for="dont-show-again" class="ml-2 block text-sm text-black">
+                        {{ if eq .Site.Language.Lang "es" }}
+                            No mostrar este anuncio de nuevo
+                        {{ else }}
+                            Don't show this announcement again
+                        {{ end }}
+                    </label>
+                </div>
+                
+                <!-- Button -->
+                <div class="flex justify-end">
+                    <button id="confirm-modal" class="bg-aoit-500 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-aoit-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aoit-500 transition-colors duration-200 w-full sm:w-auto">
+                        {{ if eq .Site.Language.Lang "es" }}
+                            Entendido
+                        {{ else }}
+                            Okay
+                        {{ end }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }} 

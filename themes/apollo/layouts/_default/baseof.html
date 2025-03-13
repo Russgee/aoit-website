@@ -3,6 +3,7 @@
     {{- partial "global/head.html" . -}}
     <body class="font-inter bg-gradient-to-b from-white to-aoit-50 border-aoit-500 {{ if .Site.Params.announcement }} {{ else }} border-t-4 {{ end }}">
         {{- partial "global/announcement-bar.html" . -}}
+        {{- partial "global/announcement-modal.html" . -}}
         {{- partial "global/nav.html" . -}}
 
         {{ if eq .IsHome false }}
@@ -47,5 +48,7 @@
           <script src="https://accounts.google.com/gsi/client" async defer></script>    
           {{ $script := resources.Get "bundle.js" | resources.Minify | resources.Fingerprint }}    
           <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
+          {{ $announcementModal := resources.Get "announcement-modal.js" | resources.Minify | resources.Fingerprint }}
+          <script src="{{ $announcementModal.RelPermalink }}" integrity="{{ $announcementModal.Data.Integrity }}" defer></script>
     </body>
 </html>
