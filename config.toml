@@ -1,0 +1,1050 @@
+baseURL = 'https://aoiths.org'
+languageCode = 'en-us'
+title = 'Academy of Innovative Technology High School'
+theme = 'apollo'
+buildFuture = true 
+DefaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+
+    [languages.en.params]
+      announcement = "Please complete the NYC School Survey! Your feedback is important to us. <a href='https://surveys.panoramaed.com/nycdoe/login' class='underline' target='_blank'>Click here</a> to access the survey."
+      modalAnnouncementTitle = "Parent-Teacher Conferences"
+      modalAnnouncement = "<p><strong>Dear Parents/Guardians,</strong></p><br><p>We are excited to announce our in-person parent-teacher conferences, for the first time since 2019!</p><br><p>Join us on <strong>Wednesday, March 19, 2025</strong> from <strong>5:00 PM to 7:30 PM</strong> to reconnect with our staff face-to-face and celebrate student progress.</p><br><p>Staff members will reach out regarding your availability. Light refreshments will be served.</p><p>We look forward to seeing you!</p>"
+      modalAnnouncementImage = "/ptc.png"
+      description = "Discover Academy of Innovative Technology High School in Cypress Hills, Brooklyn, a nurturing New York City public high school for grades 9-12, providing three New York State approved CTE programs and a vast array of supports to ensure student success."
+      backToTopText = "Back to top"
+      backToTopAlt = "Click here to return back to top."
+
+      [[languages.en.params.staff]]
+        title = "Principal"
+        name = "Meghan Drysdale"
+        email = "Ms.drysdale@aoiths.org"
+        department = "Admin"
+
+      [[languages.en.params.staff]]
+        title = "Assistant Principal"
+        name = "Nicole Simpkins"
+        email = "Ms.simpkins@aoiths.org"
+        department = "Admin"
+
+      [[languages.en.params.staff]]
+        title = "Assistant Principal"
+        name = "Nicole Woodham"
+        email = "Ms.woodham@aoiths.org"
+        department = "Admin"
+
+      [[languages.en.params.staff]]
+        title = "CTE Lead Teacher, IT Fundamentals"
+        name = "Khayri Alphonse"
+        email = "Mr.alphonse@aoiths.org"
+        department = "CTE"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Donald Amell"
+        email = "Mr.amell@aoiths.org"
+        department = "Social Studies"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Peter Banta"
+        email = "Mr.banta@aoiths.org"
+        department = "Physical Education"
+
+      [[languages.en.params.staff]]
+        title = "Guidance Counselor"
+        name = "Mary Cooper"
+        email = "Ms.cooper@aoiths.org"
+        department = "Guidance"
+
+      [[languages.en.params.staff]]
+        title = "Substitute Teacher"
+        name = "McLawrence David"
+        email = "Mr.david@aoiths.org"
+        department = "Sub teacher"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Leila Davies"
+        email = "Ms.davies@aoiths.org"
+        department = "Science"
+
+      [[languages.en.params.staff]]
+        title = "Guidance Counselor"
+        name = "Marsha Desroches"
+        email = "Ms.desroches@aoiths.org"
+        department = "Guidance"
+
+      [[languages.en.params.staff]]
+        title = "Teacher, Social Studies & English"
+        name = "Alexandra Sherman"
+        email = "Ms.sherman@aoiths.org"
+        department = "Sped"
+
+      [[languages.en.params.staff]]
+        title = "CTE Teacher, Music Technology"
+        name = "Cameron Frazer"
+        email = "Mr.frazer@aoiths.org"
+        department = "CTE"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Rachel Freck"
+        email = "Ms.freck@aoiths.org"
+        department = "Mathematics"
+
+      [[languages.en.params.staff]]
+        title = "Paraprofessional"
+        name = "Tiffany Gardner"
+        email = "Ms.gardner@aoiths.org"
+        department = "Office"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Dalian Grant"
+        email = "Mr.Grant@aoiths.org"
+        department = "English"
+
+      [[languages.en.params.staff]]
+        title = "Lead Teacher"
+        name = "Stacy Griszell"
+        email = "Ms.Griszell@aoiths.org"
+        department = "English"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Maciel Gomez"
+        email = "Ms.gomez@aoiths.org"
+        department = "English"
+
+      [[languages.en.params.staff]]
+        title = "Lead Teacher"
+        name = "Garfield Headlam"
+        email = "Mr.headlam@aoiths.org"
+        department = "Social Studies"
+
+      [[languages.en.params.staff]]
+        title = "Information Technology Specialist"
+        name = "Shamel Howell"
+        email = "Mr.howell@aoiths.org"
+        department = "IT"
+
+      [[languages.en.params.staff]]
+        title = "Teacher, Science"
+        name = "Pamela Kabir"
+        email = "Ms.kabir@aoiths.org"
+        department = "Sped"
+
+      [[languages.en.params.staff]]
+        title = "Lead Teacher"
+        name = "Adam Koelsch"
+        email = "Mr.koelsch@aoiths.org"
+        department = "Mathematics"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Ydanairy Vallejo"
+        email = "ms.vallejo@aoiths.org"
+        department = "Spanish"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Ravi Lucas"
+        email = "Mr.lucas@aoiths.org"
+        department = "Social Studies"
+
+      [[languages.en.params.staff]]
+        title = "Parent Coordinator"
+        name = "Eduardo Martinez"
+        email = "Mr.martinez@aoiths.org"
+        department = "Office"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Ryan Mcalary"
+        email = "mr.mcalary@aoiths.org"
+        department = "Physical Education"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Georgette Minto"
+        email = "Ms.minto@aoiths.org"
+        department = "Mathematics"
+
+      [[languages.en.params.staff]]
+        title = "Dean"
+        name = "Jason Mollison"
+        email = "Mr.mollison@aoiths.org"
+        department = "RID"
+
+      [[languages.en.params.staff]]
+        title = "Dean"
+        name = "Cameron Frazer"
+        email = "Mr.frazer@aoiths.org"
+        department = "RID"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Liliam Mott"
+        email = "Ms.Mott@aoiths.org"
+        department = "ENL"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Tevin Lynch"
+        email = "Mr.lynch@aoiths.org"
+        department = "Science"
+
+      [[languages.en.params.staff]]
+        title = "CTE Teacher, AP Computer Science, Website Development, Career & Financial Management, Robotics"
+        name = "Aaron Pelzer"
+        email = "Mr.pelzer@aoiths.org"
+        department = "CTE"
+
+      [[languages.en.params.staff]]
+        title = "CTE Teacher, Website Development"
+        name = "Kyle Pierre"
+        email = "Mr.pierre@aoiths.org"
+        department = "CTE"
+
+      [[languages.en.params.staff]]
+        title = "CTE Teacher, Cyber Security, Graphic Design, Career & Financial Management"
+        name = "Meagan Ramsawak"
+        email = "Ms.ramsawak@aoiths.org"
+        department = "CTE"
+
+      [[languages.en.params.staff]]
+        title = "Teacher, Social Studies"
+        name = "Elvis Rodriguez"
+        email = "Mr.rodriguez@aoiths.org"
+        department = "Sped"
+
+      [[languages.en.params.staff]]
+        title = "CTE Teacher, Game Design & Development"
+        name = "Sakib Shams"
+        email = "Mr.shams@aoiths.org"
+        department = "CTE"
+
+      [[languages.en.params.staff]]
+        title = "Lead Teacher"
+        name = "Renee Slater"
+        email = "Ms.slater@aoiths.org"
+        department = "Sped"
+
+      [[languages.en.params.staff]]
+        title = "Teacher, Social Studies & Special Education"
+        name = "Thomas Smith"
+        email = "Mr.smith@aoiths.org"
+        department = "Social Studies"
+
+      [[languages.en.params.staff]]
+        title = "Teacher, Math"
+        name = "James Steele"
+        email = "Mr.steele@aoiths.org"
+        department = "Sped"
+
+      [[languages.en.params.staff]]
+        title = "Art Teacher"
+        name = "Michael Sullivan"
+        email = "mr.sullivan@aoiths.org"
+        department = "Art"
+
+      [[languages.en.params.staff]]
+        title = "Social Worker"
+        name = "Ariel Molina"
+        email = "mr.molina@aoiths.org"
+        department = "Guidance"
+
+      [[languages.en.params.staff]]
+        title = "Principal and Purchasing Secretary"
+        name = "Elizabeth Tirado"
+        email = "Ms.tirado@aoiths.org"
+        department = "Office"
+
+      [[languages.en.params.staff]]
+        title = "Paraprofessional"
+        name = "Ryan Shephard"
+        email = "Mr.shephard@aoiths.org"
+        department = "Paraprofessional"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Ashley Urena"
+        email = "Ms.urena@aoiths.org"
+        department = "Social Studies"
+
+      [[languages.en.params.staff]]
+        title = "School Support Staff"
+        name = "Michael Valentin"
+        email = "Mr.valentin@aoiths.org"
+        department = "Office"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Kyle Forth"
+        email = "mr.forth@aoiths.org"
+        department = "Mathematics"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Christina Tavares"
+        email = "ms.tavares2@aoiths.org"
+        department = "English"
+
+      [[languages.en.params.staff]]
+        title = "Teacher"
+        name = "Billy Wong"
+        email = "mr.wong@aoiths.org"
+        department = "Mathematics"
+
+      [[languages.en.params.staff]]
+        title = "Paraprofessional"
+        name = "Andy Ward"
+        email = "Mr.ward@aoiths.org"
+        department = "Paraprofessional"
+
+      [[languages.en.params.staff]]
+        title = "Lead Teacher"
+        name = "Dayna Weaver"
+        email = "Ms.weaver@aoiths.org"
+        department = "ENL"
+
+  [languages.es]
+    languageName = "Spanish"
+    weight = 2
+
+    [languages.es.params]
+      announcement = "¡Por favor complete la Encuesta Escolar de NYC! Sus comentarios son importantes para nosotros. <a href='https://surveys.panoramaed.com/nycdoe/login' class='underline' target='_blank'>Haga clic aquí</a> para acceder a la encuesta."
+      modalAnnouncementTitle = "Conferencias de Padres y Maestros"
+      modalAnnouncement = "<p><strong>Estimados Padres/Tutores,</strong></p><p>¡Nos complace anunciar nuestras conferencias de padres y maestros en persona, por primera vez desde 2019!</p><p>Acompáñenos el <strong>miércoles 19 de marzo de 2025</strong> de <strong>5:00 PM a 7:30 PM</strong> para reconectar con nuestro personal cara a cara y celebrar el progreso de los estudiantes.</p><p>Los miembros del personal se comunicarán con usted sobre su disponibilidad. Se servirán refrigerios ligeros.</p><p>¡Esperamos verlos!</p>"
+      modalAnnouncementImage = "/ptc-spanish.png"
+      description = "Descubra la escuela secundaria Academy of Innovative Technology en Cypress Hills, Brooklyn, una enriquecedora escuela secundaria pública de la ciudad de Nueva York para los grados 9 a 12, que ofrece tres programas CTE aprobados por el estado de New York y una amplia gama de apoyos para garantizar el éxito de los estudiantes."
+      backToTopText = "Volver al inicio"
+      backToTopAlt = "Click here to go back to the top."
+
+      [[languages.es.params.staff]]
+        title = "Directora"
+        name = "Meghan Drysdale"
+        email = "Ms.lynch@aoiths.org"
+        department = "Admin"
+
+      [[languages.es.params.staff]]
+        title = "Subdirectora"
+        name = "Nicole Simpkins"
+        email = "Ms.simpkins@aoiths.org"
+        department = "Admin"
+
+      [[languages.es.params.staff]]
+        title = "Subdirectora"
+        name = "Nicole Woodham"
+        email = "Ms.woodham@aoiths.org"
+        department = "Admin"
+
+      [[languages.es.params.staff]]
+        title = "Profesor Líder, Fundamentos de TI"
+        name = "Khayri Alphonse"
+        email = "Mr.alphonse@aoiths.org"
+        department = "CTE"
+
+      [[languages.es.params.staff]]
+        title = "Profesor"
+        name = "Donald Amell"
+        email = "Mr.amell@aoiths.org"
+        department = "Social Studies"
+
+      [[languages.es.params.staff]]
+        title = "Profesor"
+        name = "Peter Banta"
+        email = "Mr.banta@aoiths.org"
+        department = "Physical Education"
+
+      [[languages.es.params.staff]]
+        title = "Consejera de Orientación"
+        name = "Mary Cooper"
+        email = "Ms.cooper@aoiths.org"
+        department = "Guidance"
+
+      [[languages.es.params.staff]]
+        title = "Profesor Sustituto"
+        name = "McLawrence David"
+        email = "Mr.david@aoiths.org"
+        department = "Sub teacher"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Leila Davies"
+        email = "Ms.davies@aoiths.org"
+        department = "Science"
+
+      [[languages.es.params.staff]]
+        title = "Consejera de Orientación"
+        name = "Marsha Desroches"
+        email = "Ms.desroches@aoiths.org"
+        department = "Guidance"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Alexandra Sherman"
+        email = "Ms.sherman@aoiths.org"
+        department = "Sped"
+
+      [[languages.es.params.staff]]
+        title = "Profesor de CTE, Tecnología Musical"
+        name = "Cameron Frazer"
+        email = "Mr.frazer@aoiths.org"
+        department = "CTE"
+
+      [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Rachel Freck"
+        email = "Ms.freck@aoiths.org"
+        department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Tiffany Gardner"
+      email = "Ms.gardner@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Dalian Grant"
+      email = "Mr.Grant@aoiths.org"
+      department = "English"
+
+    [[languages.es.params.staff]]
+      title = "Profesora Líder"
+      name = "Stacy Griszell"
+      email = "Ms.Griszell@aoiths.org"
+      department = "English"
+
+        [[languages.es.params.staff]]
+        title = "Profesora"
+        name = "Maciel Gomez"
+        email = "Ms.gomez@aoiths.org"
+        department = "English"
+
+    [[languages.es.params.staff]]
+      title = "Profesor Líder"
+      name = "Garfield Headlam"
+      email = "Mr.headlam@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Tatiana Herrera"
+      email = "Ms.herrera@aoiths.org"
+      department = "Paraprofessional"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Ryan Shephard"
+      email = "Mr.shephard@aoiths.org"
+      department = "Paraprofessional"
+
+    [[languages.es.params.staff]]
+      title = "Especialista en Tecnología de la Información"
+      name = "Shamel Howell"
+      email = "Mr.howell@aoiths.org"
+      department = "IT"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Pamela Kabir"
+      email = "Ms.kabir@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor Líder"
+      name = "Adam Koelsch"
+      email = "Mr.koelsch@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Ydanairy Vallejo"
+      email = "ms.vallejo@aoiths.org"
+      department = "Spanish"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Ravi Lucas"
+      email = "Mr.lucas@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Coordinador de Padres"
+      name = "Eduardo Martinez"
+      email = "Mr.martinez@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Ryan Mcalary"
+      email = "mr.mcalary@aoiths.org"
+      department = "Physical Education"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Georgette Minto"
+      email = "Ms.minto@aoiths.org"
+      department = "Mathematics"
+
+    [[languages.es.params.staff]]
+      title = "Decano"
+      name = "Jason Mollison"
+      email = "Mr.mollison@aoiths.org"
+      department = "RID"
+
+    [[languages.es.params.staff]]
+      title = "Decano"
+      name = "Cameron Frazer"
+      email = "Mr.frazer@aoiths.org"
+      department = "RID"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Liliam Mott"
+      email = "Ms.Mott@aoiths.org"
+      department = "ENL"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Kevin Lynch"
+      email = "Mr.lynch@aoiths.org"
+      department = "Science"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Ciencias de la Computación AP, Desarrollo de Sitios Web, Gestión de Carreras y Finanzas, Robótica"
+      name = "Aaron Pelzer"
+      email = "Mr.pelzer@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Desarrollo de Sitios Web"
+      name = "Kyle Pierre"
+      email = "Mr.pierre@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesora de CTE, Seguridad Cibernética, Diseño Gráfico, Gestión de Carreras y Finanzas"
+      name = "Meagan Ramsawak"
+      email = "Ms.ramsawak@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Elvis Rodriguez"
+      email = "Mr.rodriguez@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor de CTE, Diseño y Desarrollo de Videojuegos"
+      name = "Sakib Shams"
+      email = "Mr.shams@aoiths.org"
+      department = "CTE"
+
+    [[languages.es.params.staff]]
+      title = "Profesora Líder"
+      name = "Renee Slater"
+      email = "Ms.slater@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Thomas Smith"
+      email = "mr.smith@aoiths.org"
+      department = "Staff"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "James Steele"
+      email = "Mr.steele@aoiths.org"
+      department = "Sped"
+
+    [[languages.es.params.staff]]
+      title = "Maestro de Arte"
+      name = "Michael Sullivan"
+      email = "mr.sullivan@aoiths.org"
+      department = "Art"
+
+    [[languages.es.params.staff]]
+      title = "Trabajadora Social"
+      name = "Ariel Molina"
+      email = "mr.molina@aoiths.org"
+      department = "Guidance"
+
+    [[languages.es.params.staff]]
+      title = "Secretaria de la Directora y de Compras"
+      name = "Elizabeth Tirado"
+      email = "Ms.tirado@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesora"
+      name = "Ashley Urena"
+      email = "Ms.urena@aoiths.org"
+      department = "Social Studies"
+
+    [[languages.es.params.staff]]
+      title = "Personal de Apoyo Escolar"
+      name = "Michael Valentin"
+      email = "Mr.valentin@aoiths.org"
+      department = "Office"
+
+    [[languages.es.params.staff]]
+      title = "Profesor"
+      name = "Daniel Verley"
+      email = "Mr.verley@aoiths.org"
+      department = "Science"
+
+    [[languages.es.params.staff]]
+      title = "Paraprofesional"
+      name = "Andy Ward"
+      email = "Mr.ward@aoiths.org"
+      department = "Paraprofessional"
+
+    [[languages.es.params.staff]]
+      title = "Profesora Líder"
+      name = "Dayna Weaver"
+      email = "Ms.weaver@aoiths.org"
+      department = "ENL"
+        
+    [[languages.es.menu.main]]
+        identifier = "logo"
+        name = "logo"
+        url = "/es"
+        weight = -1
+
+      [languages.es.menu.main.params]
+        logo = "/logo.svg"
+        desc = "Base theme logo"
+
+
+      [[languages.es.menu.main]]
+        identifier = "about"
+        name = "Sobre nosotros"
+        url = "/es/about"
+        weight = 1
+        hasChildren = true
+
+                [[languages.es.menu.main]]
+                name = "Horario de campana"
+                url = "/es/about/bell-schedule"
+                identifier = "Bell Schedule"
+                parent = "about"
+                weight = 1
+                [languages.es.menu.main.params]
+                description = "Nuestro horario escolar diario."
+
+                [[languages.es.menu.main]]
+                name = "Mensaje de la directora"
+                url = "/es/about/principals-message"
+                identifier = "Principal's Message"
+                parent = "about"
+                weight = 2
+                [languages.es.menu.main.params]
+                description = "La visión y valores de nuestra directora."
+
+        [[languages.es.menu.main]]
+        identifier = "Academics"
+        name = "Académica"
+        url = "/es/academics"
+        weight = 2
+        hasChildren = true
+
+                [[languages.es.menu.main]]
+                name = "Posición avanzada"
+                url = "/es/academics/advanced-placement"
+                identifier = "Advanced Placement"
+                parent = "Academics"
+                weight = 1
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
+
+                [[languages.es.menu.main]]
+                name = "Servicios de apoyo educativo"
+                url = "/es/academics/iss"
+                identifier = "ISS"
+                parent = "Academics"
+                weight = 2
+                [languages.es.menu.main.params]
+                description = "Asistencia individualizada para el éxito del estudiante."
+
+                [[languages.es.menu.main]]
+                name = "Tutoría MESH"
+                url = "/es/academics/mesh"
+                identifier = "MESH"
+                parent = "Academics"
+                weight = 3
+                [languages.es.menu.main.params]
+                description = "Apoyo de tutoría después de la escuela."
+
+                [[languages.es.menu.main]]
+                name = "Libro de calificaciones Jupiter"
+                url = "https://login.JupiterEd.com"
+                identifier = "Jupiter Gradebook"
+                parent = "Academics"
+                weight = 4
+                new = true
+                [languages.es.menu.main.params]
+                description = "Sistema en línea de calificaciones e información estudiantil."
+                
+        [[languages.es.menu.main]]
+        identifier = "Athletics"
+        name = "Atletismo"
+        url = "/es/athletics"
+        weight = 3
+        hasChildren = true
+
+        [[languages.es.menu.main]]
+        identifier = "CTE"
+        name = "CTE"
+        url = "/es/cte"
+        weight = 4
+
+                [[languages.es.menu.main]]
+                name = "Carrera y gestión financiera"
+                url = "/es/cte/cfm"
+                identifier = "CFM"
+                parent = "CTE"
+                weight = 5
+                [languages.es.menu.main.params]
+                description = "Nuestro horario escolar diario."
+
+                [[languages.es.menu.main]]
+                name = "Desarrollo web"
+                url = "/es/cte/web"
+                identifier = "Web Development"
+                parent = "CTE"
+                weight = 1
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar desarrollo de sitios web."
+
+                [[languages.es.menu.main]]
+                name = "Diseño de juego"
+                url = "/es/cte/game-design"
+                identifier = "Game Design"
+                parent = "CTE"
+                weight = 2
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar desarrollo de videojuegos."
+  
+                [[languages.es.menu.main]]
+                name = "Sistemas IT"
+                url = "/es/cte/it"
+                identifier = "IT Systems"
+                parent = "CTE"
+                weight = 3
+                [languages.es.menu.main.params]
+                description = "Programa CTE aprobado por el estado para enseñar fundamentos de sistemas de TI."
+  
+                [[languages.es.menu.main]]
+                name = "Aprendizaje basado en el trabajo"
+                url = "/es/cte/wbl"
+                identifier = "Work-Based Learning"
+                parent = "CTE"
+                weight = 4
+                [languages.es.menu.main.params]
+                description = "Pasantías y programas diseñados para aprender a través de experiencias del mundo real."
+
+        [[languages.es.menu.main]]
+        identifier = "Calendar"
+        name = "Calendario"
+        url = "/es/calendar"
+        weight = 5
+
+        [[languages.es.menu.main]]
+        identifier = "Guidance"
+        name = "Orientación"
+        url = "/es/guidance"
+        weight = 6
+        hasChildren = true
+
+                [[languages.es.menu.main]]
+                name = "Requisitos de graduación"
+                url = "/es/guidance/grad-requirements"
+                identifier = "Graduation Requirements"
+                parent = "Guidance"
+                weight = 1
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
+
+                [[languages.es.menu.main]]
+                name = "Formularios de almuerzo"
+                url = "/es/guidance/lunch-forms"
+                identifier = "Lunch Forms"
+                parent = "Guidance"
+                weight = 2
+                [languages.es.menu.main.params]
+                description = "Cursos acelerados elegibles para créditos universitarios para estudiantes avanzados."
+
+                [[languages.es.menu.main]]
+                name = "MySchools"
+                url = "/es/guidance/myschools"
+                identifier = "MySchools"
+                parent = "Guidance"
+                weight = 3
+                [languages.es.menu.main.params]
+                description = "Acceda al sistema de búsqueda y solicitud de escuelas del Departamento de Educación de NYC."
+                new = true
+
+        [[languages.es.menu.main]]
+        identifier = "Staff"
+        name = "Personal"
+        url = "/es/staff"
+        weight = 7
+
+    [[languages.es.menu.footer]]
+
+    [[languages.es.menu.social]]
+      name = "Facebook"
+      url = "https://www.facebook.com/profile.php?id=505373589604113&paipv=0&eav=Afba7QslDWPQhuuDoslTkiqrVT9vkI85r7aRuUJdFC3iA2PiHIptNMbDBMhBNFrXpSU&_rdr"
+      pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Facebook</title>   <path d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z"/></svg>'
+
+    [[languages.es.menu.social]]
+      name = "Twitter"
+      url = "https://twitter.com/aoiths"
+      pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Twitter</title>  <path d="M22,3.999c-0.78,0.463-2.345,1.094-3.265,1.276c-0.027,0.007-0.049,0.016-0.075,0.023c-0.813-0.802-1.927-1.299-3.16-1.299 c-2.485,0-4.5,2.015-4.5,4.5c0,0.131-0.011,0.372,0,0.5c-3.353,0-5.905-1.756-7.735-4c-0.199,0.5-0.286,1.29-0.286,2.032 c0,1.401,1.095,2.777,2.8,3.63c-0.314,0.081-0.66,0.139-1.02,0.139c-0.581,0-1.196-0.153-1.759-0.617c0,0.017,0,0.033,0,0.051 c0,1.958,2.078,3.291,3.926,3.662c-0.375,0.221-1.131,0.243-1.5,0.243c-0.26,0-1.18-0.119-1.426-0.165 c0.514,1.605,2.368,2.507,4.135,2.539c-1.382,1.084-2.341,1.486-5.171,1.486H2C3.788,19.145,6.065,20,8.347,20 C15.777,20,20,14.337,20,8.999c0-0.086-0.002-0.266-0.005-0.447C19.995,8.534,20,8.517,20,8.499c0-0.027-0.008-0.053-0.008-0.08 c-0.003-0.136-0.006-0.263-0.009-0.329c0.79-0.57,1.475-1.281,2.017-2.091c-0.725,0.322-1.503,0.538-2.32,0.636 C20.514,6.135,21.699,4.943,22,3.999z"/></svg>'
+
+    [[languages.es.menu.social]]
+      name = "Instagram"
+      url = "https://instagram.com/aoiths"
+      pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Instagram</title><path d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"/></svg>'
+
+
+
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+facebook = 'true'
+twitter = 'true'
+
+[params.meta]
+        image = ""
+        description = "This is a template with meta tag configuration."
+        video = ""
+
+
+[menu]
+[[menu.main]]
+identifier = "logo"
+name = "logo"
+url = "/"
+weight = -1
+
+[menu.main.params]
+logo = "/logo.svg"
+desc = "Base theme logo"
+
+[[menu.main]]
+identifier = "about"
+name = "About Us"
+url = "/en/about"
+weight = 1
+hasChildren = true
+
+[[menu.main]]
+    name = "Bell Schedule"
+    url = "/en/about/bell-schedule"
+    identifier = "Bell Schedule"
+    parent = "about"
+    weight = 1
+    [menu.main.params]
+    description = "Our school's daily timetable."
+
+[[menu.main]]
+    name = "Principal's Message"
+    url = "/en/about/principals-message"
+    identifier = "Principal's Message"
+    parent = "about"
+    weight = 2
+    [menu.main.params]
+    description = "Our principal's vision and values."
+
+[[menu.main]]
+identifier = "academics"
+name = "Academics"
+url = "/en/academics"
+weight = 2
+hasChildren = true
+
+[[menu.main]]
+    name = "Advanced Placement"
+    url = "/en/academics/advanced-placement"
+    identifier = "Advanced Placement"
+    parent = "academics"
+    weight = 1
+    [menu.main.params]
+    description = "College-credit eligible accelerated courses for advanced learners."
+
+  [[menu.main]]
+    name = "Instructional Support Services"
+    url = "/en/academics/iss"
+    identifier = "ISS"
+    parent = "academics"
+    weight = 2
+    [menu.main.params]
+    description = "Individualized assistance for student success."
+
+  [[menu.main]]
+    name = "MESH"
+    url = "/en/academics/mesh"
+    identifier = "MESH"
+    parent = "academics"
+    weight = 3
+    [menu.main.params]
+    description = "Afterschool tutoring support."
+
+  [[menu.main]]
+    name = "Jupiter Gradebook"
+    url = "https://login.JupiterEd.com"
+    identifier = "Jupiter Gradebook"
+    parent = "academics"
+    weight = 3
+    [menu.main.params]
+    description = "Online grading and student information system."
+    new = true
+  
+  [[menu.main]]
+    identifier = "Athletics"
+    name = "Athletics"
+    url = "/en/athletics"
+    weight = 3
+
+[[menu.main]]
+identifier = "cte"
+name = "CTE"
+url = "/en/cte"
+weight = 4
+hasChildren = true
+
+  [[menu.main]]
+    name = "Web Development"
+    url = "/en/cte/web"
+    identifier = "Web Development"
+    parent = "cte"
+    weight = 1
+    [menu.main.params]
+    description = "State-approved CTE program teaching website development."
+
+  [[menu.main]]
+    name = "Game Design"
+    url = "/en/cte/game-design"
+    identifier = "Game Design"
+    parent = "cte"
+    weight = 2
+    [menu.main.params]
+    description = "State-approved CTE program teaching video game development."
+  
+  [[menu.main]]
+    name = "IT Systems"
+    url = "/en/cte/it"
+    identifier = "IT Systems"
+    parent = "cte"
+    weight = 3
+    [menu.main.params]
+    description = "State-approved CTE program teaching IT System fundamentals."
+  
+  [[menu.main]]
+    name = "Work-Based Learning"
+    url = "/en/cte/wbl"
+    identifier = "Work-Based Learning"
+    parent = "cte"
+    weight = 4
+    [menu.main.params]
+    description = "Internships and programs designed for learning through real-world experiences."
+  
+  [[menu.main]]
+    name = "Career and Financial Management"
+    url = "/en/cte/cfm"
+    identifier = "CFM"
+    parent = "cte"
+    weight = 5
+    [menu.main.params]
+    description = "State-approved CTE course teaching important career and financial skills."
+
+
+[[menu.main]]
+identifier = "calendar"
+name = "Calendar"
+url = "/en/calendar"
+weight = 4
+
+[[menu.main]]
+identifier = "guidance"
+name = "Guidance"
+url = "/en/guidance"
+weight = 5
+hasChildren = true
+
+
+[[menu.main]]
+    name = "Admissions"
+    url = "/en/guidance/admissions"
+    identifier = "Admissions"
+    parent = "guidance"
+    weight = 1
+    [menu.main.params]
+    description = "Information on our admissions criteria."
+
+[[menu.main]]
+    name = "Graduation Requirements"
+    url = "/en/guidance/grad-requirements"
+    identifier = "Graduation Requirements"
+    parent = "guidance"
+    weight = 2
+    [menu.main.params]
+    description = "Learn more about requirements to graduate."
+
+[[menu.main]]
+    name = "Lunch Forms"
+    url = "/en/guidance/lunch-forms"
+    identifier = "Lunch Forms"
+    parent = "guidance"
+    weight = 3
+    [menu.main.params]
+    description = "Access and submit lunch-related forms."
+
+[[menu.main]]
+    name = "MySchools"
+    url = "/en/guidance/myschools"
+    identifier = "MySchools"
+    parent = "guidance"
+    weight = 4
+    [menu.main.params]
+    description = "Access the NYC Department of Education's school search and application system."
+    new = true
+[[menu.main]]
+identifier = "staff"
+name = "Staff"
+url = "/en/staff"
+weight = 7
+
+[[menu.footer]]
+
+[[menu.social]]
+  name = "Facebook"
+  url = "https://www.facebook.com/profile.php?id=505373589604113&paipv=0&eav=Afba7QslDWPQhuuDoslTkiqrVT9vkI85r7aRuUJdFC3iA2PiHIptNMbDBMhBNFrXpSU&_rdr"
+  pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Facebook</title>   <path d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z"/></svg>'
+
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/aoiths"
+  pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Twitter</title>  <path d="M22,3.999c-0.78,0.463-2.345,1.094-3.265,1.276c-0.027,0.007-0.049,0.016-0.075,0.023c-0.813-0.802-1.927-1.299-3.16-1.299 c-2.485,0-4.5,2.015-4.5,4.5c0,0.131-0.011,0.372,0,0.5c-3.353,0-5.905-1.756-7.735-4c-0.199,0.5-0.286,1.29-0.286,2.032 c0,1.401,1.095,2.777,2.8,3.63c-0.314,0.081-0.66,0.139-1.02,0.139c-0.581,0-1.196-0.153-1.759-0.617c0,0.017,0,0.033,0,0.051 c0,1.958,2.078,3.291,3.926,3.662c-0.375,0.221-1.131,0.243-1.5,0.243c-0.26,0-1.18-0.119-1.426-0.165 c0.514,1.605,2.368,2.507,4.135,2.539c-1.382,1.084-2.341,1.486-5.171,1.486H2C3.788,19.145,6.065,20,8.347,20 C15.777,20,20,14.337,20,8.999c0-0.086-0.002-0.266-0.005-0.447C19.995,8.534,20,8.517,20,8.499c0-0.027-0.008-0.053-0.008-0.08 c-0.003-0.136-0.006-0.263-0.009-0.329c0.79-0.57,1.475-1.281,2.017-2.091c-0.725,0.322-1.503,0.538-2.32,0.636 C20.514,6.135,21.699,4.943,22,3.999z"/></svg>'
+
+[[menu.social]]
+  name = "Instagram"
+  url = "https://instagram.com/aoiths"
+  pre = '<svg class="fill-aoit-500 transition-all hover:fill-aoit-900" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><title>Instagram</title><path d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"/></svg>'
+
+
+
+# [permalinks]
