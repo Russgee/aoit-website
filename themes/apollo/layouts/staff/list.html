@@ -12,10 +12,38 @@
 
 {{ end }}
 
-   <div class="staff col-start-3 col-end-8">
+   <div class="staff col-start-3 col-end-8 lg:pt-0 pt-4">
+    
+    <!-- Mobile Staff Navigation -->
+    <div class="lg:hidden sticky top-0 mb-8 z-50 bg-white pb-2">
+        <button id="mobile-staff-nav-toggle" class="w-full bg-aoit-500 text-white py-4 px-5 rounded-lg flex justify-between items-center shadow-md">
+            <span class="font-semibold text-lg">{{ i18n "staff_page_title" }} <span class="text-sm ml-2 opacity-80">- Click to navigate</span></span>
+            <span class="transition-transform text-xl" id="mobile-nav-icon">&#9662;</span>
+        </button>
+        <div id="mobile-staff-nav" class="hidden bg-white shadow-lg rounded-b-lg border border-gray-200 mt-1 absolute w-full">
+            <ul class="py-2 max-h-[70vh] overflow-y-auto">
+                <li><a href="#admin" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_administration" }}</a></li>
+                <li><a href="#cteTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_career_and_technical_education" }}</a></li>
+                <li><a href="#englishTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_english" }}</a></li>
+                <li><a href="#mathTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_math" }}</a></li>
+                <li><a href="#historyTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_social_studies" }}</a></li>
+                <li><a href="#scienceTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_science" }}</a></li>
+                <li><a href="#artTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_art" | default "Art" }}</a></li>
+                <li><a href="#physEdTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_physical_education" }}</a></li>
+                <li><a href="#issTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_instructional_support_services" }}</a></li>
+                <li><a href="#paraTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_paraprofessional" }}</a></li>
+                <li><a href="#enlTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_enl" }}</a></li>
+                <li><a href="#spanish" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_spanish" }}</a></li>
+                <li><a href="#mainOffice" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_office_staff" }}</a></li>
+                <li><a href="#guidance" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_guidance" }}</a></li>
+                <li><a href="#ridTeam" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_rid" }}</a></li>
+                <li><a href="#otherStaff" class="block px-4 py-2 hover:bg-aoit-50">{{ i18n "staff_page_other_school_staff" }}</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="admin">{{ i18n "staff_page_administration" }}</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="admin">{{ i18n "staff_page_administration" }}</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
@@ -23,7 +51,12 @@
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Admin" }}
                 <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                        </div>
+                    </td>
                     <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
                 </tr>
                 {{ end }}
@@ -34,24 +67,27 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Admin" }}
-                        <tr>
-                            <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                                <br>
-                                <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
+                        </td>
+                    </tr>
                     {{ end }}
                 {{ end }}
         </table>
     </div>
     
 
-    <h2 class="text-2xl font-semibold mb-6" id="cteTeam">{{ i18n "staff_page_career_and_technical_education" }}</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="cteTeam">{{ i18n "staff_page_career_and_technical_education" }}</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
@@ -60,19 +96,23 @@
                 {{ if eq .department "CTE" }}
                         {{ if or (in .title "Lead Teacher") (eq .title "Profesor Líder") }}
                             <tr class="">
-                                <td class="border border-slate-700 p-4">
-                                    <strong>{{.name}}</strong><br>
-                                    {{.title}}
+                                <td class="border border-aoit-400 p-4">
+                                    <div class="flex flex-col space-y-2">
+                                        <strong>{{.name}}</strong><br>
+                                        {{.title}}
+                                    </div>
                                 </td>
-                                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                                <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                             </tr>
                         {{ else }}
                             <tr class="">
-                                <td class="border border-slate-700 p-4">
-                                    <strong>{{.name}}</strong><br>
-                                    {{.title}}
+                                <td class="border border-aoit-400 p-4">
+                                    <div class="flex flex-col space-y-2">
+                                        <strong>{{.name}}</strong><br>
+                                        {{.title}}
+                                    </div>
                                 </td>
-                                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                                <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                             </tr>
                         {{ end }}
                     {{ end }}
@@ -83,35 +123,27 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "CTE" }}
-                    {{ if or (in .title "Lead Teacher") (eq .title "Profesor Líder") }}
-                            <tr class="">
-                                <td class="border border-slate-700 p-4">
-                                    <strong>{{.name}}</strong><br>
-                                    {{.title}}
-                                </td>
-                                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                            </tr>
-                        {{ else }}
-                            <tr class="">
-                                <td class="border border-slate-700 p-4">
-                                    <strong>{{.name}}</strong><br>
-                                    {{.title}}
-                                </td>
-                                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                            </tr>
-                        {{ end }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
+                        </td>
+                    </tr>
                     {{ end }}
                 {{ end }}
         </table>
     </div>
     
 
-    <h2 class="text-2xl font-semibold mb-6" id="englishTeam">{{ i18n "staff_page_english" }}</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="englishTeam">{{ i18n "staff_page_english" }}</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
@@ -120,70 +152,60 @@
                 {{ if eq .department "English" }}
                     {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
                     <tr class="">
-                        <td class="border border-slate-700 p-4">
-                            <strong>{{.name}}</strong><br>
-                            {{.title}}
-                        </td>
-                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                    </tr>
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-
-            {{ range .Site.Params.staff }}
-                {{ if eq .department "English" }}
-                    {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
-                        <tr class="">
-                            <td class="border border-slate-700 p-4">
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
                                 <strong>{{.name}}</strong><br>
                                 {{.title}}
-                            </td>
-                            <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                        </tr>
+                            </div>
+                        </td>
+                        <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "English" }}
+                        {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
+                            <tr class="">
+                                <td class="border border-aoit-400 p-4">
+                                    <div class="flex flex-col space-y-2">
+                                        <strong>{{.name}}</strong><br>
+                                        {{.title}}
+                                    </div>
+                                </td>
+                                <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                            </tr>
                         {{ end }}
+                    {{ end }}
                 {{ end }}
-            {{ end }}
     </table>
 
-    <!-- Table of mobile rendering -->
+    <!-- Table for mobile rendering -->
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
             {{ range .Site.Params.staff }}
-            {{ if eq .department "English" }}
-                {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
-                <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                {{ if eq .department "English" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
             {{ end }}
-        {{ end }}
-
-        {{ range .Site.Params.staff }}
-            {{ if eq .department "English" }}
-                {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
-                    <tr class="">
-                        <td class="border border-slate-700 p-4">
-                            <strong>{{.name}}</strong><br>
-                            {{.title}}
-                        </td>
-                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                    </tr>
-                    {{ end }}
-            {{ end }}
-        {{ end }}
         </table>
     </div>
     
 
     
-    <h2 class="text-2xl font-semibold mb-6" id="mathTeam">{{ i18n "staff_page_math" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="mathTeam">{{ i18n "staff_page_math" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -193,11 +215,13 @@
         {{ if eq .department "Mathematics" }}
             {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
             <tr class="">
-                <td class="border border-slate-700 p-4">
-                    <strong>{{.name}}</strong><br>
-                    {{.title}}
+                <td class="border border-aoit-400 p-4">
+                    <div class="flex flex-col space-y-2">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </div>
                 </td>
-                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
             </tr>
             {{ end }}
         {{ end }}
@@ -207,11 +231,13 @@
         {{ if eq .department "Mathematics" }}
             {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
                 <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                    <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
         {{ end }}
@@ -222,40 +248,26 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
             {{ range .Site.Params.staff }}
-            {{ if eq .department "Mathematics" }}
-                {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
-                <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                {{ if eq .department "Mathematics" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
             {{ end }}
-        {{ end }}
-
-        {{ range .Site.Params.staff }}
-            {{ if eq .department "Mathematics" }}
-                {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
-                    <tr class="">
-                        <td class="border border-slate-700 p-4">
-                            <strong>{{.name}}</strong><br>
-                            {{.title}}
-                        </td>
-                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                    </tr>
-                    {{ end }}
-            {{ end }}
-        {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="historyTeam">{{ i18n "staff_page_social_studies" }}</h2>
-    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg max-[600px]:hidden">
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="historyTeam">{{ i18n "staff_page_social_studies" }}</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
@@ -264,11 +276,13 @@
         {{ if eq .department "Social Studies" }}
             {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
             <tr class="">
-                <td class="border border-slate-700 p-4">
-                    <strong>{{.name}}</strong><br>
-                    {{.title}}
+                <td class="border border-aoit-400 p-4">
+                    <div class="flex flex-col space-y-2">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </div>
                 </td>
-                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
             </tr>
             {{ end }}
         {{ end }}
@@ -278,11 +292,13 @@
         {{ if eq .department "Social Studies" }}
             {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
                 <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                    <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
         {{ end }}
@@ -293,39 +309,25 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
             {{ range .Site.Params.staff }}
-            {{ if eq .department "Social Studies" }}
-                {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
-                <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                {{ if eq .department "Social Studies" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
             {{ end }}
-        {{ end }}
-
-        {{ range .Site.Params.staff }}
-            {{ if eq .department "Social Studies" }}
-                {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
-                    <tr class="">
-                        <td class="border border-slate-700 p-4">
-                            <strong>{{.name}}</strong><br>
-                            {{.title}}
-                        </td>
-                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                    </tr>
-                    {{ end }}
-            {{ end }}
-        {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="scienceTeam">{{ i18n "staff_page_science" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="scienceTeam">{{ i18n "staff_page_science" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -335,11 +337,13 @@
         {{ if eq .department "Science" }}
             {{ if or (eq .title "Lead Teacher") (eq .title "Profesor Líder") }}
             <tr class="">
-                <td class="border border-slate-700 p-4">
-                    <strong>{{.name}}</strong><br>
-                    {{.title}}
+                <td class="border border-aoit-400 p-4">
+                    <div class="flex flex-col space-y-2">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </div>
                 </td>
-                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
             </tr>
             {{ end }}
         {{ end }}
@@ -349,11 +353,13 @@
         {{ if eq .department "Science" }}
             {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
                 <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                    <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
         {{ end }}
@@ -364,39 +370,68 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
             {{ range .Site.Params.staff }}
-            {{ if eq .department "Science" }}
-                {{ if eq .title "Lead Teacher" }}
-                <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                {{ if eq .department "Science" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
             {{ end }}
-        {{ end }}
-
-        {{ range .Site.Params.staff }}
-            {{ if eq .department "Science" }}
-                {{ if ne .title "Lead Teacher" }}
-                    <tr class="">
-                        <td class="border border-slate-700 p-4">
-                            <strong>{{.name}}</strong><br>
-                            {{.title}}
-                        </td>
-                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                    </tr>
-                    {{ end }}
-            {{ end }}
-        {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="physEdTeam">{{ i18n "staff_page_physical_education" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="artTeam">{{ i18n "staff_page_art" | default "Art" }}</h2>
+    <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
+        <tr class="text-white bg-aoit-500">
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+            <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
+        </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Art" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
+                    </td>
+                </tr>
+                {{ end }}
+            {{ end }}
+    </table>
+
+    <!-- Table for mobile rendering -->
+    <div class="overflow-auto min-[600px]:hidden">
+        <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
+            <tr class="text-white bg-aoit-500">
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
+            </tr>
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "Art" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{ end }}
+                {{ end }}
+        </table>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="physEdTeam">{{ i18n "staff_page_physical_education" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -405,8 +440,13 @@
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Physical Education" }}
                 <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
+                    </td>
                 </tr>
                 {{ end }}
             {{ end }}
@@ -416,14 +456,17 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Physical Education" }}
                     <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
                         </td>
                     </tr>
                     {{ end }}
@@ -431,7 +474,7 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="issTeam">{{ i18n "staff_page_instructional_support_services" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="issTeam">{{ i18n "staff_page_instructional_support_services" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -441,11 +484,13 @@
         {{ if eq .department "Sped" }}
             {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
             <tr class="">
-                <td class="border border-slate-700 p-4">
-                    <strong>{{.name}}</strong><br>
-                    {{.title}}
+                <td class="border border-aoit-400 p-4">
+                    <div class="flex flex-col space-y-2">
+                        <strong>{{.name}}</strong><br>
+                        {{.title}}
+                    </div>
                 </td>
-                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
             </tr>
             {{ end }}
         {{ end }}
@@ -455,11 +500,13 @@
         {{ if eq .department "Sped" }}
             {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
                 <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong><br>
+                            {{.title}}
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                    <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
         {{ end }}
@@ -470,41 +517,27 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
             {{ range .Site.Params.staff }}
-            {{ if eq .department "Sped" }}
-                {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
-                <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
+                {{ if eq .department "Instructional Support Services" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
                     </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                 </tr>
                 {{ end }}
             {{ end }}
-        {{ end }}
-
-        {{ range .Site.Params.staff }}
-            {{ if eq .department "Sped" }}
-                {{ if and (ne .title "Lead Teacher") (ne .title "Profesor Líder") }}
-                    <tr class="">
-                        <td class="border border-slate-700 p-4">
-                            <strong>{{.name}}</strong><br>
-                            {{.title}}
-                        </td>
-                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                    </tr>
-                    {{ end }}
-            {{ end }}
-        {{ end }}
         </table>
     </div>
     
     
 
-    <h2 class="text-2xl font-semibold mb-6" id="paraTeam">{{ i18n "staff_page_paraprofessional" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="paraTeam">{{ i18n "staff_page_paraprofessional" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -513,8 +546,13 @@
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Paraprofessional" }}
                 <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
-                    <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
+                    </td>
                 </tr>
                 {{ end }}
             {{ end }}
@@ -524,93 +562,86 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
-                {{ range .Site.Params.staff }}
-                    {{ if eq .department "Paraprofessional" }}
-                    <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
-                        </td>
-                    </tr>
-                    {{ end }}
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "Paraprofessional" }}
+                <tr>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong class="text-lg">{{ .name }}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                            <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                        </div>
+                    </td>
+                </tr>
                 {{ end }}
+            {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="enlTeam">{{ i18n "staff_page_enl" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="enlTeam">{{ i18n "staff_page_enl" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
-        {{ range .Site.Params.staff }}
-        {{ if eq .department "ENL" }}
-            {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
-            <tr class="">
-                <td class="border border-slate-700 p-4">
-                    <strong>{{.name}}</strong><br>
-                    {{.title}}
-                </td>
-                <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-            </tr>
-            {{ end }}
-        {{ end }}
-    {{ end }}
-
-    {{ range .Site.Params.staff }}
-        {{ if eq .department "ENL" }}
-            {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
-                <tr class="">
-                    <td class="border border-slate-700 p-4">
-                        <strong>{{.name}}</strong><br>
-                        {{.title}}
-                    </td>
-                    <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                </tr>
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "ENL" }}
+                    {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
+                    <tr class="">
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong>{{.name}}</strong><br>
+                                {{.title}}
+                            </div>
+                        </td>
+                        <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                    </tr>
+                    {{ end }}
                 {{ end }}
-        {{ end }}
-    {{ end }}
+            {{ end }}
+
+            {{ range .Site.Params.staff }}
+                {{ if eq .department "ENL" }}
+                    {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
+                        <tr class="">
+                            <td class="border border-aoit-400 p-4">
+                                <div class="flex flex-col space-y-2">
+                                    <strong>{{.name}}</strong><br>
+                                    {{.title}}
+                                </div>
+                            </td>
+                            <td class="font-bold border border-aoit-400 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
+                        </tr>
+                        {{ end }}
+                {{ end }}
+            {{ end }}
     </table>
 
     <!-- Table for mobile rendering -->
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
-            {{ range .Site.Params.staff }}
-                {{ if eq .department "ENL" }}
-                    {{ if or (eq .title "Lead Teacher") (eq .title "Profesora Líder") }}
-                    <tr class="">
-                        <td class="border border-slate-700 p-4">
-                            <strong>{{.name}}</strong><br>
-                            {{.title}}
+                {{ range .Site.Params.staff }}
+                    {{ if eq .department "ENL" }}
+                    <tr>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
                         </td>
-                        <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
                     </tr>
                     {{ end }}
                 {{ end }}
-            {{ end }}
-        
-            {{ range .Site.Params.staff }}
-                {{ if eq .department "ENL" }}
-                    {{ if and (ne .title "Lead Teacher") (ne .title "Profesora Líder") }}
-                        <tr class="">
-                            <td class="border border-slate-700 p-4">
-                                <strong>{{.name}}</strong><br>
-                                {{.title}}
-                            </td>
-                            <td class="font-bold border border-slate-700 p-4"><a class="underline text-aoit-500" href="mailto:{{.email}}">{{.email}}</a></td>
-                        </tr>
-                        {{ end }}
-                {{ end }}
-            {{ end }}
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="spanish">{{ i18n "staff_page_spanish" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="spanish">{{ i18n "staff_page_spanish" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -619,7 +650,12 @@
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Spanish" }}
                 <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                        </div>
+                    </td>
                     <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
                 </tr>
                 {{ end }}
@@ -630,14 +666,17 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Spanish" }}
                     <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
                         </td>
                     </tr>
                     {{ end }}
@@ -645,7 +684,7 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="mainOffice">{{ i18n "staff_page_office_staff" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="mainOffice">{{ i18n "staff_page_office_staff" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -654,7 +693,12 @@
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Office" }}
                 <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                        </div>
+                    </td>
                     <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
                 </tr>
                 {{ end }}
@@ -665,14 +709,17 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Office" }}
                     <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
                         </td>
                     </tr>
                     {{ end }}
@@ -682,7 +729,7 @@
     
 
 
-    <h2 class="text-2xl font-semibold mb-6" id="guidance">{{ i18n "staff_page_guidance" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="guidance">{{ i18n "staff_page_guidance" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -691,7 +738,12 @@
             {{ range .Site.Params.staff }}
                 {{ if eq .department "Guidance" }}
                 <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                        </div>
+                    </td>
                     <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
                 </tr>
                 {{ end }}
@@ -702,14 +754,17 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "Guidance" }}
                     <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
                         </td>
                     </tr>
                     {{ end }}
@@ -717,7 +772,7 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="ridTeam">{{ i18n "staff_page_rid" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="ridTeam">{{ i18n "staff_page_rid" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
@@ -726,7 +781,12 @@
             {{ range .Site.Params.staff }}
                 {{ if eq .department "RID" }}
                 <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                        </div>
+                    </td>
                     <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
                 </tr>
                 {{ end }}
@@ -737,14 +797,17 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
                     {{ if eq .department "RID" }}
                     <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
                         </td>
                     </tr>
                     {{ end }}
@@ -752,16 +815,21 @@
         </table>
     </div>
 
-    <h2 class="text-2xl font-semibold mb-6" id="otherStaff">{{ i18n "staff_page_other_school_staff" }}</h2>
+    <h2 class="text-2xl font-semibold mb-6 pt-16 -mt-16" id="otherStaff">{{ i18n "staff_page_other_school_staff" }}</h2>
     <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg overflow-auto max-[600px]:hidden">
         <tr class="text-white bg-aoit-500">
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
             <th class="border border-aoit-400 p-4">{{ i18n "staff_page_email"}}</th>
         </tr>
             {{ range .Site.Params.staff }}
-                {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") (eq .department "Art") }}
+                {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") }}
                 <tr>
-                    <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}</td>
+                    <td class="border border-aoit-400 p-4">
+                        <div class="flex flex-col space-y-2">
+                            <strong>{{.name}}</strong>
+                            <span class="text-gray-700">{{.title}}</span>
+                        </div>
+                    </td>
                     <td class="border border-aoit-400 p-4 lowercase"><a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a></td>
                 </tr>
                 {{ end }}
@@ -772,14 +840,17 @@
     <div class="overflow-auto min-[600px]:hidden">
         <table class="w-full my-10 table-auto border-collapse rounded-3xl shadow-2xl rounded-lg">
             <tr class="text-white bg-aoit-500">
-                <th class="border border-aoit-400 p-4">{{ i18n "staff_page_name_title"}}</th>
+                <th class="border border-aoit-400 p-4 text-left">{{ i18n "staff_page_name_title"}}</th>
             </tr>
                 {{ range .Site.Params.staff }}
-                    {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") (eq .department "Art") }}
+                    {{ if or (eq .department "IT") (eq .department "Sub teacher") (eq .department "N/A") }}
                     <tr>
-                        <td class="border border-aoit-400 p-4"><strong>{{ .name }}</strong><br>{{.title}}
-                            <br>
-                            <a class="font-semibold text-aoit-500 underline transition-all transition-300 hover:text-aoit-900" href="mailto:{{ .email}}">{{ .email }}</a>
+                        <td class="border border-aoit-400 p-4">
+                            <div class="flex flex-col space-y-2">
+                                <strong class="text-lg">{{ .name }}</strong>
+                                <span class="text-gray-700">{{.title}}</span>
+                                <a class="inline-block mt-1 font-semibold text-aoit-500 underline" href="mailto:{{ .email}}">{{ .email }}</a>
+                            </div>
                         </td>
                     </tr>
                     {{ end }}
@@ -787,9 +858,165 @@
         </table>
     </div>
 
-
-
-
-
+    <!-- Add JavaScript at the end of the file -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.getElementById('mobile-staff-nav-toggle');
+            const mobileNav = document.getElementById('mobile-staff-nav');
+            const mobileNavIcon = document.getElementById('mobile-nav-icon');
+            
+            // Get all section headings
+            const sectionHeadings = document.querySelectorAll('h2[id]');
+            const navLinks = mobileNav.querySelectorAll('a');
+            
+            // Add CSS for active link
+            const style = document.createElement('style');
+            style.textContent = `
+                .active-section {
+                    background-color: #e6f7ff;
+                    font-weight: bold;
+                    border-left: 4px solid #0077cc;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Function to update active section in the navigation
+            function updateActiveSection() {
+                if (mobileNav.classList.contains('hidden')) {
+                    const scrollPosition = window.scrollY;
+                    
+                    // Get the sticky header height
+                    const stickyHeader = document.querySelector('.sticky');
+                    const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+                    
+                    // Find the current section
+                    let currentSection = null;
+                    
+                    sectionHeadings.forEach(heading => {
+                        const sectionTop = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight - 50;
+                        if (scrollPosition >= sectionTop) {
+                            currentSection = heading.id;
+                        }
+                    });
+                    
+                    // Update the navigation toggle text and active link
+                    if (currentSection) {
+                        // Remove active class from all links
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-section');
+                        });
+                        
+                        const currentLink = Array.from(navLinks).find(link => link.getAttribute('href') === `#${currentSection}`);
+                        if (currentLink) {
+                            // Add active class to current link
+                            currentLink.classList.add('active-section');
+                            
+                            const sectionName = currentLink.textContent;
+                            const toggleText = document.querySelector('#mobile-staff-nav-toggle .font-semibold');
+                            toggleText.innerHTML = `${sectionName} <span class="text-sm ml-2 opacity-80">- Click to navigate</span>`;
+                        }
+                    }
+                }
+            }
+            
+            // Listen for scroll events to update the active section
+            window.addEventListener('scroll', updateActiveSection);
+            
+            if (mobileNavToggle && mobileNav && mobileNavIcon) {
+                mobileNavToggle.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent clicks from propagating
+                    mobileNav.classList.toggle('hidden');
+                    // Use different HTML entities for up/down arrows
+                    mobileNavIcon.innerHTML = mobileNav.classList.contains('hidden') ? '&#9662;' : '&#9652;';
+                    
+                    // Update active section when opening the menu
+                    if (!mobileNav.classList.contains('hidden')) {
+                        const scrollPosition = window.scrollY;
+                        
+                        // Get the sticky header height
+                        const stickyHeader = document.querySelector('.sticky');
+                        const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+                        
+                        // Find the current section
+                        let currentSection = null;
+                        
+                        sectionHeadings.forEach(heading => {
+                            const sectionTop = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight - 50;
+                            if (scrollPosition >= sectionTop) {
+                                currentSection = heading.id;
+                            }
+                        });
+                        
+                        // Update active link
+                        if (currentSection) {
+                            // Remove active class from all links
+                            navLinks.forEach(link => {
+                                link.classList.remove('active-section');
+                            });
+                            
+                            const currentLink = Array.from(navLinks).find(link => link.getAttribute('href') === `#${currentSection}`);
+                            if (currentLink) {
+                                // Add active class to current link
+                                currentLink.classList.add('active-section');
+                            }
+                        }
+                    }
+                });
+                
+                // Close the menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileNav.contains(e.target) && e.target !== mobileNavToggle) {
+                        mobileNav.classList.add('hidden');
+                        mobileNavIcon.innerHTML = '&#9662;';
+                    }
+                });
+                
+                // Close the menu when clicking on a link and handle smooth scrolling
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Remove active class from all links
+                        navLinks.forEach(l => {
+                            l.classList.remove('active-section');
+                        });
+                        
+                        // Add active class to clicked link
+                        this.classList.add('active-section');
+                        
+                        // Close the dropdown
+                        mobileNav.classList.add('hidden');
+                        mobileNavIcon.innerHTML = '&#9662;';
+                        
+                        // Get the target section ID
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            // Get the height of the sticky header
+                            const stickyHeader = document.querySelector('.sticky');
+                            const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+                            
+                            // Scroll to the target section with offset for the sticky header
+                            const y = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                            
+                            window.scrollTo({
+                                top: y,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Update the toggle button text
+                            const sectionName = this.textContent;
+                            const toggleText = document.querySelector('#mobile-staff-nav-toggle .font-semibold');
+                            toggleText.innerHTML = `${sectionName} <span class="text-sm ml-2 opacity-80">- Click to navigate</span>`;
+                        }
+                    });
+                });
+            }
+            
+            // Initialize the active section
+            updateActiveSection();
+        });
+    </script>
    </div>
 {{ end }}

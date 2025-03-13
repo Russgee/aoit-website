@@ -59,8 +59,11 @@ other = "Matemáticas"
 [staff_page_science]
 other = "Ciencias"
 
+[staff_page_art]
+other = "Arte"
+
 [staff_page_social_studies]
-other = "Ciencias Sociales"
+other = "Estudios Sociales"
 
 [staff_page_physical_education]
 other = "Educación Física"
