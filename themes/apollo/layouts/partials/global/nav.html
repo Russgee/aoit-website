@@ -1,6 +1,6 @@
 {{ $currentPage := . }}
 {{ if .Site.Menus.main }}
-<div class='container mx-auto nav {{ if .Site.Params.announcement }} pt-16 {{ else }} pt-6 {{ end }} px-6 pb-2 font-semibold items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll  lg:overflow-visible  text-aoit-500' id="nav">
+<div class='container mx-auto nav {{ if .Site.Params.announcement }} pt-8 {{ else }} pt-6 {{ end }} px-6 pb-2 font-semibold items-center flex-wrap z-50 text-aoit-700 flex-col overflow-y-scroll  lg:overflow-visible  text-aoit-500' id="nav">
     <div class="flex justify-between items-center w-full container mx-auto" id="nav-item-container">
         <span id="menu" class="transition-all material-symbols-outlined">
             menu
@@ -68,7 +68,7 @@
                 <span class="material-symbols-outlined">
                 language
                 </span>
-                <ul class="w-6/12 z-50 right-0 transition-all hidden absolute bg-aoit-75 rounded-2xl p-4 shadow-xl top-10 lg:left-0 w-full mt-8 group-hover:block {{ if .IsHome }} text-black {{ end }}">
+                <ul class="w-6/12 z-50 right-0 transition-all hidden absolute bg-aoit-75 rounded-2xl p-4 shadow-xl top-10 z-[9999] lg:left-0 w-full mt-8 group-hover:block {{ if .IsHome }} text-black {{ end }}">
                     {{ range .Site.Languages }}
                         {{ if eq . $.Site.Language }}
                         <li class="font-semibold text-white bg-aoit-500 shadow-md rounded-2xl mb-2 p-2">{{ .LanguageName }}</li>

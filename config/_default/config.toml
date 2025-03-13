@@ -12,7 +12,10 @@ defaultContentLanguageInSubdir = true
     weight = 1
 
     [languages.en.params]
-      announcement = ""
+      announcement = "Please complete the NYC School Survey! Your feedback is important to us. <a href='https://surveys.panoramaed.com/nycdoe/login' class='underline' target='_blank'>Click here</a> to access the survey."
+      modalAnnouncementTitle = "Parent-Teacher Conferences"
+      modalAnnouncement = "<p><strong>Dear Parents/Guardians,</strong></p><br><p>We are excited to announce our in-person parent-teacher conferences, for the first time since 2019!</p><br><p>Join us on <strong>Wednesday, March 19, 2025</strong> from <strong>5:00 PM to 7:30 PM</strong> to reconnect with our staff face-to-face and celebrate student progress.</p><br><p>Staff members will reach out regarding your availability. Light refreshments will be served.</p><p>We look forward to seeing you!</p>"
+      modalAnnouncementImage = "/ptc.png"
       description = "Discover Academy of Innovative Technology High School in Cypress Hills, Brooklyn, a nurturing New York City public high school for grades 9-12, providing three New York State approved CTE programs and a vast array of supports to ensure student success."
       backToTopText = "Back to top"
       backToTopAlt = "Click here to return back to top."
@@ -322,7 +325,10 @@ defaultContentLanguageInSubdir = true
     weight = 2
 
     [languages.es.params]
-      announcement = ""
+      announcement = "¡Por favor complete la Encuesta Escolar de NYC! Sus comentarios son importantes para nosotros. <a href='https://surveys.panoramaed.com/nycdoe/login' class='underline' target='_blank'>Haga clic aquí</a> para acceder a la encuesta."
+      modalAnnouncementTitle = "Conferencias de Padres y Maestros"
+      modalAnnouncement = "<p><strong>Estimados Padres/Tutores,</strong></p><p>¡Nos complace anunciar nuestras conferencias de padres y maestros en persona, por primera vez desde 2019!</p><p>Acompáñenos el <strong>miércoles 19 de marzo de 2025</strong> de <strong>5:00 PM a 7:30 PM</strong> para reconectar con nuestro personal cara a cara y celebrar el progreso de los estudiantes.</p><p>Los miembros del personal se comunicarán con usted sobre su disponibilidad. Se servirán refrigerios ligeros.</p><p>¡Esperamos verlos!</p>"
+      modalAnnouncementImage = "/ptc-spanish.png"
       description = "Descubra la escuela secundaria Academy of Innovative Technology en Cypress Hills, Brooklyn, una enriquecedora escuela secundaria pública de la ciudad de Nueva York para los grados 9 a 12, que ofrece tres programas CTE aprobados por el estado de New York y una amplia gama de apoyos para garantizar el éxito de los estudiantes."
       backToTopText = "Volver al inicio"
       backToTopAlt = "Click here to go back to the top."
