@@ -1,4 +1,4 @@
-baseURL = 'https://aoiths.org'
+baseURL = 'https://www.aoiths.org'
 languageCode = 'en-us'
 title = 'Academy of Innovative Technology High School'
 theme = 'apollo'
@@ -127,12 +127,6 @@ defaultContentLanguageInSubdir = true
         name = "Garfield Headlam"
         email = "Mr.headlam@aoiths.org"
         department = "Social Studies"
-
-      [[languages.en.params.staff]]
-        title = "Paraprofessional"
-        name = "Tatiana Herrera"
-        email = "Ms.herrera@aoiths.org"
-        department = "Paraprofessional"
 
       [[languages.en.params.staff]]
         title = "Information Technology Specialist"
@@ -429,12 +423,6 @@ defaultContentLanguageInSubdir = true
       email = "Ms.Griszell@aoiths.org"
       department = "English"
 
-      [[languages.es.params.staff]]
-        title = "Profesora"
-        name = "Anne Pietro"
-        email = "Ms.pietro@aoiths.org"
-        department = "English"
-
         [[languages.es.params.staff]]
         title = "Profesora"
         name = "Maciel Gomez"
@@ -608,12 +596,6 @@ defaultContentLanguageInSubdir = true
       name = "Michael Valentin"
       email = "Mr.valentin@aoiths.org"
       department = "Office"
-
-    [[languages.es.params.staff]]
-      title = "Profesora"
-      name = "Elisabeth Ventimiglia"
-      email = "Ms.ventimiglia@aoiths.org"
-      department = "Mathematics"
 
     [[languages.es.params.staff]]
       title = "Profesor"
