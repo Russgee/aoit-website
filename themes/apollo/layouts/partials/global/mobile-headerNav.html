@@ -1,3 +1,4 @@
+{{ if not (in .RelPermalink "/staff/") }}
 <ul class="relative z-50 my-4 lg:hidden">
     {{ if isset .Params "sidebar_override"}}
         {{ range .Params.sidebar_override }}
@@ -9,3 +10,4 @@
         {{ end }}
     {{ end }}
 </ul>
+{{ end }}

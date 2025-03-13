@@ -258,8 +258,8 @@ defaultContentLanguageInSubdir = true
           [[languages.en.params.staff]]
           title = "Teacher, Social Studies"
           name = "Thomas Smith"
-          email = "Mr.smith@aoiths.org"
-          department = "Special Education"
+          email = "mr.smith@aoiths.org"
+          department = "Staff"
 
           [[languages.en.params.staff]]
           title = "Teacher, Math"
@@ -268,9 +268,9 @@ defaultContentLanguageInSubdir = true
           department = "Sped"
 
           [[languages.en.params.staff]]
-          title = "Teacher, Art"
+          title = "Art Teacher"
           name = "Michael Sullivan"
-          email = "Mr.sullivan@aoiths.org"
+          email = "mr.sullivan@aoiths.org"
           department = "Art"
 
           [[languages.en.params.staff]]
@@ -581,21 +581,15 @@ defaultContentLanguageInSubdir = true
       department = "Sped"
 
     [[languages.es.params.staff]]
-      title = "Profesor"
+      title = "Maestro"
       name = "Thomas Smith"
-      email = "Mr.smith@aoiths.org"
-      department = "Social Studies"
+      email = "mr.smith@aoiths.org"
+      department = "Staff"
 
     [[languages.es.params.staff]]
-      title = "Profesor"
-      name = "James Steele"
-      email = "Mr.steele@aoiths.org"
-      department = "Sped"
-
-    [[languages.es.params.staff]]
-      title = "Profesor de Arte"
+      title = "Maestro de Arte"
       name = "Michael Sullivan"
-      email = "Mr.sullivan@aoiths.org"
+      email = "mr.sullivan@aoiths.org"
       department = "Art"
 
     [[languages.es.params.staff]]

@@ -91,6 +91,9 @@ other = "Other School Staff"
 [staff_page_science]
 other = "Science"
 
+[staff_page_art]
+other = "Art"
+
 [staff_page_spanish]
 other = "Spanish"
 
