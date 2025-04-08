@@ -14,7 +14,7 @@ defaultContentLanguageInSubdir = true
     [languages.en.params]
       announcement = "Please complete the NYC School Survey! Your feedback is important to us. <a href='https://surveys.panoramaed.com/nycdoe/login' class='underline' target='_blank'>Click here</a> to access the survey."
       modalAnnouncementTitle = "2nd Annual CTE Expo"
-      modalAnnouncement = "<p>Join us at our 2nd Annual CTE Expo! Discover how our programs in Video Game Design, IT, and Web Development are empowering tomorrow's workforce - and learn how you can get involved.</p><p>See you April 29th, 4 - 7PM!</p><p><a href='#' class='underline font-bold'>RSVP Link</a></p>"
+      modalAnnouncement = "<p>Join us at our 2nd Annual CTE Expo! Discover how our programs in Video Game Design, IT, and Web Development are empowering tomorrow's workforce - and learn how you can get involved.</p><p>See you April 29th, 4 - 7PM!</p><p><a href='https://forms.gle/9zZBy95PuxHBtaMg6' class='underline font-bold'>RSVP Link</a></p>"
       modalAnnouncementImage = "/cte-expo.png"
       description = "Discover Academy of Innovative Technology High School in Cypress Hills, Brooklyn, a nurturing New York City public high school for grades 9-12, providing three New York State approved CTE programs and a vast array of supports to ensure student success."
       backToTopText = "Back to top"
