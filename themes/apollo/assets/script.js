@@ -193,82 +193,95 @@ const formTypes = [
 
 formTypes.forEach((n) => selector.insertAdjacentHTML("beforeend", `<option value="${n.form}">${n.type}</option>`));
 
-// optimize hiding and showing
-// var hideOrDefault = (nameObjs) => {
-//   nameObjs.forEach( (v, i) => {
-//     el(v.title).style.display = "none";
-//   });
-// };
-
 var showOrHide = (name, status) => {
-  el(name).style.display = status;
+  const element = el(name);
+  if (element) {
+    element.style.display = status;
 
-  if (name === ".dvAddress") {
-    el(`${name} input`, true).forEach(function(n) {
-      if (n.id !== "address2") {
-        n.setAttribute("required", true);
-      }
-    })
+    if (name === ".dvAddress") {
+      el(`${name} input`, true).forEach(function(n) {
+        if (n.id !== "address2") {
+          n.setAttribute("required", true);
+        }
+      });
+    }
   }
-}
+};
 
 var resetFormSections = () => {
-  el(".dvAddress").style.display = "none";
+  const addressSection = el(".dvAddress");
+  if (addressSection) {
+    addressSection.style.display = "none";
+    
+    el(".dvAddress input", true).forEach(function(n) {
+      if (n.id !== "address2") {
+        n.removeAttribute("required");
+      }
+    });
+  }
+};
 
-  el(`${name} input`, true).forEach(function(n) {
-    if (n.id !== "address2") {
-      n.removeAttribute("required");
+if (selector) {
+  selector.addEventListener("change", function() {
+    const formType = this.value;
+    
+    if (form) {
+      form.name = formType;
+      const formNameInput = el("input[name='form-name']");
+      if (formNameInput) {
+        formNameInput.value = formType;
+      }
     }
-  })
+
+    var html = "", 
+        msgStart = "Your inquiry will be directed to ";
+    
+    resetFormSections();
+    
+    switch (formType) {
+      case "iss":
+        html = msgStart + "Ms. Slater, our ISS Coordinator.";
+        break;
+      case "iep-request":
+        html = msgStart + "Ms. Slater, our ISS Coordinator.";
+        break;
+      case "guidance":
+        html = msgStart + "our guidance team, Ms. Cooper and Ms. Desroches.";
+        break;
+      case "transcript":
+        html = msgStart + "our guidance team, Ms. Cooper and Ms. Desroches.";
+        showOrHide(".dvAddress", "block");
+        break;
+      case "office":
+        html = msgStart + "our main office staff and Parent Coordinator, Mr. Martinez.";
+        break;
+      case "cte":
+        html = msgStart + "our CTE team.";
+        break;
+      case "rid":
+        html = msgStart + "our RID team lead, Mr. Mollison.";
+        break;
+      default:
+          html = msgStart + "our office staff.";
+          break;
+    }
+
+    if (formHeading) {
+      formHeading.innerHTML = `<p class="text-center font-semibold text-aoit-900 mt-2">${html}</p>`;
+    }
+  });
 }
 
-selector.addEventListener("change", function() {
-  const formType = this.value;
-  
-  form.name = formType;
-  el("input[name='form-name']").value = formType;
-
-  var html = "", 
-      msgStart = "Your inquiry will be directed to ";
-  
-  resetFormSections();
-  
-  switch (formType) {
-    case "iss":
-      html = msgStart + "Ms. Slater, our ISS Coordinator.";
-      break;
-    case "iep-request":
-      html = msgStart + "Ms. Slater, our ISS Coordinator.";
-      break;
-    case "guidance":
-      html = msgStart + "our guidance team, Ms. Cooper and Ms. Desroches.";
-      break;
-    case "transcript":
-      html = msgStart + "our guidance team, Ms. Cooper and Ms. Desroches.";
-      showOrHide(".dvAddress", "flex");
-      break;
-    case "office":
-      html = msgStart + "our main office staff and Parent Coordinator, Mr. Martinez.";
-      break;
-    case "cte":
-      html = msgStart + "our CTE team.";
-      break;
-    case "rid":
-      html = msgStart + "our RID team lead, Mr. Mollison.";
-      break;
-    default:
-        html = msgStart + "our office staff.";
-        break;
-  }
-
-  formHeading.innerHTML = `<p class="text-center font-semibold text-aoit-900">${html}</p>`;
-});
-
 const states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
-var htmlStates = states.map((s, i) => `<option value="${s.toLowerCase()}"> ${ s }</option>`);
 
-el("#states").insertAdjacentHTML("beforeend", htmlStates);
-
+// Populate states dropdown
+const statesDropdown = el("#states");
+if (statesDropdown) {
+  statesDropdown.innerHTML = '<option value="">Select State</option>';
+  states.forEach(state => {
+    statesDropdown.insertAdjacentHTML("beforeend", `<option value="${state}">${state}</option>`);
+  });
+}
 
 const printModal = (error) => {
   const modalData = {
@@ -431,23 +444,258 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
           
           makeRequest(URL_ROOT, { method: "GET" }, (d) => {
               data = d.items;
+              // Log all events received from the API
+              console.log('All events received from Google Calendar API:', d);
+              console.log('Calendar items:', d.items);
+              
+              // Filter events from March 2025 onward
+              const march2025 = new Date('2025-03-01T00:00:00');
+              const eventsFromMarch2025 = d.items.filter(event => {
+                try {
+                  // Check if event and start properties exist
+                  if (!event || !event.start) {
+                    console.warn('Event missing start property:', event);
+                    return false;
+                  }
+                  const eventDate = new Date(event.start.dateTime || event.start.date);
+                  return eventDate >= march2025;
+                } catch (err) {
+                  console.error('Error processing event for March 2025 filter:', event, err);
+                  return false;
+                }
+              });
+              
+              // Log events from March 2025 onward
+              console.log('Events from March 2025 onward:', eventsFromMarch2025);
+              
+              // Filter events specifically in March 2025 (not before or after)
+              const march2025Start = new Date('2025-03-01T00:00:00');
+              const march2025End = new Date('2025-03-31T23:59:59');
+              
+              const eventsInMarch2025 = d.items.filter(event => {
+                try {
+                  // Check if event has required properties
+                  if (!event || !event.start) {
+                    return false;
+                  }
+                  
+                  // Get start and end dates
+                  const eventStartDate = new Date(event.start.dateTime || event.start.date);
+                  
+                  // For end date, if not present, use start date (for single-day events)
+                  let eventEndDate;
+                  if (event.end) {
+                    eventEndDate = new Date(event.end.dateTime || event.end.date);
+                  } else {
+                    // If no end date, assume it's the same as start date
+                    eventEndDate = new Date(eventStartDate);
+                  }
+                  
+                  // Check if the event overlaps with March 2025
+                  // An event overlaps if:
+                  // 1. It starts before March ends AND
+                  // 2. It ends after March begins
+                  return eventStartDate <= march2025End && eventEndDate >= march2025Start;
+                } catch (err) {
+                  console.error('Error checking if event is in March 2025:', event, err);
+                  return false;
+                }
+              });
+              
+              // Log only events in March 2025
+              console.log('Events occurring in March 2025 (including overlapping events):', eventsInMarch2025);
+              
+              // Log details of each March 2025 event for easier reading
+              console.log('March 2025 Events Details (including overlapping events):');
+              eventsInMarch2025.forEach((event, index) => {
+                try {
+                  if (event && event.start) {
+                    const startDate = new Date(event.start.dateTime || event.start.date);
+                    let endDate;
+                    if (event.end) {
+                      endDate = new Date(event.end.dateTime || event.end.date);
+                    } else {
+                      endDate = new Date(startDate);
+                    }
+                    
+                    // Format dates for better readability
+                    const formatDate = (date) => {
+                      return date.toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      });
+                    };
+                    
+                    console.log(`Event ${index + 1}:`, {
+                      summary: event.summary || 'No title',
+                      description: event.description || 'No description',
+                      startDate: formatDate(startDate),
+                      endDate: formatDate(endDate),
+                      status: event.status || 'No status',
+                      location: event.location || 'No location',
+                      htmlLink: event.htmlLink || 'No link'
+                    });
+                  }
+                } catch (err) {
+                  console.error('Error logging March 2025 event details:', err);
+                }
+              });
+              
+              // Also check for any events with "Parent-Teacher" in the title or description
+              const ptcEvents = d.items.filter(event => {
+                try {
+                  if (!event) return false;
+                  
+                  const summary = (event.summary || '').toLowerCase();
+                  const description = (event.description || '').toLowerCase();
+                  
+                  return summary.includes('parent-teacher') || 
+                         summary.includes('parent teacher') ||
+                         description.includes('parent-teacher') ||
+                         description.includes('parent teacher');
+                } catch (err) {
+                  return false;
+                }
+              });
+              
+              console.log('Parent-Teacher Conference related events (any date):', ptcEvents);
+              
+              // Specifically look for March 19, 2025 events
+              const march19_2025 = new Date('2025-03-19T00:00:00');
+              const march20_2025 = new Date('2025-03-20T00:00:00');
+              
+              console.log('Looking for events on March 19, 2025...');
+              
+              // First, log all raw events to see their exact structure
+              console.log('All raw events:', d.items);
+              
+              // Check each event individually with detailed logging
+              d.items.forEach((event, index) => {
+                try {
+                  console.log(`Examining event ${index}:`, event);
+                  
+                  // Check if this event has a date close to March 19, 2025
+                  if (event && event.start) {
+                    const startDate = new Date(event.start.dateTime || event.start.date);
+                    const startMonth = startDate.getMonth() + 1; // JavaScript months are 0-indexed
+                    const startDay = startDate.getDate();
+                    const startYear = startDate.getFullYear();
+                    
+                    console.log(`Event ${index} date: ${startYear}-${startMonth}-${startDay}`);
+                    
+                    // Check if this is a March 19, 2025 event
+                    if (startMonth === 3 && startDay === 19 && startYear === 2025) {
+                      console.log('FOUND MARCH 19, 2025 EVENT:', event);
+                      
+                      // Check event status
+                      console.log('Event status:', event.status);
+                      
+                      // Check if it's in the filtered March 2025 events
+                      const isInMarchEvents = eventsInMarch2025.includes(event);
+                      console.log('Is this event in the filtered March 2025 events?', isInMarchEvents);
+                      
+                      // Check if it's in future events
+                      const isInFutureEvents = futureEvents.includes(event);
+                      console.log('Is this event in future events?', isInFutureEvents);
+                      
+                      // Check why it might not be in future events
+                      if (!isInFutureEvents) {
+                        if (!event.status) {
+                          console.log('Event missing status property');
+                        } else if (event.status !== "confirmed") {
+                          console.log('Event status is not "confirmed", it is:', event.status);
+                        }
+                        
+                        if (!event.end) {
+                          console.log('Event missing end property');
+                        }
+                      }
+                    }
+                    
+                    // Also check for events that are close to March 19
+                    if (startMonth === 3 && (startDay >= 18 && startDay <= 20) && startYear === 2025) {
+                      console.log('FOUND EVENT CLOSE TO MARCH 19, 2025:', event);
+                    }
+                  } else {
+                    console.log(`Event ${index} has no start date`);
+                  }
+                } catch (err) {
+                  console.error(`Error examining event ${index}:`, err);
+                }
+              });
+              
+              // Also check for any events with March 19 in the title or description
+              const march19Events = d.items.filter(event => {
+                try {
+                  if (!event) return false;
+                  
+                  const summary = (event.summary || '').toLowerCase();
+                  const description = (event.description || '').toLowerCase();
+                  
+                  return summary.includes('march 19') || 
+                         description.includes('march 19') ||
+                         summary.includes('3/19') ||
+                         description.includes('3/19') ||
+                         summary.includes('03/19') ||
+                         description.includes('03/19');
+                } catch (err) {
+                  return false;
+                }
+              });
+              
+              console.log('Events with "March 19" in title or description:', march19Events);
+              
               const now = new Date();
 
               let futureEvents = d.items.filter(event => {
-                if (event.status === "confirmed") {
-                  const eventDate = new Date(event.end.dateTime || event.end.date);
-                  return eventDate >= now;
+                try {
+                  if (!event || !event.status || !event.end) {
+                    console.warn('Event missing required properties:', event);
+                    return false;
+                  }
+                  
+                  if (event.status === "confirmed") {
+                    // Use date as fallback if dateTime is not available
+                    const eventDate = new Date(event.end.dateTime || event.end.date);
+                    return eventDate >= now;
+                  }
+                  return false;
+                } catch (err) {
+                  console.error('Error processing event for future events filter:', event, err);
+                  return false;
                 }
               })
 
+              // Log filtered future events
+              console.log('Filtered future events:', futureEvents);
+
               futureEvents = futureEvents.sort((a, b) => {
-                const dateA = new Date(a.start.dateTime || a.start.date);
-                const dateB = new Date(b.start.dateTime || b.start.date);
-    
-                return dateA - dateB;
+                try {
+                  if (!a.start || !b.start) {
+                    console.warn('Event missing start property during sort:', { a, b });
+                    return 0;
+                  }
+                  
+                  const dateA = new Date(a.start.dateTime || a.start.date);
+                  const dateB = new Date(b.start.dateTime || b.start.date);
+      
+                  return dateA - dateB;
+                } catch (err) {
+                  console.error('Error sorting events:', { a, b }, err);
+                  return 0;
+                }
             });
 
+            // Log sorted events
+            console.log('Sorted future events:', futureEvents);
+
             futureEvents = futureEvents.slice(0, 8);
+              
+            // Log final events to be displayed
+            console.log('Final events to display (limited to 8):', futureEvents);
               
             if (futureEvents.length <= 0) {
               events.insertAdjacentHTML("beforeend", `
@@ -459,8 +707,16 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
               </div>`);
             } else {
               futureEvents.forEach((n) => {
+                try {
                     var post = n;
-                    var curr_date = processDate(post.start.dateTime || post.start.date );
+                    
+                    // Check if start property exists
+                    if (!post.start) {
+                      console.warn('Event missing start property during rendering:', post);
+                      return; // Skip this event
+                    }
+                    
+                    var curr_date = processDate(post.start.dateTime || post.start.date);
                     
                     events.insertAdjacentHTML("beforeend", 
                         `<article class="cal-event min-h-20 min-w-[15rem] rounded-cell backdrop-blur-md bg-aoit-50/25 text-white rounded-xl p-3 mb-4 flex items-center lg:mb-0 xl:w-[20rem]">
@@ -475,17 +731,23 @@ if (window.location.pathname === "/en/" || window.location.pathname === "/es/") 
                                 </strong>
                                 <span class="text-white text-xs">
                                     ${
-                                        n.start.dateTime && n.end.dateTime 
+                                        (n.start && n.start.dateTime && n.end && n.end.dateTime)
                                         ? `${processTime(n.start.dateTime)} - ${processTime(n.end.dateTime)}`
                                         : ""
                                     }
                                 </span>
                             </div>
                         </article>`);
+                } catch (err) {
+                    console.error('Error rendering event:', n, err);
+                }
               });
             }
                   
-          }, (err) => console.log(err));
+          }, (err) => {
+              // Log any errors that occur during the API request
+              console.error('Error fetching calendar events:', err);
+          });
 }
 
         function makeRequest(url, props, success, error) {
