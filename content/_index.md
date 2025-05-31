@@ -35,7 +35,7 @@ programs:
       description: "Center provides targeted academic support in math, English, science, and history, offering resources and assistance to help students excel in these core subjects."
       icon: square_foot
     - title: Student Success Center (SSC)
-      description: "Student Success Center (SSC): Our Student Success Center is a comprehensive college support hub that provides cp;;e resources, mentoring, and guidance to ensure student success and personal growth throughout their high school journey."
+      description: "Student Success Center (SSC): Our Student Success Center is a comprehensive college support hub that provides college resources, mentoring, and guidance to ensure student success and personal growth throughout their high school journey."
       icon: 
     - title: ROTC
       description: "Our Reserve Officers' Training Corps (ROTC) program offers students valuable leadership and military training opportunities, fostering character development and civic responsibility."
