@@ -786,11 +786,6 @@ defaultContentLanguageInSubdir = true
                 description = "Acceda al sistema de búsqueda y solicitud de escuelas del Departamento de Educación de NYC."
                 new = true
 
-        [[languages.es.menu.main]]
-        identifier = "Staff"
-        name = "Personal"
-        url = "/es/staff"
-        weight = 7
 
     [[languages.es.menu.footer]]
 
@@ -1014,11 +1009,6 @@ hasChildren = true
     [menu.main.params]
     description = "Access the NYC Department of Education's school search and application system."
     new = true
-[[menu.main]]
-identifier = "staff"
-name = "Staff"
-url = "/en/staff"
-weight = 7
 
 [[menu.footer]]
 
