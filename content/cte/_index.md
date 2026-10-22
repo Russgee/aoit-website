@@ -15,18 +15,18 @@ team:
       name: Khayri Alphonse
       email: mr.alphonse@aoiths.org
       lead: true
-    - title: Web Development Teacher
-      name: Kyle Pierre
-      email: mr.pierre@aoiths.org
+    - title: Web Development, AP Computer Science Teacher
+      name: Russell Gomes
+      email: mr.gomes@aoiths.org
     - title: Game Design Teacher
       name: Sakib Shams
       email: mr.shams@aoiths.org
     - title: IT Teacher, Career and Finance Management
       name: Meagan Ramsawak
       email: ms.ramsawak@aoiths.org
-    - title: Career and Finance Management, AP Computer Science, Robotics, Web
-      name: Aaron Pelzer
-      email: mr.pelzer@aoiths.org
+    - title: Career and Finance Management, Graphic Design Teacher
+      name: Henna Rahimi
+      email: ms.rahimi@aoiths.org
     - title: Modern Youth Apprenticeship Teacher
       name: Cameron Frazer
       email: mr.frazer@aoiths.org
@@ -37,4 +37,4 @@ electives:
     description: "Explore the exciting field of Mechanical Engineering as you design, build, and bring innovative machines to life, mastering the principles of mechanics, materials, and automation."
   - title: "AP Computer Science"
     description: "Advanced Placement Computer Science course, where you'll dive into the world of algorithms, data structures, and software development, preparing for college and industry opportunities in the digital age."
---- 
+---
